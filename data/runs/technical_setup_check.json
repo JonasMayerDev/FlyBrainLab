@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "classification": "technical_setup_check",
+  "documented_at_utc": "2026-10-03T23:09:47.558691+00:00",
+  "planning_status": "retrospective documentation of executed smoke checks; not a pre-registered biological experiment",
+  "question": "Can the full downloaded v783 LIF network run with a generic stimulus and with the stimulus disabled?",
+  "controls": {
+    "same_model_data_seed_duration_target": true,
+    "changed_parameter": "stimulus_rate_hz",
+    "stimulated_hz": 150,
+    "sham_hz": 0
+  },
+  "records": {
+    "stimulated": "data/runs/brain-pilot-20261003T230750Z-1204ca/run.json",
+    "sham": "data/runs/brain-pilot-20261003T230843Z-6f1ee2/run.json"
+  },
+  "observations": {
+    "stimulated_spike_events": 2,
+    "sham_spike_events": 0,
+    "stimulated_active_neurons": 1,
+    "sham_active_neurons": 0,
+    "neurons_included": 138639,
+    "connection_rows_included": 15091983,
+    "stimulated_wall_seconds": 2.494,
+    "sham_wall_seconds": 2.246,
+    "sham_peak_rss_bytes": 1088307200
+  },
+  "status": "setup_check_passed",
+  "interpretation": "The complete author-derived v783 graph executes; the generic target responds to its Poisson input and no spikes occurred in this short 0 Hz run. This is a software/runtime check, not a functional brain-body result.",
+  "next_decision": "Proceed to source-backed target selection and an explicitly designed, controlled research experiment; body adapter remains absent.",
+  "limitations": [
+    "One seed and one trial per condition, 20 ms only.",
+    "No independent functional annotation of generic target.",
+    "Neither motor outputs nor body/flight are connected.",
+    "This setup comparison does not satisfy or replace the C3 scientific discovery experiment."
+  ]
+}

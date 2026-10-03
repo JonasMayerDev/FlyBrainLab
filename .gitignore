@@ -1,0 +1,27 @@
+# Secrets: real credentials stay in process memory, never in this repository.
+.env
+.env.*
+!.env.example
+*.pem
+
+# Local runtimes and provider state
+.venv/
+.cache/
+.runtime/
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Large original datasets: reproduce through the manifest/download script.
+/data/brain/**/*.parquet
+/data/brain/**/*.csv
+/data/**/*.zip
+/data/**/*.tar.gz
+
+# Local knowledgebase state is deliberately outside this iCloud project.
+/research/local/
+/results/private/
+
+# Viewer build output
+node_modules/
+dist/

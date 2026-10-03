@@ -1,0 +1,54 @@
+spec_version: 1
+name: fly_discovery
+description: Native Omnigent local fly research and bounded setup workflow
+executor:
+  type: omnigent
+  config:
+    harness: claude-sdk
+instructions: instructions.md
+async: true
+spawn: false
+agent_session_sharing: none
+tools:
+  agents:
+  - researcher
+  - evidence_reviewer
+  - hypothesis_planner
+  - experimenter
+  - analyst
+  timeout: 120
+  retry:
+    max_retries: 0
+guardrails:
+  policies:
+    authorized_tools:
+      type: function
+      function: scripts.omnigent_policies.bounded_tool_access
+    call_limit:
+      type: function
+      function:
+        path: omnigent.policies.builtins.safety.max_tool_calls_per_session
+        arguments:
+          limit: 40
+    session_cost:
+      type: function
+      function:
+        path: omnigent.policies.builtins.cost.cost_budget
+        arguments:
+          max_cost_usd: 1.0
+          expensive_models:
+          - claude
+          - sonnet
+          - haiku
+          - opus
+    tree_cost:
+      type: function
+      function:
+        path: omnigent.policies.builtins.cost.subagent_cost_budget
+        arguments:
+          max_cost_usd: 2.0
+          expensive_models:
+          - claude
+          - sonnet
+          - haiku
+          - opus

@@ -1,0 +1,39 @@
+spec_version: 1
+name: evidence_reviewer
+description: Check source versions and evidence scope, then store supported claims
+  locally.
+executor:
+  type: omnigent
+  config:
+    harness: claude-sdk
+instructions: instructions.md
+async: true
+spawn: false
+agent_session_sharing: none
+tools:
+  agents: []
+  timeout: 120
+  retry:
+    max_retries: 0
+guardrails:
+  policies:
+    authorized_tools:
+      type: function
+      function: scripts.omnigent_policies.bounded_tool_access
+    call_limit:
+      type: function
+      function:
+        path: omnigent.policies.builtins.safety.max_tool_calls_per_session
+        arguments:
+          limit: 10
+    session_cost:
+      type: function
+      function:
+        path: omnigent.policies.builtins.cost.cost_budget
+        arguments:
+          max_cost_usd: 0.3
+          expensive_models:
+          - claude
+          - sonnet
+          - haiku
+          - opus

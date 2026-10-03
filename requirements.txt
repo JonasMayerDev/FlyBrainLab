@@ -1,0 +1,7 @@
+# Tested setup: CPython 3.12.14 on macOS arm64.
+omnigent==0.16.0
+brian2==2.9.0
+numpy==1.26.4
+pandas==2.2.3
+pyarrow==25.0.1
+joblib==1.6.0

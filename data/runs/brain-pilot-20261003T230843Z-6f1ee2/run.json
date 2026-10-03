@@ -1,0 +1,49 @@
+{
+  "run_id": "brain-pilot-20261003T230843Z-6f1ee2",
+  "status": "completed",
+  "started_at_utc": "2026-10-03T23:08:43.595041+00:00",
+  "dataset_version": "FAFB FlyWire v783",
+  "model_commit": "91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+  "duration_ms": 20.0,
+  "stimulus_rate_hz": 0.0,
+  "seed": 42,
+  "n_trials": 1,
+  "n_processes": 1,
+  "timestep_ms": 0.1,
+  "simulation_scope": "whole downloaded v783 graph",
+  "body_connected": false,
+  "evidence_scope": "technical smoke test; no independent biological or flight validation",
+  "versions": {
+    "python": "3.12.14",
+    "brian2": "2.9.0",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "pyarrow": "25.0.1"
+  },
+  "limitations": [
+    "Short technical probe; insufficient for statistical behavioral conclusions.",
+    "No body dynamics, motor adapter or sensor feedback is connected.",
+    "Generic pilot target identity has not been functionally annotated.",
+    "LIF dynamics and signed weights are author-model assumptions."
+  ],
+  "data_loading_adjustments": [
+    "Projected only the three connectivity columns consumed by create_model; all rows retained."
+  ],
+  "compatibility_adjustments": [
+    "Removed assignment w=0 from reset: w is undeclared in the upstream neuron equations. Upstream source unchanged."
+  ],
+  "stimulated_neuron_ids": [
+    "720575940596125868"
+  ],
+  "neurons": 138639,
+  "connection_rows": 15091983,
+  "spike_events": 0,
+  "active_neurons": 0,
+  "result_path": "data/runs/brain-pilot-20261003T230843Z-6f1ee2",
+  "spikes_file": "spikes.parquet",
+  "full_network_included": true,
+  "backend": "Brian2 numpy runtime",
+  "wall_seconds": 2.246,
+  "max_process_rss_bytes": 1088307200,
+  "ended_at_utc": "2026-10-03T23:08:45.841516+00:00"
+}

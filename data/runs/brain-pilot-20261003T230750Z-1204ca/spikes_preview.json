@@ -1,0 +1,15 @@
+{
+  "recorded_simulation": true,
+  "preview_is_capped": true,
+  "max_preview_events": 1000,
+  "events": [
+    {
+      "t_seconds": 0.007,
+      "flywire_id": "720575940596125868"
+    },
+    {
+      "t_seconds": 0.015600000000000001,
+      "flywire_id": "720575940596125868"
+    }
+  ]
+}

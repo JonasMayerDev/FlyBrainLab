@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "model": "Shiu Drosophila whole-brain LIF",
+  "dataset": "FlyWire FAFB v783 model-ready author-derived connectivity",
+  "downloaded_at_utc": "2026-10-03T23:03:59.639167+00:00",
+  "source_repository": "https://github.com/philshiu/Drosophila_brain_model",
+  "source_commit": "91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+  "code_license": {
+    "identifier": "MIT",
+    "path": "simulation/vendor/shiu/LICENSE"
+  },
+  "underlying_connectome": {
+    "doi": "10.5281/zenodo.10676866",
+    "url": "https://zenodo.org/records/10676866",
+    "version": "783.0",
+    "license": "CC-BY-4.0",
+    "attribution": "FlyWire Consortium, FlyWire Whole-brain Connectome Connectivity Data (2024)",
+    "license_metadata": "data/brain/flywire783/zenodo_metadata.json"
+  },
+  "limitations": [
+    "These are model-ready transformed tables from the Shiu author repository, not the unfiltered raw synapse archive.",
+    "FAFB v783 does not include a complete ventral nerve cord/body motor system.",
+    "Data and neuron models alone do not implement a flying animal.",
+    "No v630 data or IDs are silently mixed with v783."
+  ],
+  "files": [
+    {
+      "path": "data/brain/flywire783/Completeness_783.csv",
+      "url": "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/Completeness_783.csv",
+      "bytes": 3327347,
+      "sha256": "bbb847a4cc2caaa7a16349722d220c087317b946d148d4d592d94d250617a311"
+    },
+    {
+      "path": "data/brain/flywire783/Connectivity_783.parquet",
+      "url": "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/Connectivity_783.parquet",
+      "bytes": 100804642,
+      "sha256": "efeb23fb99098e9c390f6869969b2a121a2ee92c833cfc45ecb2c1d8e1af0347"
+    },
+    {
+      "path": "simulation/vendor/shiu/LICENSE",
+      "url": "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/LICENSE",
+      "bytes": 1085,
+      "sha256": "3621f6d6476189190e2960fa43f11b275ba4eca848fdac50a1ba2925de6223e8"
+    },
+    {
+      "path": "simulation/vendor/shiu/Readme.md",
+      "url": "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/Readme.md",
+      "bytes": 3617,
+      "sha256": "0654ac53f9af85000b50f6a5d2297aade8602c507a44e811f8aff602629c2625"
+    },
+    {
+      "path": "simulation/vendor/shiu/environment.yml",
+      "url": "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/environment.yml",
+      "bytes": 174,
+      "sha256": "52991bcc78eb5a18534c2c02e8240330f8ad376f31f63546756ad0724924a667"
+    },
+    {
+      "path": "simulation/vendor/shiu/environment_full.yml",
+      "url": "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/environment_full.yml",
+      "bytes": 3445,
+      "sha256": "402fcef4968c99397b0e908b3323ab9e6ef86af5583e46e6427f96f3d1091adf"
+    },
+    {
+      "path": "simulation/vendor/shiu/example.ipynb",
+      "url": "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/example.ipynb",
+      "bytes": 10282,
+      "sha256": "1737c3043af700504c4791c4bfc02d1856bbeb0d36c469832e4b9399dfddda3a"
+    },
+    {
+      "path": "simulation/vendor/shiu/model.py",
+      "url": "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/model.py",
+      "bytes": 11900,
+      "sha256": "fc45837d7122c6ce2a7f3f2f23c515992e4b232aadb919efabb72337fac88e4e"
+    },
+    {
+      "path": "simulation/vendor/shiu/utils.py",
+      "url": "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/utils.py",
+      "bytes": 2176,
+      "sha256": "f378cf0b464f2ac5e1daf3609ba25fd51c7e34f294846281707ffe006c3e9ef1"
+    }
+  ]
+}

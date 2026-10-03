@@ -1,0 +1,18 @@
+{
+  "status": "validated",
+  "dataset_version": "FAFB FlyWire v783",
+  "neurons": 138639,
+  "connection_rows": 15091983,
+  "connections_are": "author-derived neuron-pair rows, not individual raw synapse points",
+  "columns": [
+    "Presynaptic_ID",
+    "Postsynaptic_ID",
+    "Presynaptic_Index",
+    "Postsynaptic_Index",
+    "Connectivity",
+    "Excitatory",
+    "Excitatory x Connectivity"
+  ],
+  "parquet_row_groups": 15,
+  "neuron_id_encoding": "Store FlyWire IDs as strings in JavaScript/JSON consumers; values exceed safe JS integer range"
+}

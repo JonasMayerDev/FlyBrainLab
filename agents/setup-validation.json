@@ -1,0 +1,212 @@
+{
+  "status": "offline_validated",
+  "omnigent_version": "0.16.0",
+  "bundle": "agents/fly-discovery",
+  "agents": [
+    {
+      "name": "fly_discovery",
+      "tools": [
+        "fetch_source",
+        "get_setup_status",
+        "read_local_artifact",
+        "record_experiment",
+        "run_neural_pilot",
+        "search_knowledge",
+        "search_literature",
+        "store_claim",
+        "store_source"
+      ],
+      "policies": [
+        "authorized_tools",
+        "call_limit",
+        "session_cost",
+        "tree_cost"
+      ]
+    },
+    {
+      "name": "analyst",
+      "tools": [
+        "read_local_artifact",
+        "record_experiment",
+        "search_knowledge"
+      ],
+      "policies": [
+        "authorized_tools",
+        "call_limit",
+        "session_cost"
+      ]
+    },
+    {
+      "name": "evidence_reviewer",
+      "tools": [
+        "fetch_source",
+        "search_knowledge",
+        "store_claim"
+      ],
+      "policies": [
+        "authorized_tools",
+        "call_limit",
+        "session_cost"
+      ]
+    },
+    {
+      "name": "experimenter",
+      "tools": [
+        "get_setup_status",
+        "read_local_artifact",
+        "record_experiment",
+        "run_neural_pilot",
+        "search_knowledge"
+      ],
+      "policies": [
+        "authorized_tools",
+        "call_limit",
+        "session_cost"
+      ]
+    },
+    {
+      "name": "hypothesis_planner",
+      "tools": [
+        "get_setup_status",
+        "search_knowledge",
+        "store_claim"
+      ],
+      "policies": [
+        "authorized_tools",
+        "call_limit",
+        "session_cost"
+      ]
+    },
+    {
+      "name": "researcher",
+      "tools": [
+        "fetch_source",
+        "search_knowledge",
+        "search_literature",
+        "store_source"
+      ],
+      "policies": [
+        "authorized_tools",
+        "call_limit",
+        "session_cost"
+      ]
+    }
+  ],
+  "local_setup": {
+    "files": {
+      "dataset_manifest": true,
+      "brain_module": true,
+      "brightdata_client": true,
+      "knowledgebase_module": true,
+      "setup_check": true
+    },
+    "artifacts": {
+      "dataset_manifest": "data/brain/manifest.json",
+      "brain_module": "simulation/brain.py",
+      "brightdata_client": "scripts/brightdata_client.py",
+      "knowledgebase_module": "scripts/kb_store.py",
+      "setup_check": "data/runs/technical_setup_check.json"
+    },
+    "limits": {
+      "neural_pilot": "whole-network technical smoke only; no flight or biological validation",
+      "body_coupling": "not implemented by this setup tool",
+      "public_demo": "separate prerecorded viewer, not this local orchestration service"
+    }
+  },
+  "brightdata_readiness": {
+    "ready": false,
+    "missing_variables": [
+      "BRIGHTDATA_API_KEY",
+      "BRIGHTDATA_SERP_ZONE",
+      "BRIGHTDATA_UNLOCKER_ZONE",
+      "BRIGHTDATA_MAX_COST_USD",
+      "BRIGHTDATA_ESTIMATED_REQUEST_COST_USD"
+    ],
+    "max_requests": 10,
+    "kb_directory": "local application-data directory (outside repository)",
+    "allowed_domains": [
+      "pmc.ncbi.nlm.nih.gov",
+      "pubmed.ncbi.nlm.nih.gov",
+      "nature.com",
+      "github.com",
+      "neuromechfly.org",
+      "codex.flywire.ai",
+      "zenodo.org",
+      "eon.systems",
+      "biorxiv.org",
+      "elifesciences.org",
+      "janelia.org"
+    ],
+    "billing_note": "USD bound is an estimate, not provider billing enforcement. Confirm zone price and account cap."
+  },
+  "live_discovery_verified": false,
+  "missing_environment": [
+    "ANTHROPIC_API_KEY",
+    "BRIGHTDATA_API_KEY",
+    "BRIGHTDATA_SERP_ZONE",
+    "BRIGHTDATA_UNLOCKER_ZONE",
+    "BRIGHTDATA_MAX_COST_USD",
+    "BRIGHTDATA_ESTIMATED_REQUEST_COST_USD"
+  ],
+  "recorded_at_utc": "2026-10-03T23:18:03.314723+00:00",
+  "offline_policy_checks": [
+    {
+      "tool": "search_knowledge",
+      "expected": "ALLOW",
+      "actual": "ALLOW"
+    },
+    {
+      "tool": "sys_os_shell",
+      "expected": "DENY",
+      "actual": "DENY"
+    },
+    {
+      "tool": "Bash",
+      "expected": "DENY",
+      "actual": "DENY"
+    },
+    {
+      "tool": "sys_session_share",
+      "expected": "DENY",
+      "actual": "DENY"
+    },
+    {
+      "tool": "sys_session_create",
+      "expected": "DENY",
+      "actual": "DENY"
+    },
+    {
+      "policy": "cost_budget",
+      "simulated_measured_cost": 1.1,
+      "limit": 1,
+      "expected": "DENY",
+      "actual": "DENY"
+    },
+    {
+      "policy": "subagent_cost_budget",
+      "simulated_measured_cost": 1.1,
+      "limit": 1,
+      "expected": "DENY",
+      "actual": "DENY"
+    }
+  ],
+  "native_tool_protocol_checks": [
+    {
+      "tool": "get_setup_status",
+      "method": "actual LocalPythonTool.invoke subprocess",
+      "status": "passed",
+      "network": false
+    },
+    {
+      "tool": "read_local_artifact",
+      "artifact": "data/runs/technical_setup_check.json",
+      "method": "actual LocalPythonTool.invoke subprocess",
+      "status": "passed",
+      "network": false
+    }
+  ],
+  "limitations": [
+    "Offline control-plane verification only; no LLM or BrightData live request was executed.",
+    "Existing brain setup runs were generated outside Omnigent; no completed C3 discovery loop is claimed."
+  ]
+}

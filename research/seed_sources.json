@@ -1,0 +1,42 @@
+[
+  {
+    "url": "https://github.com/philshiu/Drosophila_brain_model",
+    "title": "Shiu whole-brain Drosophila model author repository",
+    "source_kind": "code",
+    "retrieval_status": "metadata_only",
+    "dataset_version": "FAFB v783 (must configure explicitly)",
+    "publication_date": null,
+    "license": "Code MIT; verify each data asset separately",
+    "limitations": ["Seed metadata only; model/data have not been validated by this record."]
+  },
+  {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11446845/",
+    "title": "Shiu et al. 2024: whole-brain model primary paper",
+    "source_kind": "paper",
+    "retrieval_status": "metadata_only",
+    "dataset_version": "FAFB (paper release; verify against chosen model)",
+    "publication_date": "2024",
+    "license": "unverified",
+    "limitations": ["Seed metadata only; no functional claim or flight result is asserted."]
+  },
+  {
+    "url": "https://codex.flywire.ai/faq",
+    "title": "FlyWire Codex dataset FAQ",
+    "source_kind": "documentation",
+    "retrieval_status": "metadata_only",
+    "dataset_version": "FAFB/BANC (separate releases; IDs must not be mixed)",
+    "publication_date": null,
+    "license": "unverified",
+    "limitations": ["Dataset documentation entry; not evidence of runnable neural dynamics."]
+  },
+  {
+    "url": "https://github.com/TuragaLab/flybody",
+    "title": "Flybody physics and body-controller repository",
+    "source_kind": "code",
+    "retrieval_status": "metadata_only",
+    "dataset_version": null,
+    "publication_date": null,
+    "license": "unverified",
+    "limitations": ["Source candidate; pretrained body controllers are not a connectome brain."]
+  }
+]
