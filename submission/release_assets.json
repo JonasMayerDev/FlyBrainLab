@@ -1,0 +1,62 @@
+[
+  {
+    "path": "submission/exports/team_intro.mp4",
+    "bytes": 511218,
+    "sha256": "15688fee818e38f4a2273c171746b3e3eb493dc05968241cadd748250e38774c"
+  },
+  {
+    "path": "submission/exports/team_intro.srt",
+    "bytes": 1032,
+    "sha256": "869d2a048c36e0be5431be675bbbbf095855a3560d3c81de92de9df78bda777c"
+  },
+  {
+    "path": "submission/exports/product_demo.mp4",
+    "bytes": 2154251,
+    "sha256": "f156983487dd69eb0b6e575687bd280fea48b8aa50514f38b5ac12d196ad1732"
+  },
+  {
+    "path": "submission/exports/product_demo.srt",
+    "bytes": 1637,
+    "sha256": "8f11646776594c0e6d30bb0ecbadf25db817c3484adba8eb7542591e7a56745c"
+  },
+  {
+    "path": "submission/exports/technical_walkthrough.mp4",
+    "bytes": 921477,
+    "sha256": "d719b34e88b0fdda5218274a53174ade270bb7fae52679c8d0ffdfeb2c10fb1f"
+  },
+  {
+    "path": "submission/exports/technical_walkthrough.srt",
+    "bytes": 929,
+    "sha256": "23e09f2a09f37189ea6da5a048a155542c358fa889213a691431e6cd80794034"
+  },
+  {
+    "path": "submission/exports/c3_demo.mp4",
+    "bytes": 1626915,
+    "sha256": "6eda78b612586d297e4e240b80eea8d01b0efaae558d643df456db2d9cf679f0"
+  },
+  {
+    "path": "submission/exports/c3_demo.srt",
+    "bytes": 1475,
+    "sha256": "56b04ecaf91d772e3f260c44f0bf92a3764ec9956705d21bc12c44bcf2adfcb4"
+  },
+  {
+    "path": "submission/exports/MEDIA_README.md",
+    "bytes": 3677,
+    "sha256": "d65c84d4a9bc9ebd08c44a465862d9b7d91d230fc48b9a3cbf37a251b5d5bee2"
+  },
+  {
+    "path": "submission/exports/asset_validation_public.json",
+    "bytes": 3750,
+    "sha256": "b7311afba6dd1ea35583d4fca79d80e3c7572b5e8e30f08525fa2fbe974faf47"
+  },
+  {
+    "path": "submission/exports/video_source_manifest.json",
+    "bytes": 4902,
+    "sha256": "7e6a66e80391e55650bcb708e22b2d5e33ad5feb967a084db19cfb1b76b1208e"
+  },
+  {
+    "path": "submission/exports/FlyBrainLab-demo-2026-10-04.zip",
+    "bytes": 4700415,
+    "sha256": "dc5eb8552e35cb1798c3731947e9645df4b26fb925b346b3a922ff4b63bf8492"
+  }
+]

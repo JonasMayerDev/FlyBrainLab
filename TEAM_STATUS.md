@@ -4,6 +4,8 @@ Stand: **4. Oktober 2026, Nachtarbeit**. Challenge 03 Databricks „Agentic Scie
 
 **[Öffentliche Demo](https://valleebo.github.io/FlyBrainLab/)**. Kanonischer Code und Team-Issues bleiben [JonasMayerDev/FlyBrainLab](https://github.com/JonasMayerDev/FlyBrainLab). Die Demo spielt echte aufgezeichnete Ergebnisse ab; der Hosting-Mirror veröffentlicht denselben Viewer.
 
+**Acht von zehn Issues sind belegt abgeschlossen.** #2 und #10 bleiben offen.
+
 ## Nachgewiesener Stand
 
 | Teil | Ergebnis | Beleg |
@@ -14,7 +16,7 @@ Stand: **4. Oktober 2026, Nachtarbeit**. Challenge 03 Databricks „Agentic Scie
 | Neuronale Resultate | Sham 0 Hz; Drive 17,2/18,8/18,4 Hz; Disconnection 0 Hz in allen Seeds | `data/experiments/`, `data/runs/` |
 | Omnigent | Zwei native Sessions mit zehn abgeschlossenen Handoffs und zwölf neuen A/B-Bedingungen; B liest die tatsächliche A-Entscheidung vor Planung und Ausführung | `data/discovery/native-trace*.json` |
 | Körper und Adapter | Flybody/MuJoCo mit vorhandener Autorenpolicy: sechs 200-ms-Läufe mit je 1.001 Zuständen und gemessenen Kontrollunterschieden | `data/coupling/native_policy_comparison.json` |
-| Viewer | 26 echte neuronale Runs; zwölf nativ verifiziert; sechs passende Körperreplays, Quellen und A→B-Nachweis. Desktop und Mobile lokal geprüft | `frontend/`, `data/replay/` |
+| Viewer | 26 echte neuronale Runs; zwölf nativ verifiziert; sechs passende Körperreplays, Quellen und A→B-Nachweis. öffentlich anonym auf Desktop und in mobiler Emulation geprüft | `frontend/`, `data/replay/` |
 | Engpassmessung | Identischer 25-ID-Abruf: 427,73 ms erneutes Parsing gegenüber 0,282 ms KB-Claim; nur warmer lokaler Wiederholungsabruf | `data/experiments/evidence_lookup_benchmark.json` |
 | Abgabevorbereitung | Texte DE/EN und vier captionierte MP4-Entwürfe innerhalb der Zeit-/Dateigrenzen, ohne erfundene Personen oder Stimmen | `submission/` |
 

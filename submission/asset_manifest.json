@@ -5,11 +5,72 @@
   "source": "User-supplied HackOS submission screenshot and Challenge 03 brief; see AGENTS.md",
   "byte_limits": "Decimal bytes; conservative interpretation of MB/GB",
   "assets": [
-    {"key": "team_photo", "path": "submission/exports/team_photo.jpg", "extensions": [".jpg", ".jpeg", ".png", ".webp"], "max_bytes": 10000000, "requires": "Actual photograph of the human team"},
-    {"key": "team_intro", "path": "submission/exports/team_intro.mp4", "extensions": [".mp4", ".mov"], "max_bytes": 1000000000, "max_duration_seconds": 60, "requires": "Actual team, roles and motivation"},
-    {"key": "product_demo", "path": "submission/exports/product_demo.mp4", "extensions": [".mp4", ".mov"], "max_bytes": 1000000000, "max_duration_seconds": 60, "requires": "Actual viewer workflow and scientific value"},
-    {"key": "technical_walkthrough", "path": "submission/exports/technical_walkthrough.mp4", "extensions": [".mp4", ".mov"], "max_bytes": 1000000000, "max_duration_seconds": 60, "requires": "Actual architecture, AI contribution, provenance and limitations"},
-    {"key": "c3_demo", "path": "submission/exports/c3_demo.mp4", "extensions": [".mp4", ".mov"], "max_bytes": 1000000000, "max_duration_seconds": 120, "duration_limit_source": "Our two-minute planning target; separate from HackOS 60-second fields", "requires": "Full Question → Evidence → Hypothesis → Experiment → Result → Updated decision sequence"}
+    {
+      "key": "team_photo",
+      "path": "submission/exports/team_photo.jpg",
+      "extensions": [
+        ".jpg",
+        ".jpeg",
+        ".png",
+        ".webp"
+      ],
+      "max_bytes": 10000000,
+      "requires": "Actual photograph of the human team"
+    },
+    {
+      "key": "team_intro",
+      "path": "submission/exports/team_intro.mp4",
+      "extensions": [
+        ".mp4",
+        ".mov"
+      ],
+      "max_bytes": 1000000000,
+      "max_duration_seconds": 60,
+      "requires": "Actual team, roles and motivation",
+      "draft_status": "Captioned 46-second draft covers confirmed team size, Munich hub, project purpose and workstreams; human names, individual contributions and personal motivation remain unconfirmed"
+    },
+    {
+      "key": "product_demo",
+      "path": "submission/exports/product_demo.mp4",
+      "extensions": [
+        ".mp4",
+        ".mov"
+      ],
+      "max_bytes": 1000000000,
+      "max_duration_seconds": 60,
+      "requires": "Actual viewer workflow and scientific value"
+    },
+    {
+      "key": "technical_walkthrough",
+      "path": "submission/exports/technical_walkthrough.mp4",
+      "extensions": [
+        ".mp4",
+        ".mov"
+      ],
+      "max_bytes": 1000000000,
+      "max_duration_seconds": 60,
+      "requires": "Actual architecture, AI contribution, provenance and limitations"
+    },
+    {
+      "key": "c3_demo",
+      "path": "submission/exports/c3_demo.mp4",
+      "extensions": [
+        ".mp4",
+        ".mov"
+      ],
+      "max_bytes": 1000000000,
+      "max_duration_seconds": 120,
+      "duration_limit_source": "Our two-minute planning target; separate from HackOS 60-second fields",
+      "requires": "Full Question → Evidence → Hypothesis → Experiment → Result → Updated decision sequence"
+    }
   ],
-  "human_checks": ["Confirm human names and team-photo identity", "Watch every video with sound/captions", "Check public demo and repository from another device", "Confirm real Omnigent trace instead of merely relabelled preflight runs", "Upload and inspect processed playback", "Submit HackOS and Google Form separately", "Save both actual submission confirmations"]
+  "human_checks": [
+    "Confirm actual human names, contributions, personal motivation and team-photo identity",
+    "Watch every video with sound/captions",
+    "Check public demo and repository from another device",
+    "Confirm real Omnigent trace instead of merely relabelled preflight runs",
+    "Upload and inspect processed playback",
+    "Submit HackOS and Google Form separately",
+    "Save both actual submission confirmations"
+  ]
 }

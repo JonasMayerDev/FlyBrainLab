@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-04T01:46:15.304221+00:00",
+  "mode": "Prepared captioned videos from real captures/artifacts; no synthetic voice or team imagery",
+  "public_capture_url": "https://valleebo.github.io/FlyBrainLab/",
+  "public_source_commit": "e7ae4a4f3e80bfbd8f739957dcb08880e3d91545",
+  "native_trace": {
+    "path": "data/discovery/native-trace.json",
+    "sha256": "c853fac9e1494b3f90fbe1c89b921bfee3176441cb02641c44e923d6b6210b28",
+    "preserved_snapshot": "submission/exports/native_trace_A_at_render.json"
+  },
+  "native_B_trace": {
+    "path": "data/discovery/native-trace-b.json",
+    "sha256": "5d0357d90a9ab819aca307dd463433b50322cc760f2e0613a7c184131028c171",
+    "preserved_snapshot": "submission/exports/native_trace_B_at_render.json"
+  },
+  "native_tests_executed_in_video": [
+    "A",
+    "B"
+  ],
+  "native_next_decision": "matched non-target inputs",
+  "native_comparisons": [
+    {
+      "path": "data/experiments/comparison-dng02-20261004T005438Z-0aa143.json",
+      "sha256": "c324e58ae4d7438da29e9a442c9f4bc40e053d9bd6faff7a25b00d7fde31611d"
+    },
+    {
+      "path": "data/experiments/comparison-dng02-20261004T011205Z-88d84a.json",
+      "sha256": "e03f00b88d663559f7085c0b6111ac9b7376f830de6ba689c38a9d932379e023"
+    }
+  ],
+  "body_comparison": {
+    "path": "data/coupling/native_policy_comparison.json",
+    "sha256": "f101d26cd7d24929c0f12f9c838b28bc675b3df4fafcfea626c2b88322e3ca2e",
+    "preserved_snapshot": "submission/exports/body_comparison_at_render.json"
+  },
+  "capture_files": [
+    {
+      "path": "frontend/output/playwright/public-final-desktop.png",
+      "sha256": "8d3fe5d83dfd2c2be1a27e12ddd428dfdb72f808831543e2e39e2e350425fcea"
+    }
+  ],
+  "videos": [
+    {
+      "path": "submission/exports/product_demo.mp4",
+      "duration_seconds": 55.0,
+      "sha256": "f156983487dd69eb0b6e575687bd280fea48b8aa50514f38b5ac12d196ad1732",
+      "mode": "Real public-browser recording with burned-in explanatory captions; recorded idle/padding trimmed; no audio/narration",
+      "body_recording_version": "v2 published policy / 200-ms native A body replay",
+      "recording_source": "frontend/output/playwright/public-product-final.webm",
+      "recording_sha256": "42765c3701dab55de37933f884541d6a9338b3300bce6dd2c0519e2d5ee11b19",
+      "recording_window": {
+        "start_seconds": 6.0,
+        "duration_seconds": 55,
+        "crop_top": 0,
+        "crop_height": 812
+      }
+    },
+    {
+      "path": "submission/exports/technical_walkthrough.mp4",
+      "duration_seconds": 55.0,
+      "sha256": "d719b34e88b0fdda5218274a53174ade270bb7fae52679c8d0ffdfeb2c10fb1f",
+      "mode": "Captioned artifact cards; no audio/narration",
+      "sources": [
+        "agents/fly-discovery/ + pinned simulation code",
+        "data/coupling/adapter_v2_policy.json + BODY_INTEGRATION.md",
+        "data/coupling/native_policy_comparison.json + adapter_v2_policy.json",
+        "data/discovery/native-trace.json + data/discovery/native-trace-b.json",
+        "data/experiments/comparison-dng02-20261004T005438Z-0aa143.json + data/experiments/comparison-dng02-20261004T011205Z-88d84a.json"
+      ]
+    },
+    {
+      "path": "submission/exports/c3_demo.mp4",
+      "duration_seconds": 118.0,
+      "sha256": "6eda78b612586d297e4e240b80eea8d01b0efaae558d643df456db2d9cf679f0",
+      "mode": "Captioned artifact cards; no audio/narration",
+      "sources": [
+        "Namiki2022 DOI10.1016/j.cub.2022.01.008 + DNG02_EVIDENCE.md",
+        "Native updated decision + NEURAL_RESULTS.md + BODY_INTEGRATION.md",
+        "Public viewer + research/designs/dng02-input-v1.json",
+        "data/coupling/native_policy_comparison.json + adapter_v2_policy.json",
+        "data/discovery/native-trace.json + data/discovery/native-trace-b.json",
+        "data/experiments/comparison-dng02-20261004T005438Z-0aa143.json + data/experiments/comparison-dng02-20261004T011205Z-88d84a.json",
+        "data/experiments/evidence_lookup_benchmark.json",
+        "research/designs/dng02-input-v1.json + .sha256"
+      ]
+    },
+    {
+      "path": "submission/exports/team_intro.mp4",
+      "duration_seconds": 46.0,
+      "sha256": "15688fee818e38f4a2273c171746b3e3eb493dc05968241cadd748250e38774c",
+      "mode": "Captioned team-introduction draft; confirmed team context and project workstreams only; no identities, individual assignments, portraits or audio",
+      "sources": [
+        "AGENTS.md + project README",
+        "Frozen question + actual native A/B results",
+        "data/coupling/ + frontend/",
+        "research/ + agents/fly-discovery/ + simulation/",
+        "submission/MORNING_CHECKLIST.md"
+      ]
+    }
+  ],
+  "human_review_required": true,
+  "team_intro_and_photo": "Captioned team-introduction draft prepared for human review; actual team photo is missing; names/contributions/motivations are unconfirmed",
+  "submission_completed": false
+}

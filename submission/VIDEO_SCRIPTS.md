@@ -2,13 +2,13 @@
 
 Stand: 4. Oktober 2026. Ziel für die drei HackOS-Felder: **50–55 Sekunden**, harte Grenze je 60 Sekunden/1 GB. Zusätzliche C3-Demo: **115–120 Sekunden** über den noch zu klärenden eigenen Einreichungsweg.
 
-Die Texte sind Aufnahmeskripte. **Ein Skript ist noch kein fertiges Video.** Mit einer Stoppuhr laut lesen; bei Bedarf Pausen oder optional markierte Sätze kürzen. Text und Messwerte müssen zum tatsächlich gezeigten Run passen. Vorab unabhängige Läufe dürfen nicht als nachträglich von Omnigent ausgeführt beschrieben werden. Die Projektbezeichnung „FlyBrainLab“ stammt vom Repository und bleibt bis zur Bestätigung der Arbeitsname.
+Die Texte sind Aufnahmeskripte. Vier captionierte MP4-Entwürfe sind vorbereitet. Die Teamvorstellung zeigt bestätigte Teamgröße, Hub, Projektzweck und Arbeitsbereiche; persönliche Namen, Beiträge und Motive bleiben zur Bestätigung offen. Mit einer Stoppuhr laut lesen; bei Bedarf Pausen oder optional markierte Sätze kürzen. Diese Texte beschreiben die streng verifizierten nativen **A- und B-Loops in zwei verbundenen Omnigent-Sitzungen** und die neue **v2-Kopplung über 200 ms**. Die zweite Sitzung liest die vorherige A-Entscheidung vor der B-Planung; beide erhalten eigene Receipts. Vorab unabhängige Läufe dürfen nicht als nachträglich von Omnigent ausgeführt beschrieben werden. Die Projektbezeichnung „FlyBrainLab“ stammt vom Repository und bleibt bis zur Bestätigung der Arbeitsname.
 
 Bildquellen: echte Viewer-Aufnahmen; eingefrorenes Design `research/designs/dng02-input-v1.json`; `research/evidence/DNG02_EVIDENCE.md`; tatsächliche Run-/Vergleichsdateien unter `data/experiments/` und `data/coupling/`; der von Omnigent selbst gespeicherte und geprüfte native Trace. Ein Diagramm erklärt die Architektur, beweist aber keine ausgeführte Orchestrierung. Keine Schlüssel, private Anbieterprofile oder Fremdtexte im Vollbild aufnehmen.
 
 ## 1. Team introduction — Ziel 50 Sekunden
 
-**Menschliche Aufnahme erforderlich.** Vier echte Personen im Bild; keine erfundenen Namen/Rollen. Die folgende Verteilung ist ein Vorschlag und muss mit den tatsächlich ausgeführten Aufgaben übereinstimmen.
+**Captionierter Team-Entwurf vorhanden:** `exports/team_intro.mp4`, 46 Sekunden, ohne Tonspur oder Personenbilder. Die Karten nennen ausschließlich bestätigte Fakten und Projektarbeitsbereiche; sie weisen keine persönlichen Rollen zu und erfinden keine Motivation. Die folgende menschliche Aufnahme kann den Entwurf nach Teamprüfung ergänzen oder ersetzen. Ihre Namen, Beiträge und Motive müssen von den tatsächlichen Personen bestätigt sein.
 
 | Zeit | Bild | Gesprochener Inhalt |
 |---|---|---|
@@ -19,31 +19,35 @@ Bildquellen: echte Viewer-Aufnahmen; eingefrorenes Design `research/designs/dng0
 
 **Deutsch:**
 
-> Wir sind das vierköpfige Team hinter FlyBrainLab. Unsere Frage: Wie kommen wir von den Verbindungen eines Fliegengehirns zu einer überprüfbaren Vorhersage? Ich bin Valentin und habe [tatsächliche Aufgabe] übernommen. Ich bin [Name 2], zuständig für [Aufgabe]. Ich bin [Name 3], zuständig für [Aufgabe]. Und ich bin [Name 4], zuständig für [Aufgabe]. Gemeinsam verbinden wir wissenschaftliche Quellen, einen kontrollierten neuronalen Test und echte Körperphysik. Unsere Demo macht Ergebnisse, Kontrollen und Grenzen sichtbar. Omnigent soll dabei jeden Forschungsschritt nachvollziehbar organisieren. Wir treten in Challenge drei an. Unsere Vision ist ein körpergebundenes Fliegenmodell; biologisch validierten oder stabilen Flug behaupten wir heute nicht.
+> Wir sind das vierköpfige Team hinter FlyBrainLab. Unsere Frage: Wie kommen wir von den Verbindungen eines Fliegengehirns zu einer überprüfbaren Vorhersage? Ich bin Valentin und habe [tatsächliche Aufgabe] übernommen. Ich bin [Name 2], zuständig für [Aufgabe]. Ich bin [Name 3], zuständig für [Aufgabe]. Und ich bin [Name 4], zuständig für [Aufgabe]. Gemeinsam verbinden wir wissenschaftliche Quellen, einen kontrollierten neuronalen Test und echte Körperphysik. Unsere Demo macht Ergebnisse, Kontrollen und Grenzen sichtbar. Omnigent organisiert den dokumentierten Forschungsablauf. Wir treten in Challenge drei an. Unsere Vision ist ein körpergebundenes Fliegenmodell; biologisch validierten Flug oder autonome Connectome-Steuerung behaupten wir heute nicht.
 
 **English:**
 
-> We are the four-person team behind FlyBrainLab. Our question is: how can a fly connectome lead to a testable prediction? I’m Valentin, and I worked on [actual contribution]. I’m [name two], responsible for [contribution]. I’m [name three], responsible for [contribution]. And I’m [name four], responsible for [contribution]. Together, we connect scientific evidence, controlled neural experiments, and real body physics. Our demo makes results, controls, and limitations visible. Omnigent is designed to coordinate each research step with a trace we can inspect. We are entering Challenge Three. Our vision is an embodied fly model; we do not claim biologically validated or stable flight today.
+> We are the four-person team behind FlyBrainLab. Our question is: how can a fly connectome lead to a testable prediction? I’m Valentin, and I worked on [actual contribution]. I’m [name two], responsible for [contribution]. I’m [name three], responsible for [contribution]. And I’m [name four], responsible for [contribution]. Together, we connect scientific evidence, controlled neural experiments, and real body physics. Our demo makes results, controls, and limitations visible. Omnigent coordinates the recorded research workflow with an inspectable trace. We are entering Challenge Three. Our vision is an embodied fly model; we do not claim biologically validated flight or autonomous connectome control today.
 
-Wenn der native Omnigent-Lauf bereits verifiziert ist, „soll … organisieren“ durch „organisiert den dokumentierten Forschungsablauf“ und „is designed to coordinate“ durch „coordinates the recorded research workflow“ ersetzen. Sonst die vorbereitete Fassung beibehalten.
+Die nativen A- und B-Loops sind verifiziert; Rollen-/Teambeiträge bleiben von den tatsächlichen Menschen zu ergänzen.
 
-## 2. Product demo — Ziel 54 Sekunden
+## 2. Product demo — 55-s-Export / Sprecherziel höchstens 55 Sekunden
 
 | Zeit | Echter Nutzerablauf/Bild | Pflichtlabel |
 |---|---|---|
-| 0–6 s | Öffentliche Startseite öffnen | Recorded simulation / Aufgezeichneter Lauf |
-| 6–17 s | Frage und kontrollierten 150-Hz-Input auswählen | Graphgewählte Inputs; keine direkt stimulierten DNg02-Zellen |
-| 17–28 s | DNg02-Raten; Sham und getrennte Ausgangsgewichte vergleichen | 200 ms, drei Seeds, alle 25 Readoutzellen |
-| 28–41 s | Körpertrajektorie abspielen/pausieren | Open-loop, echte Physik; Ende 38,8 ms |
-| 41–54 s | Quelle/Run Record und nächste Entscheidung öffnen | Technische Annahmen und biologische Grenzen |
+| 0–4 s | Öffentliche Übersicht | Recorded simulation / Aufgezeichneter Lauf |
+| 4–10 s | native A42-Stimulation | Graphgewählte Inputs; Population von 25 Readoutzellen, inklusive stiller Zellen |
+| 10–15 s | native A42-Sham | gleicher Seed, keine Stimulation, null DNg02-Output |
+| 15–21 s | native B42-Ausgangstrennung | null DNg02-Output; 222 andere Spike-Ereignisse bleiben |
+| 21–29 s | neue v2-Körpertrajektorie abspielen | vortrainierte Policy stabilisiert; Gehirn ohne Feedback |
+| 29–34 s | Body-Vergleich | sechs echte 200-ms-Läufe und gemessene Unterschiede |
+| 34–44 s | A-Trace und A→B-Nachweis | zwei verbundene native Sitzungen; A-Entscheidung vor B gelesen |
+| 44–48 s | Quellen | Originalquellen und Run Records |
+| 48–55 s | Grenzen/Übersicht | passende Nichtziel-Inputs, biologische Kalibrierung und längere Tests |
 
 **Deutsch:**
 
-> FlyBrainLab macht eine wissenschaftliche Modellfrage überprüfbar. Wir öffnen einen aufgezeichneten Simulationslauf. Acht vorab graphgewählte Inputs werden stimuliert; wir lesen fünfundzwanzig flugbezogene DNg02-Zellen aus. In den kontrollierten neuronalen Läufen reagieren diese Zellen. Sham und getrennte Ausgangsverbindungen ergeben keine Antwort. Alle Parameter und Quellen sind verlinkt. Die gespeicherten Spikes steuern anschließend über einen festen Adapter einen vorhandenen Flügelcontroller. Die Ansicht spielt tatsächlich berechnete Körperzustände ab und lässt sich pausieren. Der Körperlauf endet am Referenzende nach achtunddreißig Komma acht Millisekunden; stabiler Flug ist nicht nachgewiesen. So sehen Forschende das Ergebnis, seine Herkunft und die nächste Prüfung: passende Nichtziel-Inputs vergleichen und den Körpercontroller separat stabilisieren.
+> FlyBrainLab macht eine wissenschaftliche Modellfrage überprüfbar. Wir öffnen einen aufgezeichneten Lauf. Acht graphgewählte Inputs werden stimuliert; wir messen die Population von fünfundzwanzig flugbezogenen DNg02-Zellen, einschließlich stiller Zellen. Ihr mittlerer Output steigt; Sham und getrennte Ausgangsgewichte liefern keine DNg02-Antwort. Die Eingänge feuern im B-Test weiter. Alle Parameter und Quellen sind verlinkt. Neue Spike-Daten aus dem Omnigent-Test steuern über einen festen Adapter eine veröffentlichte, vortrainierte Flugpolicy. Die Ansicht spielt echte Körperzustände ab und lässt sich pausieren. Sechs Körperläufe erreichen zweihundert Millisekunden ohne vorzeitigen Abbruch. Die bestehende Policy stabilisiert; das Gehirn empfängt keine Körpersensoren. Gelenk- und Positionsunterschiede sind gemessen. Biologische Kalibrierung und längere Flugtests bleiben offen.
 
 **English:**
 
-> FlyBrainLab makes a scientific model question inspectable. We open a recorded simulation. Eight inputs, selected from the graph before the experiment, are stimulated; twenty-five flight-related DNg02 neurons are the readout. In the controlled neural runs, these cells respond. Sham stimulation and disconnected input outputs produce no response. Parameters and sources are linked. Saved spikes then drive an existing wingbeat controller through a fixed adapter. This view replays actual body states with playback and pause controls. The body run reaches the reference end after thirty-eight point eight milliseconds; stable flight is not demonstrated. Researchers can inspect the result, its provenance, and the next test: matched non-target inputs and separate controller stabilization.
+> FlyBrainLab makes a scientific model question inspectable. We open a recorded run. Eight graph-selected inputs are stimulated; we measure a population of twenty-five flight-related DNg02 cells, including silent cells. Their mean output rises; sham and disconnected outgoing weights give zero DNg02 response. Inputs still spike in B. Parameters and sources are linked. New spikes from the Omnigent test drive a published pretrained flight policy through a fixed adapter. The viewer replays actual body states with playback and pause controls. Six body runs reach two hundred milliseconds without early termination. The existing policy supplies stabilization; the brain receives no body sensors. Joint and position differences are measured. Biological calibration and longer flight tests remain open.
 
 ## 3. Technical walkthrough — Ziel 55 Sekunden
 
@@ -55,15 +59,15 @@ Wenn der native Omnigent-Lauf bereits verifiziert ist, „soll … organisieren�
 | 34–45 s | Adapter/Body-Provenienz, Viewer | Getrennte Ebenen und Open-loop |
 | 45–55 s | Grenzen, nächstes Experiment | Kein biologischer Flugnachweis; BrightData-Status ehrlich |
 
-**Deutsch, nur mit geprüftem nativem Trace:**
+**Deutsch, verifizierte A/B-Loops und v2-Kopplung:**
 
-> Unsere Architektur trennt Forschung, Simulation und Darstellung. Omnigent koordiniert Recherche, Evidenzprüfung, Testplanung, Experiment und Analyse. Die native Rollen- und Toolspur dokumentiert den tatsächlichen Ablauf. Quellen und Neuronenidentitäten sind versioniert; das Design mit zwei Tests war vor dem Lauf fixiert. Python und Brian2 berechnen das vollständige installierte FlyWire-Netz. Die positive DNg02-Antwort führt zum zweiten Test: Ausgangsgewichte der Inputs auf null setzen. Die Antwort verschwindet in allen drei Seeds. Ein eingefrorener Adapter übergibt gespeicherte Spikes an Flybody und MuJoCo. GitHub Pages zeigt diese Daten als Replay. Das ist Open-loop, mit gewählten Motorannahmen. Das Referenzende bei 38,8 Millisekunden ist kein Instabilitätsnachweis; ein separater verlängerter Test fällt. BrightData ist vorbereitet, aber nicht für diese Evidenz verwendet. Biologische Validierung bleibt offen.
+> Unsere Architektur trennt Forschung, Simulation und Darstellung. Omnigent koordiniert fünf Spezialrollen; die nativen Toolspuren belegen A und den verbundenen B-Forschungsloop. Quellen und Neuronenidentitäten sind versioniert, zwei Testdesigns vorab fixiert. Brian2 berechnet das vollständige installierte FlyWire-Netz. Die positive DNg02-Antwort gegen Sham wählt den zweiten Test: Ausgangsgewichte auf null setzen. B entfernt die Antwort in allen drei Seeds; passende Nichtziel-Inputs folgen. Ein eingefrorener Adapter koppelt neue Spikes an Flybody und MuJoCo mit veröffentlichter Flugpolicy. Sechs Läufe erreichen zweihundert Millisekunden ohne vorzeitigen Abbruch; physikalische Unterschiede sind gemessen. Die vortrainierte Policy stabilisiert den Körper; das Gehirn bleibt ohne Rückkanal. GitHub Pages zeigt Replay-Daten. Motorannahmen und biologische Validierung bleiben offen. BrightData wurde für diese Evidenz nicht verwendet.
 
-**English, only with the verified native trace:**
+**English, verified A/B loops and v2 coupling:**
 
-> Our architecture separates research, simulation, and visualization. Omnigent coordinates research, evidence review, test planning, experiment execution, and analysis. Its native role and tool trace records the actual workflow. Sources and neuron identities are versioned; the two-test design was frozen before execution. Python and Brian2 simulate the complete installed FlyWire network. A positive DNg02 response leads to the second test: setting the inputs’ outgoing weights to zero. The response disappears in all three seeds. A frozen adapter passes saved spikes to Flybody and MuJoCo. GitHub Pages displays these data as a replay. This is open-loop, with chosen motor assumptions. The reference end at 38.8 milliseconds is not instability; a separate extended probe falls. BrightData is prepared but was not used for this evidence. Biological validation remains open.
+> Our architecture separates research, simulation, and visualization. Omnigent coordinates five specialists; the native traces prove A and its linked B follow-up. Sources and neuron identities are versioned, with two frozen test designs. Brian2 simulates the complete installed FlyWire network. A positive DNg02 response against sham selects the second test: disconnecting outgoing weights. B removes the response in all three seeds; matched non-target inputs follow. A frozen adapter couples new spikes to Flybody and MuJoCo with a published flight policy. Six runs reach two hundred milliseconds without early termination; physical differences are measured. The pretrained policy stabilizes the body; the brain has no feedback. GitHub Pages shows recorded data. Motor assumptions and biological validation remain open. BrightData was not used for this evidence.
 
-**Wenn kein verifizierter nativer Trace vorliegt:** Den Anfang ersetzen durch: „Omnigent mit fünf Spezialrollen ist eingerichtet. Die hier gezeigten numerischen Vorläufe wurden unabhängig ausgeführt; die vorgeschriebene native Discovery-Schleife ist noch nicht nachgewiesen.“ / “Omnigent is configured with five specialist roles. The numerical preflight runs shown here were executed independently; the required native discovery loop has not yet been demonstrated.” Das Video darf dann keinen vollständig erfüllten C3-Nachweis behaupten.
+A und B besitzen eigene streng geprüfte native Receipts. Die unabhängigen Vorläufe bleiben davon getrennt; eine zweite native Sitzung ist ausdrücklich als verbundener Follow-up ausgewiesen.
 
 ## 4. Zusätzliche C3-Demo — Ziel 118 Sekunden
 
@@ -75,12 +79,12 @@ Diese Aufnahme gehört **nicht** in eines der drei 60-Sekunden-HackOS-Felder. Vo
 | 12–30 s | Evidence | Namiki-Quelle mit Fundstelle; geprüfte 25 v783-IDs |
 | 30–44 s | Hypothesis / Two tests | versiegeltes Design A/B und Auswahlregel |
 | 44–65 s | Experiment | echte native Omnigent-Rollen/Toolreceipts und neue numerische Run-IDs |
-| 65–84 s | Result / Updated decision | positive A-Differenz → tatsächlich ausgeführter B-Test → nächster Kontrolltest |
-| 84–99 s | Embodiment | echte gekoppelte Trajektorie, 38,8-ms-Referenzende; separater Fall bei 53,6 ms; Adapterlabel |
+| 65–84 s | Result / Updated decision | positive A-Differenz → native B-Ausführung → Antwort entfernt → passende Kontroll-Inputs |
+| 84–99 s | Embodiment | v2-Kopplung: 200 ms, Policy stabilisiert, neuronaler Rückkanal fehlt |
 | 99–110 s | Measured improvement | 427,73 ms vs. 0,282 ms; enger wiederholter ID-Lookup |
 | 110–118 s | Grenzen / Next experiment | passende Nichtziel-Inputs, biologische Prüfung, Controllerstabilität |
 
-**Deutsch, nur mit geprüftem nativem Trace:**
+**Deutsch, verifizierte A/B-Loops und v2-Kopplung:**
 
 > FlyBrainLab untersucht eine konkrete Modellfrage: Können acht graphgewählte Inputs flugbezogene DNg02-Zellen aktivieren, und hängt die Antwort von ihren Ausgangsverbindungen ab?
 >
@@ -88,15 +92,15 @@ Diese Aufnahme gehört **nicht** in eines der drei 60-Sekunden-HackOS-Felder. Vo
 >
 > Vor dem Lauf haben wir zwei Tests und drei Seeds fixiert. Test A vergleicht hundertfünfzig Hertz Input mit Sham. Bei einer positiven Differenz in jedem Seed folgt Test B: dieselbe Stimulation mit getrennten Ausgangsgewichten. Das ist eine Modellintervention, keine biologische Hemmmethode.
 >
-> Hier zeigt der native Omnigent-Trace die Spezialrollen, strukturierten Übergaben und tatsächlichen Experimenttools. Brian2 simuliert das vollständige installierte Netz. Der positive A-Befund führt zum B-Test. Im unveränderten Modell antworten die DNg02-Zellen; nach der Ausgangstrennung verschwindet die Antwort. Wir erhalten vollständige Spike-Daten und neue Run Records.
+> Hier zeigt der native Omnigent-Trace fünf Spezialrollen, strukturierte Übergaben und tatsächliche Experimenttools. Brian2 simuliert das vollständige installierte Netz. A liefert im Mittel rund achtzehn Hertz über alle fünfundzwanzig Zellen, einschließlich stiller Zellen. Der positive Befund gegen Sham führt zu B. Eine verbundene native Folgesitzung liest diese Entscheidung und führt B aus: null Hertz nach Ausgangstrennung in allen drei Seeds. Vollständige Spike-Daten und neue Run Records bleiben erhalten.
 >
-> Ein vorab eingefrorener Adapter koppelt die gespeicherten Spikes an echte MuJoCo-Körperphysik. Die Referenz endet nach achtunddreißig Komma acht Millisekunden. Mit verlängerter Referenz fällt das unveränderte Testmuster nach dreiundfünfzig Komma sechs Millisekunden unter die Höhen-Schwelle. Diese technische Kopplung ist Open-loop und biologisch nicht kalibriert.
+> In separaten Körperläufen koppelt ein vorab eingefrorener Adapter die neuen Spikes an eine veröffentlichte, vortrainierte Flugpolicy. Alle sechs gepaarten Läufe erreichen zweihundert Millisekunden ohne vorzeitigen Abbruch. Gelenk- und Positionsunterschiede sind gemessen. Die bestehende Policy stabilisiert; das Gehirn erhält keine Körpersensoren. Diese technische Zuordnung ist biologisch nicht kalibriert.
 >
 > Ein enger Engpass ist messbar: Wiederholtes Neuparsen der Identitäten braucht im Median rund vierhundertachtundzwanzig Millisekunden, der geprüfte KB-Claim unter eine Millisekunde. Das ist kein Nachweis einer schnelleren gesamten Forschung.
 >
-> Das nächste Experiment vergleicht passende Nichtziel-Inputs. Für Flug benötigen wir zusätzlich einen stabilen Controller, unabhängige Kalibrierung und sensorische Rückkopplung.
+> Nach dem bestätigten B-Befund folgen passende Nichtziel-Inputs. Längere Flugtests, unabhängige Kalibrierung und sensorische Rückkopplung bleiben nötig.
 
-**English, only with the verified native trace:**
+**English, verified A/B loops and v2 coupling:**
 
 > FlyBrainLab asks a concrete model question: can eight graph-selected inputs activate flight-related DNg02 neurons, and does that response depend on their outgoing connections?
 >
@@ -104,18 +108,19 @@ Diese Aufnahme gehört **nicht** in eines der drei 60-Sekunden-HackOS-Felder. Vo
 >
 > Before execution, we froze two tests and three seeds. Test A compares one hundred fifty hertz input stimulation with sham. A positive difference in every seed triggers Test B: the same stimulus with disconnected outgoing weights. This is a model intervention, not a biological silencing method.
 >
-> The native Omnigent trace shows specialist roles, structured handoffs, and actual experiment tools. Brian2 simulates the complete installed network. The positive A result leads to Test B. DNg02 cells respond in the unchanged model; disconnecting the outputs removes the response. Complete spike data and new run records are preserved.
+> The native Omnigent trace shows five specialists, structured handoffs, and actual experiment tools. Brian2 simulates the complete installed network. A produces about eighteen hertz averaged over all twenty-five cells, including silent cells. Its positive result against sham selects B. A linked native follow-up session reads that decision and executes B: zero hertz after disconnection in all three seeds. Complete spike data and new run records are preserved.
 >
-> A previously frozen adapter couples saved spikes to real MuJoCo body physics. The reference ends after thirty-eight point eight milliseconds. With an extended reference, the unchanged test pattern falls below its height threshold at fifty-three point six milliseconds. This technical coupling is open-loop and not biologically calibrated.
+> In separate body replays, a previously frozen adapter couples new spikes to a published pretrained flight policy. All six paired runs reach two hundred milliseconds without early termination. Joint and position differences are measured. The existing policy supplies stabilization; the brain receives no body sensors. This technical mapping is not biologically calibrated.
 >
 > We measured one narrow bottleneck: repeatedly parsing neuron identities takes a median of about four hundred twenty-eight milliseconds; reading the verified knowledgebase claim takes less than one millisecond. This does not establish faster discovery overall.
 >
-> The next experiment compares matched non-target inputs. Flight also requires a stable controller, independent calibration, and sensory feedback.
+> After B confirms model dependency, compare matched non-target inputs. Longer flight trials, independent calibration, and sensory feedback remain necessary.
 
 ## Vor Freigabe einmal gegenprüfen
 
 - Neue native Run-IDs/Resultate gegen den Text prüfen; bei abweichenden Werten Text und Einblendungen gemeinsam ändern.
-- Die Zahlen 18,13 ± 0,83 Hz und 100 % Rückgang stammen zunächst aus den unabhängigen Vorläufen. Nur mit passendem Trace und neuen Vergleichsartefakten eine Omnigent-Provenienz nennen.
+- Die Zahlen 18,13 ± 0,83 Hz und 100 % Rückgang sind durch neue native A/B-Vergleichsartefakte und streng geprüfte Receipts belegt. Bei der Populationsrate zählen alle 25 Zellen; nur 13–14 feuern pro angetriebenem Seed. Die früheren unabhängigen Vorläufe besitzen eigene Provenienz.
 - Körperzeit der ursprünglichen Kopplung ist **38,8 ms gemessen**, am Referenzende, nicht die angeforderten 200 ms. Separater verlängert-referenter Test: Höhen-Schwelle bei 53,6 ms unterschritten. Die diagnostische Fortsetzung bis 200 ms unter dem Boden ist ausdrücklich kein gültiger Flug. Keine Frames nach dem Abbruch erfinden. Wiedergabe darf verlangsamt werden, mit originaler Millisekundenachse.
+- Die neue **v2** verwendet eine veröffentlichte Autorenpolicy und erreicht in sechs echten gepaarten Läufen 200 ms ohne vorzeitigen Abbruch und mit aktivierten physikalischen Abbruchprüfungen. Dieses separate positive Resultat ersetzt die v1-Diagnose nicht rückwirkend. Körperpolicy-Feedback ist kein Feedback in das Gehirn.
 - Der ID-Lookup-Benchmark misst warmen lokalen Cache und geprüfte Extraktion. Keine „10× wissenschaftlicher Durchbruch“-Behauptung.
 - Keine synthetischen Stimmen/Persönlichkeiten als Team ausgeben. Synthetische Narration, falls verwendet, kennzeichnen. Aktuelle vorbereitete Sprechertexte allein nutzen keine Sprachgenerierung.

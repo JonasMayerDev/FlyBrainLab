@@ -20,6 +20,8 @@ Die Demo spielt echte vorberechnete Runs ab. Sie rechnet keine Simulation im Bro
 
 Manuelle Machbarkeitsläufe und tatsächlich unter Omnigent ausgeführte Experimente müssen getrennt beurteilt werden. [Trace A](data/discovery/native-trace.json), [Trace B](data/discovery/native-trace-b.json) und echte Tool-Receipts belegen beide vollständigen Loops. Die zweite Session liest den verifizierten A-Entscheidungsrecord vor Planung und Ausführung von B; dieser Übergang ist separat geprüft. Ein Provenienzlabel allein genügt nicht. [Resultate](docs/RESULTS.md), [Neuronale Rohdaten](data/runs/), [Experimentdesign](research/designs/), [Körperintegration](docs/BODY_INTEGRATION.md).
 
+![Öffentliche Demo mit echtem nativen A-Run und Kontrollvergleich](docs/images/public-viewer.png)
+
 ## Lokal starten
 
 Die geprüfte Plattform ist macOS/arm64, Python 3.12, 8 GiB RAM. Numerische Läufe werden seriell gerechnet. Ein Teamrechner benötigt eigene Zugänge und eigene KB; diese werden nicht mit Git übertragen.

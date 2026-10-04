@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-04T01:46:33.942450+00:00",
+  "ffmpeg_binary": "ffmpeg-macos-aarch64-v7.1",
+  "all_media_passed": false,
+  "submission_completed": false,
+  "verification_scope": "Local file format/signature, decimal byte limit, full-precision MP4/MOV duration, complete video/audio decode, SHA-256; human content/upload/submission checks remain separate",
+  "c3_limit_note": "120 seconds is our two-minute planning target, not a confirmed HackOS field limit",
+  "assets": [
+    {
+      "key": "team_photo",
+      "path": "submission/exports/team_photo.jpg",
+      "passed": false,
+      "errors": [
+        "File is missing; a script/storyboard is not a delivered media asset"
+      ]
+    },
+    {
+      "key": "team_intro",
+      "path": "submission/exports/team_intro.mp4",
+      "passed": true,
+      "errors": [],
+      "bytes": 511218,
+      "max_bytes": 1000000000,
+      "duration_seconds": 46.0,
+      "max_duration_seconds": 60,
+      "fully_decoded": true,
+      "decoded_video_frames": 1104,
+      "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080, 86 kb/s, 24 fps, 24 tbr, 12288 tbn (default)",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "15688fee818e38f4a2273c171746b3e3eb493dc05968241cadd748250e38774c"
+    },
+    {
+      "key": "product_demo",
+      "path": "submission/exports/product_demo.mp4",
+      "passed": true,
+      "errors": [],
+      "bytes": 2154251,
+      "max_bytes": 1000000000,
+      "duration_seconds": 55.0,
+      "max_duration_seconds": 60,
+      "fully_decoded": true,
+      "decoded_video_frames": 1320,
+      "stream": "Stream #0:0[0x1](eng): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt470bg/unknown/unknown, progressive), 1920x1080 [SAR 4095:4096 DAR 455:256], 310 kb/s, SAR 68400:68411 DAR 121600:68411, 24 fps, 24 tbr, 12288 tbn (default)",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "f156983487dd69eb0b6e575687bd280fea48b8aa50514f38b5ac12d196ad1732"
+    },
+    {
+      "key": "technical_walkthrough",
+      "path": "submission/exports/technical_walkthrough.mp4",
+      "passed": true,
+      "errors": [],
+      "bytes": 921477,
+      "max_bytes": 1000000000,
+      "duration_seconds": 55.0,
+      "max_duration_seconds": 60,
+      "fully_decoded": true,
+      "decoded_video_frames": 1320,
+      "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080, 131 kb/s, 24 fps, 24 tbr, 12288 tbn (default)",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "d719b34e88b0fdda5218274a53174ade270bb7fae52679c8d0ffdfeb2c10fb1f"
+    },
+    {
+      "key": "c3_demo",
+      "path": "submission/exports/c3_demo.mp4",
+      "passed": true,
+      "errors": [],
+      "bytes": 1626915,
+      "max_bytes": 1000000000,
+      "duration_seconds": 118.0,
+      "max_duration_seconds": 120,
+      "fully_decoded": true,
+      "decoded_video_frames": 2832,
+      "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080, 107 kb/s, 24 fps, 24 tbr, 12288 tbn (default)",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "6eda78b612586d297e4e240b80eea8d01b0efaae558d643df456db2d9cf679f0"
+    }
+  ],
+  "human_checks_remaining": [
+    "Confirm actual human names, contributions, personal motivation and team-photo identity",
+    "Watch every video with sound/captions",
+    "Check public demo and repository from another device",
+    "Confirm real Omnigent trace instead of merely relabelled preflight runs",
+    "Upload and inspect processed playback",
+    "Submit HackOS and Google Form separately",
+    "Save both actual submission confirmations"
+  ],
+  "local_paths_redacted": true
+}

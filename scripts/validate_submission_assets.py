@@ -105,20 +105,22 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def decode_first_frame(binary: Path, path: Path) -> dict:
+def decode_media(binary: Path, path: Path) -> dict:
     # Mapping a video stream also rejects audio-only files carrying .mp4/.mov.
     process = subprocess.run(
-        [str(binary), "-nostdin", "-hide_banner", "-i", str(path),
-         "-map", "0:v:0", "-frames:v", "1", "-f", "null", "-"],
-        stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=30,
+        [str(binary), "-nostdin", "-hide_banner", "-nostats", "-xerror",
+         "-err_detect", "explode", "-i", str(path), "-map", "0:v:0",
+         "-map", "0:a?", "-progress", "pipe:1", "-f", "null", "-"],
+        stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=60,
     )
     output = process.stderr
-    if process.returncode or not re.search(r"frame=\s*[1-9]\d*", output):
-        raise ValueError("FFmpeg could not decode a video/image frame: " + output[-1500:].strip())
+    frame_counts = re.findall(r"^frame=(\d+)$", process.stdout, flags=re.MULTILINE)
+    if process.returncode or not frame_counts or int(frame_counts[-1]) == 0:
+        raise ValueError("FFmpeg could not fully decode the video/image: " + output[-1500:].strip())
     video_line = next((line.strip() for line in output.splitlines()
                        if "Stream #0:" in line and "Video:" in line), "")
     size = re.search(r"\b(\d{2,6})x(\d{2,6})\b", video_line)
-    return {"first_frame_decoded": True, "stream": video_line,
+    return {"fully_decoded": True, "decoded_video_frames": int(frame_counts[-1]), "stream": video_line,
             "width": int(size[1]) if size else None,
             "height": int(size[2]) if size else None}
 
@@ -153,7 +155,7 @@ def validate(asset: dict, path: Path, binary: Path | None) -> dict:
         if binary is None:
             errors.append("Local FFmpeg unavailable; decode verification is incomplete")
         elif not errors:
-            result.update(decode_first_frame(binary, path))
+            result.update(decode_media(binary, path))
         result["sha256"] = sha256(path)
     except (OSError, ValueError, struct.error, subprocess.TimeoutExpired) as exc:
         errors.append(str(exc))
@@ -166,6 +168,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--manifest", type=Path, default=ROOT / "submission/asset_manifest.json")
     parser.add_argument("--ffmpeg", help="Existing local FFmpeg executable; no installation/download")
     parser.add_argument("--output", type=Path, help="Write the JSON report in addition to printing it")
+    parser.add_argument("--public-output", type=Path, help="Write a shareable copy with local absolute paths removed")
     for key in ("team_photo", "team_intro", "product_demo", "technical_walkthrough", "c3_demo"):
         parser.add_argument("--" + key.replace("_", "-"), dest=key, type=Path)
     args = parser.parse_args(argv)
@@ -180,7 +183,7 @@ def main(argv: list[str] | None = None) -> int:
         "ffmpeg_binary": str(binary) if binary else None,
         "all_media_passed": all(asset["passed"] for asset in assets),
         "submission_completed": False,
-        "verification_scope": "Local file format/signature, decimal byte limit, full-precision MP4/MOV duration, first decoded frame, SHA-256; human content/upload/submission checks remain separate",
+        "verification_scope": "Local file format/signature, decimal byte limit, full-precision MP4/MOV duration, complete video/audio decode, SHA-256; human content/upload/submission checks remain separate",
         "c3_limit_note": "120 seconds is our two-minute planning target, not a confirmed HackOS field limit",
         "assets": assets,
         "human_checks_remaining": manifest.get("human_checks", []),
@@ -189,6 +192,22 @@ def main(argv: list[str] | None = None) -> int:
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(encoded + "\n")
+    if args.public_output:
+        public = json.loads(encoded)
+        public["ffmpeg_binary"] = binary.name if binary else None
+        public["local_paths_redacted"] = True
+        for asset in public["assets"]:
+            local = Path(asset["path"])
+            try:
+                asset["path"] = str(local.relative_to(ROOT))
+            except ValueError:
+                asset["path"] = local.name
+            asset["errors"] = [error.replace(str(local), asset["path"])
+                               .replace(str(ROOT), ".")
+                               .replace(str(binary), binary.name if binary else "")
+                               for error in asset["errors"]]
+        args.public_output.parent.mkdir(parents=True, exist_ok=True)
+        args.public_output.write_text(json.dumps(public, ensure_ascii=False, indent=2) + "\n")
     print(encoded)
     return 0 if report["all_media_passed"] else 1
 
