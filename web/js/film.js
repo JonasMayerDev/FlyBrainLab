@@ -253,16 +253,17 @@ cue('title', 'The brain processes it.', 25.4, 30.8);
 cue('sub', 'Activity spreads through the network and reaches the giant-fiber escape neurons.', 26.0, 30.8);
 cue('title', 'Escape.', 31.2, 38.8, 'green');
 cue('sub', 'The giant fiber fires at 152–169 Hz. The virtual fly takes off.', 31.8, 38.8);
-cue('title', 'Control: escape neuron off.', 39.4, 45.2, 'red');
-cue('sub', 'Same stimulus, giant fiber silenced: the fly stays on the ground.', 40.0, 45.2);
+cue('title', 'Another neuron: no escape.', 39.4, 45.2);
+cue('sub', 'Stimulating the moonwalker neurons (MDN) instead: the giant fiber stays silent and the fly walks backward.', 40.0, 45.2);
 cue('title', 'What the agents found.', 45.8, 50.8, 'grad');
 cue('sub', 'With gentler stimulation, LC17, a cell type not known from escape studies, drove the escape neuron most strongly: a prediction for the real lab.', 46.4, 50.8);
 cue('title', 'Checked by an AI expert board.', 51.2, 55.4);
-cue('title', 'Embodied Fly Lab', 55.9, 59.5, 'grad end');
+cue('title', 'FlyBrainLab', 55.9, 59.5, 'grad end');
 cue('sub', 'Our agents tackle complex scientific problems by testing, validating through simulation and comparing with published research.', 56.3, 59.5, 'end');
 cue('note', 'Recorded simulations: FlyWire v783 brain model (after Shiu et al. 2024). Lit neurons = mean firing rates of the recorded run.', 0.5, 19.2);
 cue('note', 'Looming object shown symbolically: in the model the LPLC2 neurons are driven directly. Spreading wave illustrative; lit neurons = recorded mean rates. Brain shown scaled inside the head.', 19.6, 30.8);
-cue('note', 'Recorded run: brain model → frozen adapter (giant fiber → takeoff) → FlyBody physics, simplified aerodynamics, slow motion. Silencing control holds by design of the adapter.', 31.2, 45.2);
+cue('note', 'Recorded run: brain model → frozen adapter (giant fiber → takeoff) → FlyBody physics, simplified aerodynamics, slow motion.', 31.2, 39.0);
+cue('note', 'Recorded run: MDN driven directly, giant fiber 0 Hz. NeuroMechFly walking body; backward stepping approximated; slow motion.', 39.4, 45.2);
 cue('note', 'Session 3 of the agent lab (lower stimulus drive). Agent-generated prediction, not confirmed in a real fly.', 45.8, 50.8);
 cue('note', 'Audit: 3 sessions, 25 experiments re-run with the same seeds. 8/9: 5 checks circular by design, 3 emergent, 1 disagrees. 25×: first hit of the MDN screen vs. random order (5× vs. a strong baseline).', 51.4, 55.4);
 cue('note', 'FlyWire · Shiu et al. 2024 · NeuroMechFly · FlyBody · Omnigent (open source, by Databricks) · Hack-Nation 7, Challenge 03', 56.4, 59.5);
@@ -292,7 +293,7 @@ function buildRunLayers(run) {
   const b = run.brain, stim = new Set(b.stimulated_idx || []), sil = new Set(b.silenced_idx || []), ro = new Set(b.readout_idx || []);
   const rate = new Map(); (b.active_idx || []).forEach((i, j) => rate.set(i, b.active_rate_hz[j]));
   const stimIdx = [...stim];
-  const gfIdx = [...ro].filter((i) => (rate.get(i) || 0) > 50 || sil.has(i));
+  const gfIdx = [...ro].filter((i) => !stim.has(i) && ((rate.get(i) || 0) > 50 || sil.has(i)));
   const downIdx = (b.active_idx || []).filter((i) => !stim.has(i) && !gfIdx.includes(i));
   // wave order: distance from the nearest stimulated (LPLC2) neuron cluster centre, normalised to 0..1 (illustrative)
   const P = (i) => [brain.local[3 * i], brain.local[3 * i + 1], brain.local[3 * i + 2]];
@@ -309,11 +310,11 @@ function buildRunLayers(run) {
 }
 async function init() {
   try { await Promise.all([document.fonts.load('650 64px Inter'), document.fonts.load('700 96px Inter'), document.fonts.load('400 32px Inter'), document.fonts.load('500 20px Inter')]); await document.fonts.ready; } catch (e) { /* system font */ }
-  const [gFB, rTake, rSil] = await Promise.all([
-    loadGeom('data/geometry/flybody.json'), json('data/runs/lplc2_takeoff.json'), json('data/runs/lplc2_gf_silenced.json'), loadBrain()]);
-  S.fb = buildFly(gFB);
-  S.take = rTake.body.poses; S.sil = rSil.body.poses; S.u = UNIT[S.take.units] ?? 1;
-  S.L = buildRunLayers(rTake); S.LS = buildRunLayers(rSil);
+  const [gFB, gNMF, rTake, rMdn] = await Promise.all([
+    loadGeom('data/geometry/flybody.json'), loadGeom('data/geometry/neuromechfly.json'), json('data/runs/lplc2_takeoff.json'), json('data/runs/mdn_backward.json'), loadBrain()]);
+  S.fb = buildFly(gFB); S.nmf = buildFly(gNMF);
+  S.take = rTake.body.poses; S.mdn = rMdn.body.poses; S.u = UNIT[S.take.units] ?? 1; S.uW = UNIT[S.mdn.units] ?? 1;
+  S.L = buildRunLayers(rTake); S.LS = buildRunLayers(rMdn);
   const hb = new THREE.Box3(); const head = S.fb.bodies.get('head');
   head.children.forEach((m) => { m.geometry.computeBoundingBox(); hb.union(m.geometry.boundingBox.clone().applyMatrix4(m.matrix)); });
   S.headOff = hb.getCenter(new THREE.Vector3()).multiplyScalar(S.fb.unit);
@@ -339,15 +340,25 @@ const WINGS_LEGS = ['wing_left', 'wing_right', 'coxa_T2_left', 'coxa_T2_right'];
 function renderAt(t) {
   t = clamp(t, 0, DURATION);
   const control = t >= 39.2 && t < 45.6;
-  const P = control ? S.sil : S.take;
-  const simT = control ? clamp((t - 40.6) * 0.2, 0, 0.99) : (t < 32.2 ? 0 : clamp((t - 32.2) / 6.2 * 0.99, 0, 0.99));
-  // body: hidden while the brain is the subject; appears for the escape and the control
+  const P = control ? S.mdn : S.take;
+  const simT = control ? clamp((t - 40.4) * 0.2, 0, 0.99) : (t < 32.2 ? 0 : clamp((t - 32.2) / 6.2 * 0.99, 0, 0.99));
+  // body: hidden while the brain is the subject; appears for the escape and the comparison run
   const bodyA = t < 30.6 ? 0.0 : (t < 45.6 ? ramp(t, 30.6, 32.0) : 1 - ramp(t, 45.6, 46.6));
-  setAlpha(S.fb, bodyA);
-  applyPose(S.fb, P, simT);
-  const h = bodyPose(P, 'head', simT, S.u), th = bodyPose(P, 'thorax', simT, S.u);
-  placeBrain(h.p.clone().add(S.headOff.clone().applyQuaternion(h.q)), th.q, 0.72 * S.headW);
-  const bc = brain.group.position.clone(), thorax = th.p;
+  setAlpha(S.fb, control ? 0 : bodyA);
+  setAlpha(S.nmf, control ? 1 : 0);
+  let thorax;
+  if (control) {
+    applyPose(S.nmf, P, simT);
+    const l = bodyPose(P, 'nmf/l_eye', simT, S.uW), r = bodyPose(P, 'nmf/r_eye', simT, S.uW), tq = bodyPose(P, 'nmf/c_thorax', simT, S.uW);
+    placeBrain(l.p.clone().add(r.p).multiplyScalar(0.5), tq.q, 0.8 * l.p.distanceTo(r.p));
+    thorax = tq.p;
+  } else {
+    applyPose(S.fb, P, simT);
+    const h = bodyPose(P, 'head', simT, S.u), th = bodyPose(P, 'thorax', simT, S.u);
+    placeBrain(h.p.clone().add(S.headOff.clone().applyQuaternion(h.q)), th.q, 0.72 * S.headW);
+    thorax = th.p;
+  }
+  const bc = brain.group.position.clone();
 
   // ---- brain layers
   brain.base.material.opacity = t < 7 ? 0.32 * ramp(t, 0.2, 2.2) : (t < 31 ? 0.3 : (t < 46 ? 0.2 : 0.28));
@@ -355,6 +366,7 @@ function renderAt(t) {
   const L = control ? S.LS : S.L, other = control ? S.L : S.LS;
   for (const ly of [other.stim, other.down, other.gf]) ly.pts.visible = false;
   for (const ly of [L.stim, L.down, L.gf]) ly.pts.visible = true;
+  if (control) { S.L.gf.pts.visible = true; paint(S.L.gf, () => [0.32, 0.32, 0.36]); }
   const showRun = t >= 19.6 && t < 51;
   const stimA = showRun ? ramp(t, 20.6, 22.4) : 0;
   const pulseStim = 0.75 + 0.25 * Math.sin(t * 7.0);
@@ -376,7 +388,7 @@ function renderAt(t) {
 
   // ---- adapter pulses (illustrative): giant fiber -> wings / jump legs, only in the escape run
   const pa = !control && t >= 30.2 && t < 33.5 ? win(t, 30.2, 33.5, 0.5) : 0;
-  const ends = WINGS_LEGS.map((n) => bodyPose(P, n, simT, S.u)?.p || bc);
+  const ends = control ? [] : WINGS_LEGS.map((n) => bodyPose(P, n, simT, S.u)?.p || bc);
   drawPulses(bc, ends, 0xffc04d, t, pa, 1.3);
 
   // ---- looming object
@@ -391,14 +403,15 @@ function renderAt(t) {
   S.trail.visible = !control && t >= 32.2 && t < 39.2;
   if (S.trail.visible) { const { f } = frameAt(S.take, simT); S.trail.geometry.setDrawRange(0, f + 1); }
   floor.visible = ring.visible = t >= 30.6 && t < 46.6;
-  floor.position.set(0, 0, 0); ring.position.set(0, 0, 0.01);
+  if (control) { floor.position.set(thorax.x, thorax.y, 0); ring.position.set(thorax.x, thorax.y, 0.01); }
+  else { floor.position.set(0, 0, 0); ring.position.set(0, 0, 0.01); }
 
   // ---- camera
   if (t < 7) camOrbit(bc, lerp(1.3, 1.6, ramp(t, 0, 7)), lerp(12, -18, t / 7), lerp(8, 13, t / 7));
   else if (t < 19.6) camOrbit(bc, lerp(1.6, 1.75, ramp(t, 7, 19.6)), lerp(-18, 16, ramp(t, 7, 19.6)), lerp(13, 12, ramp(t, 7, 19.6)));
   else if (t < 30.6) camOrbit(bc, lerp(1.75, 1.95, ramp(t, 19.6, 30.6)), lerp(16, -14, ramp(t, 19.6, 30.6)), lerp(12, 16, ramp(t, 19.6, 30.6)));
   else if (t < 39.2) { const x = ramp(t, 30.6, 33.6); camOrbit(bc.clone().lerp(thorax, x), lerp(1.95, 11, x), lerp(-14, -55, ramp(t, 30.6, 39.2)), lerp(16, 16, x)); }
-  else if (t < 45.6) camOrbit(thorax, 9.5, lerp(-50, -70, ramp(t, 39.2, 45.6)), 22);
+  else if (t < 45.6) camOrbit(thorax, 8.5, lerp(-120, -140, ramp(t, 39.2, 45.6)), 34);
   else camOrbit(bc, lerp(2.0, 1.75, ramp(t, 45.6, 59.5)), lerp(25, -25, ramp(t, 45.6, 59.5)), 11);
 
   // ---- overlays
