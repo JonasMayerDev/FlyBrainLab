@@ -1,5 +1,8 @@
 # Tested setup: CPython 3.12.14 on macOS arm64.
 omnigent==0.16.0
+# Hosted BrightData MCP transport; already present in the validated environment.
+mcp==1.30.0
+httpx==0.28.1
 brian2==2.9.0
 numpy==1.26.4
 pandas==2.2.3

@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-04T08:20:29Z",
+  "scope": "Direct provider access checks; not an additional native Omnigent discovery loop.",
+  "anthropic": {
+    "models_http_status": 200,
+    "messages_http_status": 200,
+    "model": "claude-haiku-4-5-20251001",
+    "max_tokens": 8,
+    "input_tokens": 11,
+    "output_tokens": 5,
+    "stop_reason": "end_turn",
+    "successful_generation_calls": 1,
+    "promotional_balance_verified": false
+  },
+  "brightdata": {
+    "account_api_http_status": 200,
+    "active_zones_in_initial_response": [],
+    "existing_product_type": "browser_api",
+    "transport": "streamable_http",
+    "mcp_endpoint_base": "https://mcp.brightdata.com/mcp",
+    "server_name": "brightdata-mcp",
+    "server_version": "1.0.0",
+    "dashboard_free_calls_shown_before_checks": 5000,
+    "dashboard_configuration_group": "advanced_scraping",
+    "tool_calls": [
+      {
+        "name": "search_engine",
+        "arguments": {"query": "DNg02 wing amplitude Namiki 2022 primary paper", "engine": "google"},
+        "is_error": false,
+        "characters": 3924,
+        "response_sha256": "dfb620a67853fe583d5c7e7c7c1967d5d6b96ebcdfd961261348f0072c449bc1",
+        "primary_source_found": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9206711/"
+      },
+      {
+        "name": "scrape_as_markdown",
+        "arguments": {"url": "https://www.nature.com/articles/s41586-024-07763-9"},
+        "is_error": false,
+        "characters": 199990,
+        "response_sha256": "693d33fc9c7b83fe9b0c5e160f813dddfc081147c09d25f669120b3d72dcb009",
+        "content_verified_as": "Shiu et al. whole-brain model article, published 2024-10-02"
+      }
+    ],
+    "paid_tool_groups_enabled": false,
+    "browser_wss_tested": false,
+    "browser_wss_limitation": "Provided proxy password is masked; MCP does not require that password.",
+    "promotional_balance_verified": false,
+    "billing_limitation": "The displayed free pool is shared. Tool selection is not a provider-enforced spending cap.",
+    "hosted_filter_observation": "An encoded two-tool allowlist advertised search only. Selecting one tool per fresh session advertised and executed the requested tool. No cause inferred.",
+    "provisioning_limitation": "Hosted initialization can provision its default zones; no guarantee that a handshake leaves account state unchanged."
+  },
+  "project_adapter_check": {
+    "recorded_at": "2026-10-04T08:26:18.408601+00:00",
+    "transport": "mcp",
+    "request_attempts": 2,
+    "request_statuses": ["received", "received"],
+    "search_candidates": 0,
+    "search_limitation": "This second real search returned organic=[] for the same query; the initial direct test found nine organic results. No cause inferred and no results invented.",
+    "source_id": "src_d386ff8383302ff886e3",
+    "source_url": "https://www.nature.com/articles/s41586-024-07763-9",
+    "source_content_sha256": "b63fd77231da3b5cea5331f917f422e8b36da4a046780d441b7a23d7d0a5e934",
+    "snapshot_hash_verified": true,
+    "storage": "Existing local knowledgebase outside iCloud; full paper text is not published in Git.",
+    "local_estimated_cost_usd": "0",
+    "total_successful_mcp_data_calls_in_this_check": 4,
+    "native_omnigent_loop_executed": false,
+    "offline_omnigent_roles_validated": 6,
+    "offline_omnigent_missing_environment": [],
+    "initial_search_source_id": "src_70b230018916b51523fa",
+    "initial_search_snapshot_sha256": "dfb620a67853fe583d5c7e7c7c1967d5d6b96ebcdfd961261348f0072c449bc1",
+    "initial_search_allowlisted_candidates_preserved": 4,
+    "initial_search_import_sent_new_provider_calls": false,
+    "offline_adapter_tests_passed": 26,
+    "offline_knowledgebase_tests_passed": 10,
+    "offline_credentials_helper_tests_passed": 5
+  },
+  "credentials_written_by_checks": false,
+  "scientific_claims_added": false,
+  "existing_native_A_B_provenance_changed": false
+}

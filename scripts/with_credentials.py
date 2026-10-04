@@ -30,17 +30,35 @@ def main() -> int:
     parser.add_argument("--anthropic", action="store_true", help="Anthropic-Key im Terminal abfragen")
     parser.add_argument("--brightdata", action="store_true", help="BrightData-Key, SERP-Zone und Budget abfragen")
     parser.add_argument("--unlocker", action="store_true", help="Zusätzlich BrightData-Unlocker-Zone abfragen")
+    parser.add_argument("--brightdata-mcp", action="store_true", help="BrightData-MCP mit bestätigtem Freikontingent, ohne Produktzonen")
     parser.add_argument("command", nargs=argparse.REMAINDER)
     args = parser.parse_args()
     command = args.command[1:] if args.command[:1] == ["--"] else args.command
     if not command:
         parser.error("Befehl nach -- angeben; zum Beispiel -- .venv/bin/python scripts/omnigent_run.py")
+    if args.brightdata_mcp and (args.brightdata or args.unlocker):
+        parser.error("--brightdata-mcp separat verwenden; --brightdata/--unlocker wählen die REST-Route.")
     env = dict(os.environ)
     root = Path(__file__).resolve().parents[1]
     try:
         if args.anthropic:
             require_value(env, "ANTHROPIC_API_KEY", secret=True)
+        if args.brightdata_mcp:
+            require_value(env, "BRIGHTDATA_API_KEY", secret=True)
+            print("Verbleibende kostenlose MCP-Aufrufe zuerst im BrightData-Dashboard prüfen.")
+            require_value(env, "BRIGHTDATA_FREE_REQUEST_ALLOWANCE", secret=False)
+            allowance = int(env["BRIGHTDATA_FREE_REQUEST_ALLOWANCE"])
+            max_requests = min(int(env.get("BRIGHTDATA_MAX_REQUESTS", "2")), 2, allowance)
+            if allowance < 1 or max_requests < 1:
+                raise ValueError("BrightData-MCP: bestätigtes Freikontingent und mindestens ein Request erforderlich.")
+            env["BRIGHTDATA_TRANSPORT"] = "mcp"
+            env["BRIGHTDATA_MAX_REQUESTS"] = str(max_requests)
+            env["BRIGHTDATA_MAX_COST_USD"] = "0"
+            env["BRIGHTDATA_ESTIMATED_REQUEST_COST_USD"] = "0"
+            print(f"BrightData-MCP: maximal {max_requests} gezählte Versuche aus dem bestätigten Freikontingent.")
+            print("Der lokale Zähler begrenzt Aufrufe; das gemeinsame Anbieter-Freikontingent separat im Blick behalten.")
         if args.brightdata or args.unlocker:
+            env["BRIGHTDATA_TRANSPORT"] = "rest"
             require_value(env, "BRIGHTDATA_API_KEY", secret=True)
             if args.brightdata:
                 require_value(env, "BRIGHTDATA_SERP_ZONE", secret=False)

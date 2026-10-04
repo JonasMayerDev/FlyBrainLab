@@ -1,6 +1,6 @@
 # FlyBrainLab – Stand für 09:00
 
-Stand: **4. Oktober 2026, Nachtarbeit**. Challenge 03 Databricks „Agentic Scientific Discovery“. Deadline heute 15:00; internes Ziel 14:30, Feature-Freeze 11:30.
+Stand: **4. Oktober 2026, Nachtarbeit mit Zugangsprüfung um 10:20**. Challenge 03 Databricks „Agentic Scientific Discovery“. Deadline heute 15:00; internes Ziel 14:30, Feature-Freeze 11:30.
 
 **[Öffentliche Demo](https://valleebo.github.io/FlyBrainLab/)**. Kanonischer Code und Team-Issues bleiben [JonasMayerDev/FlyBrainLab](https://github.com/JonasMayerDev/FlyBrainLab). Die Demo spielt echte aufgezeichnete Ergebnisse ab; der Hosting-Mirror veröffentlicht denselben Viewer.
 
@@ -26,7 +26,7 @@ Die 25 Readouts umfassen auch stumme Neuronen; unter Stimulation reagieren 13–
 
 ## Offen und menschlich erforderlich
 
-1. **#2 Zugänge:** Anthropic-/BrightData-Aktivierung, Guthaben, Zonen und Tarif sind unbestätigt. Vorhandener Codex-Zugang hat die native Omnigent-Route ermöglicht. Keine Schlüssel in Chat, Git oder iCloud ablegen.
+1. **#2 Zugänge (Valentin):** echter Claude-Haiku-Aufruf und BrightData-MCP-Suche/Seitenabruf erfolgreich geprüft; 5.000 kostenlose MCP-Aufrufe vor den Tests im Dashboard sichtbar. [Bereinigte Belege](research/provider-access-2026-10-04.json). Promo-Guthaben, Account-Ausgabenlimits und REST-Produkte sind weiterhin unbestätigt. Die nativen A/B-Loops liefen über Codex; diese Zugangschecks sind keine weitere Discovery-Schleife. Keine Schlüssel in Projekt, Git oder iCloud ablegen. #2, #8 und #10 bearbeitet Valentin; keine automatische Änderung dieser Issues.
 2. **#10 Abgabe:** echtes Teamfoto aufnehmen; vier Videoentwürfe gemeinsam prüfen und besonders die Teamvorstellung personalisieren. Namen und tatsächliche Beiträge bestätigen. HackOS und danach Google Form ausfüllen, Uploads abspielen und beide Bestätigungen sichern.
 3. **Nächstes wissenschaftliches Experiment:** passende Kontrollinputs und belegte sensorische Eingänge prüfen. Dies ist die dokumentierte B-Folgeentscheidung, noch kein ausgeführter Test. Längere Flugstabilität und biologische Kalibrierung bleiben offen; kein Walking-Scopewechsel.
 

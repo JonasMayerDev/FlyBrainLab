@@ -29,32 +29,73 @@ keine Schlüsselwerte und keine neuen Dateien.
 
 ## Bright Data anschließen
 
+Die Zugangschecks am 4. Oktober waren erfolgreich: ein echter Claude-Haiku-Aufruf,
+eine DNg02-Suche und ein vollständiger Shiu-Seitenabruf über den gehosteten
+BrightData-MCP-Server. [Bereinigte Belege](provider-access-2026-10-04.json).
+Die ursprünglichen nativen A/B-Loops wurden über Codex ausgeführt; diese separaten
+Providerchecks ersetzen deren Provenienz nicht.
+
+**MCP** ist die standardisierte Werkzeugschnittstelle des Anbieters. Unsere
+Omnigent-Recherchetools rufen darüber `search_engine` und `scrape_as_markdown` auf.
+Die Browser-API mit `wss://` steuert dagegen einen entfernten Browser und benötigt
+ein eigenes Proxy-Passwort. Für unseren Literaturabruf genügt MCP mit API-Token.
+
+Für den kostenlosen MCP-Einstieg zuerst im BrightData-Dashboard das verbleibende
+gemeinsame Freikontingent prüfen. Dann verdeckt eingeben:
+
+```sh
+.venv/bin/python scripts/with_credentials.py --brightdata-mcp -- .venv/bin/python scripts/brightdata_client.py status
+```
+
+Der Helfer setzt `BRIGHTDATA_TRANSPORT=mcp`, höchstens zwei gezählte Versuche und
+einen lokalen Schätzpreis von null aus dem bestätigten Freikontingent. Eigene
+SERP-/Web-Unlocker-Zonennamen werden dafür nicht benötigt. Das Freikontingent
+wird von anderen Kontonutzern geteilt; der lokale Zähler erzwingt keine
+Anbieterabrechnung. Vor weiteren Aufrufen Restkontingent prüfen. Ein neuer
+Prozess setzt das persistente Ledger nicht zurück. Der gehostete Server kann
+seine Standardzonen beim Start selbst provisionieren.
+
+[Offizieller MCP-Quickstart](https://docs.brightdata.com/products/mcp-server/remote/quickstart),
+[Free-Tier-Regeln](https://docs.brightdata.com/general/account/billing-and-pricing/free-tier).
+
 Root verwaltet die sichere Eingabe/Umgebung. Die Module benötigen:
 
 | Variable | Bedeutung |
 |---|---|
 | `BRIGHTDATA_API_KEY` | API-Schlüssel, ausschließlich im Prozess-Environment |
-| `BRIGHTDATA_SERP_ZONE` | Aktive Zone für das SERP-Produkt |
-| `BRIGHTDATA_UNLOCKER_ZONE` | Aktive Zone für Web Unlocker |
+| `BRIGHTDATA_TRANSPORT` | `rest` (Default) oder `mcp` |
+| `BRIGHTDATA_SERP_ZONE` | Nur REST: aktive Zone für das SERP-Produkt |
+| `BRIGHTDATA_UNLOCKER_ZONE` | Nur REST: aktive Zone für Web Unlocker |
 | `BRIGHTDATA_MAX_REQUESTS` | Gemeinsame persistente Höchstzahl; Default 10 |
 | `BRIGHTDATA_MAX_COST_USD` | Grenze für geschätzte Kosten; muss gesetzt sein |
 | `BRIGHTDATA_ESTIMATED_REQUEST_COST_USD` | Konservativer Wert aus dem tatsächlichen Accounttarif; muss gesetzt sein |
+| `BRIGHTDATA_FREE_REQUEST_ALLOWANCE` | MCP mit Nullschätzung: aktuell bestätigte kostenlose Aufrufe, mindestens so groß wie die Requestgrenze |
 | `BRIGHTDATA_ALLOWED_DOMAINS` | Optional: durch Kommas getrennte erlaubte Quellendomains |
 | `RESEARCH_KB_DIR` | Optional: anderer lokaler Speicherpfad |
 
-Es gibt keinen angenommenen Standardpreis. Die USD-Grenze ist nur eine Schätzung
+Für REST gibt es keinen angenommenen Standardpreis. Die USD-Grenze ist nur eine Schätzung
 anhand der konfigurierten Stückkosten; sie erzwingt nicht die Abrechnung beim
 Anbieter. Tarif und Accountausgabenlimit zusätzlich im Bright-Data-Account prüfen.
 Die Request-Anzahl wird tatsächlich im lokalen Ledger durchgesetzt. Ein
 fehlgeschlagener oder abgebrochener Versuch bleibt gezählt, weil er bereits
 Kosten verursacht haben kann. Es gibt keine automatischen Wiederholungen.
 
-Suche und Abruf verwenden den offiziellen `POST https://api.brightdata.com/request`
+Die REST-Route verwendet den offiziellen `POST https://api.brightdata.com/request`
 mit Bearer-Authentifizierung und einer passenden Produktzone. Suche verlangt
 strukturiertes JSON; Abruf verlangt Markdown-Text. Der aktuelle Account muss für
 beide Produkte freigeschaltet sein; ein eingelöster Promo-Code beweist das nicht.
 [SERP-Referenz](https://docs.brightdata.com/api-reference/rest-api/serp/serp-api),
 [Web-Unlocker-Referenz](https://docs.brightdata.com/api-reference/rest-api/unlocker/unlock-website)
+
+Die MCP-Route verbindet sich über Streamable HTTP mit `https://mcp.brightdata.com/mcp`.
+Authentifizierung bleibt im Prozessspeicher. Pro Anfrage wird genau das benötigte
+Werkzeug ausgewählt und geprüft; keine weiteren Remote-Werkzeuge werden an
+Omnigent freigegeben. Die gehostete Toolauswahl hat im Zweierfilter nur das erste
+Werkzeug geliefert; getrennte Einzelwerkzeug-Sessions waren erfolgreich.
+Suchantworten enthalten eine externe Sicherheitsmarkierung um ihr JSON. Nur die
+passend markierte Datenhülle wird zum Parsen entfernt; Quellenaussagen bleiben
+ungeprüfte Daten. Quelle, Inhaltshash, Cache und fehlgeschlagene Versuche werden
+wie bei REST gespeichert.
 
 Nach Einrichtung der Umgebung:
 

@@ -78,13 +78,21 @@ Mit bereits angemeldeter Codex-CLI und importierten echten Primärquellen:
 
 Das Modell muss vom tatsächlichen Konto unterstützt werden; die geprüfte CLI meldete GPT-5.5. Der Launcher erzeugt ein isoliertes natives Bundle und CLI-Wrapper, ohne Benutzerkonfiguration oder Anmeldung umzuschreiben. Providerkosten-/Toolgrenzen gelten; native Shell und fremde MCP-Server werden unterdrückt. `existing` entfernt BrightData-Tools und verwendet echte bereits gespeicherte Evidenz.
 
-Die separat vorbereitete Anthropic-/BrightData-Route benötigt gültige Keys, aktivierte SERP-/Web-Unlocker-Zonen und einen bestätigten Requesttarif:
+Am 4. Oktober sind ein echter Claude-Haiku-Aufruf sowie BrightData-MCP-Suche und Seitenabruf erfolgreich geprüft: [Zugangsbelege](research/provider-access-2026-10-04.json). Das bestätigt die Zugänge; die bisherigen nativen A/B-Loops liefen weiterhin über Codex. Promo-Guthaben und eine zusätzliche Claude-/BrightData-Discovery-Schleife sind damit nicht nachgewiesen.
+
+Für BrightData-MCP werden keine eigenen SERP-/Web-Unlocker-Zonennamen benötigt. Der Helfer fragt das im Dashboard geprüfte verbleibende Freikontingent ab und begrenzt auf höchstens zwei gezählte Versuche:
+
+```sh
+.venv/bin/python scripts/with_credentials.py --brightdata-mcp -- .venv/bin/python scripts/brightdata_client.py status
+```
+
+Die alternative REST-Route benötigt aktivierte SERP-/Web-Unlocker-Zonen und einen bestätigten Requesttarif:
 
 ```sh
 .venv/bin/python scripts/with_credentials.py --anthropic --brightdata --unlocker -- .venv/bin/python scripts/omnigent_run.py --discovery
 ```
 
-Schlüssel werden verdeckt abgefragt und nur an den Kindprozess weitergegeben. Die Anbieteraktivierung bleibt offen; grüne Offline-Tests bestätigen keinen bezahlten API-Zugang. Start- und Policy-Details: [agents/README.md](agents/README.md), [research/README.md](research/README.md).
+Schlüssel werden verdeckt abgefragt und nur an den Kindprozess weitergegeben. Der lokale MCP-Zähler begrenzt Aufrufversuche, erzwingt aber kein Anbieter-Ausgabenlimit. Start- und Policy-Details: [agents/README.md](agents/README.md), [research/README.md](research/README.md).
 
 ### Körperphysik
 
