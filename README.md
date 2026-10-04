@@ -1,5 +1,14 @@
 # FlyBrainLab
 
+> **Branch `embodied-fly-lab`: merged team version.** This branch adds Maximilian Kahl's *Embodied Fly Lab* on top of FlyBrainLab `main`
+> (nothing from `main` was removed or changed except appended lines in `.gitignore` and `.env.example`):
+> numpy re-implementation of the Shiu et al. 2024 whole-brain model (`flylab/brain.py`), frozen descending-neuron bridge (`flylab/bridge.py`),
+> NeuroMechFly walking + FlyBody flight bodies (`flylab/body.py`, `flylab/flight.py`), connectome-guided discovery screen (`flylab/screen.py`),
+> movement verifier (`flylab/verify.py`), Omnigent lab with 9 agents and policies (`agents/fly_lab.yaml`), recorded runs (`runs/`),
+> Streamlit dashboard (`app.py`), static 3D replay viewer with story mode (`web/`), knowledge base export in the FlyBrainLab schema (`data/knowledge/`).
+> Full description, results and limitations: **[EMBODIED_FLY_LAB.md](EMBODIED_FLY_LAB.md)**. The Pages workflow of `main` (frontend/) is unchanged; `web/` is served locally (`uv run python -m http.server 8777 --directory web`).
+
+
 **Ein quellenbasierter Forschungsworkflow verbindet ein vollständiges Fliegengehirnmodell mit kontrollierten Experimenten und einer virtuellen Fliegenkörper-Physik.** Challenge 03: Databricks „Agentic Scientific Discovery“, Global AI Hackathon Munich, 3.–4. Oktober 2026.
 
 **[Öffentliche interaktive Demo](https://valleebo.github.io/FlyBrainLab/)** · [Ergebnisse und Grenzen](docs/RESULTS.md) · [Teamstand](TEAM_STATUS.md) · [GitHub-Issues](https://github.com/JonasMayerDev/FlyBrainLab/issues) · [Abgabeunterlagen](submission/README.md) · [Vier Videoentwürfe und Downloadpaket](https://github.com/JonasMayerDev/FlyBrainLab/releases/tag/demo-2026-10-04)
