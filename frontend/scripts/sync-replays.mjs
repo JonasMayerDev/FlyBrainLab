@@ -1,0 +1,10 @@
+import { cp, mkdir, readdir, rm } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+const source = fileURLToPath(new URL('../../data/replay/', import.meta.url));
+const target = fileURLToPath(new URL('../public/replays/', import.meta.url));
+const files = await readdir(source);
+if (!files.includes('index.json')) throw new Error('Missing replay exports. Run: .venv/bin/python scripts/export_replays.py');
+await rm(target, { recursive: true, force: true });
+await mkdir(target, { recursive: true });
+for (const file of files.filter(name => name.endsWith('.json'))) await cp(`${source}/${file}`, `${target}/${file}`);
+console.log(`Copied ${files.filter(name => name.endsWith('.json')).length} recorded replay exports.`);

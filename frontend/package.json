@@ -1,0 +1,13 @@
+{
+  "name": "flybrainlab-replay",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/sync-replays.mjs && vite --host 127.0.0.1",
+    "build": "node scripts/sync-replays.mjs && tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": { "three": "0.186.1" },
+  "devDependencies": { "@types/three": "0.186.0", "typescript": "7.0.2", "vite": "8.3.2" }
+}

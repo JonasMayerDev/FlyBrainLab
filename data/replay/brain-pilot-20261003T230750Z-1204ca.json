@@ -1,0 +1,1747 @@
+{
+  "schema_version": 1,
+  "run_id": "brain-pilot-20261003T230750Z-1204ca",
+  "title": "Stimulated \u00b7 150 Hz",
+  "classification": "technical_setup_check",
+  "recorded_simulation": true,
+  "metadata": {
+    "run_id": "brain-pilot-20261003T230750Z-1204ca",
+    "status": "completed",
+    "started_at_utc": "2026-10-03T23:07:50.154153+00:00",
+    "ended_at_utc": "2026-10-03T23:07:52.648438+00:00",
+    "dataset_version": "FAFB FlyWire v783",
+    "model_commit": "91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+    "duration_ms": 20.0,
+    "stimulus_rate_hz": 150.0,
+    "seed": 42,
+    "n_trials": 1,
+    "timestep_ms": 0.1,
+    "simulation_scope": "whole downloaded v783 graph",
+    "body_connected": false,
+    "evidence_scope": "technical smoke test; no independent biological or flight validation",
+    "versions": {
+      "python": "3.12.14",
+      "brian2": "2.9.0",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "pyarrow": "25.0.1"
+    },
+    "limitations": [
+      "Short technical probe; insufficient for statistical behavioral conclusions.",
+      "No body dynamics, motor adapter or sensor feedback is connected.",
+      "Generic pilot target identity has not been functionally annotated.",
+      "LIF dynamics and signed weights are author-model assumptions."
+    ],
+    "compatibility_adjustments": [
+      "Removed assignment w=0 from reset: w is undeclared in the upstream neuron equations. Upstream source unchanged."
+    ],
+    "data_loading_adjustments": [
+      "Projected only the three connectivity columns consumed by create_model; all rows retained."
+    ],
+    "stimulated_neuron_ids": [
+      "720575940596125868"
+    ],
+    "neurons": 138639,
+    "connection_rows": 15091983,
+    "spike_events": 2,
+    "active_neurons": 1,
+    "full_network_included": true,
+    "backend": "Brian2 numpy runtime",
+    "wall_seconds": 2.494
+  },
+  "activity": {
+    "time_unit": "ms",
+    "event_count": 2,
+    "events": [
+      {
+        "time_ms": 7.0,
+        "neuron_id": "720575940596125868"
+      },
+      {
+        "time_ms": 15.6,
+        "neuron_id": "720575940596125868"
+      }
+    ],
+    "events_complete": true,
+    "source_complete": true,
+    "display_sampling": "none",
+    "histogram": {
+      "bin_width_ms": 0.2,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "complete": true
+    }
+  },
+  "graph": {
+    "layout": "abstract schematic; no anatomical coordinates or inferred synapses",
+    "selection": "all stimulated and readout IDs, 96 most active recorded cells, up to 256 uniformly sampled v783 model IDs",
+    "nodes": [
+      {
+        "id": "720575940596125868",
+        "target": true,
+        "readout": false,
+        "spike_count": 2
+      },
+      {
+        "id": "720575940604221356",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940604910270",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940605370802",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940605748960",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940606053310",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940606449766",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940606744766",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940607177739",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940607613314",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940608024515",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940608386140",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940608833628",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940609206211",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940609503189",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940609834052",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940610163918",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940610449614",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940610718131",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940610982874",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940611218418",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940611458146",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940611660498",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940611860600",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940612062414",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940612258513",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940612429994",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940612596954",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940612761842",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940612920433",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940613070489",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940613241497",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940613427058",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940613590442",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940613757462",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940613960159",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940614165836",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940614326946",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940614501928",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940614662517",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940614796354",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940614967958",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940615123250",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940615265478",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940615428242",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940615596178",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940615747178",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940615921803",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940616061382",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940616208965",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940616369851",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940616528543",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940616686225",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940616844347",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940616982614",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940617130129",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940617290555",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940617429716",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940617567691",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940617696342",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940617836598",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940617970525",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940618084667",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940618198941",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940618317617",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940618449553",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940618576197",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940618710720",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940618845780",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940618979382",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940619110198",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940619250785",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940619410671",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940619574907",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940619695860",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940619822160",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940619944241",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940620050303",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940620163531",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940620279376",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940620401099",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940620507119",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940620602351",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940620688856",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940620774405",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940620876635",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940620961961",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940621060705",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940621149350",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940621253708",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940621346932",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940621436837",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940621538292",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940621622363",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940621709439",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940621797870",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940621895006",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622003316",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622091558",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622182569",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622270391",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622357740",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622458356",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622562654",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622665315",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622752205",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622859305",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622956131",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940623045901",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940623134746",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940623222271",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940623319053",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940623413173",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940623500947",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940623603495",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940623714186",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940623822579",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940623915527",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624009653",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624100075",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624186602",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624280319",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624365350",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624467197",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624585459",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624695088",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624799290",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624896841",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624989966",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940625077175",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940625183975",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940625319114",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940625429996",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940625535369",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940625655992",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940625754663",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940625857923",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940625961049",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626059920",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626173744",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626291277",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626397258",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626510211",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626618000",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626710458",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626804120",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626889218",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626979271",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627066237",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627149723",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627223897",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627306938",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627399576",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627490459",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627588593",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627695882",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627783164",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627875144",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627969768",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940628061321",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940628149647",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940628246842",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940628338028",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940628419372",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940628524309",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940628620879",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940628720104",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940628810071",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940628909553",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940629011196",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940629119985",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940629224492",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940629339703",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940629446147",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940629544195",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940629665918",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940629777018",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940629879040",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940629974019",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630084507",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630189624",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630292606",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630406604",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630511486",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630611578",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630707322",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630799164",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630905683",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630998359",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940631101548",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940631204156",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940631301932",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940631415670",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940631526006",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940631638073",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940631765079",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940631907269",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940632012243",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940632131921",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940632270540",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940632390471",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940632496952",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940632623943",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940632741516",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940632859729",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940633004845",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940633167185",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940633297377",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940633459501",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940633626649",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940633801567",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940633985899",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940634223968",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940634441102",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940634677856",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940634895002",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940635094426",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940635256986",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940635478880",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940635667636",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940635868596",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940636094815",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940636344824",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940636588655",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940636841023",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940637086576",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940637327991",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940637572430",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940637785006",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940638046692",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940638255332",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940638513374",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940638747507",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940638990308",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940639196137",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940639453685",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940639697827",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940639931893",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940640169947",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940640406094",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940640718243",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940641063632",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940641611739",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940642328628",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940642951309",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940643778612",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940644371872",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940644854052",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940645333271",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940645858948",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940646535203",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940647331972",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940648429956",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940650635641",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940653288097",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940655839649",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      }
+    ],
+    "edges": []
+  },
+  "body": null,
+  "sources": [
+    {
+      "title": "Shiu et al. (2024) \u00b7 whole-brain LIF model",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11446845/",
+      "kind": "Published model",
+      "scope": "Published sensorimotoric experiments; no general flight validation."
+    },
+    {
+      "title": "Shiu author implementation \u00b7 pinned commit",
+      "url": "https://github.com/philshiu/Drosophila_brain_model/tree/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+      "kind": "Reproduction code",
+      "scope": "FAFB v783 tables and author LIF assumptions; compatibility adjustments recorded per run."
+    },
+    {
+      "title": "FlyWire whole-brain connectivity \u00b7 v783",
+      "url": "https://zenodo.org/records/10676866",
+      "kind": "Connectome \u00b7 CC BY 4.0",
+      "scope": "FlyWire Consortium (2024). Our model uses author-transformed connectivity tables, not raw synapse points."
+    }
+  ],
+  "provenance": {
+    "run_record_url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/runs/brain-pilot-20261003T230750Z-1204ca/run.json",
+    "run_record_sha256": "dc5cacbc791f3d59c9f0c7a9d9a53e0551b5b9c9ad7f2fe258d25e9c109c27eb",
+    "spike_source_url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/runs/brain-pilot-20261003T230750Z-1204ca/spikes.parquet",
+    "spike_source_sha256": "d982ea764dbe03d048aeff08bc0a32ac5dd409a7cd959c3b914e63827bacee48",
+    "model_url": "https://github.com/philshiu/Drosophila_brain_model/tree/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+    "exporter": "scripts/export_replays.py"
+  }
+}

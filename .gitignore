@@ -25,3 +25,6 @@ __pycache__/
 # Viewer build output
 node_modules/
 dist/
+/output/
+/submission/exports/
+.playwright-cli/

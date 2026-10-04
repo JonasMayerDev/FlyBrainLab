@@ -1,0 +1,6785 @@
+{
+  "schema_version": 1,
+  "run_id": "neural-dng02-20261004T001805Z-5fd84a",
+  "title": "Sham \u00b7 0 Hz",
+  "classification": "model_experiment",
+  "recorded_simulation": true,
+  "metadata": {
+    "run_id": "neural-dng02-20261004T001805Z-5fd84a",
+    "status": "completed",
+    "started_at_utc": "2026-10-04T00:18:05.790481+00:00",
+    "ended_at_utc": "2026-10-04T00:18:08.911386+00:00",
+    "dataset_version": "FAFB FlyWire v783",
+    "model_commit": "91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+    "duration_ms": 200,
+    "stimulus_rate_hz": 0,
+    "seed": 42,
+    "n_trials": 1,
+    "timestep_ms": 0.1,
+    "simulation_scope": "whole downloaded v783 graph",
+    "body_connected": false,
+    "evidence_scope": "Frozen connectome-model prediction of DNg02 firing; no biological or flight validation",
+    "versions": {
+      "python": "3.12.14",
+      "brian2": "2.9.0",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3"
+    },
+    "limitations": [
+      "Graph-selected upstream inputs are hypotheses; seven lack a verified cell-type label and none are assumed to be visual sensory inputs.",
+      "DNg02 has published flight-amplitude evidence, but this frozen assay predicts neural firing only, not takeoff or flight.",
+      "FAFB brain omits complete ventral nerve cord and wing-muscle system.",
+      "Shiu LIF model was biologically validated for feeding/grooming; these DNg02 outputs have no new independent biological validation.",
+      "Only200ms and3 simulation seeds; no general biological efficacy conclusion.",
+      "DNg02 subtypes a..g are pooled; signed-connectivity weights reflect author predictions.",
+      "Zero spontaneous activity means sham0 is expected and tests only this driven state.",
+      "Existing author model has a reset compatibility correction (remove undeclared w assignment).",
+      "Open-loop brain signal; no sensor feedback."
+    ],
+    "compatibility_adjustments": [
+      "Removed undeclared upstream reset assignment w=0; source untouched"
+    ],
+    "data_loading_adjustments": [
+      "Projected three required connectivity columns; retained every edge and cell"
+    ],
+    "stimulated_neuron_ids": [
+      "720575940623744236",
+      "720575940619031837",
+      "720575940622712979",
+      "720575940625965374",
+      "720575940609695683",
+      "720575940646682676",
+      "720575940619155995",
+      "720575940619524555"
+    ],
+    "neurons": 138639,
+    "connection_rows": 15091983,
+    "spike_events": 0,
+    "active_neurons": 0,
+    "full_network_included": true,
+    "backend": "Brian2 numpy runtime",
+    "wall_seconds": 3.120745,
+    "max_process_rss_bytes": 1333313536,
+    "condition": "sham",
+    "hypothesis": "The eight upstream targets, selected by positive graph weight before observing activity, increase pooled DNg02 firing relative to sham; removing all outgoing target weights reduces the DNg02 mean rate by at least 80%. This is a model-generated hypothesis, not an established biological finding.",
+    "question": "Do eight connectivity-selected right-side upstream neurons drive firing in flight-related DNg02 cells in the fixed full-v783 LIF model, and does this response require their outgoing connections?",
+    "readout_neuron_ids": [
+      "720575940610863310",
+      "720575940612014131",
+      "720575940612804606",
+      "720575940613668620",
+      "720575940613793170",
+      "720575940615679282",
+      "720575940617498507",
+      "720575940617922439",
+      "720575940622042603",
+      "720575940622681864",
+      "720575940622910188",
+      "720575940625144061",
+      "720575940625482954",
+      "720575940626278129",
+      "720575940626377349",
+      "720575940626904219",
+      "720575940627414887",
+      "720575940627850622",
+      "720575940628942586",
+      "720575940630289804",
+      "720575940630492714",
+      "720575940632573887",
+      "720575940639201443",
+      "720575940641305229",
+      "720575940647964281"
+    ],
+    "design_id": "dng02-input-v1",
+    "design_sha256": "e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6",
+    "design_path": "research/designs/dng02-input-v1.json",
+    "readout_metrics": {
+      "readout_spike_events": 0,
+      "readout_active_neurons": 0,
+      "population_mean_rate_hz": 0.0,
+      "group_mean_rate_hz": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "right_minus_left_mean_rate_hz": 0.0,
+      "per_neuron_spike_counts": {
+        "720575940610863310": 0,
+        "720575940612014131": 0,
+        "720575940612804606": 0,
+        "720575940613668620": 0,
+        "720575940613793170": 0,
+        "720575940615679282": 0,
+        "720575940617498507": 0,
+        "720575940617922439": 0,
+        "720575940622042603": 0,
+        "720575940622681864": 0,
+        "720575940622910188": 0,
+        "720575940625144061": 0,
+        "720575940625482954": 0,
+        "720575940626278129": 0,
+        "720575940626377349": 0,
+        "720575940626904219": 0,
+        "720575940627414887": 0,
+        "720575940627850622": 0,
+        "720575940628942586": 0,
+        "720575940630289804": 0,
+        "720575940630492714": 0,
+        "720575940632573887": 0,
+        "720575940639201443": 0,
+        "720575940641305229": 0,
+        "720575940647964281": 0
+      },
+      "nonstimulated_active_neurons": 0
+    },
+    "execution_context": "independent-feasibility-before-Omnigent",
+    "orchestration_verified_by_this_module": false
+  },
+  "activity": {
+    "time_unit": "ms",
+    "event_count": 0,
+    "events": [],
+    "events_complete": true,
+    "source_complete": true,
+    "display_sampling": "none",
+    "histogram": {
+      "bin_width_ms": 2.0,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "complete": true
+    }
+  },
+  "graph": {
+    "layout": "abstract schematic; no anatomical coordinates or inferred synapses",
+    "selection": "all stimulated and readout IDs, 96 most active recorded cells, up to 256 uniformly sampled v783 model IDs",
+    "nodes": [
+      {
+        "id": "720575940623744236",
+        "target": true,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940619031837",
+        "target": true,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622712979",
+        "target": true,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940625965374",
+        "target": true,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940609695683",
+        "target": true,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940646682676",
+        "target": true,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940619155995",
+        "target": true,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940619524555",
+        "target": true,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940610863310",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940612014131",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940612804606",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940613668620",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940613793170",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940615679282",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940617498507",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940617922439",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622042603",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622681864",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622910188",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940625144061",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940625482954",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626278129",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626377349",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626904219",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627414887",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627850622",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940628942586",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630289804",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630492714",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940632573887",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940639201443",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940641305229",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940647964281",
+        "target": false,
+        "readout": true,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940596125868",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940604221356",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940604910270",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940605370802",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940605748960",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940606053310",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940606449766",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940606744766",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940607177739",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940607613314",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940608024515",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940608386140",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940608833628",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940609206211",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940609503189",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940609834052",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940610163918",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940610449614",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940610718131",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940610982874",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940611218418",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940611458146",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940611660498",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940611860600",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940612062414",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940612258513",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940612429994",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940612596954",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940612761842",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940612920433",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940613070489",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940613241497",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940613427058",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940613590442",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940613757462",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940613960159",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940614165836",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940614326946",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940614501928",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940614662517",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940614796354",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940614967958",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940615123250",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940615265478",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940615428242",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940615596178",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940615747178",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940615921803",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940616061382",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940616208965",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940616369851",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940616528543",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940616686225",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940616844347",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940616982614",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940617130129",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940617290555",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940617429716",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940617567691",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940617696342",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940617836598",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940617970525",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940618084667",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940618198941",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940618317617",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940618449553",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940618576197",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940618710720",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940618845780",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940618979382",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940619110198",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940619250785",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940619410671",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940619574907",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940619695860",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940619822160",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940619944241",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940620050303",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940620163531",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940620279376",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940620401099",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940620507119",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940620602351",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940620688856",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940620774405",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940620876635",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940620961961",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940621060705",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940621149350",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940621253708",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940621346932",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940621436837",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940621538292",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940621622363",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940621709439",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940621797870",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940621895006",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622003316",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622091558",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622182569",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622270391",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622357740",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622458356",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622562654",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622665315",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622752205",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622859305",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940622956131",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940623045901",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940623134746",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940623222271",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940623319053",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940623413173",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940623500947",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940623603495",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940623714186",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940623822579",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940623915527",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624009653",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624100075",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624186602",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624280319",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624365350",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624467197",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624585459",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624695088",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624799290",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624896841",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940624989966",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940625077175",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940625183975",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940625319114",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940625429996",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940625535369",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940625655992",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940625754663",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940625857923",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940625961049",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626059920",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626173744",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626291277",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626397258",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626510211",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626618000",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626710458",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626804120",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626889218",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940626979271",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627066237",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627149723",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627223897",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627306938",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627399576",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627490459",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627588593",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627695882",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627783164",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627875144",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940627969768",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940628061321",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940628149647",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940628246842",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940628338028",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940628419372",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940628524309",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940628620879",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940628720104",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940628810071",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940628909553",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940629011196",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940629119985",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940629224492",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940629339703",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940629446147",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940629544195",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940629665918",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940629777018",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940629879040",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940629974019",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630084507",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630189624",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630292606",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630406604",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630511486",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630611578",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630707322",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630799164",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630905683",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940630998359",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940631101548",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940631204156",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940631301932",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940631415670",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940631526006",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940631638073",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940631765079",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940631907269",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940632012243",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940632131921",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940632270540",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940632390471",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940632496952",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940632623943",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940632741516",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940632859729",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940633004845",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940633167185",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940633297377",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940633459501",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940633626649",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940633801567",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940633985899",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940634223968",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940634441102",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940634677856",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940634895002",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940635094426",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940635256986",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940635478880",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940635667636",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940635868596",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940636094815",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940636344824",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940636588655",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940636841023",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940637086576",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940637327991",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940637572430",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940637785006",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940638046692",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940638255332",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940638513374",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940638747507",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940638990308",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940639196137",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940639453685",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940639697827",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940639931893",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940640169947",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940640406094",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940640718243",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940641063632",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940641611739",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940642328628",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940642951309",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940643778612",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940644371872",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940644854052",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940645333271",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940645858948",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940646535203",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940647331972",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940648429956",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940650635641",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940653288097",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      },
+      {
+        "id": "720575940655839649",
+        "target": false,
+        "readout": false,
+        "spike_count": 0
+      }
+    ],
+    "edges": []
+  },
+  "body": {
+    "model": "Flybody Drosophila melanogaster",
+    "model_commit": "d015e9bfe441bd90ae431bac24c55cb74bdbce26",
+    "controller": "author WingBeatPatternGenerator; approximate pattern; no trained RL policy",
+    "loop": "open-loop recorded spike replay",
+    "flight_validated": false,
+    "axis_convention": "right-handed MuJoCo world; z-up; quaternion xyzw",
+    "adapter": {
+      "adapter_id": "dng02-wing-yaw-amplitude-v1",
+      "specification_path": "data/coupling/adapter_v1.json",
+      "specification_sha256": "76b7dcdc5f529f4b1ba9dfee6791eca8150f12cfb54fe4a99f57e89bc2ee162e",
+      "readout_ids": [
+        "720575940610863310",
+        "720575940612014131",
+        "720575940612804606",
+        "720575940613668620",
+        "720575940613793170",
+        "720575940615679282",
+        "720575940617498507",
+        "720575940617922439",
+        "720575940622042603",
+        "720575940622681864",
+        "720575940622910188",
+        "720575940625144061",
+        "720575940625482954",
+        "720575940626278129",
+        "720575940626377349",
+        "720575940626904219",
+        "720575940627414887",
+        "720575940627850622",
+        "720575940628942586",
+        "720575940630289804",
+        "720575940630492714",
+        "720575940632573887",
+        "720575940639201443",
+        "720575940641305229",
+        "720575940647964281"
+      ],
+      "event_count": 0,
+      "window_ms": 10.0,
+      "model_assumption": true,
+      "biologically_calibrated": false,
+      "mapping": "r(t)=count(events in [t-10ms,t))/(25*0.010s); u=clip(r/100Hz,0,1); yaw'=0.3+(1+0.1*u)*(yaw-0.3)"
+    },
+    "position_unit": "cm",
+    "duration_ms": 38.8,
+    "task_terminated_early": true,
+    "limitations": [
+      "Default wing pattern is an author-provided test approximation.",
+      "Initial position/velocity are task reference initialization, not generated by the brain.",
+      "Floor collision is disabled by the author flight task.",
+      "A moving body is not evidence of stable or brain-generated flight.",
+      "No sensory feedback or calibrated ventral nerve cord/muscle mapping is present."
+    ],
+    "metrics": {
+      "sample_count": 195,
+      "actual_duration_ms": 38.8,
+      "root_displacement_cm": 0.775548128135724,
+      "root_path_length_cm": 0.8211070024490292,
+      "root_height_change_cm": -0.43939191892163854,
+      "minimum_root_height_cm": 0.5974942009207599,
+      "wing_yaw_peak_to_peak_rad": [
+        2.2293602325226307,
+        2.2293222420699634
+      ],
+      "maximum_adapter_rate_hz": 0.0,
+      "maximum_wing_yaw_amplitude_factor": 1.0
+    },
+    "states": [
+      {
+        "time_ms": 0.0,
+        "position": [
+          0.014479220816211532,
+          -0.00029204999999999997,
+          1.0368861198423984
+        ],
+        "quaternion": [
+          0.0,
+          -0.40274668985873724,
+          0.0,
+          0.9153114791194471
+        ],
+        "wing_angles_rad": [
+          1.1609400395596137,
+          -0.23343749486517906,
+          1.6402639123075577,
+          1.1609400395596137,
+          -0.23343749486517906,
+          1.6402639123075577
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 0.2,
+        "position": [
+          0.01865851718489285,
+          -0.0003406225460217894,
+          1.0367864358997307
+        ],
+        "quaternion": [
+          -0.0006788844133319948,
+          -0.40792789614329616,
+          0.0008703105719682013,
+          0.9130134792124186
+        ],
+        "wing_angles_rad": [
+          1.2745702312323242,
+          -0.2874276517955763,
+          1.4119539363261702,
+          1.2748379819392044,
+          -0.2871569459007665,
+          1.4118419051274078
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 0.4,
+        "position": [
+          0.022826968946751375,
+          -0.00039577001970662933,
+          1.0366646755666
+        ],
+        "quaternion": [
+          -0.001568098550544459,
+          -0.41420594028133223,
+          0.001875554023703628,
+          0.9101799066117079
+        ],
+        "wing_angles_rad": [
+          1.3505622117233886,
+          -0.3240019090750455,
+          1.2108235311480238,
+          1.3508756432479638,
+          -0.3237417654724165,
+          1.2106871359797597
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 0.6,
+        "position": [
+          0.026867403118420622,
+          -0.000434578863163921,
+          1.0365519380789818
+        ],
+        "quaternion": [
+          -0.002277665122874845,
+          -0.4186047780310265,
+          0.0025835442611022545,
+          0.9081619774854228
+        ],
+        "wing_angles_rad": [
+          1.392359636395709,
+          -0.3445794780995344,
+          0.9641884794349243,
+          1.3925294832292723,
+          -0.3445474248813613,
+          0.9641050430075392
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 0.8,
+        "position": [
+          0.030784121056163207,
+          -0.0004584836076302781,
+          1.0364309407344958
+        ],
+        "quaternion": [
+          -0.0027696929278593673,
+          -0.42114178410925657,
+          0.0030101367224538715,
+          0.906985592804687
+        ],
+        "wing_angles_rad": [
+          1.3876473556038846,
+          -0.3415645637619793,
+          0.6630925637569903,
+          1.3876548983715193,
+          -0.3417476557849808,
+          0.6630670189891139
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 1.0,
+        "position": [
+          0.0346097463384802,
+          -0.00047204492655408765,
+          1.036286142848958
+        ],
+        "quaternion": [
+          -0.0030866365298773102,
+          -0.4223772426109842,
+          0.0032354759430583153,
+          0.9064091070232558
+        ],
+        "wing_angles_rad": [
+          1.3230614827109572,
+          -0.30832830921986565,
+          0.33402080359086406,
+          1.3229664920443724,
+          -0.30860080909990106,
+          0.3340278693195556
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 1.2,
+        "position": [
+          0.03836798285685788,
+          -0.0004789544278692163,
+          1.03612212791073
+        ],
+        "quaternion": [
+          -0.003286100521705901,
+          -0.4227070842615429,
+          0.003330232361474795,
+          0.9062542866165569
+        ],
+        "wing_angles_rad": [
+          1.1914880857376957,
+          -0.24486595654510734,
+          0.016036215994103133,
+          1.1913588804059028,
+          -0.24510950397798767,
+          0.016052926367400598
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 1.4,
+        "position": [
+          0.042031786308477426,
+          -0.000481473433714661,
+          1.035963340211396
+        ],
+        "quaternion": [
+          -0.0034233414590727584,
+          -0.4223072637918082,
+          0.003339977042906026,
+          0.9064401250139378
+        ],
+        "wing_angles_rad": [
+          0.9946182409059754,
+          -0.15886791731457955,
+          -0.253491124346892,
+          0.9944994085015072,
+          -0.15902562291105,
+          -0.2534765148362967
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 1.6,
+        "position": [
+          0.04551883757498054,
+          -0.0004834532003919629,
+          1.0358445543218242
+        ],
+        "quaternion": [
+          -0.0035686299368808847,
+          -0.42117452066585725,
+          0.0033344315927152975,
+          0.9069664655257172
+        ],
+        "wing_angles_rad": [
+          0.7429791036885726,
+          -0.06376588345136652,
+          -0.4459549210756548,
+          0.7429018962851754,
+          -0.0638166701200836,
+          -0.44594491386951773
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 1.8,
+        "position": [
+          0.04875996537464279,
+          -0.0004801257141590624,
+          1.0357856526696139
+        ],
+        "quaternion": [
+          -0.00368650583977688,
+          -0.4195122643281905,
+          0.0032285819237629913,
+          0.9077364408305357
+        ],
+        "wing_angles_rad": [
+          0.45417756199290515,
+          0.0249273703264,
+          -0.5434462083829349,
+          0.4540984122628804,
+          0.024941944251914882,
+          -0.5434384062918333
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 2.0,
+        "position": [
+          0.0517531518189563,
+          -0.00047431592074725643,
+          1.0357877598331855
+        ],
+        "quaternion": [
+          -0.003798576191583062,
+          -0.4175379004244668,
+          0.003078753258990524,
+          0.9086463524421449
+        ],
+        "wing_angles_rad": [
+          0.15043799641772795,
+          0.09265857597037037,
+          -0.5381551814938884,
+          0.15034980101490075,
+          0.09271385609175521,
+          -0.5381472485888803
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 2.2,
+        "position": [
+          0.05457833080030275,
+          -0.00046775634260723755,
+          1.0358364592406863
+        ],
+        "quaternion": [
+          -0.003913899846819655,
+          -0.41550015236561066,
+          0.002926242684277801,
+          0.9095799810219528
+        ],
+        "wing_angles_rad": [
+          -0.1438021371662163,
+          0.12806034331524746,
+          -0.4311596480643279,
+          -0.14388892768643347,
+          0.12814335501594204,
+          -0.43114960274540864
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 2.4,
+        "position": [
+          0.057342448649425365,
+          -0.0004610223396110518,
+          1.0359063356218965
+        ],
+        "quaternion": [
+          -0.004027992234295571,
+          -0.41358280103206896,
+          0.002788665268104412,
+          0.9104533295644817
+        ],
+        "wing_angles_rad": [
+          -0.40449542104604075,
+          0.1251237446055415,
+          -0.23124283653371197,
+          -0.40456913225772406,
+          0.12522055384043737,
+          -0.23123060822998806
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 2.6,
+        "position": [
+          0.06013295889190169,
+          -0.00045439308578563113,
+          1.0359508524617376
+        ],
+        "quaternion": [
+          -0.004136402721000862,
+          -0.411726343304475,
+          0.002668409514273051,
+          0.9112942378794673
+        ],
+        "wing_angles_rad": [
+          -0.6107459676906014,
+          0.08466902302013012,
+          0.04616875550859543,
+          -0.6108012899933629,
+          0.0847620336365691,
+          0.046181612112490625
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 2.8,
+        "position": [
+          0.06302134726730103,
+          -0.0004478319480177996,
+          1.0359059320894985
+        ],
+        "quaternion": [
+          -0.0042383936670762614,
+          -0.40959364341409427,
+          0.002552976437052482,
+          0.9122546605006753
+        ],
+        "wing_angles_rad": [
+          -0.7474252754055638,
+          0.01773239715112688,
+          0.3759596604762712,
+          -0.7474651454734893,
+          0.017804547184902236,
+          0.3759716822124826
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 3.0,
+        "position": [
+          0.06604212604504352,
+          -0.0004406459453270735,
+          1.0358265620453357
+        ],
+        "quaternion": [
+          -0.004330797432493559,
+          -0.407960367963849,
+          0.0024424862709582005,
+          0.9129860988126904
+        ],
+        "wing_angles_rad": [
+          -0.8068389289505838,
+          -0.022123600816885306,
+          0.7354730680452268,
+          -0.8068652804487042,
+          -0.022081323875334298,
+          0.7354825221391894
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 3.2,
+        "position": [
+          0.06920660839009615,
+          -0.0004326963843621965,
+          1.0357394624315424
+        ],
+        "quaternion": [
+          -0.004407428112981446,
+          -0.4069435311353737,
+          0.0023391573391629505,
+          0.913439688971004
+        ],
+        "wing_angles_rad": [
+          -0.7863596207179577,
+          -0.009432590297884094,
+          1.1012221892175356,
+          -0.7863710319624496,
+          -0.009418706229018196,
+          1.1012286212894136
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 3.4,
+        "position": [
+          0.07252506342164676,
+          -0.0004245185508694605,
+          1.035619951986346
+        ],
+        "quaternion": [
+          -0.004469318559278843,
+          -0.4059194313007491,
+          0.002243306867085033,
+          0.9138951843939173
+        ],
+        "wing_angles_rad": [
+          -0.6869338895191857,
+          0.03978964277638474,
+          1.446197904060393,
+          -0.6869312156964733,
+          0.039786254489144905,
+          1.4462020150749244
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 3.6,
+        "position": [
+          0.07603192716788905,
+          -0.00041649166667326196,
+          1.035437246271509
+        ],
+        "quaternion": [
+          -0.004519607411481589,
+          -0.40440834448017365,
+          0.002153477554759155,
+          0.9145648290843423
+        ],
+        "wing_angles_rad": [
+          -0.5142280890438229,
+          0.09444366617968614,
+          1.743444682703281,
+          -0.5142176378723583,
+          0.09443372830670572,
+          1.7434480129088616
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 3.8,
+        "position": [
+          0.0797871024986774,
+          -0.0004088794870328779,
+          1.035170785561471
+        ],
+        "quaternion": [
+          -0.004559372562832775,
+          -0.40241771646715757,
+          0.002072078826614599,
+          0.9154424613729297
+        ],
+        "wing_angles_rad": [
+          -0.27991895562805424,
+          0.12656580379498553,
+          1.9700919595534703,
+          -0.27990840271574263,
+          0.12655343124013382,
+          1.9700963992293319
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 4.0,
+        "position": [
+          0.08382571272815892,
+          -0.0004020183101489239,
+          1.0348030512896886
+        ],
+        "quaternion": [
+          -0.0045871025038207065,
+          -0.4001144047792319,
+          0.00200309112195219,
+          0.9164515312905194
+        ],
+        "wing_angles_rad": [
+          -0.0010173294329703724,
+          0.1205667799694862,
+          2.1092549594302037,
+          -0.0010102696121966593,
+          0.12055159288212289,
+          2.109261536458995
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 4.2,
+        "position": [
+          0.08809067541381414,
+          -0.00039620858395993715,
+          1.0343246106016395
+        ],
+        "quaternion": [
+          -0.004603492393507775,
+          -0.3976494305854544,
+          0.0019471696376197052,
+          0.9175238126300862
+        ],
+        "wing_angles_rad": [
+          0.3017338450052808,
+          0.07412149457697603,
+          2.1506763604236663,
+          0.301740999849822,
+          0.07410195567523177,
+          2.150684745041535
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 4.4,
+        "position": [
+          0.09244363904201781,
+          -0.00039142632690552056,
+          1.0337553498725531
+        ],
+        "quaternion": [
+          -0.004604897630214439,
+          -0.3952476113673408,
+          0.0019074265972629173,
+          0.9185610934227526
+        ],
+        "wing_angles_rad": [
+          0.604830681847101,
+          -0.005107380713686712,
+          2.0913424310651867,
+          0.6048371518273767,
+          -0.005131406670083789,
+          2.091351828834578
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 4.6,
+        "position": [
+          0.09672021153163185,
+          -0.0003867796925249351,
+          1.0331504991190261
+        ],
+        "quaternion": [
+          -0.004602664742288312,
+          -0.39296987784234044,
+          0.001872218355913477,
+          0.9195379194923252
+        ],
+        "wing_angles_rad": [
+          0.8849752818601441,
+          -0.10328514786697308,
+          1.935734760026397,
+          0.884989820983874,
+          -0.10331227979182885,
+          1.9357434761653165
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 4.8,
+        "position": [
+          0.10084227575011002,
+          -0.0003817519384809126,
+          1.0325606627699648
+        ],
+        "quaternion": [
+          -0.004592166975168188,
+          -0.39051314799488923,
+          0.0018422214628126855,
+          0.920584053449589
+        ],
+        "wing_angles_rad": [
+          1.1199889958663796,
+          -0.20298365394653836,
+          1.6953648716659273,
+          1.1199978158809696,
+          -0.2030087390264661,
+          1.6953721894047182
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 5.0,
+        "position": [
+          0.1047998737985914,
+          -0.000375912445038272,
+          1.032004191262458
+        ],
+        "quaternion": [
+          -0.00458175027339219,
+          -0.3875285691030872,
+          0.0018089173673050086,
+          0.9218445332654005
+        ],
+        "wing_angles_rad": [
+          1.292288938953855,
+          -0.28615414610964485,
+          1.387836425618443,
+          1.2922849389955748,
+          -0.2861712913888478,
+          1.3878416136894065
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 5.2,
+        "position": [
+          0.10861882554678244,
+          -0.0003695110925889408,
+          1.0314611641941704
+        ],
+        "quaternion": [
+          -0.0045777827229862905,
+          -0.38409819782817034,
+          0.001769348594872611,
+          0.9232792035652282
+        ],
+        "wing_angles_rad": [
+          1.3899630569420292,
+          -0.3374480071087261,
+          1.0356800516431912,
+          1.3899467628492965,
+          -0.33745338383359436,
+          1.035682771162917
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 5.4,
+        "position": [
+          0.11234537388884147,
+          -0.00036298104248532587,
+          1.0308984424935017
+        ],
+        "quaternion": [
+          -0.00458270477450137,
+          -0.38054043444796287,
+          0.0017240117623820207,
+          0.924751320275104
+        ],
+        "wing_angles_rad": [
+          1.4071135012709153,
+          -0.347800051958301,
+          0.6649675291025848,
+          1.407091407943459,
+          -0.34779364366244214,
+          0.6649679783993182
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 5.6,
+        "position": [
+          0.11603652629516835,
+          -0.0003563273977305672,
+          1.0303018845145995
+        ],
+        "quaternion": [
+          -0.004598076570544988,
+          -0.3768931591307325,
+          0.0016715486189122558,
+          0.9262438179105553
+        ],
+        "wing_angles_rad": [
+          1.343065523381625,
+          -0.3163290442554883,
+          0.30365209725579845,
+          1.34304514003012,
+          -0.3163147015193078,
+          0.3036508263289083
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 5.8,
+        "position": [
+          0.11971380454000984,
+          -0.0003491687711169126,
+          1.0296869744494508
+        ],
+        "quaternion": [
+          -0.004626010781791147,
+          -0.3729466455742615,
+          0.001609748115487768,
+          0.9278398613393138
+        ],
+        "wing_angles_rad": [
+          1.20190234256717,
+          -0.24946419572330436,
+          -0.020539840942203316,
+          1.201886644197613,
+          -0.24944763854776741,
+          -0.020542118960354325
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 6.0,
+        "position": [
+          0.12332382532677233,
+          -0.00034100400816028105,
+          1.029092562046285
+        ],
+        "quaternion": [
+          -0.004667359467123274,
+          -0.36846157938631974,
+          0.0015377797581329986,
+          0.9296299884928186
+        ],
+        "wing_angles_rad": [
+          0.9931851289278154,
+          -0.1592115915615649,
+          -0.2827965046827471,
+          0.9931704508327159,
+          -0.15919409235881282,
+          -0.2827986040016829
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 6.2,
+        "position": [
+          0.1267703579490652,
+          -0.0003387046554784331,
+          1.0285634202849878
+        ],
+        "quaternion": [
+          -0.004798492036943948,
+          -0.3633402770678918,
+          0.0015863276479905265,
+          0.9316427969447257
+        ],
+        "wing_angles_rad": [
+          0.7318543849314465,
+          -0.06118885663688155,
+          -0.46354790069643054,
+          0.7318954838990411,
+          -0.06111642762980918,
+          -0.46354706525855816
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 6.4,
+        "position": [
+          0.13001457073993358,
+          -0.0003362283169676337,
+          1.0281110976701604
+        ],
+        "quaternion": [
+          -0.005002022879895617,
+          -0.35837062636957834,
+          0.0016393447959113206,
+          0.9335645593483209
+        ],
+        "wing_angles_rad": [
+          0.4371951854194157,
+          0.028368665640132795,
+          -0.5497155330920942,
+          0.43723067104849145,
+          0.02848849576677405,
+          -0.5497080960940219
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 6.6,
+        "position": [
+          0.1330497486291591,
+          -0.00032495464254116396,
+          1.0277462540685338
+        ],
+        "quaternion": [
+          -0.005162725575660425,
+          -0.35344443081176075,
+          0.0015457633862194745,
+          0.9354399987216359
+        ],
+        "wing_angles_rad": [
+          0.13140132600618917,
+          0.09529039492985603,
+          -0.5351872312087791,
+          0.13136807058868424,
+          0.09540068239576388,
+          -0.5351770045068613
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 6.8,
+        "position": [
+          0.1359455047757771,
+          -0.00031050936416217496,
+          1.0274503822108207
+        ],
+        "quaternion": [
+          -0.0053083983972666005,
+          -0.34851808018667413,
+          0.0014161193383122144,
+          0.93728595598967
+        ],
+        "wing_angles_rad": [
+          -0.16190788940491466,
+          0.1287683776721329,
+          -0.42119233986607163,
+          -0.1619864090721912,
+          0.12886220604918847,
+          -0.42118109120544456
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 7.0,
+        "position": [
+          0.13879835908922117,
+          -0.00029508790390455524,
+          1.0271855370064722
+        ],
+        "quaternion": [
+          -0.005445415271373491,
+          -0.3436989759037212,
+          0.001291517459486812,
+          0.9390631998954632
+        ],
+        "wing_angles_rad": [
+          -0.4196118857893544,
+          0.1234536715193499,
+          -0.21615817586360328,
+          -0.41969835328313704,
+          0.12353542056963816,
+          -0.2161464749250892
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 7.2,
+        "position": [
+          0.14168261920206238,
+          -0.00027958296463816807,
+          1.0268924903953591
+        ],
+        "quaternion": [
+          -0.005573925156017904,
+          -0.33891889581971296,
+          0.0011782458727070558,
+          0.9407983445730354
+        ],
+        "wing_angles_rad": [
+          -0.6216204943198042,
+          0.08080714829406907,
+          0.0648235002638661,
+          -0.6216918004249428,
+          0.08087475070507716,
+          0.064834789352457
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 7.4,
+        "position": [
+          0.14465571248350248,
+          -0.00026462489399719244,
+          1.0265027874229133
+        ],
+        "quaternion": [
+          -0.0056972601884212075,
+          -0.33390804731033863,
+          0.0010693370550288574,
+          0.9425878281019778
+        ],
+        "wing_angles_rad": [
+          -0.7535192806911348,
+          0.014940424903352413,
+          0.3967468651394998,
+          -0.7535685224589329,
+          0.014988069797689522,
+          0.39675722918700146
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 7.6,
+        "position": [
+          0.1477582054134989,
+          -0.000249743230332402,
+          1.026060893371337
+        ],
+        "quaternion": [
+          -0.005814842370251311,
+          -0.3294560352770358,
+          0.0009667948935122443,
+          0.9441525161409984
+        ],
+        "wing_angles_rad": [
+          -0.8080297511675139,
+          -0.021888308055469756,
+          0.7570352758666906,
+          -0.8080568012380921,
+          -0.021863588155310646,
+          0.7570435537668887
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 7.8,
+        "position": [
+          0.15100462163990933,
+          -0.00023487158649107583,
+          1.0255847088442167
+        ],
+        "quaternion": [
+          -0.0059202460087722526,
+          -0.32563500821577973,
+          0.0008716043512356152,
+          0.9454766165365267
+        ],
+        "wing_angles_rad": [
+          -0.7827405699083233,
+          -0.006697798113951714,
+          1.1221220846108346,
+          -0.7827475182468935,
+          -0.006692458078687095,
+          1.1221280083363256
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 8.0,
+        "position": [
+          0.15440153809452156,
+          -0.00022062765324408557,
+          1.0250454006157321
+        ],
+        "quaternion": [
+          -0.006011342913039421,
+          -0.32177640575459093,
+          0.0007826697559492504,
+          0.9467962800328751
+        ],
+        "wing_angles_rad": [
+          -0.6788057295518851,
+          0.04338158814910629,
+          1.4649317879909005,
+          -0.6787977710551522,
+          0.04337811016355121,
+          1.4649359875379906
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 8.2,
+        "position": [
+          0.1579798695817069,
+          -0.0002076450701199211,
+          1.0244035521921593
+        ],
+        "quaternion": [
+          -0.00608928627778213,
+          -0.317389233241939,
+          0.0006974901553568758,
+          0.9482755447243189
+        ],
+        "wing_angles_rad": [
+          -0.5021742363985264,
+          0.09721568148656375,
+          1.7586232261450454,
+          -0.5021591471008787,
+          0.09721267946425348,
+          1.7586268648719448
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 8.4,
+        "position": [
+          0.1617948873441716,
+          -0.00019659292408694232,
+          1.0236248573604794
+        ],
+        "quaternion": [
+          -0.006154408489767435,
+          -0.31248474551247124,
+          0.0006179167329682225,
+          0.9499026398831925
+        ],
+        "wing_angles_rad": [
+          -0.26481610536238187,
+          0.12742767313535183,
+          1.9805977599674958,
+          -0.2648005871097376,
+          0.12742781019292718,
+          1.9806020111393081
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 8.6,
+        "position": [
+          0.16587290745141903,
+          -0.00018807282846198213,
+          1.0226814311496613
+        ],
+        "quaternion": [
+          -0.006205583353491538,
+          -0.3072268301161953,
+          0.0005475719589539689,
+          0.9516159234465061
+        ],
+        "wing_angles_rad": [
+          0.016042652502279993,
+          0.11922233798314015,
+          2.1143027249970068,
+          0.016056026108261227,
+          0.1192226126692708,
+          2.1143081494240215
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 8.8,
+        "position": [
+          0.17015083052123398,
+          -0.00018216378024543144,
+          1.0215715175613675
+        ],
+        "quaternion": [
+          -0.006240638824954053,
+          -0.301801049583544,
+          0.0004902246990968874,
+          0.9533503766071901
+        ],
+        "wing_angles_rad": [
+          0.31940884022681165,
+          0.0709230981770212,
+          2.1498759058835404,
+          0.3194193244330167,
+          0.07091902472934516,
+          2.1498824516710875
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 9.0,
+        "position": [
+          0.1744877480953974,
+          -0.00017801018092863905,
+          1.0203440443447789
+        ],
+        "quaternion": [
+          -0.006258433180471253,
+          -0.29649780290324007,
+          0.0004479237541049147,
+          0.9550129236046948
+        ],
+        "wing_angles_rad": [
+          0.6218625602853204,
+          -0.009483135188132064,
+          2.0847429442404772,
+          0.6218705849555166,
+          -0.009494289024682303,
+          2.0847502367410993
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 9.2,
+        "position": [
+          0.17873777183210382,
+          -0.00017398777470122866,
+          1.0190867841837952
+        ],
+        "quaternion": [
+          -0.006260928929584765,
+          -0.291426041868399,
+          0.0004178824795366788,
+          0.9565727825231543
+        ],
+        "wing_angles_rad": [
+          0.8999346854879721,
+          -0.10797562616813229,
+          1.9238321099678308,
+          0.8999398482097615,
+          -0.10799368770109839,
+          1.9238394883153624
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 9.4,
+        "position": [
+          0.18283499717183693,
+          -0.00016877843279468387,
+          1.0178691918870313
+        ],
+        "quaternion": [
+          -0.0062513518688945705,
+          -0.28626370256838507,
+          0.00039357699903931756,
+          0.9581303973305492
+        ],
+        "wing_angles_rad": [
+          1.131798951272654,
+          -0.20713080364003947,
+          1.6790521530086533,
+          1.1317963467505798,
+          -0.20715239266914395,
+          1.679058857020668
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 9.6,
+        "position": [
+          0.18677828298317314,
+          -0.00016189340888466314,
+          1.016712390395992
+        ],
+        "quaternion": [
+          -0.006237118679869148,
+          -0.2806254633242604,
+          0.0003672561870380044,
+          0.9597970164610379
+        ],
+        "wing_angles_rad": [
+          1.300065983474323,
+          -0.28896588480029295,
+          1.3683297100220948,
+          1.3000524847433945,
+          -0.2889857091932764,
+          1.3683347852413712
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 9.8,
+        "position": [
+          0.19059261970045557,
+          -0.00015373334176400815,
+          1.0155928845803028
+        ],
+        "quaternion": [
+          -0.006224597100125919,
+          -0.27455868851091536,
+          0.00033652464386689626,
+          0.961550137905076
+        ],
+        "wing_angles_rad": [
+          1.3931686797837028,
+          -0.33836230151099567,
+          1.0144250458570778,
+          1.3931461160791778,
+          -0.3383750469144868,
+          1.01442769556983
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 10.0,
+        "position": [
+          0.19431949813497332,
+          -0.00014498266460590442,
+          1.0144700862327871
+        ],
+        "quaternion": [
+          -0.006217520400639437,
+          -0.26834629558212636,
+          0.00030188891052285746,
+          0.9633024016115099
+        ],
+        "wing_angles_rad": [
+          1.4055717986103422,
+          -0.3465959537609753,
+          0.6435410054491719,
+          1.4055466542274073,
+          -0.3465980926807827,
+          0.6435411047388834
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 10.2,
+        "position": [
+          0.198012373251916,
+          -0.00013592664213968162,
+          1.0133190925958084
+        ],
+        "quaternion": [
+          -0.00621921843194748,
+          -0.26200328495239317,
+          0.00026151509236001664,
+          0.9650469064279241
+        ],
+        "wing_angles_rad": [
+          1.3369038799932134,
+          -0.3131282162103069,
+          0.2836675172504868,
+          1.3368831128539373,
+          -0.3131202837097319,
+          0.283665743902139
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 10.4,
+        "position": [
+          0.20169299738159654,
+          -0.000126258491694261,
+          1.0121516452756099
+        ],
+        "quaternion": [
+          -0.006232691947187648,
+          -0.25532184809088215,
+          0.00021279394400752294,
+          0.9668360058237822
+        ],
+        "wing_angles_rad": [
+          1.1915456918140859,
+          -0.24470079220492236,
+          -0.037559345978336475,
+          1.191531485397443,
+          -0.24468672062219685,
+          -0.0375619654767279
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 10.6,
+        "position": [
+          0.20531577663058975,
+          -0.00011515615809712641,
+          1.0110201023526901
+        ],
+        "quaternion": [
+          -0.006258279707797938,
+          -0.24805557927162755,
+          0.00015447913268234881,
+          0.9687255750022876
+        ],
+        "wing_angles_rad": [
+          0.979390745653397,
+          -0.15361638800781294,
+          -0.2955774073755633,
+          0.9793784197494148,
+          -0.15359704639591998,
+          -0.29557945347393755
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 10.8,
+        "position": [
+          0.20879278503025725,
+          -0.00010148703682110384,
+          1.0099974237916796
+        ],
+        "quaternion": [
+          -0.006296658592170134,
+          -0.23996050401438138,
+          8.482524286228152e-05,
+          0.9707622270197861
+        ],
+        "wing_angles_rad": [
+          0.7156673572943272,
+          -0.05557603469134189,
+          -0.47115823459497175,
+          0.7156490303522538,
+          -0.05554823677925973,
+          -0.4711582002460448
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 11.0,
+        "position": [
+          0.21207829056403538,
+          -9.789444577912223e-05,
+          1.0091139169093615
+        ],
+        "quaternion": [
+          -0.006444822862758351,
+          -0.23144420487025852,
+          0.00024141747864106307,
+          0.9728268016496264
+        ],
+        "wing_angles_rad": [
+          0.4197168162728831,
+          0.03309278661923804,
+          -0.5516101586885087,
+          0.4197865843804644,
+          0.03322692909658042,
+          -0.5515976342690888
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 11.2,
+        "position": [
+          0.21521624797293562,
+          -8.520405237189688e-05,
+          1.008340914369061
+        ],
+        "quaternion": [
+          -0.00660843806980121,
+          -0.22346283100547462,
+          0.0002595051821229384,
+          0.9746900144981252
+        ],
+        "wing_angles_rad": [
+          0.11398122983721812,
+          0.09816810329300033,
+          -0.5312871139267512,
+          0.11400374689434724,
+          0.09831073101171778,
+          -0.5312712198766696
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 11.4,
+        "position": [
+          0.21826260467374028,
+          -6.440147332441578e-05,
+          1.007658169298709
+        ],
+        "quaternion": [
+          -0.006746600196434036,
+          -0.21570506467134995,
+          0.00015809975218727566,
+          0.9764352428427525
+        ],
+        "wing_angles_rad": [
+          -0.1779065495006932,
+          0.12928795987827615,
+          -0.41178814898363797,
+          -0.17795702264558186,
+          0.12938702013611827,
+          -0.4117761183796636
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 11.6,
+        "position": [
+          0.2212914782217737,
+          -4.160904795841842e-05,
+          1.0070120157130302
+        ],
+        "quaternion": [
+          -0.006873515696042301,
+          -0.20809852383439537,
+          4.46581599307618e-05,
+          0.978083716849212
+        ],
+        "wing_angles_rad": [
+          -0.4329431885070904,
+          0.1215226433314754,
+          -0.20193136594474947,
+          -0.4330229594891545,
+          0.12158741624900854,
+          -0.20192252756922682
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 11.8,
+        "position": [
+          0.22435307460216,
+          -1.9072609998921678e-05,
+          1.0063269029368012
+        ],
+        "quaternion": [
+          -0.006993533466662266,
+          -0.20052724633290148,
+          -5.6254023454438004e-05,
+          0.9796631619098874
+        ],
+        "wing_angles_rad": [
+          -0.631271582867318,
+          0.07676740539167504,
+          0.08283463546625955,
+          -0.6313432434946343,
+          0.07681097661656405,
+          0.0828419969105391
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 12.0,
+        "position": [
+          0.2274829442905453,
+          2.3395041099636683e-06,
+          1.0055272675656362
+        ],
+        "quaternion": [
+          -0.007111083355444642,
+          -0.19278696866839576,
+          -0.00015102626517076473,
+          0.9812148563878499
+        ],
+        "wing_angles_rad": [
+          -0.7588811124635894,
+          0.012085786787591434,
+          0.41719262391779727,
+          -0.7589296026480862,
+          0.012111655406891478,
+          0.417199413135821
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 12.2,
+        "position": [
+          0.2307298988361542,
+          2.289341419953901e-05,
+          1.0046408315961066
+        ],
+        "quaternion": [
+          -0.007226225178279775,
+          -0.18567314814769761,
+          -0.0002367536907709067,
+          0.9825849620639857
+        ],
+        "wing_angles_rad": [
+          -0.8088124911841136,
+          -0.021644621463227983,
+          0.778460287400872,
+          -0.8088349165074666,
+          -0.021634239966348227,
+          0.7784658246312095
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 12.4,
+        "position": [
+          0.2341107740323268,
+          4.247285468712325e-05,
+          1.0036746870013376
+        ],
+        "quaternion": [
+          -0.007332025663636773,
+          -0.1792031606475863,
+          -0.00031278625943015066,
+          0.9837847176991202
+        ],
+        "wing_angles_rad": [
+          -0.7788897772302784,
+          -0.003949328257647883,
+          1.1429509078925313,
+          -0.7788896761999239,
+          -0.0039489494885901755,
+          1.1429549713588365
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 12.6,
+        "position": [
+          0.23762356000333423,
+          6.047749805476179e-05,
+          1.0025962624285933
+        ],
+        "quaternion": [
+          -0.00742344749239369,
+          -0.17265758329231923,
+          -0.0003835332046091933,
+          0.9849538589503891
+        ],
+        "wing_angles_rad": [
+          -0.6705314740076633,
+          0.046956489923689754,
+          1.4835570565349219,
+          -0.6705169635397058,
+          0.0469557794818954,
+          1.4835603686549574
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 12.8,
+        "position": [
+          0.24128719810043897,
+          7.6075998909485e-05,
+          1.0013551966574343
+        ],
+        "quaternion": [
+          -0.007500421842204006,
+          -0.1655342889997552,
+          -0.000453349273861673,
+          0.9861754089977952
+        ],
+        "wing_angles_rad": [
+          -0.4900247001965163,
+          0.09994053909465288,
+          1.7736175112973844,
+          -0.4900041008363021,
+          0.09994598771359135,
+          1.773620933525438
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 13.0,
+        "position": [
+          0.2451426092529974,
+          8.824127753592969e-05,
+          0.9998984943975614
+        ],
+        "quaternion": [
+          -0.007563315353803708,
+          -0.15784833716673352,
+          -0.0005214551829458382,
+          0.9874342645457704
+        ],
+        "wing_angles_rad": [
+          -0.24966141870586017,
+          0.12825060034028152,
+          1.9908452332913478,
+          -0.24963993820819913,
+          0.12826320587845105,
+          1.990849143780075
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 13.2,
+        "position": [
+          0.24919821635683953,
+          9.620850931576718e-05,
+          0.9981903146623324
+        ],
+        "quaternion": [
+          -0.007608566423870302,
+          -0.1497645579690097,
+          -0.0005831051805519229,
+          0.9886922407309907
+        ],
+        "wing_angles_rad": [
+          0.033198636812537576,
+          0.1178698467277286,
+          2.119036671865582,
+          0.033214984453550866,
+          0.1178844350833477,
+          2.119041227312079
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 13.4,
+        "position": [
+          0.25338264773077995,
+          0.00010035219723681848,
+          0.9962516606545132
+        ],
+        "quaternion": [
+          -0.007628896494548141,
+          -0.14151859483103343,
+          -0.0006317381067833371,
+          0.9899059996597092
+        ],
+        "wing_angles_rad": [
+          0.3373452301826115,
+          0.06773296322921557,
+          2.1487280065961323,
+          0.33735238509426657,
+          0.06774237396442942,
+          2.1487332986999923
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 13.6,
+        "position": [
+          0.25757569607462205,
+          0.0001024074591862554,
+          0.9941748686976417
+        ],
+        "quaternion": [
+          -0.007631541840238089,
+          -0.13348966115919528,
+          -0.0006683695727025953,
+          0.9910205967662109
+        ],
+        "wing_angles_rad": [
+          0.6390987950474467,
+          -0.013806959851329449,
+          2.077801376409602,
+          0.6391041280887435,
+          -0.013807736019845902,
+          2.077807124395311
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 13.8,
+        "position": [
+          0.2616695780495807,
+          0.00010480505596384879,
+          0.9920921184156284
+        ],
+        "quaternion": [
+          -0.00761625321333359,
+          -0.12582943196331314,
+          -0.0006936118736132008,
+          0.9920224118644434
+        ],
+        "wing_angles_rad": [
+          0.9150474863537686,
+          -0.11259193704180605,
+          1.9116333417199078,
+          0.915051080055395,
+          -0.11260340786924701,
+          1.9116392792010846
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 14.0,
+        "position": [
+          0.2656284095537136,
+          0.00010928955006819405,
+          0.9900921451473499
+        ],
+        "quaternion": [
+          -0.00758648693546798,
+          -0.11819161916216575,
+          -0.0007141079350682182,
+          0.9929615684535134
+        ],
+        "wing_angles_rad": [
+          1.143622921159397,
+          -0.21117689055497949,
+          1.6625160819933023,
+          1.1436203500985214,
+          -0.21119595089480214,
+          1.6625216338748814
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 14.2,
+        "position": [
+          0.2694634372806085,
+          0.00011632147311320545,
+          0.9881945403114204
+        ],
+        "quaternion": [
+          -0.007548601725518586,
+          -0.11014427285752264,
+          -0.0007367369457153705,
+          0.9938866710985467
+        ],
+        "wing_angles_rad": [
+          1.3077065265259422,
+          -0.2916596172109667,
+          1.3486866492737843,
+          1.307694066245814,
+          -0.29168090652221806,
+          1.348690825444435
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 14.4,
+        "position": [
+          0.2731949389609803,
+          0.0001253345533651603,
+          0.9863689411362817
+        ],
+        "quaternion": [
+          -0.007508798844922601,
+          -0.10169139707090469,
+          -0.0007631240212680729,
+          0.9947873618735832
+        ],
+        "wing_angles_rad": [
+          1.396116535868063,
+          -0.33915659092553,
+          0.9931283015720941,
+          1.3960955228431755,
+          -0.33917375892506346,
+          0.9931300655980991
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 14.6,
+        "position": [
+          0.27685227325932593,
+          0.00013540560199207485,
+          0.9845637701661397
+        ],
+        "quaternion": [
+          -0.007471791284002243,
+          -0.09307784411250167,
+          -0.0007923648261281568,
+          0.9956304833764184
+        ],
+        "wing_angles_rad": [
+          1.4037057269620168,
+          -0.3452835342768547,
+          0.6221677286503366,
+          1.4036823687906026,
+          -0.34529098641702716,
+          0.6221668434192029
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 14.8,
+        "position": [
+          0.28047831325592654,
+          0.0001459750298288591,
+          0.9827387699005935
+        ],
+        "quaternion": [
+          -0.007442337458890264,
+          -0.08430274899186391,
+          -0.000825963109470824,
+          0.9964120512671981
+        ],
+        "wing_angles_rad": [
+          1.3304129296349456,
+          -0.3098357805873233,
+          0.26382411628555646,
+          1.3303940121377569,
+          -0.30983208227416675,
+          0.2638214953192917
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 15.0,
+        "position": [
+          0.28409503730867797,
+          0.00015727130394467057,
+          0.9809001943975334
+        ],
+        "quaternion": [
+          -0.00742417182068726,
+          -0.07516948141967639,
+          -0.000866213632174238,
+          0.9971427582898138
+        ],
+        "wing_angles_rad": [
+          1.1809184038979146,
+          -0.2398668540945914,
+          -0.054364608330570434,
+          1.1809060307775887,
+          -0.23985458555760708,
+          -0.05436761873336818
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 15.2,
+        "position": [
+          0.2876756698974906,
+          0.00017039913787815985,
+          0.9791159871261462
+        ],
+        "quaternion": [
+          -0.007417653724898273,
+          -0.06543507769724426,
+          -0.0009147210230300633,
+          0.9978288391830654
+        ],
+        "wing_angles_rad": [
+          0.9654233009257378,
+          -0.14796971606696,
+          -0.3080864682623586,
+          0.965412874907563,
+          -0.14794958647668677,
+          -0.3080883759941869
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 15.4,
+        "position": [
+          0.2911636995429362,
+          0.0001869201839690908,
+          0.9774853844753352
+        ],
+        "quaternion": [
+          -0.007423243635579778,
+          -0.05487311082599693,
+          -0.0009732338417206741,
+          0.998465267286797
+        ],
+        "wing_angles_rad": [
+          0.6993842511876378,
+          -0.0499808527819403,
+          -0.4784540971059919,
+          0.6993681938724535,
+          -0.049950969631115436,
+          -0.478453581245955
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 15.6,
+        "position": [
+          0.2945235411263749,
+          0.00020445107350704894,
+          0.9760661855634982
+        ],
+        "quaternion": [
+          -0.0074507581561339825,
+          -0.0435737131958178,
+          -0.0009813474542486856,
+          0.9990219490473683
+        ],
+        "wing_angles_rad": [
+          0.4023224279868604,
+          0.03786009839993358,
+          -0.5531592737853567,
+          0.40232479483150796,
+          0.03792782173383564,
+          -0.5531525390004267
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 15.8,
+        "position": [
+          0.2977922715392807,
+          0.00021439719561270668,
+          0.9747999778251057
+        ],
+        "quaternion": [
+          -0.007551251645332241,
+          -0.03269494983802467,
+          -0.0007955426334862045,
+          0.9994365342359649
+        ],
+        "wing_angles_rad": [
+          0.09667228772677477,
+          0.10118880075850877,
+          -0.5270218576749817,
+          0.09672927185585747,
+          0.10134448667494794,
+          -0.5270017556608032
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 16.0,
+        "position": [
+          0.3010301575546881,
+          0.00023797955567223601,
+          0.9736242696906967
+        ],
+        "quaternion": [
+          -0.007661794339814175,
+          -0.02240550068646936,
+          -0.0008278679852788888,
+          0.9997192631339474
+        ],
+        "wing_angles_rad": [
+          -0.1937449584770289,
+          0.130003166375957,
+          -0.40204461790003804,
+          -0.19375181601158736,
+          0.13011767675508906,
+          -0.4020288854332011
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 16.2,
+        "position": [
+          0.3042814428077077,
+          0.0002651518621416566,
+          0.972474883997378
+        ],
+        "quaternion": [
+          -0.00776931243195625,
+          -0.012398034653378192,
+          -0.0009059643501403352,
+          0.99989254710177
+        ],
+        "wing_angles_rad": [
+          -0.4460556537640645,
+          0.1198245691873156,
+          -0.18741657731944514,
+          -0.44610602326879284,
+          0.11988689246253446,
+          -0.18740735694334126
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 16.4,
+        "position": [
+          0.3075598478546915,
+          0.00029219705966252243,
+          0.9712681197157259
+        ],
+        "quaternion": [
+          -0.007872170684949598,
+          -0.0024645393840277293,
+          -0.0009805141193717512,
+          0.9999654961879407
+        ],
+        "wing_angles_rad": [
+          -0.6406496919762366,
+          0.07297851816067594,
+          0.10106390384622209,
+          -0.6407051610627151,
+          0.07300610563140109,
+          0.10106925752683742
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 16.6,
+        "position": [
+          0.3108715469962195,
+          0.00031784445503811484,
+          0.9699279959642397
+        ],
+        "quaternion": [
+          -0.007975017713726978,
+          0.007539603234752145,
+          -0.0010495352521476121,
+          0.9999392241287889
+        ],
+        "wing_angles_rad": [
+          -0.7639417626749039,
+          0.009465505660340379,
+          0.4377709806720724,
+          -0.7639812083927594,
+          0.009471137845959415,
+          0.4377748605777362
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 16.8,
+        "position": [
+          0.3142691526723057,
+          0.0003420707544359004,
+          0.968460402240361
+        ],
+        "quaternion": [
+          -0.008077909466830567,
+          0.016835459936845928,
+          -0.0011086825670780906,
+          0.9998250274374648
+        ],
+        "wing_angles_rad": [
+          -0.8092946132657802,
+          -0.021234792514645207,
+          0.799921572262857,
+          -0.809310759018123,
+          -0.021241625020928412,
+          0.7999244409377145
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 17.0,
+        "position": [
+          0.3177670939659069,
+          0.0003645687362526203,
+          0.9668620878307577
+        ],
+        "quaternion": [
+          -0.008172406389789466,
+          0.025478715022366715,
+          -0.0011579927556979565,
+          0.9996412886167657
+        ],
+        "wing_angles_rad": [
+          -0.7747645583886142,
+          -0.0011386833268309938,
+          1.1637165566046284,
+          -0.774759494713743,
+          -0.0011481908811420596,
+          1.1637188420223161
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 17.2,
+        "position": [
+          0.321349716283782,
+          0.0003847658808125762,
+          0.9651008075456982
+        ],
+        "quaternion": [
+          -0.008251570185082959,
+          0.034225923555866816,
+          -0.0012046230956757732,
+          0.999379330699523
+        ],
+        "wing_angles_rad": [
+          -0.6620228177048589,
+          0.050497679423559864,
+          1.5020195727011496,
+          -0.662004928089311,
+          0.050494741746427166,
+          1.5020223117230889
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 17.4,
+        "position": [
+          0.32501391473202773,
+          0.00040169656955183267,
+          0.9631191493374772
+        ],
+        "quaternion": [
+          -0.008314797948981247,
+          0.04357745209356085,
+          -0.001254065348872655,
+          0.9990146631177154
+        ],
+        "wing_angles_rad": [
+          -0.47769803079648354,
+          0.10257077225350354,
+          1.7883592388827392,
+          -0.47767474835086726,
+          0.10258068549007898,
+          1.7883628527650755
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 17.6,
+        "position": [
+          0.32877285308409554,
+          0.00041407874555476193,
+          0.960849044728885
+        ],
+        "quaternion": [
+          -0.008362767168086678,
+          0.053514443603519646,
+          -0.001306105402612286,
+          0.9985312025869676
+        ],
+        "wing_angles_rad": [
+          -0.2344086129742018,
+          0.12897918582951348,
+          2.000781100504242,
+          -0.2343834119338862,
+          0.1290013102691232,
+          2.000785057493811
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 17.8,
+        "position": [
+          0.3326125924334182,
+          0.0004211906636034911,
+          0.9582547825760546
+        ],
+        "quaternion": [
+          -0.00840161984989022,
+          0.06386531199333416,
+          -0.0013590480175609398,
+          0.9979222352951048
+        ],
+        "wing_angles_rad": [
+          0.050259913092029165,
+          0.11648384632878771,
+          2.1234330166767093,
+          0.050293158082140556,
+          0.11650908533154533,
+          2.1234365500168386
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 18.0,
+        "position": [
+          0.33647130664264546,
+          0.00042368087617443044,
+          0.9553861449795078
+        ],
+        "quaternion": [
+          -0.008428552163238059,
+          0.07433742878120383,
+          -0.0014079871990759878,
+          0.9971965321653896
+        ],
+        "wing_angles_rad": [
+          0.3548540059529825,
+          0.06461223530088779,
+          2.147245457176987,
+          0.3548907660659119,
+          0.06463192935337621,
+          2.147248459384137
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 18.2,
+        "position": [
+          0.3402731368775425,
+          0.000423943780246259,
+          0.9523875189931346
+        ],
+        "quaternion": [
+          -0.008434684464038736,
+          0.08447979136106641,
+          -0.0014471340956439835,
+          0.9963884416995678
+        ],
+        "wing_angles_rad": [
+          0.6558325879727143,
+          -0.0180113288234165,
+          2.070546269332241,
+          0.6558637970085217,
+          -0.01800253560478069,
+          2.0705493664323003
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 18.4,
+        "position": [
+          0.34397758869722045,
+          0.0004249869494693656,
+          0.9494283753646825
+        ],
+        "quaternion": [
+          -0.008415321435760893,
+          0.09410804375960738,
+          -0.0014758910918501649,
+          0.9955253287638434
+        ],
+        "wing_angles_rad": [
+          0.9297925761767902,
+          -0.11709156567821542,
+          1.899159932524713,
+          0.9298084225135418,
+          -0.11709534386333105,
+          1.8991638207433916
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 18.6,
+        "position": [
+          0.3475946986086006,
+          0.0004288187835231166,
+          0.9466018867116992
+        ],
+        "quaternion": [
+          -0.00837660472956566,
+          0.10358768400345657,
+          -0.0015010569474461332,
+          0.9945839185529022
+        ],
+        "wing_angles_rad": [
+          1.1551526662940939,
+          -0.21511533181778097,
+          1.6457702532111322,
+          1.1551517667820894,
+          -0.21513097666253597,
+          1.6457747171191246
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 18.8,
+        "position": [
+          0.3511477087308248,
+          0.0004358279973907801,
+          0.9439177567480463
+        ],
+        "quaternion": [
+          -0.008325858430558056,
+          0.11339074362507132,
+          -0.0015289867139609598,
+          0.9935144093274022
+        ],
+        "wing_angles_rad": [
+          1.3150660031924544,
+          -0.2942563332587376,
+          1.3289169312384215,
+          1.3150496083949816,
+          -0.29427976230261516,
+          1.3289208667829664
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 19.0,
+        "position": [
+          0.35464596019676337,
+          0.000445335357078168,
+          0.9413382470052378
+        ],
+        "quaternion": [
+          -0.008269437869583559,
+          0.12355657910540875,
+          -0.001560646786021284,
+          0.9923018454778263
+        ],
+        "wing_angles_rad": [
+          1.3987715697076009,
+          -0.3398628576763093,
+          0.9717953677060206,
+          1.3987449646624799,
+          -0.33988679921325005,
+          0.9717972521904039
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 19.2,
+        "position": [
+          0.3580972883696216,
+          0.000456278708072437,
+          0.9388033391522559
+        ],
+        "quaternion": [
+          -0.008213087769233775,
+          0.13388038745285655,
+          -0.0015946068428795963,
+          0.990962181051217
+        ],
+        "wing_angles_rad": [
+          1.4015329798444829,
+          -0.3438849128150187,
+          0.6008528587175738,
+          1.401504876977729,
+          -0.34390092599690497,
+          0.6008519237726869
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 19.4,
+        "position": [
+          0.3615241350025881,
+          0.0004679050688343441,
+          0.9362592669629672
+        ],
+        "quaternion": [
+          -0.008162784727349671,
+          0.14436936815874007,
+          -0.001631383482774081,
+          0.9894888544449977
+        ],
+        "wing_angles_rad": [
+          1.323623216183057,
+          -0.30645633048278476,
+          0.24413190514027258,
+          1.3236015341426084,
+          -0.30645980790359023,
+          0.2441288469897762
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 19.6,
+        "position": [
+          0.3649476962590036,
+          0.00048036627694906343,
+          0.9337058782375829
+        ],
+        "quaternion": [
+          -0.008122498485790901,
+          0.15519436316266097,
+          -0.001672319829007969,
+          0.9878491473941123
+        ],
+        "wing_angles_rad": [
+          1.1700447249548065,
+          -0.23495306976833225,
+          -0.07094407112432226,
+          1.1700315917397155,
+          -0.23494394535940658,
+          -0.07094768994734892
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 19.8,
+        "position": [
+          0.3683724937401168,
+          0.0004949262657740005,
+          0.9312197739705048
+        ],
+        "quaternion": [
+          -0.008092271408407296,
+          0.1665756062232675,
+          -0.0017190888915743464,
+          0.9859939793366832
+        ],
+        "wing_angles_rad": [
+          0.9512902540142772,
+          -0.1422506954354597,
+          -0.3203155482714645,
+          0.9512807757788225,
+          -0.14222859342912086,
+          -0.3203178379888601
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 20.0,
+        "position": [
+          0.3717909530374682,
+          0.0005133683081782835,
+          0.9289146079834167
+        ],
+        "quaternion": [
+          -0.008072063043807861,
+          0.17870117718033893,
+          -0.001773321879736304,
+          0.9838686835152801
+        ],
+        "wing_angles_rad": [
+          0.6830161329196005,
+          -0.04430478518557978,
+          -0.48543270634534524,
+          0.683002595188948,
+          -0.04426883695645778,
+          -0.4854320690196888
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 20.2,
+        "position": [
+          0.3751978993235523,
+          0.0005366499965851753,
+          0.9268562650060013
+        ],
+        "quaternion": [
+          -0.008063316289088907,
+          0.19152581739932015,
+          -0.0018343840556359645,
+          0.9814527391754952
+        ],
+        "wing_angles_rad": [
+          0.3848950555411522,
+          0.04266885835816182,
+          -0.5543747743596602,
+          0.3848719881392387,
+          0.042717224593853395,
+          -0.5543706393997894
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 20.4,
+        "position": [
+          0.37860310986415324,
+          0.0005580439328661706,
+          0.9249976631423154
+        ],
+        "quaternion": [
+          -0.008056819280764727,
+          0.20448787811188418,
+          -0.001792684192991299,
+          0.9788342973413643
+        ],
+        "wing_angles_rad": [
+          0.07941950424269897,
+          0.10442357067539507,
+          -0.5223822090044931,
+          0.07943272297885914,
+          0.10452774134898613,
+          -0.5223682662107947
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 20.6,
+        "position": [
+          0.3820278279714409,
+          0.0005804394628392565,
+          0.9232010005273711
+        ],
+        "quaternion": [
+          -0.008090839863861752,
+          0.2164647997570353,
+          -0.0017284187447468428,
+          0.9762553668713371
+        ],
+        "wing_angles_rad": [
+          -0.20952357928567933,
+          0.13097699028355567,
+          -0.39194737010449837,
+          -0.20951064823467652,
+          0.13109609594032223,
+          -0.3919292837686471
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 20.8,
+        "position": [
+          0.38548618636769044,
+          0.000606729839621616,
+          0.9213976711784339
+        ],
+        "quaternion": [
+          -0.008151452441484578,
+          0.2279053690603778,
+          -0.0017165718480812236,
+          0.9736476518523718
+        ],
+        "wing_angles_rad": [
+          -0.4590898852120773,
+          0.11842031587521888,
+          -0.17260220331700557,
+          -0.45909909163390483,
+          0.1185030427147443,
+          -0.17258831018796106
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 21.0,
+        "position": [
+          0.3889516683457784,
+          0.000633938029288666,
+          0.9195182212796519
+        ],
+        "quaternion": [
+          -0.008221279854623391,
+          0.23920507462744567,
+          -0.0017237410902833197,
+          0.9709327327609693
+        ],
+        "wing_angles_rad": [
+          -0.6499232143910776,
+          0.06951047975355096,
+          0.11951886448633217,
+          -0.6499424681751554,
+          0.06954582426757953,
+          0.11952691564937039
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 21.2,
+        "position": [
+          0.39240112295219204,
+          0.0006605375981311406,
+          0.9174999808611524
+        ],
+        "quaternion": [
+          -0.008299366413295784,
+          0.2504674348874937,
+          -0.0017398916253026895,
+          0.9680878872060888
+        ],
+        "wing_angles_rad": [
+          -0.7688655291951785,
+          0.007148585914812103,
+          0.4584875780836123,
+          -0.768881267981828,
+          0.007144062695900271,
+          0.4584915764607144
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 21.4,
+        "position": [
+          0.3958820441817288,
+          0.0006858618222728609,
+          0.9153257809734585
+        ],
+        "quaternion": [
+          -0.008382280324414822,
+          0.26096770936508273,
+          -0.0017540116534886614,
+          0.9653095438709927
+        ],
+        "wing_angles_rad": [
+          -0.8096131659261233,
+          -0.020609680100412836,
+          0.8214227729030968,
+          -0.8096166301194618,
+          -0.020636646449089642,
+          0.8214246059558153
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 21.6,
+        "position": [
+          0.3994018157079476,
+          0.0007092782470045446,
+          0.9129856887201726
+        ],
+        "quaternion": [
+          -0.008458346634966456,
+          0.2708221417961629,
+          -0.0017644175105707746,
+          0.9625906246769651
+        ],
+        "wing_angles_rad": [
+          -0.7704597026101886,
+          0.0017535722500966802,
+          1.1844202021565993,
+          -0.7704497777142544,
+          0.0017240725796639628,
+          1.1844218766315704
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 21.8,
+        "position": [
+          0.4029292795356259,
+          0.000730164751706135,
+          0.91045649811753
+        ],
+        "quaternion": [
+          -0.008518714586939159,
+          0.28078379034835865,
+          -0.0017782740246421098,
+          0.9597315938953391
+        ],
+        "wing_angles_rad": [
+          -0.6533296049375378,
+          0.053998069357453445,
+          1.5203225783712893,
+          -0.6533115674429392,
+          0.0539817821463016,
+          1.5203258065937817
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 22.0,
+        "position": [
+          0.40643235520938265,
+          0.0007474684856312628,
+          0.9076858141787366
+        ],
+        "quaternion": [
+          -0.008561960899872509,
+          0.2913238381549093,
+          -0.0018004864500720066,
+          0.9565844826238739
+        ],
+        "wing_angles_rad": [
+          -0.4652178652222444,
+          0.1050816059120658,
+          1.8028604161440054,
+          -0.46519598336580825,
+          0.10508738977823077,
+          1.8028650973548084
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 22.2,
+        "position": [
+          0.4098858633004599,
+          0.0007597889428817017,
+          0.9046057181586327
+        ],
+        "quaternion": [
+          -0.008588705887532822,
+          0.3024188028218712,
+          -0.0018304442279833135,
+          0.9531346973565131
+        ],
+        "wing_angles_rad": [
+          -0.21907785831848695,
+          0.12956380220217809,
+          2.0104084173744585,
+          -0.21905291426008472,
+          0.12959021721934533,
+          2.010413027145813
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 22.4,
+        "position": [
+          0.4132541735593362,
+          0.0007664747210546173,
+          0.9011940149112329
+        ],
+        "quaternion": [
+          -0.008602102750817018,
+          0.3138948197078398,
+          -0.0018646357384998556,
+          0.9494169627315544
+        ],
+        "wing_angles_rad": [
+          0.06726130736077962,
+          0.11499508624858308,
+          2.1274832959755026,
+          0.06729283988338448,
+          0.11503055814692645,
+          2.1274865600326187
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 22.6,
+        "position": [
+          0.4165038395286178,
+          0.0007686007860147989,
+          0.8975312562118571
+        ],
+        "quaternion": [
+          -0.008597314661395284,
+          0.3254185840508631,
+          -0.0018983978212964324,
+          0.9455290727527401
+        ],
+        "wing_angles_rad": [
+          0.3722536922267616,
+          0.06143692969499831,
+          2.14541706520477,
+          0.3722877260163793,
+          0.06146897658499617,
+          2.145418957149012
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 22.8,
+        "position": [
+          0.41964071394304026,
+          0.0007690521254682831,
+          0.8937890617712757
+        ],
+        "quaternion": [
+          -0.008571201378724672,
+          0.3364945719356649,
+          -0.001927127733283892,
+          0.9416444253238369
+        ],
+        "wing_angles_rad": [
+          0.6723471258201379,
+          -0.02222093108211081,
+          2.0629793975737303,
+          0.6723783095369396,
+          -0.022201297837515656,
+          2.062980948393226
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 23.0,
+        "position": [
+          0.4227161334460001,
+          0.0007709930038366954,
+          0.8901328760862797
+        ],
+        "quaternion": [
+          -0.008523924313144752,
+          0.34693143587901665,
+          -0.0019505884899954872,
+          0.9378497303501079
+        ],
+        "wing_angles_rad": [
+          0.944037134045747,
+          -0.12153249975746795,
+          1.8864326918827776,
+          0.9440600311607308,
+          -0.12152952210839267,
+          1.8864349786059558
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 23.2,
+        "position": [
+          0.4257888624553748,
+          0.000776201788648497,
+          0.8866368543966173
+        ],
+        "quaternion": [
+          -0.008458866803807726,
+          0.3571164826143678,
+          -0.0019741473590554276,
+          0.9340194688333546
+        ],
+        "wing_angles_rad": [
+          1.1660437064319906,
+          -0.21897898749010253,
+          1.628840958649897,
+          1.1660526244110099,
+          -0.21899214446377396,
+          1.6288441215740388
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 23.4,
+        "position": [
+          0.4288863973160328,
+          0.0007848483479956338,
+          0.8832948799103254
+        ],
+        "quaternion": [
+          -0.00838069358648321,
+          0.367531999921389,
+          -0.00200280821661417,
+          0.9299709574863296
+        ],
+        "wing_angles_rad": [
+          1.3217908032822498,
+          -0.29678985208623315,
+          1.3090458392644804,
+          1.3217830791418068,
+          -0.29681454017420456,
+          1.3090488257580906
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 23.6,
+        "position": [
+          0.432000355963423,
+          0.0007962145834036445,
+          0.8800675168533324
+        ],
+        "quaternion": [
+          -0.008295491547238043,
+          0.37824278771830394,
+          -0.002036301499079745,
+          0.9256670199565717
+        ],
+        "wing_angles_rad": [
+          1.4008755977644054,
+          -0.34051325218989625,
+          0.9504480062310298,
+          1.4008552454618841,
+          -0.3405413068495536,
+          0.9504490764325202
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 23.8,
+        "position": [
+          0.4351098895812313,
+          0.0008092378166949726,
+          0.876897517607776
+        ],
+        "quaternion": [
+          -0.008209179596815946,
+          0.3890794226871539,
+          -0.0020720393005193936,
+          0.921165304852997
+        ],
+        "wing_angles_rad": [
+          1.3989208566799611,
+          -0.3424220342025995,
+          0.579609088877268,
+          1.3988967124010858,
+          -0.34244362505814385,
+          0.5796072362769393
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 24.0,
+        "position": [
+          0.4382089213129943,
+          0.000823097668610062,
+          0.8737278649319367
+        ],
+        "quaternion": [
+          -0.00812783369929135,
+          0.4000464329137122,
+          -0.0021089040479452623,
+          0.9164564050494097
+        ],
+        "wing_angles_rad": [
+          1.3165027838474954,
+          -0.30300131806842934,
+          0.22459445460408892,
+          1.3164833100184115,
+          -0.30300998683294816,
+          0.22459036982040506
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 24.2,
+        "position": [
+          0.44131633569757306,
+          0.0008378697953223425,
+          0.8705516080554269
+        ],
+        "quaternion": [
+          -0.00805521686490552,
+          0.4112766379530886,
+          -0.0021469586853267823,
+          0.911472452202296
+        ],
+        "wing_angles_rad": [
+          1.1589358894473858,
+          -0.22996512205188263,
+          -0.0872903640939051,
+          1.1589240328972799,
+          -0.2299587064518054,
+          -0.08729485278257171
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 24.4,
+        "position": [
+          0.4444751385340131,
+          0.0008547649939103151,
+          0.8674364406054385
+        ],
+        "quaternion": [
+          -0.007991707458128857,
+          0.4229472689532682,
+          -0.0021876105860718473,
+          0.9061164134131987
+        ],
+        "wing_angles_rad": [
+          0.9369964090488252,
+          -0.13646304054186528,
+          -0.33225401857600084,
+          0.9369885772875753,
+          -0.1364402380360516,
+          -0.33225675522072623
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 24.6,
+        "position": [
+          0.4477348830075513,
+          0.000875446252891037,
+          0.8644837756606987
+        ],
+        "quaternion": [
+          -0.007937489216559441,
+          0.4351923067344674,
+          -0.0022321918073010677,
+          0.9002997666021051
+        ],
+        "wing_angles_rad": [
+          0.6665288027854437,
+          -0.038557008285273336,
+          -0.4920845097658742,
+          0.6665185909612042,
+          -0.038517517190732514,
+          -0.49208378070214603
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 24.8,
+        "position": [
+          0.45112153807864985,
+          0.0009006994563968325,
+          0.8617475632898344
+        ],
+        "quaternion": [
+          -0.007893930360549467,
+          0.44794812899097014,
+          -0.0022797006678329777,
+          0.8940217908763837
+        ],
+        "wing_angles_rad": [
+          0.36734371318037995,
+          0.04754085076862905,
+          -0.5552508912564691,
+          0.3673264493587979,
+          0.04759409519350902,
+          -0.555246238549645
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 25.0,
+        "position": [
+          0.4546236739303104,
+          0.0009297063247880932,
+          0.8591843591921681
+        ],
+        "quaternion": [
+          -0.00786278015365112,
+          0.4609215177415246,
+          -0.0023262254748134406,
+          0.8874030199667705
+        ],
+        "wing_angles_rad": [
+          0.06206255561600523,
+          0.10773001441210953,
+          -0.5174060226166959,
+          0.06203787630094034,
+          0.10779034866360955,
+          -0.5173984828560128
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 25.2,
+        "position": [
+          0.45818859355616126,
+          0.0009482914194201265,
+          0.8566673372461935
+        ],
+        "quaternion": [
+          -0.007766377696875512,
+          0.4732549024854722,
+          -0.002168762967119701,
+          0.8808886292364816
+        ],
+        "wing_angles_rad": [
+          -0.22544258821865215,
+          0.13212032906359064,
+          -0.3815036813248124,
+          -0.22539572171629585,
+          0.1322614730052666,
+          -0.38148236274791575
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 25.4,
+        "position": [
+          0.46177308206782036,
+          0.0009739520564890763,
+          0.8541021802834796
+        ],
+        "quaternion": [
+          -0.007757646927716277,
+          0.48476686202351815,
+          -0.002101507445851433,
+          0.8746064784029848
+        ],
+        "wing_angles_rad": [
+          -0.47225449917757384,
+          0.11725518616351321,
+          -0.15747855909019567,
+          -0.47222778395971277,
+          0.11735508244199953,
+          -0.15746135645249706
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 25.6,
+        "position": [
+          0.4653266130354519,
+          0.0010019859138542656,
+          0.8514535134775586
+        ],
+        "quaternion": [
+          -0.007782591790567225,
+          0.49602013370928205,
+          -0.002073827060620267,
+          0.8682736650741915
+        ],
+        "wing_angles_rad": [
+          -0.6592994951300961,
+          0.06632214168658239,
+          0.13821176369638807,
+          -0.659297709207106,
+          0.06635547890854508,
+          0.13822075080571633
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 25.8,
+        "position": [
+          0.46880892221644943,
+          0.0010297268825448258,
+          0.8486848618849944
+        ],
+        "quaternion": [
+          -0.007821682621836846,
+          0.5071086101062614,
+          -0.002053829143726078,
+          0.8618442206239517
+        ],
+        "wing_angles_rad": [
+          -0.7738573735921662,
+          0.005101893195868415,
+          0.4793526639204051,
+          -0.773863165452629,
+          0.005085818149670553,
+          0.47935591600871286
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 26.0,
+        "position": [
+          0.4722535176968018,
+          0.0010560685243372332,
+          0.8457610612827656
+        ],
+        "quaternion": [
+          -0.007866799944885731,
+          0.5174230125614838,
+          -0.0020274608667715526,
+          0.8556911995181782
+        ],
+        "wing_angles_rad": [
+          -0.8099450230824269,
+          -0.01979592537464215,
+          0.8429680573035957,
+          -0.8099440867211136,
+          -0.019835152379499475,
+          0.8429686742871622
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 26.2,
+        "position": [
+          0.47565996792895504,
+          0.001080487410138549,
+          0.8426726957893299
+        ],
+        "quaternion": [
+          -0.007905957016655293,
+          0.5271207739784676,
+          -0.0019981870315074392,
+          0.8497512534457238
+        ],
+        "wing_angles_rad": [
+          -0.766088233668908,
+          0.004701616657007427,
+          1.2050542686930659,
+          -0.7660764032552906,
+          0.004663413163708226,
+          1.2050552204500669
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 26.4,
+        "position": [
+          0.478987262018231,
+          0.0011025711233682946,
+          0.8394162043688991
+        ],
+        "quaternion": [
+          -0.007930186577167637,
+          0.536889991200419,
+          -0.001975986073882272,
+          0.843612674732131
+        ],
+        "wing_angles_rad": [
+          -0.6444973212234798,
+          0.057426294655995025,
+          1.538452829866943,
+          -0.6444784944225213,
+          0.0574065717312023,
+          1.53845615974743
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 26.6,
+        "position": [
+          0.4821770656158128,
+          0.0011214461972151196,
+          0.8359616223949026
+        ],
+        "quaternion": [
+          -0.007937570204067627,
+          0.5471330355115684,
+          -0.0019663313489731668,
+          0.8370057168097343
+        ],
+        "wing_angles_rad": [
+          -0.4525930994777471,
+          0.10742078278996342,
+          1.8171147551300877,
+          -0.45257081299712737,
+          0.10742861005896087,
+          1.817119978893268
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 26.8,
+        "position": [
+          0.48516758633320733,
+          0.0011359087309164117,
+          0.8322646758354947
+        ],
+        "quaternion": [
+          -0.007928591403859476,
+          0.557820918424447,
+          -0.001968879770011073,
+          0.8299211311437413
+        ],
+        "wing_angles_rad": [
+          -0.20367836640668743,
+          0.12991404087784536,
+          2.019744692153915,
+          -0.2036524204608702,
+          0.12994713622659051,
+          2.0197495732379966
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 27.0,
+        "position": [
+          0.4879135369219351,
+          0.001145545171834955,
+          0.8283309613118872
+        ],
+        "quaternion": [
+          -0.007898420195430461,
+          0.5687934644548371,
+          -0.0019820959222473233,
+          0.8224400774814139
+        ],
+        "wing_angles_rad": [
+          0.08423029646756121,
+          0.11324050289122334,
+          2.131214087074107,
+          0.08425656554637674,
+          0.11328672971071675,
+          2.131217116196773
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 27.2,
+        "position": [
+          0.49043099156344977,
+          0.0011516948497286587,
+          0.8242533905802971
+        ],
+        "quaternion": [
+          -0.007848527141793946,
+          0.5797167301279715,
+          -0.002000692919300255,
+          0.8147778290179959
+        ],
+        "wing_angles_rad": [
+          0.38947455583492296,
+          0.05800284046646654,
+          2.1432679395598093,
+          0.38950370071626944,
+          0.058046293350508746,
+          2.143269000215362
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 27.4,
+        "position": [
+          0.49282191731848796,
+          0.0011570426195590742,
+          0.8201768368197411
+        ],
+        "quaternion": [
+          -0.007778982999197056,
+          0.5901197861559931,
+          -0.0020198530489806505,
+          0.8072756936786601
+        ],
+        "wing_angles_rad": [
+          0.6884905586587828,
+          -0.026654497272046947,
+          2.055124871501094,
+          0.6885214092631781,
+          -0.0266254086889154,
+          2.055125250831605
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 27.6,
+        "position": [
+          0.495223055724852,
+          0.0011643417530429645,
+          0.8162103120053441
+        ],
+        "quaternion": [
+          -0.007695146232021278,
+          0.5998548401386966,
+          -0.0020373215376447962,
+          0.800069250007521
+        ],
+        "wing_angles_rad": [
+          0.9578770310481463,
+          -0.12620689995371132,
+          1.8734766248058512,
+          0.957908904599206,
+          -0.12619885123335647,
+          1.8734776373570643
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 27.8,
+        "position": [
+          0.49772469019806154,
+          0.0011748377341535181,
+          0.8123791436838584
+        ],
+        "quaternion": [
+          -0.007600353533913497,
+          0.6093006041232798,
+          -0.002056873612236978,
+          0.7929002318779503
+        ],
+        "wing_angles_rad": [
+          1.176487273596232,
+          -0.22307838493814064,
+          1.6117575149288157,
+          1.1765107037877436,
+          -0.2230902117878689,
+          1.61175948302643
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 28.0,
+        "position": [
+          0.5003456589862888,
+          0.0011883880862634023,
+          0.808659783811252
+        ],
+        "quaternion": [
+          -0.00749436487921608,
+          0.618891636317971,
+          -0.0020836922859728633,
+          0.7854378620980642
+        ],
+        "wing_angles_rad": [
+          1.3280292366073643,
+          -0.2995218136999181,
+          1.2891006878324527,
+          1.3280355814364557,
+          -0.2995473447047464,
+          1.2891025922652337
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 28.2,
+        "position": [
+          0.5030584183109387,
+          0.0012043801127435663,
+          0.8050231527175323
+        ],
+        "quaternion": [
+          -0.007382522385422759,
+          0.6286828532902018,
+          -0.002115738614865247,
+          0.7776238756572691
+        ],
+        "wing_angles_rad": [
+          1.4025118123762206,
+          -0.3412828322564212,
+          0.929107273975693,
+          1.4025026027678036,
+          -0.3413133303028413,
+          0.9291072623567991
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 28.4,
+        "position": [
+          0.5058157902680616,
+          0.0012219510110056436,
+          0.8014322213348907
+        ],
+        "quaternion": [
+          -0.0072699019128581715,
+          0.6385308992641769,
+          -0.002149198968586606,
+          0.7695588477529522
+        ],
+        "wing_angles_rad": [
+          1.3959118236458625,
+          -0.34098397285002663,
+          0.5584511415594821,
+          1.3958953269681642,
+          -0.34100935695423173,
+          0.5584480853685795
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 28.6,
+        "position": [
+          0.5085832134161818,
+          0.0012404021897246937,
+          0.7978430311294816
+        ],
+        "quaternion": [
+          -0.007161524282844198,
+          0.648434663235055,
+          -0.0021815463658202993,
+          0.7612334996179816
+        ],
+        "wing_angles_rad": [
+          1.309075851579883,
+          -0.29950686611010274,
+          0.2052169986175298,
+          1.3090608026134,
+          -0.2995195606907448,
+          0.2052116334394774
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 28.8,
+        "position": [
+          0.5113750602046306,
+          0.0012597469275917531,
+          0.794241880467459
+        ],
+        "quaternion": [
+          -0.007060532856694927,
+          0.6584880877262693,
+          -0.00221167328736035,
+          0.752554779201919
+        ],
+        "wing_angles_rad": [
+          1.1475972671077004,
+          -0.22492699270189714,
+          -0.10340976928485766,
+          1.147587809735693,
+          -0.22492292261602112,
+          -0.10341536307608575
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 29.0,
+        "position": [
+          0.514266469192416,
+          0.001280890207271143,
+          0.7906641296247591
+        ],
+        "quaternion": [
+          -0.006967877683856398,
+          0.6688171547866637,
+          -0.00224026446889349,
+          0.7433909088486101
+        ],
+        "wing_angles_rad": [
+          0.922511255941698,
+          -0.13065644462540596,
+          -0.3439006473426704,
+          0.9225058426882379,
+          -0.1306331060111608,
+          -0.34390404190892965
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 29.2,
+        "position": [
+          0.5173522974711902,
+          0.0013050128875209748,
+          0.7871666125488908
+        ],
+        "quaternion": [
+          -0.00688426070640595,
+          0.6795016198812839,
+          -0.0022681464135483323,
+          0.7336382017350805
+        ],
+        "wing_angles_rad": [
+          0.6498458996837422,
+          -0.03284400482138052,
+          -0.49840269885529875,
+          0.649840052986532,
+          -0.032800878738310696,
+          -0.4984020006765384
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 29.4,
+        "position": [
+          0.5206773430036834,
+          0.001332552570958624,
+          0.7837761840879253
+        ],
+        "quaternion": [
+          -0.006810802875064086,
+          0.6904711203595425,
+          -0.002294323306775331,
+          0.7233242571587091
+        ],
+        "wing_angles_rad": [
+          0.3495619827078582,
+          0.05231902148994259,
+          -0.5557821154513729,
+          0.34955194012022817,
+          0.0523783943038355,
+          -0.5557768852485591
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 29.6,
+        "position": [
+          0.5242006730866837,
+          0.0013627214612707593,
+          0.7804585646078843
+        ],
+        "quaternion": [
+          -0.006748451778735459,
+          0.701492331199448,
+          -0.0023152868033450773,
+          0.712641289229
+        ],
+        "wing_angles_rad": [
+          0.04442779322590884,
+          0.11084476575907401,
+          -0.5121126256354998,
+          0.044412709191340494,
+          0.11091234797544583,
+          -0.5121041598913127
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 29.8,
+        "position": [
+          0.5278240882914996,
+          0.0013922434033193534,
+          0.7771418305881297
+        ],
+        "quaternion": [
+          -0.006675710746111317,
+          0.7122026825248235,
+          -0.0023037593655441686,
+          0.7019383638064414
+        ],
+        "wing_angles_rad": [
+          -0.24159006308319575,
+          0.13314867063847682,
+          -0.370754410080107,
+          -0.2415936299058997,
+          0.13323013250132454,
+          -0.3707427131353784
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 30.0,
+        "position": [
+          0.5314385772576273,
+          0.0014137776514450654,
+          0.773769466458925
+        ],
+        "quaternion": [
+          -0.00652603281630894,
+          0.7222112000919165,
+          -0.002171108105167951,
+          0.691638402380224
+        ],
+        "wing_angles_rad": [
+          -0.4856796276434666,
+          0.1159830372377628,
+          -0.14208555940670445,
+          -0.48563779273370955,
+          0.11609826320394019,
+          -0.1420678765217731
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 30.2,
+        "position": [
+          0.5349722913523997,
+          0.0014398368287142375,
+          0.7703372370662662
+        ],
+        "quaternion": [
+          -0.0064566464733653225,
+          0.7318021085951787,
+          -0.0020763045920848665,
+          0.6814834367255066
+        ],
+        "wing_angles_rad": [
+          -0.6689150034005161,
+          0.06308368719157378,
+          0.15711035724463202,
+          -0.6688828596370587,
+          0.0631426706148706,
+          0.15712275607257828
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 30.4,
+        "position": [
+          0.5383550306001105,
+          0.0014673261514697672,
+          0.7668507873468978
+        ],
+        "quaternion": [
+          -0.006425717403706421,
+          0.7412636820792209,
+          -0.001998983933930268,
+          0.6711802051978545
+        ],
+        "wing_angles_rad": [
+          -0.7811744157856294,
+          -0.0057921417478968605,
+          0.46420503669686686,
+          -0.781155330200092,
+          -0.005796359206747706,
+          0.4642114076569096
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 30.6,
+        "position": [
+          0.5416517488590593,
+          0.0014945298221850478,
+          0.7632508057981435
+        ],
+        "quaternion": [
+          -0.006411195298444339,
+          0.7499292743591736,
+          -0.0019200168391174993,
+          0.6614841597266748
+        ],
+        "wing_angles_rad": [
+          -0.8222467312517153,
+          -0.04106418156193117,
+          0.7789891164917716,
+          -0.8222308341265042,
+          -0.041105896983419016,
+          0.7789911242008682
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 30.8,
+        "position": [
+          0.5448991527166284,
+          0.0015208788493873775,
+          0.759522718453773
+        ],
+        "quaternion": [
+          -0.006396745310122793,
+          0.7577617499156251,
+          -0.0018403364590105062,
+          0.6524973756084876
+        ],
+        "wing_angles_rad": [
+          -0.7921155528254072,
+          -0.02274780753061322,
+          1.1075380145606315,
+          -0.7920967816546969,
+          -0.022798038898923848,
+          1.107538690772785
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 31.0,
+        "position": [
+          0.5480537412197708,
+          0.001546112998143489,
+          0.7556959334503275
+        ],
+        "quaternion": [
+          -0.006371458695947271,
+          0.7654306622260401,
+          -0.001771250344085621,
+          0.6434843964778859
+        ],
+        "wing_angles_rad": [
+          -0.690267086326564,
+          0.03171703649236124,
+          1.4315893035978384,
+          -0.6902463171354614,
+          0.03168176282208182,
+          1.4315917870141155
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 31.2,
+        "position": [
+          0.5510363937706655,
+          0.0015697405081041612,
+          0.7517907832415448
+        ],
+        "quaternion": [
+          -0.006332265939397595,
+          0.7734346303589036,
+          -0.0017196597203622463,
+          0.6338421078944693
+        ],
+        "wing_angles_rad": [
+          -0.519930957906681,
+          0.09113016640481808,
+          1.7224002880611775,
+          -0.5199105137441511,
+          0.09112460387460747,
+          1.7224053646436084
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 31.4,
+        "position": [
+          0.5537592487295369,
+          0.0015908728776987007,
+          0.7478042922910676
+        ],
+        "quaternion": [
+          -0.0062798262738517855,
+          0.781794122391388,
+          -0.001685838439236687,
+          0.6235027441198676
+        ],
+        "wing_angles_rad": [
+          -0.29021800516064966,
+          0.12758824179742964,
+          1.9518488940783771,
+          -0.29019643888662544,
+          0.12761580943114237,
+          1.9518544206973099
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 31.6,
+        "position": [
+          0.5561606224879992,
+          0.0016089536631584559,
+          0.7437497613070057
+        ],
+        "quaternion": [
+          -0.006216776571651963,
+          0.7903484471953551,
+          -0.0016653239381318673,
+          0.6126237918993425
+        ],
+        "wing_angles_rad": [
+          -0.015807655096079624,
+          0.12559362312142774,
+          2.098082568599362,
+          -0.01577758886234216,
+          0.1256439472994527,
+          2.0980859434917463
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 31.8,
+        "position": [
+          0.558263989956681,
+          0.001624455419154303,
+          0.7396828450629372
+        ],
+        "quaternion": [
+          -0.006140601603870139,
+          0.7988727016809047,
+          -0.0016553964278795653,
+          0.6014665071171129
+        ],
+        "wing_angles_rad": [
+          0.2839520509407756,
+          0.08282077967590118,
+          2.1475540102912896,
+          0.28399071018170385,
+          0.08287734141407443,
+          2.147554409311189
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 32.0,
+        "position": [
+          0.5602063872752009,
+          0.0016389536323970816,
+          0.7356703320728784
+        ],
+        "quaternion": [
+          -0.0060478339084154235,
+          0.8070252554998246,
+          -0.001653900478204648,
+          0.5904836367789256
+        ],
+        "wing_angles_rad": [
+          0.586447609033696,
+          0.006484728280859665,
+          2.0956037410913515,
+          0.5864905400685897,
+          0.00653199951865614,
+          2.0956024353868306
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 32.2,
+        "position": [
+          0.5621747750391021,
+          0.0016541467372666238,
+          0.7317392277293162
+        ],
+        "quaternion": [
+          -0.005933913995133808,
+          0.8145932664580686,
+          -0.0016632969646305457,
+          0.5799998554733254
+        ],
+        "wing_angles_rad": [
+          0.868009409540328,
+          -0.09022440350435135,
+          1.9461607957956206,
+          0.8680433776244342,
+          -0.0901948594946303,
+          1.9461600672997996
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 32.4,
+        "position": [
+          0.5642972294593579,
+          0.0016710121129115214,
+          0.7278654424383727
+        ],
+        "quaternion": [
+          -0.005794131035501178,
+          0.8217730742861634,
+          -0.0016930142680467593,
+          0.5697829201779375
+        ],
+        "wing_angles_rad": [
+          1.106263986920135,
+          -0.19050047142483065,
+          1.7106498735010727,
+          1.1062780250164823,
+          -0.19049031829125224,
+          1.710650849066062
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 32.6,
+        "position": [
+          0.5666009908605397,
+          0.001690154896784906,
+          0.7240122585587573
+        ],
+        "quaternion": [
+          -0.00564716097575444,
+          0.8289343896423623,
+          -0.001731901846789673,
+          0.5593146589864686
+        ],
+        "wing_angles_rad": [
+          1.282642509010289,
+          -0.27622132405078836,
+          1.4066526336549436,
+          1.2826446624895536,
+          -0.2762289705892649,
+          1.4066540626443687
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 32.8,
+        "position": [
+          0.569062002056742,
+          0.0017112515585264636,
+          0.7201656752829864
+        ],
+        "quaternion": [
+          -0.005497152438016648,
+          0.8362081022830694,
+          -0.0017762267321915508,
+          0.5483818341355006
+        ],
+        "wing_angles_rad": [
+          1.3848091188194511,
+          -0.33144182662004135,
+          1.0565895840754735,
+          1.384803667222104,
+          -0.3314607175908115,
+          1.0565893531955173
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 33.0,
+        "position": [
+          0.5716298159232659,
+          0.0017337922496952498,
+          0.7163261208323541
+        ],
+        "quaternion": [
+          -0.005347392251674907,
+          0.8434808622120689,
+          -0.0018206901386489157,
+          0.5371295240121413
+        ],
+        "wing_angles_rad": [
+          1.406710048691012,
+          -0.3460841135292298,
+          0.6863579995838617,
+          1.4067015737473438,
+          -0.34610582456135974,
+          0.6863545177845506
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 33.2,
+        "position": [
+          0.5742447846633805,
+          0.0017572647675012313,
+          0.7124837127754365
+        ],
+        "quaternion": [
+          -0.005200920885794042,
+          0.8506922596306276,
+          -0.001861618212217259,
+          0.5256350104436607
+        ],
+        "wing_angles_rad": [
+          1.3475588693719858,
+          -0.3182438351760238,
+          0.3238160250753071,
+          1.347551741579688,
+          -0.31825998046834303,
+          0.32380967773888153
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 33.4,
+        "position": [
+          0.5768837735690328,
+          0.0017814508375282331,
+          0.7086186094502459
+        ],
+        "quaternion": [
+          -0.0050604250034877365,
+          0.8578919668852446,
+          -0.001896533456637334,
+          0.513801681987707
+        ],
+        "wing_angles_rad": [
+          1.2111761298777535,
+          -0.2537703058231545,
+          -0.0032198210323069873,
+          1.2111728516345523,
+          -0.25377441671665113,
+          -0.0032268752562553296
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 33.6,
+        "position": [
+          0.5796020535497123,
+          0.0018066212679873797,
+          0.7047135333184152
+        ],
+        "quaternion": [
+          -0.004927719131998653,
+          0.8651537693825361,
+          -0.001923968405407922,
+          0.5014787844494711
+        ],
+        "wing_angles_rad": [
+          1.0066496056828853,
+          -0.1645085506271524,
+          -0.26966307362728403,
+          1.0066500247994048,
+          -0.1644961649808041,
+          -0.26966831262592045
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 33.8,
+        "position": [
+          0.5825070028538106,
+          0.0018332927121252989,
+          0.7007561867108746
+        ],
+        "quaternion": [
+          -0.004804231517699306,
+          0.8725403333416982,
+          -0.0019434069763049195,
+          0.48851459468556846
+        ],
+        "wing_angles_rad": [
+          0.7483499071171205,
+          -0.0659808915594029,
+          -0.4555351285432644,
+          0.7483515234272344,
+          -0.06594914155238235,
+          -0.4555364681200665
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 34.0,
+        "position": [
+          0.5856765372554804,
+          0.0018617155616745906,
+          0.6967401007211369
+        ],
+        "quaternion": [
+          -0.004691088716201115,
+          0.8800305072602546,
+          -0.0019543003674914352,
+          0.4748899669270638
+        ],
+        "wing_angles_rad": [
+          0.45498116182765214,
+          0.025370087439484337,
+          -0.5473152447777827,
+          0.4549809502778356,
+          0.025420919315490065,
+          -0.5473117273033917
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 34.2,
+        "position": [
+          0.589090327766005,
+          0.0018915604085188973,
+          0.6926617657140721
+        ],
+        "quaternion": [
+          -0.004588573879088915,
+          0.8874974005891049,
+          -0.001955091656781745,
+          0.46078572737656476
+        ],
+        "wing_angles_rad": [
+          0.1485254638957417,
+          0.09453370244305016,
+          -0.5385774252760572,
+          0.14852157992379095,
+          0.09459809208236725,
+          -0.5385698278998005
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 34.4,
+        "position": [
+          0.5926401384865987,
+          0.0019220880899154676,
+          0.6885194799546571
+        ],
+        "quaternion": [
+          -0.004495461280239946,
+          0.8947344256829319,
+          -0.0019427576655075278,
+          0.4465717456561298
+        ],
+        "wing_angles_rad": [
+          -0.14713753401097499,
+          0.13014163447302315,
+          -0.43017712735285607,
+          -0.14714470883697334,
+          0.13020936122736657,
+          -0.4301676402162463
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 34.6,
+        "position": [
+          0.5962034035713037,
+          0.0019526438475815206,
+          0.6843225321939433
+        ],
+        "quaternion": [
+          -0.004408847983188028,
+          0.9015532098305962,
+          -0.001914128837403808,
+          0.4326415467964241
+        ],
+        "wing_angles_rad": [
+          -0.4083894560309447,
+          0.1266059922706391,
+          -0.23010215845810553,
+          -0.4083971579610336,
+          0.12666484955877144,
+          -0.23009322532811832
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 34.8,
+        "position": [
+          0.5996933456788182,
+          0.001979772841207613,
+          0.6801071560408065
+        ],
+        "quaternion": [
+          -0.004275142966604242,
+          0.9079233286880332,
+          -0.0018422335883755592,
+          0.4191104371786286
+        ],
+        "wing_angles_rad": [
+          -0.6146265256633172,
+          0.08524632733715583,
+          0.046978377838264196,
+          -0.6146126597011274,
+          0.08530779884897953,
+          0.04698749027197437
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 35.0,
+        "position": [
+          0.6030628520056854,
+          0.002006949262613918,
+          0.6759253279074909
+        ],
+        "quaternion": [
+          -0.004145836489620934,
+          0.914067023746808,
+          -0.0017479537437882922,
+          0.40553820140174424
+        ],
+        "wing_angles_rad": [
+          -0.7508878223266985,
+          0.017419181467629375,
+          0.3764226629178069,
+          -0.7508627456679056,
+          0.017452325701266588,
+          0.37642959737902476
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 35.2,
+        "position": [
+          0.6063018727869537,
+          0.002034887189473114,
+          0.671716435209071
+        ],
+        "quaternion": [
+          -0.004040597325145825,
+          0.9196681238433806,
+          -0.0016430515048423966,
+          0.39267227549370415
+        ],
+        "wing_angles_rad": [
+          -0.8095800308328931,
+          -0.02317057474308572,
+          0.7357566192158759,
+          -0.8095513011621132,
+          -0.023176880737563518,
+          0.7357604911958436
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 35.4,
+        "position": [
+          0.6094112465104404,
+          0.002062996495953739,
+          0.6674544146130744
+        ],
+        "quaternion": [
+          -0.00394869062787379,
+          0.9247130153691632,
+          -0.0015391084340733662,
+          0.3806414036786094
+        ],
+        "wing_angles_rad": [
+          -0.7882370749056297,
+          -0.010922242703053869,
+          1.101492535137428,
+          -0.7882080443068984,
+          -0.0109533928221379,
+          1.1014957897114466
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 35.6,
+        "position": [
+          0.6123823967415192,
+          0.0020908354277063028,
+          0.6631747919197988
+        ],
+        "quaternion": [
+          -0.003855536666189509,
+          0.9295483559240343,
+          -0.0014481676312529943,
+          0.36867721877877313
+        ],
+        "wing_angles_rad": [
+          -0.6879781587695302,
+          0.03834886840359733,
+          1.4464767236738127,
+          -0.6879519393076117,
+          0.03831911024951574,
+          1.4464823408584921
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 35.8,
+        "position": [
+          0.6151758405004343,
+          0.002118181525966617,
+          0.6589253316948782
+        ],
+        "quaternion": [
+          -0.00375594311014172,
+          0.9344189518105793,
+          -0.001376802928502919,
+          0.3561533655635829
+        ],
+        "wing_angles_rad": [
+          -0.5148254923311115,
+          0.09348751697644485,
+          1.7436803189717092,
+          -0.514803507821059,
+          0.09348128014723252,
+          1.743688571317945
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 36.0,
+        "position": [
+          0.617723237664238,
+          0.0021446409382387646,
+          0.654750710890515
+        ],
+        "quaternion": [
+          -0.0036494125347554937,
+          0.939330916015972,
+          -0.0013258442717872195,
+          0.342990312023113
+        ],
+        "wing_angles_rad": [
+          -0.28067416183186644,
+          0.1264517600869715,
+          1.9702340480286247,
+          -0.2806527132210374,
+          0.1264788939846913,
+          1.9702419942098686
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 36.2,
+        "position": [
+          0.6199880635299937,
+          0.0021698729650605902,
+          0.6507009191985895
+        ],
+        "quaternion": [
+          -0.003525915384938833,
+          0.9442197358821951,
+          -0.0013078799736561762,
+          0.32929462148846184
+        ],
+        "wing_angles_rad": [
+          -0.0022281775424663514,
+          0.12179633845934816,
+          2.109209137985956,
+          -0.00222137309594449,
+          0.12185482111880719,
+          2.1092137000999003
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 36.4,
+        "position": [
+          0.6220331956751411,
+          0.002194278464693548,
+          0.6468081570067054
+        ],
+        "quaternion": [
+          -0.0033669997045761035,
+          0.9489772959624139,
+          -0.0013468902575491373,
+          0.3153235496240129
+        ],
+        "wing_angles_rad": [
+          0.2999812181927188,
+          0.07726042362093136,
+          2.150317312824785,
+          0.2999617149172887,
+          0.07733333567262297,
+          2.1503181676579377
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 36.6,
+        "position": [
+          0.6240024514032892,
+          0.0022190421609843665,
+          0.6430467212462995
+        ],
+        "quaternion": [
+          -0.003202491752368382,
+          0.953425991993391,
+          -0.0013935264996429123,
+          0.30160683003189476
+        ],
+        "wing_angles_rad": [
+          0.6026097673502927,
+          5.6972338671311206e-05,
+          2.090626755465578,
+          0.6026043786082208,
+          0.00011674532609582468,
+          2.090625614998388
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 36.8,
+        "position": [
+          0.6260629290400884,
+          0.0022440480636012543,
+          0.6393212854286013
+        ],
+        "quaternion": [
+          -0.0030170934722533104,
+          0.9574863908359716,
+          -0.0014721878565014882,
+          0.28845890725335405
+        ],
+        "wing_angles_rad": [
+          0.8825884402880294,
+          -0.09683483932603251,
+          1.934787595013759,
+          0.8825776870337266,
+          -0.09679516545404743,
+          1.934787385261349
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 37.0,
+        "position": [
+          0.6282946643985203,
+          0.0022698213404004066,
+          0.6355377040465464
+        ],
+        "quaternion": [
+          -0.002816715730739248,
+          0.9612840422837466,
+          -0.0015824834448992368,
+          0.27554047236160856
+        ],
+        "wing_angles_rad": [
+          1.1177052472870026,
+          -0.19652086713302058,
+          1.6944301510081592,
+          1.1176941078463982,
+          -0.19650174875069376,
+          1.6944310348871818
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 37.2,
+        "position": [
+          0.6306944273870321,
+          0.002296858653049699,
+          0.6316543551863494
+        ],
+        "quaternion": [
+          -0.0026188869052783366,
+          0.9649945577520852,
+          -0.0016975001372662576,
+          0.262251336380805
+        ],
+        "wing_angles_rad": [
+          1.2899934526726702,
+          -0.28081412644678955,
+          1.3871440993180968,
+          1.2899944632647316,
+          -0.2808099753007627,
+          1.3871438711245174
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 37.4,
+        "position": [
+          0.6332400415524049,
+          0.002324898836691323,
+          0.6276766676097055
+        ],
+        "quaternion": [
+          -0.0024241499225084954,
+          0.9686434113643172,
+          -0.001811774402198476,
+          0.24843667722614154
+        ],
+        "wing_angles_rad": [
+          1.3876731823706598,
+          -0.3338410236312792,
+          1.035335702834408,
+          1.3876839733017616,
+          -0.3338444617292389,
+          1.0353322186585157
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 37.6,
+        "position": [
+          0.6358961616608642,
+          0.0023536886587925635,
+          0.6236359102901244
+        ],
+        "quaternion": [
+          -0.0022327043190791124,
+          0.9721505219965539,
+          -0.0019206035975475003,
+          0.23433883351905566
+        ],
+        "wing_angles_rad": [
+          1.4050264508862296,
+          -0.3458798978547189,
+          0.6649231645208025,
+          1.405041548575272,
+          -0.3458860718253729,
+          0.6649158605628329
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 37.8,
+        "position": [
+          0.638610821343047,
+          0.002383095877529563,
+          0.6195593786408338
+        ],
+        "quaternion": [
+          -0.0020453201594775594,
+          0.9754850266155867,
+          -0.0020212195388060266,
+          0.22004702721420427
+        ],
+        "wing_angles_rad": [
+          1.341458334592365,
+          -0.31556710233617125,
+          0.3037721632957773,
+          1.341473178494495,
+          -0.3155721824202421,
+          0.303763007910629
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 38.0,
+        "position": [
+          0.6413548941516246,
+          0.00241307743013249,
+          0.6154432776191722
+        ],
+        "quaternion": [
+          -0.0018630780287270598,
+          0.9786699085952107,
+          -0.002110844537659556,
+          0.20541977335650446
+        ],
+        "wing_angles_rad": [
+          1.2009947919267494,
+          -0.2492323179622233,
+          -0.020391733024441864,
+          1.2010068248708963,
+          -0.2492325360538661,
+          -0.02039957011424967
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 38.2,
+        "position": [
+          0.6441633457331781,
+          0.002443530210501695,
+          0.6112374365451696
+        ],
+        "quaternion": [
+          -0.0016870355002769409,
+          0.9817304336638711,
+          -0.0021860391111545494,
+          0.1902570123868546
+        ],
+        "wing_angles_rad": [
+          0.9929745086495346,
+          -0.1590237018364203,
+          -0.28269961598273,
+          0.992983087309286,
+          -0.15901617306823518,
+          -0.2827041167076908
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 38.4,
+        "position": [
+          0.6471105898487051,
+          0.0024741781174592954,
+          0.606866352765593
+        ],
+        "quaternion": [
+          -0.0015181808762950953,
+          0.9846761142126682,
+          -0.0022437315362754734,
+          0.17437204734319992
+        ],
+        "wing_angles_rad": [
+          0.7320069840079211,
+          -0.060577750100400195,
+          -0.4634816921864404,
+          0.7320116743897457,
+          -0.060559663498876475,
+          -0.4634821739696327
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 38.6,
+        "position": [
+          0.6502459447848699,
+          0.0025046562384032182,
+          0.6022805164155723
+        ],
+        "quaternion": [
+          -0.0013572048569916889,
+          0.9874750758414702,
+          -0.0022818921869444267,
+          0.15775273549103636
+        ],
+        "wing_angles_rad": [
+          0.4370237951202115,
+          0.02970596998602015,
+          -0.549597358329489,
+          0.43702408507755014,
+          0.029736096499854685,
+          -0.5495940512563228
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      },
+      {
+        "time_ms": 38.8,
+        "position": [
+          0.6535423239186732,
+          0.002534766979950201,
+          0.5974942009207599
+        ],
+        "quaternion": [
+          -0.001203990615876572,
+          0.9900567909966378,
+          -0.002299371210016772,
+          0.1406442814339572
+        ],
+        "wing_angles_rad": [
+          0.13022167829869155,
+          0.09699676102996936,
+          -0.5350389685186757,
+          0.13021781621883324,
+          0.09703637406875511,
+          -0.5350330692173785
+        ],
+        "adapter_rate_hz": 0.0,
+        "wing_yaw_amplitude_factor": 1.0
+      }
+    ],
+    "run_record_url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/body/body-coupled-20261004T002129Z-4b352e/run.json",
+    "trajectory_sha256": "1f2f6755747780461136377aec03b943730984fe649869e2b94a64eed45befef"
+  },
+  "sources": [
+    {
+      "title": "Shiu et al. (2024) \u00b7 whole-brain LIF model",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11446845/",
+      "kind": "Published model",
+      "scope": "Published sensorimotoric experiments; no general flight validation."
+    },
+    {
+      "title": "Shiu author implementation \u00b7 pinned commit",
+      "url": "https://github.com/philshiu/Drosophila_brain_model/tree/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+      "kind": "Reproduction code",
+      "scope": "FAFB v783 tables and author LIF assumptions; compatibility adjustments recorded per run."
+    },
+    {
+      "title": "FlyWire whole-brain connectivity \u00b7 v783",
+      "url": "https://zenodo.org/records/10676866",
+      "kind": "Connectome \u00b7 CC BY 4.0",
+      "scope": "FlyWire Consortium (2024). Our model uses author-transformed connectivity tables, not raw synapse points."
+    },
+    {
+      "title": "Frozen DNg02 experiment design",
+      "url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/research/designs/dng02-input-v1.json",
+      "kind": "Preregistered model assay",
+      "scope": "Two tests, three fixed seeds, 25 predefined DNg02 readouts; hypothesis selected before observing the response."
+    },
+    {
+      "title": "DNg02 target identity and biological evidence",
+      "url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/research/evidence/dng02_targets.json",
+      "kind": "Evidence and exact v783 IDs",
+      "scope": "Annotation release and graph-selected upstream identities. Flight-related biological evidence does not validate this model as a flying brain."
+    }
+  ],
+  "provenance": {
+    "run_record_url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/runs/neural-dng02-20261004T001805Z-5fd84a/run.json",
+    "run_record_sha256": "53cf4425d2ecb31dc297686bb2f18347a7d5ab286663ecfa104a40d3e1496533",
+    "spike_source_url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/runs/neural-dng02-20261004T001805Z-5fd84a/spikes.parquet",
+    "spike_source_sha256": "69c74f9882a3831712fd7aefc3fbcdce187d61cbaf12e97aad2fbc4f0e83d276",
+    "model_url": "https://github.com/philshiu/Drosophila_brain_model/tree/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+    "exporter": "scripts/export_replays.py"
+  }
+}
