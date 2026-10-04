@@ -192,6 +192,22 @@ function story(s, b, idx) {
   </article>`;
 }
 
+function runYourself() {
+  return `<section class="s-visionbox"><h3>Run the AI lab yourself</h3>
+    <p>The expert board needs the Python lab: the brain simulation uses the 100 MB fly connectome, so it cannot run in a web page.
+      Every session shown here was recorded from such a run and checked independently. To start a new session with your own Anthropic API key:</p>
+    <pre class="s-code"><code>git clone https://github.com/JonasMayerDev/FlyBrainLab.git
+cd FlyBrainLab &amp;&amp; git checkout embodied-fly-lab
+python3 -m venv .venv
+.venv/bin/pip install "omnigent==0.16.0" numpy scipy pandas pyarrow requests anthropic pillow imageio imageio-ffmpeg flygym
+echo "ANTHROPIC_API_KEY=your-key" &gt; .env
+agents/omni.sh -ApproveAtLaunch lab "your question for the board"
+python3 -m flylab.board export          # update this page
+.venv/bin/python -m flylab.audit all     # independent check</code></pre>
+    <p class="small">Your key stays in the local <code>.env</code> file (ignored by git). The first run downloads the connectome and body models.
+      A session takes 10 to 15 minutes; the lab policy stops it at $3.</p></section>`;
+}
+
 function glossaryBox() {
   const words = [
     ['Neuron (nerve cell)', 'A cell that passes on electrical signals. A fruit fly has about 139,000 in its brain.'],
@@ -212,6 +228,6 @@ export function renderSimple(b, el, onExpert) {
       <p class="small">Each experiment builds on the one before: the experts read the earlier results before planning the next test.</p>
       ${sessions.map((s) => story(s, b, b.sessions.indexOf(s))).join('')}
     </section>
-    ${vision(b)}${glossaryBox()}`;
+    ${vision(b)}${runYourself()}${glossaryBox()}`;
   el.querySelectorAll('[data-expert]').forEach((a) => a.addEventListener('click', (ev) => { ev.preventDefault(); onExpert(a.dataset.expert); }));
 }

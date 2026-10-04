@@ -230,3 +230,4 @@
 .s-visionbox { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 4px 18px 10px; margin-top: 20px; }
 .s-visionbox ul { padding-left: 1.2rem; }
 .s-review { background: var(--warn-bg); color: var(--text); border-radius: 10px; padding: 8px 12px; font-size: .92rem; }
+.s-code { background: var(--panel-2); border-radius: 8px; padding: 10px 12px; overflow-x: auto; font-size: .82rem; line-height: 1.5; }

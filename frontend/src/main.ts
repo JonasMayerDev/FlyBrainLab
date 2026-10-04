@@ -35,7 +35,7 @@ const nativeTest = (id: string) => index.discovery?.receipts.find(receipt => rec
 function frameShell(): void {
   app.innerHTML = `
     <header class="topbar"><a class="brand" href="./">${icon.fly}<span>FlyBrain<span class="brand-light">Lab</span><small>AGENTIC SCIENTIFIC DISCOVERY</small></span></a>
-      <nav aria-label="Project links"><span class="challenge"><span class="status-dot"></span>Challenge 03 · Databricks</span><a class="repo-link" href="${REPO}" target="_blank" rel="noopener">Repository ${icon.arrow}</a></nav></header>
+      <nav aria-label="Project links"><span class="challenge"><span class="status-dot"></span>Challenge 03 · Databricks</span><a class="repo-link" href="./lab/board.html">Expert board &amp; results ${icon.arrow}</a><a class="repo-link" href="${REPO}" target="_blank" rel="noopener">Repository ${icon.arrow}</a></nav></header>
     <div class="layout"><aside class="sidebar"><div class="sidebar-heading"><span class="eyebrow">EXPERIMENT LIBRARY</span><span id="run-count" class="small-pill">—</span></div>
       <p class="sidebar-intro">Recorded runs. Inspect the stimulus, response and controls.</p><div id="run-list" aria-label="Recorded experiments"><div class="loading">Loading recorded experiments…</div></div>
       <div class="sidebar-footer"><span class="eyebrow">MODEL SNAPSHOT</span><p>FAFB / FlyWire <strong>v783</strong></p><div class="mini-stat"><span>Neurons in the model</span><b>138,639</b></div><div class="mini-stat"><span>Connection rows</span><b>15,091,983</b></div><a href="${REPO}/blob/main/data/brain/manifest.json" target="_blank" rel="noopener">Dataset manifest ${icon.arrow}</a></div></aside>

@@ -3,7 +3,7 @@ name: Publish replay viewer
 on:
   push:
     branches: [main]
-    paths: ['frontend/**', 'data/replay/**', '.github/workflows/pages.yml']
+    paths: ['frontend/**', 'data/replay/**', 'web/**', '.github/workflows/pages.yml']
   workflow_dispatch:
 
 permissions:
@@ -29,6 +29,8 @@ jobs:
         working-directory: frontend
       - run: npm run build
         working-directory: frontend
+      # Embodied Fly Lab: expert board (simple + expert view, audits, videos) and 3D replay, static files from web/
+      - run: cp -R web frontend/dist/lab
       - uses: actions/configure-pages@v5
         if: github.repository == 'valleebo/FlyBrainLab'
       - uses: actions/upload-pages-artifact@v3
