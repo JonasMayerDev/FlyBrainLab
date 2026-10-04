@@ -9,7 +9,7 @@ import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 
 const UNIT = { mm: 1, cm: 10, m: 1000, model: 1 };
-const DURATION = 59.5;
+const DURATION = 54.5;
 const CAPTURE = new URLSearchParams(location.search).has('capture');
 
 // ---------- helpers ----------
@@ -255,18 +255,15 @@ cue('title', 'Escape.', 31.2, 38.8, 'green');
 cue('sub', 'The giant fiber fires at 152–169 Hz. The virtual fly takes off.', 31.8, 38.8);
 cue('title', 'Another neuron: no escape.', 39.4, 45.2);
 cue('sub', 'Stimulating the moonwalker neurons (MDN) instead: the giant fiber stays silent and the fly walks backward.', 40.0, 45.2);
-cue('title', 'What the agents found.', 45.8, 50.8, 'grad');
-cue('sub', 'With gentler stimulation, LC17, a cell type not known from escape studies, drove the escape neuron most strongly: a prediction for the real lab.', 46.4, 50.8);
-cue('title', 'Checked by an AI expert board.', 51.2, 55.4);
-cue('title', 'FlyBrainLab', 55.9, 59.5, 'grad end');
-cue('sub', 'Our agents tackle complex scientific problems by testing, validating through simulation and comparing with published research.', 56.3, 59.5, 'end');
+cue('title', 'Checked by an AI expert board.', 46.2, 50.4);
+cue('title', 'FlyBrainLab', 50.9, 54.5, 'grad end');
+cue('sub', 'Our agents tackle complex scientific problems by testing, validating through simulation and comparing with published research.', 51.3, 54.5, 'end');
 cue('note', 'Recorded simulations: FlyWire v783 brain model (after Shiu et al. 2024). Lit neurons = mean firing rates of the recorded run.', 0.5, 19.2);
 cue('note', 'Looming object shown symbolically: in the model the LPLC2 neurons are driven directly. Spreading wave illustrative; lit neurons = recorded mean rates. Brain shown scaled inside the head.', 19.6, 30.8);
 cue('note', 'Recorded run: brain model → frozen adapter (giant fiber → takeoff) → FlyBody physics, simplified aerodynamics, slow motion.', 31.2, 39.0);
 cue('note', 'Recorded run: MDN driven directly, giant fiber 0 Hz. NeuroMechFly walking body; backward stepping approximated; slow motion.', 39.4, 45.2);
-cue('note', 'Session 3 of the agent lab (lower stimulus drive). Agent-generated prediction, not confirmed in a real fly.', 45.8, 50.8);
-cue('note', 'Audit: 3 sessions, 25 experiments re-run with the same seeds. 8/9: 5 checks circular by design, 3 emergent, 1 disagrees. 25×: first hit of the MDN screen vs. random order (5× vs. a strong baseline).', 51.4, 55.4);
-cue('note', 'FlyWire · Shiu et al. 2024 · NeuroMechFly · FlyBody · Omnigent (open source, by Databricks) · Hack-Nation 7, Challenge 03', 56.4, 59.5);
+cue('note', 'Audit: 3 sessions, 25 experiments re-run with the same seeds. 8/9: 5 checks circular by design, 3 emergent, 1 disagrees. 25×: first hit of the MDN screen vs. random order (5× vs. a strong baseline).', 46.4, 50.4);
+cue('note', 'FlyWire · Shiu et al. 2024 · NeuroMechFly · FlyBody · Omnigent (open source, by Databricks) · Hack-Nation 7, Challenge 03', 51.4, 54.5);
 
 // ---------- load ----------
 const S = {};
@@ -367,7 +364,7 @@ function renderAt(t) {
   for (const ly of [other.stim, other.down, other.gf]) ly.pts.visible = false;
   for (const ly of [L.stim, L.down, L.gf]) ly.pts.visible = true;
   if (control) { S.L.gf.pts.visible = true; paint(S.L.gf, () => [0.32, 0.32, 0.36]); }
-  const showRun = t >= 19.6 && t < 51;
+  const showRun = t >= 19.6 && t < 45.8;
   const stimA = showRun ? ramp(t, 20.6, 22.4) : 0;
   const pulseStim = 0.75 + 0.25 * Math.sin(t * 7.0);
   paint(L.stim, () => [1.0 * stimA * pulseStim, 0.25 * stimA * pulseStim, 0.85 * stimA * pulseStim]);
@@ -412,16 +409,16 @@ function renderAt(t) {
   else if (t < 30.6) camOrbit(bc, lerp(1.75, 1.95, ramp(t, 19.6, 30.6)), lerp(16, -14, ramp(t, 19.6, 30.6)), lerp(12, 16, ramp(t, 19.6, 30.6)));
   else if (t < 39.2) { const x = ramp(t, 30.6, 33.6); camOrbit(bc.clone().lerp(thorax, x), lerp(1.95, 11, x), lerp(-14, -55, ramp(t, 30.6, 39.2)), lerp(16, 16, x)); }
   else if (t < 45.6) camOrbit(thorax, 8.5, lerp(-120, -140, ramp(t, 39.2, 45.6)), 34);
-  else camOrbit(bc, lerp(2.0, 1.75, ramp(t, 45.6, 59.5)), lerp(25, -25, ramp(t, 45.6, 59.5)), 11);
+  else camOrbit(bc, lerp(2.0, 1.75, ramp(t, 45.6, 54.5)), lerp(25, -25, ramp(t, 45.6, 54.5)), 11);
 
   // ---- overlays
   const fade = Math.max(win(t, 38.6, 39.8, 0.6), ramp(t, 45.0, 46.0) * (1 - ramp(t, 46.0, 46.8)),
-    t >= 51 && t < 55.6 ? lerp(0, 0.88, ramp(t, 50.8, 51.6)) : 0, t >= 55.6 ? lerp(0.88, 1, ramp(t, 55.4, 56.0)) : 0);
+    t >= 45.6 && t < 50.6 ? lerp(0, 0.88, ramp(t, 45.6, 46.4)) : 0, t >= 50.6 ? lerp(0.88, 1, ramp(t, 50.4, 51.0)) : 0);
   $('fade').style.opacity = fade;
   drawText(t);
-  $('stats').style.opacity = win(t, 51.6, 55.4, 0.5);
-  document.querySelectorAll('#stats .s').forEach((el, i) => { const o = win(t, 51.8 + 0.3 * i, 55.4, 0.5); el.style.opacity = o; el.style.transform = `translateY(${(1 - o) * 12}px)`; });
-  const chipsA = Math.max(win(t, 8.2, 12.8, 0.6), win(t, 52.8, 55.4, 0.5));
+  $('stats').style.opacity = win(t, 46.6, 50.4, 0.5);
+  document.querySelectorAll('#stats .s').forEach((el, i) => { const o = win(t, 46.8 + 0.3 * i, 50.4, 0.5); el.style.opacity = o; el.style.transform = `translateY(${(1 - o) * 12}px)`; });
+  const chipsA = Math.max(win(t, 8.2, 12.8, 0.6), win(t, 47.8, 50.4, 0.5));
   $('chips').style.opacity = chipsA;
   $('chips').style.top = t < 20 ? '78vh' : '';
   composer.render();
