@@ -1,0 +1,142 @@
+{
+ "inputs": {
+  "candidates": [
+   "LPC1",
+   "LT82b",
+   "LC6",
+   "LC18",
+   "LPLC1",
+   "LC4",
+   "LC16",
+   "LPLC2"
+  ],
+  "target_groups": [
+   "MDN"
+  ],
+  "rate_hz": 20,
+  "duration_ms": 500,
+  "n_trials": 2,
+  "seed": 1
+ },
+ "hit_threshold_hz": 5.0,
+ "rows": [
+  {
+   "cell_type": "LPC1",
+   "n_stimulated": 164,
+   "target_rates": {
+    "MDN": 3.75
+   },
+   "target_max": {
+    "MDN": 10.0
+   },
+   "n_active": 462,
+   "runtime_s": 2.009,
+   "cached": false,
+   "hit_targets": []
+  },
+  {
+   "cell_type": "LT82b",
+   "n_stimulated": 4,
+   "target_rates": {
+    "MDN": 0.0
+   },
+   "target_max": {
+    "MDN": 0.0
+   },
+   "n_active": 81,
+   "runtime_s": 1.829,
+   "cached": false,
+   "hit_targets": []
+  },
+  {
+   "cell_type": "LC6",
+   "n_stimulated": 125,
+   "target_rates": {
+    "MDN": 0.0
+   },
+   "target_max": {
+    "MDN": 0.0
+   },
+   "n_active": 304,
+   "runtime_s": 1.487,
+   "cached": true,
+   "hit_targets": []
+  },
+  {
+   "cell_type": "LC18",
+   "n_stimulated": 188,
+   "target_rates": {
+    "MDN": 0.0
+   },
+   "target_max": {
+    "MDN": 0.0
+   },
+   "n_active": 799,
+   "runtime_s": 1.848,
+   "cached": false,
+   "hit_targets": []
+  },
+  {
+   "cell_type": "LPLC1",
+   "n_stimulated": 140,
+   "target_rates": {
+    "MDN": 0.25
+   },
+   "target_max": {
+    "MDN": 1.0
+   },
+   "n_active": 966,
+   "runtime_s": 2.002,
+   "cached": false,
+   "hit_targets": []
+  },
+  {
+   "cell_type": "LC4",
+   "n_stimulated": 104,
+   "target_rates": {
+    "MDN": 0.0
+   },
+   "target_max": {
+    "MDN": 0.0
+   },
+   "n_active": 180,
+   "runtime_s": 4.354,
+   "cached": true,
+   "hit_targets": []
+  },
+  {
+   "cell_type": "LC16",
+   "n_stimulated": 151,
+   "target_rates": {
+    "MDN": 0.0
+   },
+   "target_max": {
+    "MDN": 0.0
+   },
+   "n_active": 192,
+   "runtime_s": 1.7,
+   "cached": false,
+   "hit_targets": []
+  },
+  {
+   "cell_type": "LPLC2",
+   "n_stimulated": 210,
+   "target_rates": {
+    "MDN": 0.0
+   },
+   "target_max": {
+    "MDN": 0.0
+   },
+   "n_active": 419,
+   "runtime_s": 1.899,
+   "cached": false,
+   "hit_targets": []
+  }
+ ],
+ "hits": [],
+ "hits_by_target": {
+  "MDN": []
+ },
+ "wall_s": 11.34,
+ "mock": false
+}

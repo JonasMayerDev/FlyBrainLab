@@ -395,13 +395,13 @@ def brain_score(cov: dict | None = None) -> dict:
             brain = [t for t in i["tests"] if t["label_source"] == "brain read-out"] or \
                     [t for t in i["tests"] if not t["circular"]]
             vs = {t["verdict"] for t in brain}
-            verdict = ("untested" if not brain else "disagrees" if "inconsistent" in vs
-                       else "agrees" if "consistent" in vs else "unclear")
+            verdict = ("untested" if not brain else "depends" if {"consistent", "inconsistent"} <= vs
+                       else "disagrees" if "inconsistent" in vs else "agrees" if "consistent" in vs else "unclear")
             items.append({**row, "verdict": verdict, "n_tests": len(brain),
                           "sources": sorted({t["source"] for t in brain})})
-    n = {v: sum(1 for x in items if x["verdict"] == v) for v in ("agrees", "disagrees", "unclear", "untested")}
+    n = {v: sum(1 for x in items if x["verdict"] == v) for v in ("agrees", "depends", "disagrees", "unclear", "untested")}
     return {"items": items, "pipeline_checks": checks, "counts": n, "n_total": len(items),
-            "n_conclusive": n["agrees"] + n["disagrees"],
+            "n_conclusive": n["agrees"] + n["depends"] + n["disagrees"],
             "rule": "counted: published experiments that nudge sensory/upstream neurons; excluded: nudging the "
                     "neurons the brain-to-body link reads (true by construction)"}
 

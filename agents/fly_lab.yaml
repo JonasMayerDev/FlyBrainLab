@@ -432,7 +432,7 @@ tools:
       reopens. Read get_benchmark() if a screen benchmark exists and report the measured acceleration honestly.
       Log a short analysis with log_note(event_type="analysis"), then ONE log_board_statement(agent="analysis",
       stance="support"/"object"/"concern", refs=[artifacts + ground-truth ids], statement=<what this round showed about
-      the repertoire hypothesis>). Return: per-result verdicts, numbers,
+      the lab hypothesis: did the brain's command neurons respond as in the real fly?>). Return: per-result verdicts, numbers,
       surprises, and a concrete recommendation for the next experiment.
     tools:
       compare_to_ground_truth:

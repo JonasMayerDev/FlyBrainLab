@@ -69,6 +69,34 @@
     "flight_01",
     "flight_02"
    ]
+  },
+  "20261004-133848-at-realistic-drive-rates-10-30-h-8ed6": {
+   "title": "Escape or back away: does the brain copy pick the right command?",
+   "question": "Real flies can react to a looming object by jumping away or by backing away. With gentle, realistic nudges, which eye neurons switch on the backing-away (moonwalker) neurons, and does the brain copy keep escape and backing away apart, switching on the right command and leaving the other off?",
+   "knew_before": "From experiments 1 to 3: the LPLC2 eye neurons switch on the escape neuron but never the backing-away neurons, the only clear disagreement with real flies. LC16 switched the backing-away neurons on, but only with strong stimulation.",
+   "tried": "The experts nudged 8 eye-neuron types at 20 pulses per second. They nudged LC16 and LPLC2 at 10, 20 and 30 pulses per second, then more strongly, and switched off the escape or backing-away neurons in matched pairs. This experiment used the brain only, no body.",
+   "found": [
+    "With gentle nudges (20 pulses per second), none of the 8 eye-neuron types switched on the backing-away neurons (the highest reached 3.75 signals per second).",
+    "LPLC2 switched on only the escape neuron, more with stronger nudges (35, 68.5 and 80 signals per second at 10, 20 and 30 pulses). The backing-away neurons stayed at 0, even with the escape neuron switched off, so LPLC2 has no hidden route to them in the brain copy.",
+    "LC16 needs a strong nudge: the backing-away neurons stayed off up to 75 pulses per second (0.58 signals) and only switched on at 150 (32 signals, experiment 1).",
+    "LC16 also switched on steering neurons on its own (10.7 signals per second at 75 pulses), separate from backing away."
+   ],
+   "verdict": "partly",
+   "verdict_text": "The brain copy keeps escape and backing away apart: each eye-neuron type switches on its own command and not the other. Escape matches real flies even with gentle nudges. Backing away needs much stronger stimulation than escape, and LPLC2 never triggers it, which disagrees with a real-fly study.",
+   "next": "The experts suggest checking whether LPLC2 reaches the backing-away neurons through the nerve cord (not in our brain-only model), and whether brain chemicals that the model leaves out make the LC16 route easier to switch on.",
+   "review_note": "The AI record keeper's final report mislabels two things: it calls brain_07 and brain_08 no-stimulus controls (they are LC16 with the backing-away neurons off, and LPLC2 with the escape neuron off), and it attaches some reference ids to the wrong experiments (for example gt08, which is LPLC2 → escape). Its numbers are correct. The independent check verifies numbers and sources, not these labels. The planner also spent slightly over budget (about 10.4 of 10 units).",
+   "numbers_from": [
+    "screen_01",
+    "brain_01",
+    "brain_02",
+    "brain_03",
+    "brain_04",
+    "brain_05",
+    "brain_06",
+    "brain_09",
+    "brain_11",
+    "S1/brain_01"
+   ]
   }
  }
 }

@@ -26,9 +26,10 @@ function hero(b) {
       such as the escape neuron that makes a fly jump away, while the others stay off? A board of AI experts plans each experiment, reads the result and decides what to test next.</p>
     <div class="s-answer">
       <div class="s-score"><span class="big">${n.agrees} of ${sc.n_conclusive}</span>
-        <span>published experiments with a clear answer agree: the brain copy switched on the same command neurons as the real fly.</span></div>
+        <span>published experiments with a clear answer agree: the brain copy switched on the same command neurons as the real fly${n.depends ? `; ${n.depends} more agree only with strong stimulation` : ''}.</span></div>
       <ul class="s-tally">
         <li><span class="dot good"></span><b>${n.agrees}</b> agree</li>
+        ${n.depends ? `<li><span class="dot mid"></span><b>${n.depends}</b> agree only with strong stimulation</li>` : ''}
         <li><span class="dot bad"></span><b>${n.disagrees}</b> disagree${n.disagrees ? ' (LPLC2: real flies also back away, the brain copy does not start backing away)' : ''}</li>
         <li><span class="dot none"></span><b>${n.unclear}</b> no clear answer</li>
         <li><span class="dot none"></span><b>${n.untested}</b> not replayed yet</li>
@@ -41,7 +42,7 @@ function hero(b) {
   </section>`;
 }
 
-const VERB = { agrees: ['good', 'same as real flies'], disagrees: ['bad', 'different from real flies'],
+const VERB = { agrees: ['good', 'same as real flies'], depends: ['mid', 'same only with strong stimulation'], disagrees: ['bad', 'different from real flies'],
   unclear: ['none', 'no clear answer'], untested: ['none', 'not replayed yet'] };
 
 function brainLine(x) {
@@ -50,6 +51,7 @@ function brainLine(x) {
   const ro = x.readout_plain || 'the matching command neurons';
   const [cls, txt] = VERB[x.verdict];
   const said = { agrees: x.effect === 'reduce' ? `the ${ro} were held back, as in real flies` : `the ${ro} switched on, as in real flies`,
+    depends: `the ${ro} switched on with strong stimulation (150 pulses/s) but stayed off with gentle stimulation (10–75 pulses/s)`,
     disagrees: `the ${ro} stayed off, unlike in real flies`, unclear: 'the runs so far did not test this directly', untested: 'not replayed yet' }[x.verdict];
   const name = `${x.target_plain}${x.target_plain.includes(x.target) || x.target_plain.includes('(') ? '' : ` (${x.target})`}`;
   return `<li class="${cls}"><div class="real"><b>Real flies</b> <span class="small-inline">(${esc(x.citation.first_author)} et al. ${esc(x.citation.year)},
@@ -58,7 +60,7 @@ function brainLine(x) {
 }
 
 function brainBreakdown(sc) {
-  const order = { disagrees: 0, agrees: 1, unclear: 2, untested: 3 };
+  const order = { disagrees: 0, depends: 1, agrees: 2, unclear: 3, untested: 4 };
   const items = sc.items.slice().sort((a, c) => order[a.verdict] - order[c.verdict]);
   return `<details class="s-row mid" open><summary><b>Every published experiment we compare against</b>
       <span class="cnt">${sc.n_total - sc.counts.untested} of ${sc.n_total} replayed</span></summary>
@@ -183,6 +185,7 @@ function story(s, b, idx) {
     ${doseChart(s, b)}
     <div class="s-verdict">${verdictChip(v)} <span>${esc(p.verdict_text)}</span></div>
     ${p.next ? `<p class="next"><b>What the experts decided to do next:</b> ${esc(p.next)}</p>` : ''}
+    ${p.review_note ? `<p class="s-review"><b>Reviewer note:</b> ${esc(p.review_note)}</p>` : ''}
     ${audit(s)}
     <p class="small"><a href="#" data-expert="${esc(s.id)}">See the full expert discussion for this experiment →</a>
       ${s.plain ? ' · Plain-language summary written from the lab notebook; every number is in the raw results.' : ''}</p>
