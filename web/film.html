@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Embodied Fly Lab Film</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&display=block" rel="stylesheet">
+<style>
+  :root { --bg: #000; --fg: #f5f5f7; --dim: #a1a1a6; --faint: #86868b; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); overflow: hidden; }
+  body { font-family: "Inter", -apple-system, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+         font-optical-sizing: auto; color: var(--fg); -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision;
+         font-feature-settings: "cv11", "ss01", "ss03"; }
+  canvas { position: fixed; inset: 0; width: 100vw !important; height: 100vh !important; display: block; }
+  /* text layers: safe margins of 8 % on both sides, nothing may touch the frame edge */
+  .t { position: fixed; left: 8vw; right: 8vw; text-align: center; pointer-events: none; opacity: 0; will-change: opacity, transform; z-index: 10; }
+  #title { top: 7.5vh; font-weight: 650; font-size: 4.3vw; letter-spacing: -0.032em; line-height: 1.16;
+           white-space: nowrap; padding: 0.04em 0 0.14em; }
+  #sub { top: calc(7.5vh + 5.9vw); font-weight: 400; font-size: 1.55vw; line-height: 1.38; color: var(--dim);
+         letter-spacing: -0.006em; text-wrap: balance; max-width: 62vw; margin: 0 auto; left: 0; right: 0; }
+  #title.red, #title.green, #title.grad { -webkit-background-clip: text; background-clip: text; color: transparent; }
+  #title.red { background-image: linear-gradient(90deg, #ff7a6b, #ff375f); }
+  #title.green { background-image: linear-gradient(90deg, #6ff0ac, #30d158); }
+  #title.grad { background-image: linear-gradient(90deg, #ffffff 5%, #b9c7ff 50%, #ffd29a 95%); }
+  #title.end { top: 33vh; font-size: 6.2vw; font-weight: 700; letter-spacing: -0.04em; }
+  #sub.end { top: calc(33vh + 8.6vw); font-size: 1.75vw; color: #d2d2d7; max-width: 56vw; }
+  #note { bottom: 3.4vh; font-size: 0.82vw; color: var(--faint); letter-spacing: 0.01em; line-height: 1.4; text-wrap: balance; }
+  #fade { position: fixed; inset: 0; background: #000; opacity: 0; pointer-events: none; z-index: 5; }
+  /* stats scene */
+  #stats { position: fixed; left: 8vw; right: 8vw; top: 40vh; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.2vw;
+           opacity: 0; z-index: 10; pointer-events: none; }
+  #stats .s { text-align: center; opacity: 0; transform: translateY(12px); }
+  #stats .n { font-weight: 700; font-size: 4.1vw; letter-spacing: -0.04em; line-height: 1.12; padding-bottom: 0.08em;
+              background-image: linear-gradient(180deg, #ffffff, #b9c7ff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  #stats .l { margin-top: 0.7vw; font-size: 1.12vw; line-height: 1.38; color: var(--dim); text-wrap: balance; }
+  #chips { position: fixed; left: 8vw; right: 8vw; top: calc(40vh + 13.5vw); text-align: center; opacity: 0; z-index: 10; pointer-events: none; }
+  #chips span { display: inline-block; margin: 0.3vw 0.25vw; padding: 0.42vw 1.0vw; border-radius: 999px; font-size: 0.95vw; font-weight: 500;
+                color: #e8e8ed; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); }
+</style>
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+               "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/" } }
+</script>
+</head>
+<body>
+<div id="title" class="t"></div>
+<div id="sub" class="t"></div>
+<div id="stats">
+  <div class="s"><div class="n">138,639</div><div class="l">neurons simulated from the FlyWire connectome</div></div>
+  <div class="s"><div class="n">25 / 25</div><div class="l">experiments re-run identically by an independent audit</div></div>
+  <div class="s"><div class="n">8 / 9</div><div class="l">comparable checks agree with published experiments</div></div>
+  <div class="s"><div class="n">25×</div><div class="l">fewer simulations to the first hit than random order</div></div>
+</div>
+<div id="chips"><span>Literature</span><span>Hypothesis</span><span>Planner</span><span>Safety</span><span>Runner</span><span>Movement verifier</span><span>Analysis</span><span>Record keeper</span><span>Independent audit</span></div>
+<div id="note" class="t"></div>
+<div id="fade"></div>
+<script type="module" src="js/film.js"></script>
+</body>
+</html>
