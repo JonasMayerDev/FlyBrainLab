@@ -111,7 +111,7 @@ function buildFly(geom) {
   }
   return { root, bodies, mats: [body, wing, eye], unit: UNIT[geom.meta.units] ?? 1 };
 }
-function setAlpha(fly, a) { fly.mats.forEach((m, i) => { m.uniforms.uAlpha.value = a * (i === 1 ? 0.8 : 1); }); fly.root.visible = a > 0.002; }
+function setAlpha(fly, a) { fly.mats.forEach((m, i) => { m.uniforms.uAlpha.value = a * (i === 1 ? 0.55 : 1); }); fly.root.visible = a > 0.002; }
 
 // pose access (MuJoCo frame, mm)
 function frameAt(P, t) {
@@ -244,28 +244,29 @@ cue('title', '138,639 neurons.', 0.8, 6.6);
 cue('sub', 'The complete wiring of a fruit-fly brain.', 1.6, 6.6);
 cue('title', 'Now it has a body.', 8.2, 13.6);
 cue('sub', 'A physics-simulated fly around a simulated brain.', 9.0, 13.6);
-cue('title', 'Neurons, wired to muscles.', 14.4, 19.4);
-cue('sub', 'Descending neurons connect the brain to legs and wings.', 15.0, 19.4);
+cue('title', 'Neurons, mapped to movement.', 14.4, 19.4);
+cue('sub', 'A documented bridge turns descending-neuron activity into leg and wing commands.', 15.0, 19.4);
 cue('title', 'Test 1: steering.', 20.6, 24.4);
-cue('sub', 'Left steering neurons fire. The adapter is wired wrong on purpose.', 21.2, 24.4);
+cue('sub', 'One left steering neuron (DNa02) is driven. The adapter is wired wrong on purpose.', 21.2, 24.4);
 cue('title', 'Wrong turn.', 24.8, 28.0, 'red');
 cue('sub', 'The verifier expected left. The fly went right.', 25.2, 28.0);
-cue('title', 'Detected. Rewired.', 28.2, 30.2, 'red');
+cue('title', 'Caught. Rewired.', 28.2, 30.2, 'red');
+cue('sub', 'The verifier flags it; the correct wiring is restored.', 28.6, 30.2);
 cue('title', 'Verified.', 30.6, 33.6, 'green');
-cue('sub', 'Same neurons, left turn, as published.', 31.0, 33.6);
+cue('sub', 'Same neuron, left turn: the direction reported by Rayshubskiy et al. 2025.', 31.0, 33.6);
 cue('title', 'Test 2: escape.', 34.6, 38.4);
-cue('sub', 'Giant fiber and DNg02 neurons fire.', 35.2, 38.4);
+cue('sub', 'Giant fiber and DNg02 neurons are driven; the adapter turns this into a takeoff.', 35.2, 38.4);
 cue('title', 'Lift-off.', 38.8, 42.6, 'green');
 cue('title', 'Taste.', 43.0, 46.2, 'grad');
-cue('sub', 'Sugar neurons light up the feeding neuron MN9.', 43.4, 46.2);
+cue('sub', 'Driving sugar-sensing neurons activates the feeding neuron MN9 (brain model).', 43.4, 46.2);
 cue('title', 'Checked by an AI expert board.', 47.5, 53.0);
-cue('sub', 'Omnigent agents plan, simulate, verify every movement and compare it with published research. An independent audit re-runs each experiment.', 48.1, 53.0);
+cue('sub', 'Omnigent agents plan experiments, run the simulations, check the movements and compare results with published research. An automated audit re-runs every recorded experiment.', 48.1, 53.0);
 cue('title', 'Embodied Fly Lab', 53.6, 59.5, 'grad end');
-cue('sub', 'Our agents solve complex scientific problems by testing, validating through simulation and comparing with published research.', 54.3, 59.5, 'end');
-cue('note', 'Recorded simulations: FlyWire brain model, NeuroMechFly and FlyBody in MuJoCo. Brain shown scaled inside the head.', 0.5, 33.6);
-cue('note', 'Recorded flight simulation. Sugar cube is an illustration.', 34.0, 46.4);
-cue('note', 'Numbers from the recorded runs: audit of 3 sessions (25 experiments), validation benchmarks. 25× = connectome-guided vs. random order (5× vs. a strong baseline).', 48.6, 53.0);
-cue('note', 'FlyWire · Shiu et al. 2024 · NeuroMechFly · FlyBody · Omnigent (Databricks) · Hack-Nation 7, Challenge 03', 54.6, 59.5);
+cue('sub', 'Our agents tackle complex scientific problems by testing, validating through simulation and comparing with published research.', 54.3, 59.5, 'end');
+cue('note', 'Recorded simulations in slow motion: FlyWire brain model, NeuroMechFly and FlyBody in MuJoCo. Brain shown scaled inside the head. Lit neurons = mean firing rates; pulses are illustrative.', 0.5, 33.6);
+cue('note', 'Recorded flight simulation, simplified aerodynamics, slow motion. Taste: brain read-out only. Sugar cube is an illustration.', 34.0, 46.4);
+cue('note', 'Audit: 3 sessions, 25 experiments re-run with the same seeds. 8/9: 5 checks circular by design, 3 emergent, 1 disagrees. 25×: first hit of the MDN screen vs. random order (5× vs. a strong baseline).', 48.6, 53.0);
+cue('note', 'FlyWire · Shiu et al. 2024 · NeuroMechFly · FlyBody · Omnigent (open source, by Databricks) · Hack-Nation 7, Challenge 03', 54.6, 59.5);
 
 // ---------- load ----------
 const S = {};
@@ -285,7 +286,7 @@ async function init() {
   S.headOff = hb.getCenter(new THREE.Vector3()).multiplyScalar(S.fb.unit);
   const hs = hb.getSize(new THREE.Vector3()); S.headW = Math.max(hs.x, hs.y, hs.z) * S.fb.unit;
   initPulses(8);
-  S.trail = new THREE.Line(new THREE.BufferGeometry(), new THREE.LineBasicMaterial({ color: 0xffb340, transparent: true, opacity: 0.9, blending: THREE.AdditiveBlending }));
+  S.trail = new THREE.Line(new THREE.BufferGeometry(), new THREE.LineBasicMaterial({ color: 0xffb340, transparent: true, opacity: 0.5, blending: THREE.AdditiveBlending }));
   const ti = S.fly.bodies.indexOf('thorax'); const tp = [];
   S.fly.p.forEach((p) => tp.push(p[3 * ti] * S.uFly, p[3 * ti + 1] * S.uFly, p[3 * ti + 2] * S.uFly));
   S.trail.geometry.setAttribute('position', new THREE.Float32BufferAttribute(tp, 3)); S.trail.frustumCulled = false; world.add(S.trail);
@@ -376,7 +377,7 @@ function renderAt(t) {
 
   // ---- fades + text
   const fade = t < 47.2 ? Math.max(win(t, 19.4, 20.6, 0.6), win(t, 33.4, 34.6, 0.6), ramp(t, 46.3, 47.2))
-    : t < 53 ? lerp(1, 0.74, ramp(t, 47.2, 48.4)) : lerp(0.74, 1, ramp(t, 53.0, 53.6));
+    : t < 53 ? lerp(1, 0.88, ramp(t, 47.2, 48.4)) : lerp(0.88, 1, ramp(t, 53.0, 53.6));
   $('fade').style.opacity = fade;
   drawText(t);
   const so = win(t, 48.6, 53.0, 0.6);
