@@ -6455,6 +6455,18 @@
       "scope": "FlyWire Consortium (2024). Our model uses author-transformed connectivity tables, not raw synapse points."
     },
     {
+      "title": "Namiki et al. (2022) \u00b7 DNg02 flight evidence",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9206711/",
+      "kind": "Primary biological evidence",
+      "scope": "Population activation relates to wingbeat amplitude in already flying, tethered flies. It does not show virtual takeoff or validate our rate-to-motor adapter."
+    },
+    {
+      "title": "Schlegel et al. (2024) \u00b7 cell-type annotation",
+      "url": "https://doi.org/10.1038/s41586-024-07686-5",
+      "kind": "Cell identities \u00b7 pinned v2.1.0",
+      "scope": "25 selected DNg02 entries are verified in the installed v783 graph. Subtypes are pooled; all selected entries are retained in the mean-rate denominator."
+    },
+    {
       "title": "Frozen DNg02 experiment design",
       "url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/research/designs/dng02-input-v1.json",
       "kind": "Preregistered model assay",

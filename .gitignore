@@ -28,3 +28,4 @@ dist/
 /output/
 /submission/exports/
 .playwright-cli/
+.codex-tmp/

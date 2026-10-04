@@ -187,3 +187,15 @@ Tests verwenden ausschließlich markierte Provider-/Claim-Fixtures in temporäre
 Ordnern. Sie prüfen Persistenz, Provenienz, ID-Präzision, unzulässige Quellen,
 fehlende Konfiguration, Caching, persistente Request-/Kostengrenzen und
 Secret-Redaktion. Das sind keine Live-Verbindungs- oder Forschungsnachweise.
+
+## Tatsächlicher DNg02-Stand
+
+Vier zusätzliche echte gehashte Quellenfassungen und vier geprüfte Claims sind importiert: Namiki2022, offizielle v783-Annotationen, Shiu2024 und gepinnter Autorcode. Herkunft/Bedingungen/IDs und Reproduktionsimport: [DNg02-Evidenz](evidence/DNG02_EVIDENCE.md). Direktabruf war unabhängig von BrightData.
+
+`search_knowledge` erlaubt die Collections `sources`, `claims`, `runs`; alle Wörter im Query müssen vorkommen. Leerer Query listet Records, ein präziser Begriff wie `DNg02` durchsucht sie. Der Store enthält keine semantische Suchmaschine.
+
+```sh
+.venv/bin/python -m research.download_evidence --output-dir /tmp/flybrain-evidence
+```
+
+Der Downloader prüft die fixierte Annotation perHash. Artikel können sich ändern; der Import erhält den Hash der tatsächlich erhaltenen Fassung. Volltexte bleiben lokal. Das wissenschaftliche Design und öffentliche abgeleitete Resultate stehen unter `research/designs/`, `data/experiments/` und `docs/RESULTS.md`.

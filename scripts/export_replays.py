@@ -102,6 +102,9 @@ def export_run(directory: Path, sampled_ids: list[str]) -> dict | None:
     metadata = {key: record[key] for key in (
         "run_id", "status", "started_at_utc", "ended_at_utc", "dataset_version", "model_commit", "duration_ms", "stimulus_rate_hz", "seed", "n_trials", "timestep_ms", "simulation_scope", "body_connected", "evidence_scope", "versions", "limitations", "compatibility_adjustments", "data_loading_adjustments", "stimulated_neuron_ids", "neurons", "connection_rows", "spike_events", "active_neurons", "full_network_included", "backend", "wall_seconds", "max_process_rss_bytes", "experiment_id", "condition", "hypothesis", "question", "readout_neuron_ids", "controller", "motor_adapter", "orchestration", "silenced_neuron_ids", "metrics", "design_id", "design_sha256", "design_path", "readout_metrics", "execution_context", "orchestration_verified_by_this_module"
     ) if key in record}
+    metadata["stimulated_neuron_ids"] = targets
+    if "readout_neuron_ids" in metadata:
+        metadata["readout_neuron_ids"] = readouts
     body = None
     body_file = directory / record.get("body_trajectory_file", "body_trajectory.json")
     if body_file.exists():
@@ -124,6 +127,8 @@ def export_run(directory: Path, sampled_ids: list[str]) -> dict | None:
     run_sources = list(record.get("sources", SOURCES))
     if record.get("design_id"):
         run_sources.extend([
+            {"title": "Namiki et al. (2022) · DNg02 flight evidence", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9206711/", "kind": "Primary biological evidence", "scope": "Population activation relates to wingbeat amplitude in already flying, tethered flies. It does not show virtual takeoff or validate our rate-to-motor adapter."},
+            {"title": "Schlegel et al. (2024) · cell-type annotation", "url": "https://doi.org/10.1038/s41586-024-07686-5", "kind": "Cell identities · pinned v2.1.0", "scope": "25 selected DNg02 entries are verified in the installed v783 graph. Subtypes are pooled; all selected entries are retained in the mean-rate denominator."},
             {"title": "Frozen DNg02 experiment design", "url": f"{REPOSITORY}/blob/main/{record.get('design_path', 'research/designs/dng02-input-v1.json')}", "kind": "Preregistered model assay", "scope": "Two tests, three fixed seeds, 25 predefined DNg02 readouts; hypothesis selected before observing the response."},
             {"title": "DNg02 target identity and biological evidence", "url": f"{REPOSITORY}/blob/main/research/evidence/dng02_targets.json", "kind": "Evidence and exact v783 IDs", "scope": "Annotation release and graph-selected upstream identities. Flight-related biological evidence does not validate this model as a flying brain."},
         ])

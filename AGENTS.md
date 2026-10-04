@@ -232,3 +232,13 @@ Vorläufige vier Rollen gemäß `TEAM_STATUS.md`: Literatur/Knowledgebase; Omnig
 - `Challenges/`: vorhandene Challenge-Quellen; unverändert erhalten.
 
 Bei bestätigten Produkt-, Track- oder Teamentscheidungen diesen Projektkontext und den Plan konsistent aktualisieren. Diese Projektpflege ist keine Erlaubnis, die persönliche Codex-Memory zu ändern.
+
+## Nachtfortschritt4.Oktober2026
+
+Der frühere Setup-Snapshot ist für folgende Teile abgelöst:25DNg02-v783Readouts und8graphgewählte Inputs quellenbasiert geprüft, vier echte primäre KB-Snapshots und vier Claims importiert; versiegeltes200msA/B-Design und12manuelle wissenschaftliche Vollgraph-Machbarkeitsruns ausgeführt. Sham0Hz, Drive17,2/18,8/18,4Hz, Ausgangsdisconnection0Hz. Flybody/MuJoCo installiert; echter10msOpen-loop-Motoradapter mit Körpertrajektorien. Dauer/Terminierung und biologisch unkalibrierte Kopplung ausdrücklich begrenzen.
+
+Öffentlicher Viewer läuft unter https://valleebo.github.io/FlyBrainLab/ und ist anonym Desktop/Mobile geprüft. Kanonischer Code/Issues bleiben JonasMayerDev/FlyBrainLab; Hosting-Mirror valleebo/FlyBrainLab wurde mangels Pages-Adminrechten im Teamrepo eingerichtet.14echte Neuronenruns,6Körpertrajektorien zunächst exportiert.
+
+Omnigent hat eine native Codex-Route über vorhandene Anmeldung; GPT-5.5 ist im tatsächlichen Konto unterstützt. Die echte5Spezialistenkette wird mit neuen numerischen Toolausführungen abgearbeitet; Abschluss erst nach strikter Traceprüfung behaupten. Startup-Policy muss synthetisches sys_agent_start erlauben, sonst wird die Parent-Inbox nicht initialisiert. Asyncdelegation einmal starten, Turn yielden, nach nativer Fertigmeldung Inbox einmal lesen. Kein Pollingloop. BrightData/Anthropic-Anbieteraktivierung bleibt offen.
+
+Aktuelle Resultate: docs/RESULTS.md. Reale Replays: frontend/ und data/replay/. Abgabeunterlagen, Videoskripte und menschliche09:00-Aufgaben: submission/. #2 und #10 nicht ohne tatsächliche Provider-/Abgabenachweise schließen. Körperdiagnostik und native Loopverifikation können diesen Snapshot aktualisieren.

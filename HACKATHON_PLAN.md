@@ -183,3 +183,7 @@ Gehirnaktivität als Spike-Raster, Ausleseraten oder Bereichsübersicht; Körper
 - Um 14:30 zwei Bestätigungen zu zweit kontrollieren. Plattform-Nachfrist bis 15:15 nicht als allgemeine Deadlineverlängerung einplanen.
 
 **Nächster konkreter Meilenstein:** Anbieterzugänge im lokalen Terminal ergänzen und einen echten Omnigent-/BrightData-Handoff ausführen. Parallel öffentliche Viewer-URL und separates Körperbeispiel vorbereiten. Daten/Brain-Runtime sind eingerichtet; vorhandene numerische Läufe bleiben technische Setupchecks außerhalb Omnigent. Wissenschaftlicher Discovery-Test, Körperkopplung und Veröffentlichung sind noch offen.
+
+## Nachtmeilenstein4.Oktober
+
+Öffentlicher tatsächlicher Replay-Viewer: https://valleebo.github.io/FlyBrainLab/. v783-DNg02-Auswahl, zwei versiegelte Designs, echte A/B-Machbarkeitsruns und eingefrorene physikalische Open-loop-Kopplung sind nachgewiesen; Details docs/RESULTS.md und docs/BODY_INTEGRATION.md. Native5Spezialisten-Orchestrierung verwendet vorhandenen Codex-Zugang, neue Experimente und separate Traceprüfung. Kein BrightData-Zugang behaupten. Menschliche persönliche Medien/Formulare bleiben9:00-Aufgaben in submission/MORNING_CHECKLIST.md. Deadline/Feature-Freeze unverändert.

@@ -1,118 +1,105 @@
-# Fly Discovery – lokales Hackathon-Setup
+# FlyBrainLab
 
-Challenge 03: Databricks „Agentic Scientific Discovery“. Deadline: 4. Oktober 2026, 15:00 Europe/Berlin.
+**Ein quellenbasierter Forschungsworkflow verbindet ein vollständiges Fliegengehirnmodell mit kontrollierten Experimenten und einer virtuellen Fliegenkörper-Physik.** Challenge 03: Databricks „Agentic Scientific Discovery“, Global AI Hackathon Munich, 3.–4. Oktober 2026.
 
-**Teammitglieder: zuerst [TEAM_STATUS.md](TEAM_STATUS.md) lesen.** Dort stehen geprüfter Fortschritt, aktuelle Blocker, vier parallele Arbeitsbereiche und konkrete Startschritte. Aufgaben: [GitHub-Issues](https://github.com/JonasMayerDev/FlyBrainLab/issues).
+**[Öffentliche interaktive Demo](https://valleebo.github.io/FlyBrainLab/)** · [Ergebnisse und Grenzen](docs/RESULTS.md) · [Teamstand](TEAM_STATUS.md) · [GitHub-Issues](https://github.com/JonasMayerDev/FlyBrainLab/issues) · [Abgabeunterlagen](submission/README.md)
 
-Das Setup verbindet ein vorhandenes Drosophila-Gehirnmodell mit einer lokalen Evidenzablage und einer nativen Omnigent-Agentenarchitektur. Die spätere öffentliche Demo spielt echte Ergebnisse ab. Körperkopplung, Flug und veröffentlichter Viewer sind noch nicht umgesetzt.
+Die Demo spielt echte vorberechnete Runs ab. Sie rechnet keine Simulation im Browser. Der vollständige FAFB-FlyWire-v783-Graph umfasst 138.639 Neuronen und 15.091.983 verarbeitete Verbindungszeilen. Das eingefrorene DNg02-Experiment untersucht neuronale Signalübertragung; die Körperkopplung nutzt einen ausdrücklich angenommenen Motoradapter. **Stabiler oder biologisch validierter autonomer Flug ist nicht nachgewiesen.**
 
-## Was bereits funktioniert
+## Was funktioniert
 
-| Baustein | Geprüfter Stand |
+| Baustein | Nachweis |
 |---|---|
-| Python | Isolierte `.venv`, CPython 3.12.14; direkte und vollständige Dependency-Pins |
-| Gehirndaten | FAFB FlyWire v783: 138.639 Neuronen und 15.091.983 autorenseitig verarbeitete Verbindungszeilen |
-| Modell | Gepinnter Shiu-Autorencode, Brian2 2.9.0; Lizenz und Datei-Prüfsummen erhalten |
-| Numerischer Starttest | Vollständiger heruntergeladener Graph, 20 ms simulierte Zeit: 150-Hz-Pilot erzeugt 2 Spikes, 0-Hz-Sham 0 Spikes |
-| Omnigent | 0.16.0 installiert; Supervisor plus fünf Spezialagenten, konkrete Tools und Policies mit dem installierten Parser geprüft |
-| Lokaler Omnigent-Dienst | Gestartet; `/health` an `http://127.0.0.1:6767` antwortet erfolgreich. Live-Modellzugang noch nicht geprüft |
-| Native Toolausführung | Echte Omnigent-Tool-Subprozesse lesen Setupstatus und Ergebnisdateien; keine Modellaufrufe dafür nötig |
-| Lokale Knowledgebase | Vier Quellen, ein heruntergeladener Autor-README-Snapshot und zwei tatsächliche neuronale Setup-Run-Records |
-| BrightData | SERP-/Web-Unlocker-Adapter verdrahtet; 22 Offline-Tests für Adapter und Speicherung bestanden |
-| Git | Dieses Repository enthält den lokalen Code-/Dokumentationsstand und kleine echte Ergebnisse; öffentlicher Viewer/Pages noch offen |
+| Vollgraph-Neuronenrechnung | Gepinnter Shiu-Autorencode + Brian2; echte Sham-/Stimulations-/Disconnection-Runs, Seeds 42/43/44 |
+| Wissenschaftliche Targets | 25 DNg02-IDs in v783 verifiziert; Primärliteratur, vier gehashte Quellensnapshots und geprüfte KB-Claims |
+| Vorab eingefrorene Untersuchung | Zwei Testdesigns, versiegelte Parameter/Targets und ergebnisabhängige nächste Entscheidung |
+| Native Agentenarchitektur | Omnigent 0.16.0: Supervisor + Recherche, Evidenzprüfung, Planung, Experiment und Analyse; deklarierte Tools/Policies |
+| Körperphysik und Kopplung | Gepinntes Flybody/MuJoCo, echte physikalische Trajektorien, eingefrorener Open-loop-Adapter; Körper endet bei 38,8 ms |
+| Öffentlicher Viewer | Vite + TypeScript + Three.js, GitHub Actions/Pages; Run-Auswahl, Play/Pause, Zeitleiste, Readouts, Kontrollen und Quellen |
+| Engpassmessung | Wiederholter identischer 25-ID-Abruf: 427,73 ms erneutes Par­sen versus 0,282 ms geprüfter KB-Claim; eng begrenzte Cache-Messung |
 
-GitHub-Repository: [JonasMayerDev/FlyBrainLab](https://github.com/JonasMayerDev/FlyBrainLab). Schreibzugriff geprüft, zehn Teamaufgaben erstellt; Übersicht in [GITHUB_ISSUES.md](GITHUB_ISSUES.md). Große Originaldaten, Secrets und lokale Dienste/KB sind ausgeschlossen; die kleinen Spike-Parquet-Dateien der tatsächlichen Setup-Runs sind enthalten.
+Manuelle Machbarkeitsläufe und tatsächlich unter Omnigent ausgeführte Experimente müssen getrennt beurteilt werden. Native Session-Trace und Tool-Receipt sind der erforderliche Orchestrierungsnachweis; ein Provenienzlabel in einem Run allein ist keiner. [Resultate](docs/RESULTS.md), [Neuronale Rohdaten](data/runs/), [Experimentdesign](research/designs/), [Körperintegration](docs/BODY_INTEGRATION.md).
 
-Die kurzen neuronalen Läufe sind technische Setupchecks, keine biologische Funktionsvalidierung. Sie liefen vor der Omnigent-Einrichtung und werden auch so gespeichert. Der Vergleich wurde retrospektiv dokumentiert. Kein Körperadapter, kein sensorischer Rückkanal und kein Flugnachweis.
+## Lokal starten
 
-## Dateien und lokale Ablage
-
-```text
-agents/fly-discovery/       native Omnigent-Konfiguration, Spezialagenten, Tools und Policies
-simulation/                Download, Validierung und begrenzter neuronaler Pilot
-simulation/vendor/shiu/    unveränderter Autorencode, MIT-Lizenz
-data/brain/                Datensatzmanifest, Validierung, große lokale Datendateien
-data/runs/                 echte technische Run Records und Spike-Dateien
-scripts/                   BrightData, lokale KB, Start- und Statuswerkzeuge
-research/                  Quellenmetadaten und Dokumentation
-tests/                     Offline-Verifikation ohne bezahlte Aufrufe
-```
-
-**Die Knowledgebase bleibt außerhalb von iCloud Drive:**
-
-```text
-~/Library/Application Support/FlyDiscovery/knowledgebase/
-  sources.jsonl
-  claims.jsonl
-  runs.jsonl
-  snapshots/
-```
-
-Omnigent speichert seinen veränderlichen Dienstzustand unter `~/Library/Application Support/FlyDiscovery/omnigent/`. Das Projekt selbst liegt in iCloud Drive; deshalb keine echte `.env` mit Schlüsseln dort anlegen. `RESEARCH_KB_DIR` kann den KB-Pfad explizit ändern. Öffentliche Exporte aus der lokalen KB sind ein separater späterer Schritt.
-
-## Jetzt prüfen
-
-Im Terminal dieses Projektordners:
+Die geprüfte Plattform ist macOS/arm64, Python 3.12, 8 GiB RAM. Numerische Läufe werden seriell gerechnet. Ein Teamrechner benötigt eigene Zugänge und eigene KB; diese werden nicht mit Git übertragen.
 
 ```sh
-.venv/bin/python scripts/check_setup.py
-.venv/bin/python scripts/omnigent_run.py --check
-.venv/bin/python scripts/brightdata_client.py status
-```
-
-Diese Befehle benötigen keine Schlüssel und lösen keine Modell-/BrightData-Aufrufe aus. Der native Configcheck prüft auch die tatsächlich geladenen Tools je Rolle; syntaktisch akzeptiertes YAML allein genügt nicht.
-
-## Fehlende Zugänge einrichten und den echten Agentenlauf starten
-
-1. Anthropic-Angebot einlösen und den tatsächlichen Console-Saldo prüfen. Dort einen API-Key für das Teamprojekt erstellen.
-2. BrightData-Angebot aktivieren. API-Key und Namen einer **SERP-API-Zone** sowie einer **Web-Unlocker-Zone** bereithalten; der Angebotscode ist kein API-Key.
-3. Den konservativen Preis pro Request aus den aktiven Produkttarifen prüfen; für den gemeinsamen Zähler den höheren zutreffenden Wert verwenden. Das Schätzbudget ersetzt keine anbieterseitige Kostengrenze.
-4. Den folgenden Befehl lokal starten. Schlüssel werden verdeckt abgefragt und nur über die Prozessumgebung an den frisch gestarteten CLI-Runner weitergegeben; weder in den Projektdateien noch als Kommandozeilenargument gespeichert.
-
-```sh
-.venv/bin/python scripts/with_credentials.py --anthropic --brightdata --unlocker -- .venv/bin/python scripts/omnigent_run.py
-```
-
-Die Eingabe wird bei Schlüsseln nicht angezeigt. Zonennamen und Requestpreis sind normale Eingaben. Im Startwrapper gelten maximal zehn BrightData-Anfragen und 1 USD geschätztes Budget; die Omnigent-Konfiguration enthält weitere Session-/Agentenbaum-Limits. Bereits reservierte Requests bleiben nach Fehlern mitgezählt, weil ein Timeout eine berechnete Anfrage sein kann.
-
-Der erste Prompt liest vorhandene echte Setup-Ergebnisse, delegiert Recherche/Evidenzprüfung, plant zwei künftige Tests und leitet eine nächste Entscheidung ab. **Eine abgeschlossene wissenschaftliche C3-Schleife ist damit noch nicht nachgewiesen.** Der ausgesuchte wissenschaftliche Versuch muss anschließend tatsächlich unter Omnigent ausgeführt und interpretiert werden.
-
-API-Zugriff und Live-Handoffs sind mangels Zugangsdaten noch nicht getestet. Eine grüne Offline-Prüfung oder bloße Schlüsselpräsenz bestätigt keinen gültigen Anbieterzugang.
-
-## Gehirndaten und Modell reproduzieren
-
-```sh
-.venv/bin/python -m simulation.download_brain --verify-only
-.venv/bin/python -m simulation.brain validate
-.venv/bin/python -m simulation.brain pilot --duration-ms 20 --rate-hz 150 --seed 42
-```
-
-Neu herunterladen: `.venv/bin/python -m simulation.download_brain`. Große Originaldateien werden nicht in normales Git aufgenommen; Quellen, Version, Lizenz, Größe und SHA256 stehen in `data/brain/manifest.json`.
-
-Das neuronale Modell nutzt alle heruntergeladenen v783-Verbindungszeilen. Laufzeitanpassungen sind in jedem Run Record dokumentiert: nur benötigte Connectivity-Spalten laden und eine ungültige `w=0`-Resetzuweisung aus den Laufzeitparametern entfernen. Die Vendorquelle bleibt unverändert. FlyWire-IDs in JSON/JavaScript als Strings erhalten.
-
-## Installation auf einem weiteren Rechner
-
-Python 3.12 und `uv` bereitstellen, dann:
-
-```sh
+git clone https://github.com/JonasMayerDev/FlyBrainLab.git
+cd FlyBrainLab
 UV_CACHE_DIR="$PWD/.cache/uv" uv venv --python 3.12 .venv
 UV_CACHE_DIR="$PWD/.cache/uv" uv pip install --python .venv/bin/python -r requirements.lock
-.venv/bin/python -m simulation.download_brain
-.venv/bin/python scripts/kb_store.py init
-.venv/bin/python scripts/kb_store.py seed
+.venv/bin/python scripts/check_setup.py
 .venv/bin/python scripts/omnigent_run.py --check
+.venv/bin/python -m unittest discover -s tests -v
 ```
 
-Die neue lokale KB startet mit Metadaten; vorhandene Wissens- und Run-Daten werden nicht automatisch über Git übertragen.
+### Viewer
 
-## Verifikation und nächste Arbeit
+Node.js 24 und npm:
 
 ```sh
-.venv/bin/python -m unittest discover -s tests -v
-UV_CACHE_DIR="$PWD/.cache/uv" uv pip check --python .venv/bin/python
+cd frontend
+npm ci
+npm run dev
+# Produktionsbuild: npm run build
 ```
 
-Geprüft sind unter anderem konkurrierende Schreibzugriffe, gemeinsame Requestlimits, Provenienz, gepinnte Quellenfassungen, String-IDs und Secret-Redaktion. Keine echten API-Ergebnisse werden durch Testfixtures ersetzt.
+Replay-Exporte sind klein und versioniert unter `data/replay/`. Neue tatsächliche Runs exportieren: `.venv/bin/python scripts/export_replays.py`. IDs als Strings erhalten. Körperzustände werden nur für den tatsächlichen simulierten Zeitraum wiedergegeben.
 
-Als Nächstes: Anbieterzugänge tatsächlich testen, eine funktionell belegte v783-Neuronengruppe recherchieren, die wissenschaftliche Testwahl einfrieren und ausführen. Körper-/Motoranbindung und öffentlicher Three.js-Replay folgen darauf. Abgabecheckliste und Zeitplan: `HACKATHON_PLAN.md`; Stack und Credits: `STACK.md`; technische Details: `agents/README.md`, `simulation/README.md`, `research/README.md`.
+### Gehirn und wissenschaftlicher Vergleich
+
+```sh
+.venv/bin/python -m simulation.download_brain
+.venv/bin/python -m simulation.brain validate
+.venv/bin/python -m simulation.experiment --test A
+.venv/bin/python -m simulation.experiment --test B
+```
+
+Die Originaldateien werden über versionierte Originalquellen geladen und anhand der Manifest-Hashes geprüft; sie liegen nicht in normalem Git. Die Direktbefehle sind manuelle Runs. Für die tatsächliche Agentenschleife Omnigent verwenden. Details: [Simulation](simulation/README.md), [versiegeltes Design](research/designs/EXPERIMENT_DESIGN.md).
+
+### Omnigent und Knowledgebase
+
+KB und veränderlicher Dienstzustand bleiben außerhalb iCloud unter `~/Library/Application Support/FlyDiscovery/`. Reproduzierbare Quellenimporte: [Evidenz](research/evidence/DNG02_EVIDENCE.md). Keine Schlüssel in Chat, Dateien oder Git schreiben.
+
+Mit bereits angemeldeter Codex-CLI und importierten echten Primärquellen:
+
+```sh
+.venv/bin/python -m research.download_evidence --output-dir /tmp/flybrain-evidence
+.venv/bin/python -m research.import_dng02_evidence \
+  --annotations-tsv /tmp/flybrain-evidence/flywire-neuron-annotations-v2.1.0.tsv \
+  --namiki-html /tmp/flybrain-evidence/namiki-dng02-paper.html \
+  --shiu-html /tmp/flybrain-evidence/shiu-brain-model-paper.html
+.venv/bin/python scripts/omnigent_run.py --check --harness codex --evidence-mode existing --model gpt-5.5
+.venv/bin/python scripts/omnigent_run.py --harness codex --evidence-mode existing --model gpt-5.5 --discovery
+```
+
+Das Modell muss vom tatsächlichen Konto unterstützt werden; die geprüfte CLI meldete GPT-5.5. Der Launcher erzeugt ein isoliertes natives Bundle und CLI-Wrapper, ohne Benutzerkonfiguration oder Anmeldung umzuschreiben. Providerkosten-/Toolgrenzen gelten; native Shell und fremde MCP-Server werden unterdrückt. `existing` entfernt BrightData-Tools und verwendet echte bereits gespeicherte Evidenz.
+
+Die separat vorbereitete Anthropic-/BrightData-Route benötigt gültige Keys, aktivierte SERP-/Web-Unlocker-Zonen und einen bestätigten Requesttarif:
+
+```sh
+.venv/bin/python scripts/with_credentials.py --anthropic --brightdata --unlocker -- .venv/bin/python scripts/omnigent_run.py --discovery
+```
+
+Schlüssel werden verdeckt abgefragt und nur an den Kindprozess weitergegeben. Die Anbieteraktivierung bleibt offen; grüne Offline-Tests bestätigen keinen bezahlten API-Zugang. Start- und Policy-Details: [agents/README.md](agents/README.md), [research/README.md](research/README.md).
+
+### Körperphysik
+
+Eigene isolierte `.runtime/body-venv`; keine Änderung der Hauptumgebung. Versionspins, Installations-/Runbefehle und Controllerherkunft: [BODY_INTEGRATION.md](docs/BODY_INTEGRATION.md). Die Baseline benutzt vorhandene Autorenbausteine und kein neues RL-Training.
+
+## Veröffentlichung und Abgabe
+
+Das Team-Repository und die Issues bleiben **JonasMayerDev/FlyBrainLab**. Dem angemeldeten Teamzugang fehlen dort Pages-Adminrechte. Deshalb veröffentlicht ein gleichnamiger öffentlicher Hosting-Mirror **valleebo/FlyBrainLab** denselben Viewer über GitHub Actions. Die Demo-Adresse ist `https://valleebo.github.io/FlyBrainLab/`; localhost ist kein Einreichungslink.
+
+Abgabe am **4. Oktober 2026, 15:00 Europe/Berlin**, internes Ziel 14:30. Benötigt werden Teamfoto, drei Plattformvideos jeweils höchstens 60 Sekunden/1 GB sowie eine zusätzliche zweiminütige Track-Demo. HackOS und das verlinkte Google Form müssen beide tatsächlich eingereicht werden; ein Entwurf ist keine Einreichung. [Abgabeunterlagen](submission/README.md) enthalten Aufnahmeplan und Validator. Foto, persönliche Teamvorstellung und finale Einreichungen benötigen die Menschen im Team.
+
+## Herkunft und Grenzen
+
+- [Shiu et al. 2024](https://pmc.ncbi.nlm.nih.gov/articles/PMC11446845/): Whole-brain-LIF-Modell, insbesondere Feeding/Grooming-Validierung; Autorencode und MIT-Lizenz unter `simulation/vendor/shiu/`.
+- [Namiki et al. 2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC9206711/): DNg02-Flügelamplitude in schon fliegenden Fliegen.
+- [FlyWire-Annotation](https://github.com/flyconnectome/flywire_annotations): gepinnte v783-Identitäten; keine BANC-/v630-IDs mischen.
+- [Flybody](https://github.com/TuragaLab/flybody): Körperphysik und vorhandener approximierter Controller, Apache-2.0-Lizenz dokumentiert.
+- [Omnigent](https://github.com/omnigent-ai/omnigent): tatsächliche Agenten- und Sessionorchestrierung; LLMs ersetzen keine neuronale oder physikalische Integration.
+
+Eine reagierende Population, ein angenommener Motoradapter, physikalische Bewegung und eine 3D-Darstellung sind vier getrennte Nachweise. Die aktuellen Ergebnisse tragen einen transparenten kontrollierten Modellbefund, keine vollständige Gehirnemulation oder neue biologische Flugvalidierung.

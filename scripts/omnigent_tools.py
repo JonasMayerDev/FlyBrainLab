@@ -48,7 +48,7 @@ def read_local_artifact(relative_path: str, max_chars: int = 12000) -> dict[str,
         raise ValueError("Artifact must be under data/, research/, or simulation/")
     path = (PROJECT_ROOT / relative).resolve()
     path.relative_to(PROJECT_ROOT)
-    if path.suffix.lower() not in {".json", ".jsonl", ".md", ".txt"}:
+    if path.suffix.lower() not in {".json", ".jsonl", ".md", ".txt", ".sha256"}:
         raise ValueError("Unsupported artifact type")
     if not path.is_file():
         return {"status": "missing", "path": relative_path}

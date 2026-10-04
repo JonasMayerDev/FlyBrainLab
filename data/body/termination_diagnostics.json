@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "run_id": "body-baseline-20261004T004459Z-71d985",
+      "result_path": "data/body/body-baseline-20261004T004459Z-71d985",
+      "diagnostic_configuration": null,
+      "metrics": {
+        "sample_count": 195,
+        "actual_duration_ms": 38.8,
+        "root_displacement_cm": 0.7755481281364935,
+        "root_path_length_cm": 0.8211070024502538,
+        "root_height_change_cm": -0.43939191891819174,
+        "minimum_root_height_cm": 0.5974942009242067,
+        "wing_yaw_peak_to_peak_rad": [
+          2.229360232522691,
+          2.2293222420696157
+        ],
+        "maximum_adapter_rate_hz": 0.0,
+        "maximum_wing_yaw_amplitude_factor": 1.0
+      },
+      "task_termination_checks": {
+        "reference_end_reached": true,
+        "reference_end_step": 194,
+        "reference_end_ms": 38.800000000000004,
+        "thorax_height_cm": 0.5974942009242067,
+        "thorax_height_threshold_cm": 0.2,
+        "thorax_below_threshold": false,
+        "qacc_norm": 2964217.470178193,
+        "qacc_threshold": 100000000000000.0,
+        "acceleration_above_threshold": false
+      },
+      "termination_reason": "reference trajectory end"
+    },
+    {
+      "run_id": "body-diagnostic-20261004T004503Z-1a16fd",
+      "result_path": "data/body/body-diagnostic-20261004T004503Z-1a16fd",
+      "diagnostic_configuration": {
+        "extend_reference": true,
+        "disable_task_termination": false,
+        "duration_ms": 200
+      },
+      "metrics": {
+        "sample_count": 269,
+        "actual_duration_ms": 53.6,
+        "root_displacement_cm": 1.2220707042733971,
+        "root_path_length_cm": 1.2951870564097585,
+        "root_height_change_cm": -0.8435223142982787,
+        "minimum_root_height_cm": 0.19336380554411967,
+        "wing_yaw_peak_to_peak_rad": [
+          2.229360232522691,
+          2.2293222420696157
+        ],
+        "maximum_adapter_rate_hz": 0.0,
+        "maximum_wing_yaw_amplitude_factor": 1.0
+      },
+      "task_termination_checks": {
+        "reference_end_reached": false,
+        "reference_end_step": 1014,
+        "reference_end_ms": 202.8,
+        "thorax_height_cm": 0.19336380554411967,
+        "thorax_height_threshold_cm": 0.2,
+        "thorax_below_threshold": true,
+        "qacc_norm": 2795061.0075441683,
+        "qacc_threshold": 100000000000000.0,
+        "acceleration_above_threshold": false
+      },
+      "termination_reason": "thorax below height threshold"
+    },
+    {
+      "run_id": "body-diagnostic-20261004T004506Z-cb33b6",
+      "result_path": "data/body/body-diagnostic-20261004T004506Z-cb33b6",
+      "diagnostic_configuration": {
+        "extend_reference": true,
+        "disable_task_termination": true,
+        "duration_ms": 200
+      },
+      "metrics": {
+        "sample_count": 1001,
+        "actual_duration_ms": 200.0,
+        "root_displacement_cm": 8.381609649262876,
+        "root_path_length_cm": 8.749595028484444,
+        "root_height_change_cm": -8.181626016067895,
+        "minimum_root_height_cm": -7.144739896225496,
+        "wing_yaw_peak_to_peak_rad": [
+          2.2354687571315286,
+          2.235395578153491
+        ],
+        "maximum_adapter_rate_hz": 0.0,
+        "maximum_wing_yaw_amplitude_factor": 1.0
+      },
+      "task_termination_checks": {
+        "reference_end_reached": false,
+        "reference_end_step": 1014,
+        "reference_end_ms": 202.8,
+        "thorax_height_cm": -7.144739896225496,
+        "thorax_height_threshold_cm": 0.2,
+        "thorax_below_threshold": true,
+        "qacc_norm": 3011120.774828055,
+        "qacc_threshold": 100000000000000.0,
+        "acceleration_above_threshold": false
+      },
+      "termination_reason": "requested probe horizon"
+    }
+  ],
+  "flight_validated": false
+}

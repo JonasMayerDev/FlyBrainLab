@@ -2,7 +2,7 @@
 
 Stand: 4. Oktober 2026. Repository: [JonasMayerDev/FlyBrainLab](https://github.com/JonasMayerDev/FlyBrainLab).
 
-Zehn offene Issues sind angelegt. GitHub-Zugriff als `valleebo` mit Schreibrecht wurde geprüft. Dieses Repository enthält Code, Dokumentation, Agenten und kleine tatsächliche Setup-Ergebnisse; Pages-Veröffentlichung steht noch aus. Einstieg fürs Team: [TEAM_STATUS.md](TEAM_STATUS.md).
+Zehn Team-Issues werden mit echten Artefakten abgearbeitet. Öffentliche Demo: [FlyBrainLab](https://valleebo.github.io/FlyBrainLab/). Pages läuft auf dem Hosting-Mirror `valleebo/FlyBrainLab`, weil dem Teamzugang im kanonischen Repository Adminrechte für Pages fehlen. Code und Issues bleiben im kanonischen Repo. Aktueller Teamstand: [TEAM_STATUS.md](TEAM_STATUS.md). Status und Abschlussbelege stehen auf GitHub; #2 und #10 benötigen noch Zugangsdaten bzw. persönliche Abgabeinhalte.
 
 P0: abgabekritische Aufgaben. P1: gewünschte Körper-/Gehirnintegration, deren Machbarkeit früh geprüft wird. Ein engerer Demo-Scope benötigt eine ausdrückliche Teamentscheidung. GitHub-Assignees sind offen, weil die weiteren Team-Handles nicht bekannt sind.
 
@@ -28,4 +28,4 @@ P0: abgabekritische Aufgaben. P1: gewünschte Körper-/Gehirnintegration, deren 
 
 Der Forschungsweg ist #2 → #3 → #4 → #5 → #9. #10 (Teamfoto, Videos und doppelte Einreichung) früh vorbereiten; internes Einreichungsziel 14:30, Deadline 15:00 Europe/Berlin. Rollen nach tatsächlichen Fähigkeiten auf die vier Menschen verteilen.
 
-Alle zehn Issues wurden auf GitHub auf Titel, Inhalt, Label und offenen Status geprüft.
+Die Abnahmekriterien werden pro Issue anhand echter Quellen, Run-Dateien, nativer Trace und öffentlicher Prüfung kontrolliert. Manuelle Machbarkeitsläufe ersetzen den Omnigent-Nachweis nicht.

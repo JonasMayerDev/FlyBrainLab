@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "namiki": {
+      "source_id": "src_ed165fa0105fe71168bc",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9206711/",
+      "retrieval_status": "retrieved",
+      "content_sha256": "2fe58a0a27de98343ac509c6aebb11885ae8f862499af7ca551ce980d365a99d",
+      "snapshot_path": "snapshots/2fe58a0a27de98343ac509c6aebb11885ae8f862499af7ca551ce980d365a99d.txt"
+    },
+    "annotations": {
+      "source_id": "src_8ed6cdb697519ced31f7",
+      "url": "https://raw.githubusercontent.com/flyconnectome/flywire_annotations/ebd66db2596fcc39c6950fb54ea3efa00f7fe8a0/supplemental_files/Supplemental_file1_neuron_annotations.tsv",
+      "retrieval_status": "retrieved",
+      "content_sha256": "3edb1415a7e812608383e05c93c2ab0a935566925158c83de418688a932f83e1",
+      "snapshot_path": "snapshots/3edb1415a7e812608383e05c93c2ab0a935566925158c83de418688a932f83e1.txt"
+    },
+    "shiu": {
+      "source_id": "src_26b56b10e90a9cdc96ac",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11446845/",
+      "retrieval_status": "retrieved",
+      "content_sha256": "6a3b47e44ea8852b22d1b18291dde8d86a23ec70ae477e18d3b7311df1ae0e5a",
+      "snapshot_path": "snapshots/6a3b47e44ea8852b22d1b18291dde8d86a23ec70ae477e18d3b7311df1ae0e5a.txt"
+    },
+    "code": {
+      "source_id": "src_38fb76e91124b3802a6d",
+      "url": "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/model.py",
+      "retrieval_status": "retrieved",
+      "content_sha256": "fc45837d7122c6ce2a7f3f2f23c515992e4b232aadb919efabb72337fac88e4e",
+      "snapshot_path": "snapshots/fc45837d7122c6ce2a7f3f2f23c515992e4b232aadb919efabb72337fac88e4e.txt"
+    }
+  },
+  "claim_ids": [
+    "clm_3b70e19bd21e4140bb41fc8ca5b2d9b7",
+    "clm_56ffe1e8dc514ef6a84029d464124c34",
+    "clm_f0e3ce6e163f42a8abc9f1b407af3be9",
+    "clm_6640c27508c34365a3df7e1d028248fc"
+  ],
+  "knowledgebase": {
+    "storage": "local-jsonl",
+    "directory": "/Users/valentin/Library/Application Support/FlyDiscovery/knowledgebase",
+    "counts": {
+      "sources": 8,
+      "claims": 4,
+      "runs": 2
+    }
+  },
+  "source_snapshot_note": "Actual retrieved contents; no search-snippet evidence is promoted to a finding."
+}

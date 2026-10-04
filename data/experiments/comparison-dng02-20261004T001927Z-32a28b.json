@@ -1,0 +1,336 @@
+{
+  "schema_version": 1,
+  "design_id": "dng02-input-v1",
+  "design_sha256": "e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6",
+  "test": "B",
+  "status": "completed",
+  "started_at_utc": "2026-10-04T00:19:27.907588+00:00",
+  "ended_at_utc": "2026-10-04T00:19:46.372499+00:00",
+  "execution_context": "independent-feasibility-before-Omnigent",
+  "orchestration_verified_by_this_module": false,
+  "wall_seconds": 18.464653,
+  "run_ids": [
+    "neural-dng02-20261004T001929Z-7bc446",
+    "neural-dng02-20261004T001932Z-7d41cb",
+    "neural-dng02-20261004T001935Z-100e5f",
+    "neural-dng02-20261004T001938Z-620f73",
+    "neural-dng02-20261004T001940Z-8dd95e",
+    "neural-dng02-20261004T001943Z-958a6e"
+  ],
+  "result_paths": [
+    "data/runs/neural-dng02-20261004T001929Z-7bc446",
+    "data/runs/neural-dng02-20261004T001932Z-7d41cb",
+    "data/runs/neural-dng02-20261004T001935Z-100e5f",
+    "data/runs/neural-dng02-20261004T001938Z-620f73",
+    "data/runs/neural-dng02-20261004T001940Z-8dd95e",
+    "data/runs/neural-dng02-20261004T001943Z-958a6e"
+  ],
+  "summary": {
+    "test": "B",
+    "n_seeds": 3,
+    "inference": "descriptive model comparison; no p-value or biological replication",
+    "upstream_drive": {
+      "population_mean_rates_hz": [
+        17.2,
+        18.8,
+        18.4
+      ],
+      "mean_hz": 18.133333333333333,
+      "sample_sd_hz": 0.8326663997864536,
+      "min_hz": 17.2,
+      "max_hz": 18.8
+    },
+    "outgoing_disconnected": {
+      "population_mean_rates_hz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_hz": 0.0,
+      "sample_sd_hz": 0.0,
+      "min_hz": 0.0,
+      "max_hz": 0.0
+    },
+    "paired_fraction_reduction": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "supports_outgoing_dependency": true,
+    "updated_decision": "Model output depends on source axonal weights; next validate upstream identities and test a matched non-target input before any biological flight claim",
+    "next_test": "matched_input_and_sensory_validation"
+  },
+  "runs": [
+    {
+      "run_id": "neural-dng02-20261004T001929Z-7bc446",
+      "condition": "upstream_drive",
+      "seed": 42,
+      "result_path": "data/runs/neural-dng02-20261004T001929Z-7bc446",
+      "wall_seconds": 2.979055,
+      "readout_metrics": {
+        "readout_spike_events": 86,
+        "readout_active_neurons": 14,
+        "population_mean_rate_hz": 17.2,
+        "group_mean_rate_hz": {
+          "left": 9.615384615384615,
+          "right": 25.416666666666664
+        },
+        "right_minus_left_mean_rate_hz": 15.80128205128205,
+        "per_neuron_spike_counts": {
+          "720575940610863310": 0,
+          "720575940612014131": 0,
+          "720575940612804606": 3,
+          "720575940613668620": 0,
+          "720575940613793170": 0,
+          "720575940615679282": 14,
+          "720575940617498507": 0,
+          "720575940617922439": 7,
+          "720575940622042603": 1,
+          "720575940622681864": 0,
+          "720575940622910188": 10,
+          "720575940625144061": 2,
+          "720575940625482954": 15,
+          "720575940626278129": 6,
+          "720575940626377349": 6,
+          "720575940626904219": 0,
+          "720575940627414887": 1,
+          "720575940627850622": 0,
+          "720575940628942586": 2,
+          "720575940630289804": 0,
+          "720575940630492714": 7,
+          "720575940632573887": 0,
+          "720575940639201443": 0,
+          "720575940641305229": 10,
+          "720575940647964281": 2
+        },
+        "nonstimulated_active_neurons": 235
+      }
+    },
+    {
+      "run_id": "neural-dng02-20261004T001932Z-7d41cb",
+      "condition": "outgoing_disconnected",
+      "seed": 42,
+      "result_path": "data/runs/neural-dng02-20261004T001932Z-7d41cb",
+      "wall_seconds": 2.737574,
+      "readout_metrics": {
+        "readout_spike_events": 0,
+        "readout_active_neurons": 0,
+        "population_mean_rate_hz": 0.0,
+        "group_mean_rate_hz": {
+          "left": 0.0,
+          "right": 0.0
+        },
+        "right_minus_left_mean_rate_hz": 0.0,
+        "per_neuron_spike_counts": {
+          "720575940610863310": 0,
+          "720575940612014131": 0,
+          "720575940612804606": 0,
+          "720575940613668620": 0,
+          "720575940613793170": 0,
+          "720575940615679282": 0,
+          "720575940617498507": 0,
+          "720575940617922439": 0,
+          "720575940622042603": 0,
+          "720575940622681864": 0,
+          "720575940622910188": 0,
+          "720575940625144061": 0,
+          "720575940625482954": 0,
+          "720575940626278129": 0,
+          "720575940626377349": 0,
+          "720575940626904219": 0,
+          "720575940627414887": 0,
+          "720575940627850622": 0,
+          "720575940628942586": 0,
+          "720575940630289804": 0,
+          "720575940630492714": 0,
+          "720575940632573887": 0,
+          "720575940639201443": 0,
+          "720575940641305229": 0,
+          "720575940647964281": 0
+        },
+        "nonstimulated_active_neurons": 0
+      }
+    },
+    {
+      "run_id": "neural-dng02-20261004T001935Z-100e5f",
+      "condition": "upstream_drive",
+      "seed": 43,
+      "result_path": "data/runs/neural-dng02-20261004T001935Z-100e5f",
+      "wall_seconds": 2.532371,
+      "readout_metrics": {
+        "readout_spike_events": 94,
+        "readout_active_neurons": 14,
+        "population_mean_rate_hz": 18.8,
+        "group_mean_rate_hz": {
+          "left": 9.615384615384615,
+          "right": 28.749999999999996
+        },
+        "right_minus_left_mean_rate_hz": 19.13461538461538,
+        "per_neuron_spike_counts": {
+          "720575940610863310": 1,
+          "720575940612014131": 0,
+          "720575940612804606": 3,
+          "720575940613668620": 0,
+          "720575940613793170": 0,
+          "720575940615679282": 15,
+          "720575940617498507": 0,
+          "720575940617922439": 9,
+          "720575940622042603": 0,
+          "720575940622681864": 0,
+          "720575940622910188": 11,
+          "720575940625144061": 3,
+          "720575940625482954": 14,
+          "720575940626278129": 5,
+          "720575940626377349": 9,
+          "720575940626904219": 0,
+          "720575940627414887": 3,
+          "720575940627850622": 0,
+          "720575940628942586": 1,
+          "720575940630289804": 0,
+          "720575940630492714": 8,
+          "720575940632573887": 0,
+          "720575940639201443": 0,
+          "720575940641305229": 10,
+          "720575940647964281": 2
+        },
+        "nonstimulated_active_neurons": 193
+      }
+    },
+    {
+      "run_id": "neural-dng02-20261004T001938Z-620f73",
+      "condition": "outgoing_disconnected",
+      "seed": 43,
+      "result_path": "data/runs/neural-dng02-20261004T001938Z-620f73",
+      "wall_seconds": 2.57374,
+      "readout_metrics": {
+        "readout_spike_events": 0,
+        "readout_active_neurons": 0,
+        "population_mean_rate_hz": 0.0,
+        "group_mean_rate_hz": {
+          "left": 0.0,
+          "right": 0.0
+        },
+        "right_minus_left_mean_rate_hz": 0.0,
+        "per_neuron_spike_counts": {
+          "720575940610863310": 0,
+          "720575940612014131": 0,
+          "720575940612804606": 0,
+          "720575940613668620": 0,
+          "720575940613793170": 0,
+          "720575940615679282": 0,
+          "720575940617498507": 0,
+          "720575940617922439": 0,
+          "720575940622042603": 0,
+          "720575940622681864": 0,
+          "720575940622910188": 0,
+          "720575940625144061": 0,
+          "720575940625482954": 0,
+          "720575940626278129": 0,
+          "720575940626377349": 0,
+          "720575940626904219": 0,
+          "720575940627414887": 0,
+          "720575940627850622": 0,
+          "720575940628942586": 0,
+          "720575940630289804": 0,
+          "720575940630492714": 0,
+          "720575940632573887": 0,
+          "720575940639201443": 0,
+          "720575940641305229": 0,
+          "720575940647964281": 0
+        },
+        "nonstimulated_active_neurons": 0
+      }
+    },
+    {
+      "run_id": "neural-dng02-20261004T001940Z-8dd95e",
+      "condition": "upstream_drive",
+      "seed": 44,
+      "result_path": "data/runs/neural-dng02-20261004T001940Z-8dd95e",
+      "wall_seconds": 2.684823,
+      "readout_metrics": {
+        "readout_spike_events": 92,
+        "readout_active_neurons": 13,
+        "population_mean_rate_hz": 18.4,
+        "group_mean_rate_hz": {
+          "left": 8.846153846153847,
+          "right": 28.749999999999996
+        },
+        "right_minus_left_mean_rate_hz": 19.90384615384615,
+        "per_neuron_spike_counts": {
+          "720575940610863310": 0,
+          "720575940612014131": 0,
+          "720575940612804606": 2,
+          "720575940613668620": 0,
+          "720575940613793170": 0,
+          "720575940615679282": 15,
+          "720575940617498507": 0,
+          "720575940617922439": 9,
+          "720575940622042603": 0,
+          "720575940622681864": 0,
+          "720575940622910188": 10,
+          "720575940625144061": 4,
+          "720575940625482954": 13,
+          "720575940626278129": 4,
+          "720575940626377349": 8,
+          "720575940626904219": 0,
+          "720575940627414887": 3,
+          "720575940627850622": 0,
+          "720575940628942586": 1,
+          "720575940630289804": 0,
+          "720575940630492714": 9,
+          "720575940632573887": 0,
+          "720575940639201443": 0,
+          "720575940641305229": 10,
+          "720575940647964281": 4
+        },
+        "nonstimulated_active_neurons": 228
+      }
+    },
+    {
+      "run_id": "neural-dng02-20261004T001943Z-958a6e",
+      "condition": "outgoing_disconnected",
+      "seed": 44,
+      "result_path": "data/runs/neural-dng02-20261004T001943Z-958a6e",
+      "wall_seconds": 2.773014,
+      "readout_metrics": {
+        "readout_spike_events": 0,
+        "readout_active_neurons": 0,
+        "population_mean_rate_hz": 0.0,
+        "group_mean_rate_hz": {
+          "left": 0.0,
+          "right": 0.0
+        },
+        "right_minus_left_mean_rate_hz": 0.0,
+        "per_neuron_spike_counts": {
+          "720575940610863310": 0,
+          "720575940612014131": 0,
+          "720575940612804606": 0,
+          "720575940613668620": 0,
+          "720575940613793170": 0,
+          "720575940615679282": 0,
+          "720575940617498507": 0,
+          "720575940617922439": 0,
+          "720575940622042603": 0,
+          "720575940622681864": 0,
+          "720575940622910188": 0,
+          "720575940625144061": 0,
+          "720575940625482954": 0,
+          "720575940626278129": 0,
+          "720575940626377349": 0,
+          "720575940626904219": 0,
+          "720575940627414887": 0,
+          "720575940627850622": 0,
+          "720575940628942586": 0,
+          "720575940630289804": 0,
+          "720575940630492714": 0,
+          "720575940632573887": 0,
+          "720575940639201443": 0,
+          "720575940641305229": 0,
+          "720575940647964281": 0
+        },
+        "nonstimulated_active_neurons": 0
+      }
+    }
+  ],
+  "comparison_path": "data/experiments/comparison-dng02-20261004T001927Z-32a28b.json"
+}

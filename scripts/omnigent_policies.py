@@ -20,10 +20,12 @@ def bounded_tool_access(event: dict[str, Any]) -> dict[str, Any] | None:
     allowed = {
         "get_setup_status", "read_local_artifact", "search_literature", "fetch_source",
         "store_source", "store_claim", "search_knowledge", "record_experiment",
-        "run_neural_pilot", "researcher", "evidence_reviewer", "hypothesis_planner",
+        "run_neural_pilot", "read_source_snapshot", "run_frozen_experiment", "save_discovery_record",
+        "researcher", "evidence_reviewer", "hypothesis_planner",
         "experimenter", "analyst", "sys_session_send", "sys_session_get_info",
         "sys_session_get_history", "sys_session_get_usage", "sys_read_inbox",
         "sys_session_list", "sys_session_cancel", "sys_cancel_async",
+        "sys_cancel_task", "sys_session_close", "sys_agent_start",
     }
     if name in allowed:
         return {"result": "ALLOW"}

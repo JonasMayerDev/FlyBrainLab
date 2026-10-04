@@ -1,6 +1,6 @@
 # Lokales Fliegengehirn
 
-Das heruntergeladene Modell ist das veröffentlichte **Whole-brain-LIF-Modell von Shiu et al.** mit den im Autorenrepository bereitgestellten **FlyWire FAFB v783**-Tabellen. Es ist ein neuronales Modell; ein virtueller Körper und Flug sind noch nicht angeschlossen.
+Das heruntergeladene Modell ist das veröffentlichte **Whole-brain-LIF-Modell von Shiu et al.** mit den im Autorenrepository bereitgestellten **FlyWire FAFB v783**-Tabellen. Das neuronale Modell ist inzwischen über einen eingefrorenen Open-loop-Adapter an echte Flybody/MuJoCo-Physik gekoppelt. Dies ist keine biologische Flugvalidierung.
 
 ## Quellen und Dateien
 
@@ -52,3 +52,14 @@ Ein erfolgreicher kurzer Pilot belegt, dass das neuronale Netzwerk berechenbar i
 - Der Vergleich steht in `data/runs/technical_setup_check.json` und ist ausdrücklich eine nachträgliche Dokumentation von Setupchecks, kein vorregistriertes biologisches Experiment und kein Ersatz für den wissenschaftlichen C3-Discovery-Test.
 - Laufumgebung: CPython 3.12.14, Brian2 2.9.0, NumPy 1.26.4, Pandas 2.2.3, PyArrow 25.0.1. Das ist ein geprüfter kurzer Lauf mit neueren Paketversionen, keine vollständige Reproduktion aller publizierten Experimente.
 - Zur Speicherreduktion liest der Wrapper nur die drei vom Modell verwendeten Connectivity-Spalten; alle Netzwerkzeilen bleiben enthalten. Auch diese Anpassung wird protokolliert.
+
+## Wissenschaftlicher Vergleich und Körper
+
+Die separat gespeicherten A/B-Läufe verwenden25annotationgeprüfte DNg02-Readouts und8graphgewählte Inputs: [Design](../research/designs/EXPERIMENT_DESIGN.md), [Ergebnisse](../docs/RESULTS.md).
+
+```sh
+.venv/bin/python -m simulation.experiment --test A
+.venv/bin/python -m simulation.experiment --test B
+```
+
+Diese direkten Befehle sind manuelle Läufe. Native Omnigent-Ausführung hat zusätzlich echte Session-/Tool-/Handoffbelege. Flybody benutzt eine eigene isolierte Umgebung; Versionen, Controller und Adapter: [Körperintegration](../docs/BODY_INTEGRATION.md). Der Viewer zeigt gemessene Zustände nur im tatsächlichen Zeitfenster.

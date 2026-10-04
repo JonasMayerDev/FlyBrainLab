@@ -1,6 +1,6 @@
 spec_version: 1
 name: experimenter
-description: Run one bounded numerical setup pilot and return its measured artifact.
+description: Execute sealed DNg02 control comparisons and return measured artifacts.
 executor:
   type: omnigent
   config:

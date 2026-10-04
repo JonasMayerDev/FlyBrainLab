@@ -85,7 +85,10 @@ function library(): void {
   const groups = [{ name: 'RECORDED MODEL EXPERIMENTS', items: index.runs.filter(item => science(item) && item.metadata.execution_context !== 'independent-feasibility-before-Omnigent') }, { name: 'INDEPENDENT FEASIBILITY RUNS', items: index.runs.filter(item => science(item) && item.metadata.execution_context === 'independent-feasibility-before-Omnigent') }, { name: 'TECHNICAL SETUP CHECKS', items: index.runs.filter(item => !science(item)) }];
   document.querySelector('#run-count')!.textContent = String(index.runs.length);
   document.querySelector('#run-list')!.innerHTML = groups.filter(group => group.items.length).map(group => `<div class="run-group-label">${group.name}</div>${group.items.map(item => `<button class="run-card" data-run="${h(item.run_id)}"><div class="run-card-top"><span class="run-icon">${icon.layers}</span><span class="run-state">RECORDED</span></div><strong>${h(item.title)}</strong><span class="run-card-meta">${format(item.metadata.duration_ms)} ms · seed ${h(item.metadata.seed)}</span><div class="run-card-bottom"><span>${format(item.metadata.spike_events)} spike${item.metadata.spike_events === 1 ? '' : 's'}</span>${icon.chevron}</div></button>`).join('')}`).join('');
-  document.querySelectorAll<HTMLButtonElement>('[data-run]').forEach(button => button.addEventListener('click', () => void selectRun(button.dataset.run!)));
+  document.querySelectorAll<HTMLButtonElement>('[data-run]').forEach(button => button.addEventListener('click', () => void selectRun(button.dataset.run!).catch(error => {
+    document.querySelector('#live-status')!.textContent = `Could not load recorded run: ${error instanceof Error ? error.message : error}`;
+    document.querySelector('#run-title')!.textContent = 'Replay unavailable; choose another recorded run.';
+  })));
 }
 
 async function selectRun(id: string): Promise<void> {
@@ -97,9 +100,9 @@ async function selectRun(id: string): Promise<void> {
   if (!next.recorded_simulation || !Number.isFinite(next.metadata.duration_ms) || next.metadata.duration_ms <= 0 || next.graph.nodes.some(node => typeof node.id !== 'string')) throw new Error('Invalid recorded replay or neuron ID encoding.');
   cache.set(id, next); run = next; currentTime = 0; activeMode = 'neural';
   scene?.load(run);
+  document.querySelector<HTMLDivElement>('.legend')!.dataset.mode = '';
   document.querySelectorAll<HTMLButtonElement>('[data-run]').forEach(button => { button.classList.toggle('selected', button.dataset.run === id); button.setAttribute('aria-pressed', String(button.dataset.run === id)); });
   document.querySelector('#run-title')!.textContent = run.title;
-  document.querySelector('#sample-count')!.textContent = `${run.graph.nodes.length} IDs shown / ${format(run.metadata.neurons)} simulated`;
   const timeline = document.querySelector<HTMLInputElement>('#timeline')!;
   timeline.max = String(run.metadata.duration_ms); timeline.step = String(run.metadata.timestep_ms ?? 0.1); timeline.value = '0';
   document.querySelector('#duration-value')!.textContent = `${format(run.metadata.duration_ms)} ms`;
@@ -182,6 +185,11 @@ function updateTime(): void {
   document.querySelector('#time-value')!.textContent = `${currentTime.toFixed(1)} ms`;
   document.querySelector<HTMLInputElement>('#timeline')!.value = String(currentTime);
   document.querySelector('#scene-label')!.textContent = activeMode === 'neural' ? 'Abstract layout · real neuron IDs' : `Recorded root marker · cm, z-up${currentTime > (run.body?.duration_ms ?? Infinity) ? ` · stopped at ${format(run.body?.duration_ms)} ms (early termination)` : ''}`;
+  const legend = document.querySelector<HTMLDivElement>('.legend')!;
+  if (legend.dataset.mode !== activeMode) {
+    legend.dataset.mode = activeMode;
+    legend.innerHTML = activeMode === 'body' ? '<span><i class="lime"></i>Recorded root pose</span><span><i class="muted"></i>Complete measured trajectory</span><span>Reference grid · 1 scene unit = 1 cm</span><span>Early termination · no trajectory extrapolation</span>' : `<span><i class="lime"></i>Stimulated target</span>${run.metadata.readout_neuron_ids?.length ? '<span><i class="teal"></i>DNg02 readout</span>' : ''}<span><i class="white"></i>Recorded spike</span><span><i class="muted"></i>Sampled model cell</span><span id="sample-count">${run.graph.nodes.length} IDs shown / ${format(run.metadata.neurons)} simulated</span>`;
+  }
   chart();
 }
 
@@ -217,4 +225,4 @@ async function start(): Promise<void> {
   requestAnimationFrame(animate);
 }
 
-void start().catch(error => { document.querySelector('#run-list')!.innerHTML = `<div class="error-message"><strong>Replay could not be loaded.</strong><p>${h(error instanceof Error ? error.message : error)}</p><a href="${REPO}">Inspect the public run records</a></div>`; document.querySelector('#live-status')!.textContent = 'Replay data failed to load. Public run records are linked.'; });
+  void start().catch(error => { document.querySelector('#run-list')!.innerHTML = `<div class="error-message"><strong>Replay could not be loaded.</strong><p>${h(error instanceof Error ? error.message : error)}</p><a href="${REPO}">Inspect the public run records</a></div>`; document.querySelector('#live-status')!.textContent = 'Replay data failed to load. Public run records are linked.'; });

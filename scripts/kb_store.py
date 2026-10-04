@@ -287,7 +287,7 @@ def store_claim(claim_json: str) -> dict[str, Any]:
 
 
 def search_knowledge(query: str, collection: str = "claims", limit: int = 20) -> list[dict[str, Any]]:
-    """Search locally stored evidence, sources or run records; no network call."""
+    """Search local claims, sources or runs (only these collection names). Query uses case-insensitive AND of whitespace terms; use query="" to list all records, or a single term such as DNg02. No network call."""
     return LocalKnowledgeBase().query(query, collection, limit)
 
 

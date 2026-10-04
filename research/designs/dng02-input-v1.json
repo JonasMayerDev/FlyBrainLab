@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "design_id": "dng02-input-v1",
+  "frozen_at_utc": "2026-10-04T00:17:05.868847+00:00",
+  "frozen_before_neural_conditions": true,
+  "question": "Do eight connectivity-selected right-side upstream neurons drive firing in flight-related DNg02 cells in the fixed full-v783 LIF model, and does this response require their outgoing connections?",
+  "hypothesis": "The eight upstream targets, selected by positive graph weight before observing activity, increase pooled DNg02 firing relative to sham; removing all outgoing target weights reduces the DNg02 mean rate by at least 80%. This is a model-generated hypothesis, not an established biological finding.",
+  "dataset_version": "FAFB FlyWire v783",
+  "model_commit": "91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+  "target_file": "research/evidence/dng02_targets.json",
+  "target_file_sha256": "a52400e3d6ba5736db86699125848f1d452d365252c907eab095112168c82f07",
+  "dataset_files_sha256": {
+    "Completeness_783.csv": "bbb847a4cc2caaa7a16349722d220c087317b946d148d4d592d94d250617a311",
+    "Connectivity_783.parquet": "efeb23fb99098e9c390f6869969b2a121a2ee92c833cfc45ecb2c1d8e1af0347"
+  },
+  "stimulus_ids": [
+    "720575940623744236",
+    "720575940619031837",
+    "720575940622712979",
+    "720575940625965374",
+    "720575940609695683",
+    "720575940646682676",
+    "720575940619155995",
+    "720575940619524555"
+  ],
+  "readout_ids": [
+    "720575940610863310",
+    "720575940612014131",
+    "720575940612804606",
+    "720575940613668620",
+    "720575940613793170",
+    "720575940615679282",
+    "720575940617498507",
+    "720575940617922439",
+    "720575940622042603",
+    "720575940622681864",
+    "720575940622910188",
+    "720575940625144061",
+    "720575940625482954",
+    "720575940626278129",
+    "720575940626377349",
+    "720575940626904219",
+    "720575940627414887",
+    "720575940627850622",
+    "720575940628942586",
+    "720575940630289804",
+    "720575940630492714",
+    "720575940632573887",
+    "720575940639201443",
+    "720575940641305229",
+    "720575940647964281"
+  ],
+  "readout_groups": {
+    "left": [
+      "720575940612014131",
+      "720575940613668620",
+      "720575940613793170",
+      "720575940622042603",
+      "720575940622681864",
+      "720575940626278129",
+      "720575940626377349",
+      "720575940626904219",
+      "720575940627850622",
+      "720575940628942586",
+      "720575940630289804",
+      "720575940639201443",
+      "720575940641305229"
+    ],
+    "right": [
+      "720575940610863310",
+      "720575940612804606",
+      "720575940615679282",
+      "720575940617498507",
+      "720575940617922439",
+      "720575940622910188",
+      "720575940625144061",
+      "720575940625482954",
+      "720575940627414887",
+      "720575940630492714",
+      "720575940632573887",
+      "720575940647964281"
+    ]
+  },
+  "stimulus_rate_hz": 150,
+  "duration_ms": 200,
+  "timestep_ms": 0.1,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "n_processes": 1,
+  "model_parameters": {
+    "v_rest_mV": -52,
+    "v_reset_mV": -52,
+    "v_threshold_mV": -45,
+    "membrane_time_ms": 20,
+    "conductance_decay_ms": 5,
+    "refractory_ms": 2.2,
+    "synapse_delay_ms": 1.8,
+    "weight_per_signed_synapse_mV": 0.275,
+    "poisson_weight_scale": 250,
+    "poisson_target_refractory_ms": 0,
+    "initial_spontaneous_rate_hz": 0,
+    "reset_equation": "v = v_rst; g = 0 * mV"
+  },
+  "test_designs": [
+    {
+      "id": "A",
+      "name": "Upstream stimulation versus sham",
+      "conditions": [
+        "sham",
+        "upstream_drive"
+      ],
+      "selection_reason": "First establish propagated readout activity without directly stimulating any DNg02 neuron. Sham instantiates identical zero-rate Poisson targets and therefore the same refractory settings.",
+      "measurement": "Mean DNg02 spikes per neuron per second across all 25 predefined cells and paired seed-wise difference.",
+      "success_criterion": "Strictly positive paired difference in every seed; descriptive model result only."
+    },
+    {
+      "id": "B",
+      "name": "Outgoing-connectivity necessity control",
+      "conditions": [
+        "upstream_drive",
+        "outgoing_disconnected"
+      ],
+      "selection_reason": "If A yields a positive response, this distinguishes connectivity-mediated output from the mere presence of the external input.",
+      "measurement": "One minus disconnected/readout mean rate per paired seed.",
+      "success_criterion": "At least 0.80 fractional reduction for every seed with nonzero driven output."
+    }
+  ],
+  "initial_selected_test": "A",
+  "branch_rule": "After A, choose B only if all three paired differences exceed zero. Otherwise use the registered direct-DNg02 calibration, preserve the null result and do not retune targets/parameters.",
+  "registered_calibration": {
+    "conditions": [
+      "sham",
+      "direct_dng02"
+    ],
+    "meaning": "Direct activation of all25 DNg02 cells at150Hz tests readout responsiveness only; not a network-propagation finding."
+  },
+  "analysis": "All selected cells including zeros in denominator; mean, sample standard deviation, min/max over3 fixed seeds; paired raw differences. No p-values or animal-population inference.",
+  "primary_metric": "population_mean_rate_hz",
+  "secondary_metrics": [
+    "left/right per-cell mean rate",
+    "active readout cells",
+    "per-neuron spike counts",
+    "nonstimulated active network cells",
+    "integration and total wall seconds"
+  ],
+  "motor_adapter": "Defined and sealed separately by body module before comparisons; neural experiment itself has no body. No result-dependent gain fitting.",
+  "limitations": [
+    "Graph-selected upstream inputs are hypotheses; seven lack a verified cell-type label and none are assumed to be visual sensory inputs.",
+    "DNg02 has published flight-amplitude evidence, but this frozen assay predicts neural firing only, not takeoff or flight.",
+    "FAFB brain omits complete ventral nerve cord and wing-muscle system.",
+    "Shiu LIF model was biologically validated for feeding/grooming; these DNg02 outputs have no new independent biological validation.",
+    "Only200ms and3 simulation seeds; no general biological efficacy conclusion.",
+    "DNg02 subtypes a..g are pooled; signed-connectivity weights reflect author predictions.",
+    "Zero spontaneous activity means sham0 is expected and tests only this driven state.",
+    "Existing author model has a reset compatibility correction (remove undeclared w assignment).",
+    "Open-loop brain signal; no sensor feedback."
+  ]
+}

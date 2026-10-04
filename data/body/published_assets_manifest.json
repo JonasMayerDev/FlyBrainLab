@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "source": "https://doi.org/10.25378/janelia.25309105",
+  "article_id": 25309105,
+  "article_version": 4,
+  "license": {
+    "value": 6,
+    "name": "GPL 3.0+",
+    "url": "https://www.gnu.org/licenses/gpl-3.0.html"
+  },
+  "selected_files": [
+    {
+      "id": 44815195,
+      "name": "trained-fly-policies.zip",
+      "size": 6537720,
+      "download_url": "https://ndownloader.figshare.com/files/44815195",
+      "supplied_md5": "12934d5a1c60631a710bc2b6d297d3ce"
+    },
+    {
+      "id": 51196859,
+      "name": "datasets_flight-imitation.zip",
+      "size": 12880076,
+      "download_url": "https://ndownloader.figshare.com/files/51196859",
+      "supplied_md5": "bb35ce27e07c4ffbd3d56ff6dec90905"
+    }
+  ],
+  "wing_pattern_sha256": "f97b975ef1b5adbe42c208ea9665f3c37fa432914f56f3943f1697cdb090d1ce",
+  "flight_saved_model_sha256": {
+    "flight/saved_model.pb": "3183f73654e8d0406caaf377e710c8073cafc7e9908d9927ab413e44edf859c8",
+    "flight/variables/variables.data-00000-of-00001": "211190ad5cee8c4cd837202d53c2075e524520bd097d03f09a65984a4cdeb090",
+    "flight/variables/variables.index": "e35378d85f49851dc099a4663be4ff1d8266c6d55efc078aed92f56e585e8fb9"
+  },
+  "raw_data_path": ".runtime/body-published-data (excluded from public repository)",
+  "purpose": "separate published-controller diagnostics; original adapter/baseline preserved"
+}

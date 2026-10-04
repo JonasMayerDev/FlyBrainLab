@@ -1,6 +1,6 @@
 # Stack und öffentliche Demo
 
-Stand: 4. Oktober 2026, nach lokalem Grundsetup und Vorbereitung des GitHub-Teamstands. Python/Omnigent installiert, v783-Daten heruntergeladen, zwei tatsächliche neuronale Setupchecks ausgeführt. Repository: `JonasMayerDev/FlyBrainLab`. API-/Live-Discovery-Test, Körperkopplung und öffentliche Viewer-Veröffentlichung stehen aus. Teamstart: `TEAM_STATUS.md`; Startanleitung: `README.md`.
+Stand:4.Oktober2026, nach echten DNg02-A/B-Machbarkeitsläufen, Körperkopplung und öffentlicher Viewer-Veröffentlichung. Kanonisches Repository: `JonasMayerDev/FlyBrainLab`; öffentliche Pages-Demo: https://valleebo.github.io/FlyBrainLab/. Der Hosting-Mirror veröffentlicht denselben statischen Build, weil Pages-Adminrechte im Teamrepo fehlen. Native Omnigent-Loop-Verifikation wird separat geführt; Anbietercredits/BrightData sind weiter unbestätigt. Siehe `TEAM_STATUS.md`, `docs/RESULTS.md`.
 
 ## 1. Bestätigte Anforderungen
 
@@ -16,13 +16,13 @@ Stand: 4. Oktober 2026, nach lokalem Grundsetup und Vorbereitung des GitHub-Team
 |---|---|---|
 | Forschungsorchestration | Omnigent | Spezialagenten, Quellenprüfung, Testauswahl, Toolausführung, Ergebnis und nächste Entscheidung; zwingend tatsächlich ausführen |
 | Knowledgebase | JSONL + Quellenmanifest | Kleine nachvollziehbare Claims mit Herkunft, IDs, Version und Prüfstatus; keine zusätzliche Datenbank nötig |
-| Neuronale Simulation | Python + Brian2; vorhandenes Shiu-Modell | v783/Autorencode gewählt und Pilot gemessen; funktionelle Targetwahl und wissenschaftlicher Versuch noch offen |
-| Körperphysik | MuJoCo; Flybody als bevorzugter Pilot für das Flugziel | Vorhandenes Körpermodell und Controller prüfen; Gehirnkopplung ist eigene offene Integrationsarbeit |
+| Neuronale Simulation | Python + Brian2; vorhandenes Shiu-Modell | v783/Shiu gepinnt;25DNg02Readouts und A/B-Vergleiche tatsächlich gerechnet |
+| Körperphysik | MuJoCo; Flybody als bevorzugter Pilot für das Flugziel | Flybody/MuJoCo installiert; eingefrorener Open-loop-Adapter und echte kurze Körperruns vorhanden |
 | Export | JSON für Metadaten, Aktivität/Messwerte und Körpertrajektorie | Kleine reproduzierbare Viewerdaten aus echten Runs; volle Rohdaten getrennt erhalten |
 | Öffentliche Oberfläche | **Vite + TypeScript + Three.js** | Experimente wählen, abspielen, pausieren und zeitlich untersuchen; Aktivität, Bewegung, Kontrollen und Quellen zeigen |
 | Code und Veröffentlichung | **GitHub-Repository + GitHub Actions + GitHub Pages** | Frontend bauen und öffentliche HTTPS-Seite veröffentlichen |
 
-Der öffentliche Viewer ist entschieden. Brain-Baustein inzwischen eingerichtet: FAFB/FlyWire v783 + Shiu-Autorencode/Brian2, echte 20-ms-Whole-network-Runs erfolgreich. MuJoCo/Flybody bleibt eine noch ungetestete Körper-/Flugempfehlung. FlyGym/NeuroMechFly bleibt ein möglicher Walking-Einstieg, falls das Team später diesen engeren MVP ausdrücklich wählt; heute nicht zwei Körperframeworks gleichzeitig integrieren.
+Der öffentliche Viewer ist entschieden. Brain-Baustein inzwischen eingerichtet: FAFB/FlyWire v783 + Shiu-Autorencode/Brian2, echte 20-ms-Whole-network-Runs erfolgreich. MuJoCo/Flybody ist inzwischen mit echten Zuständen und kausalem Motoradapter nachgewiesen; stabile/biologisch kalibrierte Flugsteuerung bleibt offen. FlyGym/NeuroMechFly bleibt ein möglicher Walking-Einstieg, falls das Team später diesen engeren MVP ausdrücklich wählt; heute nicht zwei Körperframeworks gleichzeitig integrieren.
 
 Three.js zeichnet die 3D-Szene. Die Bewegung kommt aus den exportierten Körperzuständen der Simulation. Ein Connectome, die neuronale Dynamik und die Motorsteuerung sind separate Bausteine. Ein vorhandener Flugcontroller beweist allein keine connectomebasierte Flugsteuerung.
 
@@ -41,7 +41,7 @@ flowchart LR
     P --> V[GitHub Pages: Three.js-Replay]
 ```
 
-Omnigent und die numerischen Runs laufen lokal. Installation, nativer Agenten-/Toolcheck und Dienst-Healthcheck sind erfolgreich; API-Schlüssel und Live-Recherche fehlen noch. Die kurzen Brain-Runs sind auf der 8-GiB-Maschine gemessen, keine Garantie für längere Runs/Körperkopplung. KB und Omnigent-Zustand liegen unter `~/Library/Application Support/FlyDiscovery/`, außerhalb des iCloud-Projekts. Eine öffentlich betriebene Simulations-API ist für den gewählten Replay-Modus nicht erforderlich.
+Omnigent und die numerischen Runs laufen lokal. Installation, nativer Agenten-/Toolcheck und Dienst-Healthcheck sind erfolgreich. Die Codex-Route nutzt vorhandene CLI-Anmeldung; BrightData/Anthropic-Schlüssel fehlen weiterhin. Die kurzen Brain-Runs sind auf der 8-GiB-Maschine gemessen, keine Garantie für längere Runs/Körperkopplung. KB und Omnigent-Zustand liegen unter `~/Library/Application Support/FlyDiscovery/`, außerhalb des iCloud-Projekts. Eine öffentlich betriebene Simulations-API ist für den gewählten Replay-Modus nicht erforderlich.
 
 GitHub Pages liefert statisches HTML/CSS/JavaScript und Run-Dateien aus. Dort läuft kein Python-/Omnigent-Server. Actions übernimmt zuerst nur Build und Veröffentlichung; Simulationsjobs dort erst nach gemessenem Ressourcen-Pilot ergänzen. Ein CI-Workflow ersetzt den vorgeschriebenen Omnigent-Loop nicht.
 
@@ -59,7 +59,7 @@ Ganzhirnaktivität kann als Raster, Zeitreihe oder aggregierte Ansicht gezeigt w
 
 ## 5. Repository und Exportvertrag
 
-Zielstruktur; Agenten, Simulation, Research-/KB-Tools, Daten/Run Records und lokales Git sind inzwischen angelegt. `web/` und Pages-Workflow sind noch offen:
+Zielstruktur; Agenten, Simulation, Research-/KB-Tools, Daten/Run Records und lokales Git sind inzwischen angelegt. `frontend/` und der Pages-Workflow sind aufgebaut:
 
 ```text
 agents/                  Omnigent-Rollen, Tools und Policies
@@ -67,8 +67,8 @@ research/                öffentliche Quellenmetadaten/Schema; KB bleibt lokal
 simulation/              Python, Stimulationsprotokolle, Motoradapter
 experiments/             zwei Testdesigns und eingefrorene Konfigurationen
 results/                 Run Records, Messwerte, Analyse, größere Dateien verlinkt
-web/                     Vite + TypeScript + Three.js
-web/public/runs/          kleine veröffentlichte Replay-Dateien
+frontend/                Vite + TypeScript + Three.js
+data/replay/             kleine veröffentlichte Replay-Dateien
 scripts/                 Daten-Download, Export und Reproduktion
 .github/workflows/       Frontend-Build und Pages-Veröffentlichung
 README.md                Startanleitung, Demo, Evidenz, Grenzen und nächste Frage
@@ -88,7 +88,7 @@ Normales GitHub-Git blockiert Dateien über 100 MiB; veröffentlichte Pages-Seit
 
 ## 6. Erste Meilensteine und Stop-Kriterien
 
-1. **Nächster paralleler Meilenstein:** erstes öffentliches Pages-Gerüst mit Repo-Link öffnen und auf fremdem Gerät ohne Team-Login prüfen. Das ursprüngliche Ziel 01:30 wurde nicht erreicht. Technische Runs sind vorhanden; bis zum Forschungsrun deren Setup-Status ehrlich anzeigen.
+1. **Erreicht:** öffentlicher Pages-Viewer anonym auf Desktop und Mobile geprüft. Echte14neuronaleRuns und6zugeordnete Körpertrajektorien. Native Forschungsruns nach erfolgreicher Traceprüfung ergänzen.
 2. **Bis 02:00:** kleiner echter neuronaler Baseline-Run oder klar dokumentierter Blocker; Laufzeit und Speicherbedarf messen. Parallel vorhandenen Flybody-Controller separat prüfen. Verfügbare Zeit nicht durch eine zweite Hostingarchitektur verbrauchen.
 3. **Bis 09:30:** Kopplung und erste echte Exporte prüfen. Bei fehlender Körperkopplung vorhandenen neuronalen Forschungsloop sichern und Embodiment als offene Arbeit kennzeichnen.
 4. **Bis 11:30:** gewählten Vergleich ausführen, interpretieren und nächste Entscheidung unter Omnigent erzeugen; Viewer mit echten Ergebnissen veröffentlichen, Feature-Freeze.
