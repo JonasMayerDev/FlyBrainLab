@@ -6,7 +6,7 @@
 > NeuroMechFly walking + FlyBody flight bodies (`flylab/body.py`, `flylab/flight.py`), connectome-guided discovery screen (`flylab/screen.py`),
 > movement verifier (`flylab/verify.py`), Omnigent lab with 9 agents and policies (`agents/fly_lab.yaml`), recorded runs (`runs/`),
 > Streamlit dashboard (`app.py`), static 3D replay viewer with story mode (`web/`), expert-board discussion page with a simple view for non-experts and live updates (`web/board.html`, `flylab/board.py`), independent session audit (`flylab/audit.py`), macOS launcher (`agents/omni.sh -ApproveAtLaunch lab "<question>"`), knowledge base export in the FlyBrainLab schema (`data/knowledge/`).
-> Full description, results and limitations: **[EMBODIED_FLY_LAB.md](EMBODIED_FLY_LAB.md)**. The Pages workflow of `main` (frontend/) is unchanged; `web/` is served locally (`uv run python -m http.server 8777 --directory web`).
+> Full description, results and limitations: **[EMBODIED_FLY_LAB.md](EMBODIED_FLY_LAB.md)**. GitHub Pages publishes `web/` (locally: `python3 -m http.server 8777 --directory web`).
 
 
 **Ein quellenbasierter Forschungsworkflow verbindet ein vollständiges Fliegengehirnmodell mit kontrollierten Experimenten und einer virtuellen Fliegenkörper-Physik.** Challenge 03: Databricks „Agentic Scientific Discovery“, Global AI Hackathon Munich, 3.–4. Oktober 2026.
@@ -47,14 +47,13 @@ UV_CACHE_DIR="$PWD/.cache/uv" uv pip install --python .venv/bin/python -r requir
 
 ### Viewer
 
-Node.js 24 und npm:
+Statische Seite ohne Build-Schritt in `web/` (3D-Replay, Expert Board, Film). Lokal:
 
 ```sh
-cd frontend
-npm ci
-npm run dev
-# Produktionsbuild: npm run build
+python3 -m http.server 8777 --directory web
 ```
+
+Ein Push nach `main`, der `web/` ändert, veröffentlicht sie über GitHub Actions auf https://valleebo.github.io/FlyBrainLab/ (zusätzlich unter `/lab/`).
 
 Replay-Exporte sind klein und versioniert unter `data/replay/`. Neue tatsächliche Runs exportieren: `.venv/bin/python scripts/export_replays.py`. IDs als Strings erhalten. Körperzustände werden nur für den tatsächlichen simulierten Zeitraum wiedergegeben.
 

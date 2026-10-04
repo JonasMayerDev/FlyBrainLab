@@ -1,5 +1,0 @@
-Flybody fruit-fly geometry, TuragaLab and Flybody contributors.
-Source: https://github.com/TuragaLab/flybody/tree/d015e9bfe441bd90ae431bac24c55cb74bdbce26/flybody/fruitfly/assets
-Licensed under Apache License 2.0; the original license is in LICENSE.
-Modified by FlyBrainLab: compiled flight-task hierarchy exported to JSON; original mesh vertices deduplicated by equal position and packed as float32/uint16. No triangles removed, geometry decimation, new simulation or controller training. Surface normals are recomputed by the renderer; authored material RGBA retained.
-This geometry license is separate from the GPL-licensed published policy supplement.
