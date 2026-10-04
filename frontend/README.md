@@ -39,9 +39,10 @@ committed. No API credentials or server are needed by the static viewer.
   result-dependent analyst decision. Only independently verified raw run IDs
   are marked as native; a pending continuation is not presented as executed.
 - Where an exact neural provenance link exists, the real Flybody root
-  trajectory is replayed as a schematic marker and its complete measured
-  path. Coordinates are centimeters, z-up; no anatomy is inferred. The
-  marker stops at the recorded final state and is never extrapolated. An
+  trajectory and six wing angles drive the original author Flybody meshes.
+  The complete measured path stays at its actual scale: centimeters, z-up.
+  Head, abdomen, legs and other unexported joints use the fixed compiled
+  model reference pose. Playback stops at the recorded final state. An
   authors' published-policy replay takes priority over the earlier approximate
   wing controller for the same exact neural source; earlier diagnostics stay
   linked separately.
@@ -55,6 +56,29 @@ and the fixed rate-to-wing adapter is biologically uncalibrated. Earlier
 approximate-controller runs terminate early and remain separate diagnostics.
 The body pose is a separate measured physics record, not a movement inferred
 solely from stimulating a named neuron.
+
+## Body geometry and framing
+
+Open `?view=body` for the body view. Its camera follows the recorded fly at
+the actual centimeter scale; turn off **Follow fly** to frame the whole path.
+This changes the camera only. There is no procedural flapping, gait or
+extrapolation: root position/orientation and six wing angles come from the replay.
+Other joints stay at the author flight-task reference pose, including retracted legs.
+
+`public/models/flybody/` contains 85 original meshes (272,550 triangles) from
+the Apache-2.0 [Flybody author commit](https://github.com/TuragaLab/flybody/tree/d015e9bfe441bd90ae431bac24c55cb74bdbce26).
+Source hashes, buffer descriptors and the independent four-pose MuJoCo
+kinematics check are recorded in `manifest.json`; LICENSE and NOTICE accompany
+the assets. The binary uses float32 positions and uint16 indices (3.14 MiB).
+With the existing pinned `requirements.body.lock` runtime, reproduce only
+the geometry export from the repository root:
+
+```bash
+.runtime/body-venv/bin/python scripts/export_flybody_geometry.py
+```
+
+That helper compiles the installed model and checks existing recorded poses;
+it does not step the simulator, run a controller or regenerate scientific runs.
 
 ## Export contract
 

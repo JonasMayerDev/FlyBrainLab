@@ -1,0 +1,5119 @@
+{
+  "schema_version": 1,
+  "units": "cm",
+  "angles": "radians",
+  "axes": {
+    "handedness": "right",
+    "up": "+z",
+    "forward": "+x",
+    "left": "+y"
+  },
+  "quaternion_order": "xyzw",
+  "buffer": "geometry.bin",
+  "source": {
+    "repository": "https://github.com/TuragaLab/flybody",
+    "commit": "d015e9bfe441bd90ae431bac24c55cb74bdbce26",
+    "license": "Apache-2.0",
+    "fingerprint_sha256": "f5e8c3eb08eccc592725edfafc4630392143d121e5218368dd6abc9247922ad1"
+  },
+  "mesh_transform_rule": "Compiled vertices and geom transforms already include mesh scale/centering/alignment. Apply only geom position/quaternion once.",
+  "pose_rule": "Root pose and six wing angles are recorded. Other joints use fixed compiled neutral reference; legs are author flight-task retracted geometry. Fixed parts are not measured joint motion.",
+  "joint_transform_rule": "body base transform then listed hinge rotations in order, angle minus reference, positive right-hand rule about body-local axes/pivots",
+  "wing_joint_order": [
+    "wing_yaw_left",
+    "wing_roll_left",
+    "wing_pitch_left",
+    "wing_yaw_right",
+    "wing_roll_right",
+    "wing_pitch_right"
+  ],
+  "geometries": [
+    {
+      "id": "walker/head",
+      "positions": {
+        "byte_offset": 0,
+        "count": 5982,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 71784,
+        "count": 35880,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 5982,
+      "triangle_count": 11960
+    },
+    {
+      "id": "walker/head_red",
+      "positions": {
+        "byte_offset": 143544,
+        "count": 29888,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 502200,
+        "count": 177912,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 29888,
+      "triangle_count": 59304
+    },
+    {
+      "id": "walker/head_ocelli",
+      "positions": {
+        "byte_offset": 858024,
+        "count": 5958,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 929520,
+        "count": 35712,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 5958,
+      "triangle_count": 11904
+    },
+    {
+      "id": "walker/head_black",
+      "positions": {
+        "byte_offset": 1000944,
+        "count": 12148,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 1146720,
+        "count": 71940,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 12148,
+      "triangle_count": 23980
+    },
+    {
+      "id": "walker/haustellum",
+      "positions": {
+        "byte_offset": 1290600,
+        "count": 1834,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 1312608,
+        "count": 10992,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 1834,
+      "triangle_count": 3664
+    },
+    {
+      "id": "walker/haustellum_black",
+      "positions": {
+        "byte_offset": 1334592,
+        "count": 1344,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 1350720,
+        "count": 7920,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 1344,
+      "triangle_count": 2640
+    },
+    {
+      "id": "walker/rostrum",
+      "positions": {
+        "byte_offset": 1366560,
+        "count": 2116,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 1391952,
+        "count": 12684,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 2116,
+      "triangle_count": 4228
+    },
+    {
+      "id": "walker/rostrum_bristle-brown",
+      "positions": {
+        "byte_offset": 1417320,
+        "count": 1568,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 1436136,
+        "count": 9240,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 1568,
+      "triangle_count": 3080
+    },
+    {
+      "id": "walker/labrum_left_lower",
+      "positions": {
+        "byte_offset": 1454616,
+        "count": 482,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 1460400,
+        "count": 2880,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 482,
+      "triangle_count": 960
+    },
+    {
+      "id": "walker/wing_left_brown",
+      "positions": {
+        "byte_offset": 1466160,
+        "count": 3147,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 1503924,
+        "count": 18684,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 3147,
+      "triangle_count": 6228
+    },
+    {
+      "id": "walker/wing_left_membrane",
+      "positions": {
+        "byte_offset": 1541292,
+        "count": 252,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 1544316,
+        "count": 1500,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 252,
+      "triangle_count": 500
+    },
+    {
+      "id": "walker/antenna_left",
+      "positions": {
+        "byte_offset": 1547316,
+        "count": 2066,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 1572108,
+        "count": 12384,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 2066,
+      "triangle_count": 4128
+    },
+    {
+      "id": "walker/antenna_left_black",
+      "positions": {
+        "byte_offset": 1596876,
+        "count": 872,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 1607340,
+        "count": 5160,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 872,
+      "triangle_count": 1720
+    },
+    {
+      "id": "walker/haltere_left",
+      "positions": {
+        "byte_offset": 1617660,
+        "count": 626,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 1625172,
+        "count": 3744,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 626,
+      "triangle_count": 1248
+    },
+    {
+      "id": "walker/labrum_right_lower",
+      "positions": {
+        "byte_offset": 1632660,
+        "count": 482,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 1638444,
+        "count": 2880,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 482,
+      "triangle_count": 960
+    },
+    {
+      "id": "walker/wing_right_brown",
+      "positions": {
+        "byte_offset": 1644204,
+        "count": 3147,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 1681968,
+        "count": 18684,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 3147,
+      "triangle_count": 6228
+    },
+    {
+      "id": "walker/wing_right_membrane",
+      "positions": {
+        "byte_offset": 1719336,
+        "count": 252,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 1722360,
+        "count": 1500,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 252,
+      "triangle_count": 500
+    },
+    {
+      "id": "walker/antenna_right",
+      "positions": {
+        "byte_offset": 1725360,
+        "count": 2066,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 1750152,
+        "count": 12384,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 2066,
+      "triangle_count": 4128
+    },
+    {
+      "id": "walker/antenna_right_black",
+      "positions": {
+        "byte_offset": 1774920,
+        "count": 872,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 1785384,
+        "count": 5160,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 872,
+      "triangle_count": 1720
+    },
+    {
+      "id": "walker/haltere_right",
+      "positions": {
+        "byte_offset": 1795704,
+        "count": 626,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 1803216,
+        "count": 3744,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 626,
+      "triangle_count": 1248
+    },
+    {
+      "id": "walker/thorax",
+      "positions": {
+        "byte_offset": 1810704,
+        "count": 9158,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 1920600,
+        "count": 54936,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 9158,
+      "triangle_count": 18312
+    },
+    {
+      "id": "walker/thorax_black",
+      "positions": {
+        "byte_offset": 2030472,
+        "count": 12821,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2184324,
+        "count": 73974,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 12821,
+      "triangle_count": 24658
+    },
+    {
+      "id": "walker/abdomen_1",
+      "positions": {
+        "byte_offset": 2332272,
+        "count": 764,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2341440,
+        "count": 4374,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 764,
+      "triangle_count": 1458
+    },
+    {
+      "id": "walker/abdomen_1_lower",
+      "positions": {
+        "byte_offset": 2350188,
+        "count": 275,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2353488,
+        "count": 1440,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 275,
+      "triangle_count": 480
+    },
+    {
+      "id": "walker/abdomen_2",
+      "positions": {
+        "byte_offset": 2356368,
+        "count": 343,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2360484,
+        "count": 1860,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 343,
+      "triangle_count": 620
+    },
+    {
+      "id": "walker/abdomen_2_lower",
+      "positions": {
+        "byte_offset": 2364204,
+        "count": 289,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2367672,
+        "count": 1536,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 289,
+      "triangle_count": 512
+    },
+    {
+      "id": "walker/abdomen_3",
+      "positions": {
+        "byte_offset": 2370744,
+        "count": 409,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2375652,
+        "count": 2244,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 409,
+      "triangle_count": 748
+    },
+    {
+      "id": "walker/abdomen_3_lower",
+      "positions": {
+        "byte_offset": 2380140,
+        "count": 339,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2384208,
+        "count": 1824,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 339,
+      "triangle_count": 608
+    },
+    {
+      "id": "walker/abdomen_4",
+      "positions": {
+        "byte_offset": 2387856,
+        "count": 409,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2392764,
+        "count": 2244,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 409,
+      "triangle_count": 748
+    },
+    {
+      "id": "walker/abdomen_4_lower",
+      "positions": {
+        "byte_offset": 2397252,
+        "count": 339,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2401320,
+        "count": 1824,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 339,
+      "triangle_count": 608
+    },
+    {
+      "id": "walker/abdomen_5",
+      "positions": {
+        "byte_offset": 2404968,
+        "count": 405,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2409828,
+        "count": 2196,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 405,
+      "triangle_count": 732
+    },
+    {
+      "id": "walker/abdomen_5_lower",
+      "positions": {
+        "byte_offset": 2414220,
+        "count": 367,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2418624,
+        "count": 1968,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 367,
+      "triangle_count": 656
+    },
+    {
+      "id": "walker/abdomen_6",
+      "positions": {
+        "byte_offset": 2422560,
+        "count": 409,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2427468,
+        "count": 2244,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 409,
+      "triangle_count": 748
+    },
+    {
+      "id": "walker/abdomen_6_lower",
+      "positions": {
+        "byte_offset": 2431956,
+        "count": 339,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2436024,
+        "count": 1824,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 339,
+      "triangle_count": 608
+    },
+    {
+      "id": "walker/abdomen_7",
+      "positions": {
+        "byte_offset": 2439672,
+        "count": 409,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2444580,
+        "count": 2244,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 409,
+      "triangle_count": 748
+    },
+    {
+      "id": "walker/abdomen_7_lower",
+      "positions": {
+        "byte_offset": 2449068,
+        "count": 339,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2453136,
+        "count": 1824,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 339,
+      "triangle_count": 608
+    },
+    {
+      "id": "walker/abdomen_8",
+      "positions": {
+        "byte_offset": 2456784,
+        "count": 845,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2466924,
+        "count": 5058,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 845,
+      "triangle_count": 1686
+    },
+    {
+      "id": "walker/tibia_T1_left",
+      "positions": {
+        "byte_offset": 2477040,
+        "count": 497,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2483004,
+        "count": 2970,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 497,
+      "triangle_count": 990
+    },
+    {
+      "id": "walker/tarsus_T1_1_left",
+      "positions": {
+        "byte_offset": 2488944,
+        "count": 337,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2492988,
+        "count": 1968,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 337,
+      "triangle_count": 656
+    },
+    {
+      "id": "walker/tarsus_T1_2_left",
+      "positions": {
+        "byte_offset": 2496924,
+        "count": 305,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2500584,
+        "count": 1776,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 305,
+      "triangle_count": 592
+    },
+    {
+      "id": "walker/tarsus_T1_3_left",
+      "positions": {
+        "byte_offset": 2504136,
+        "count": 305,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2507796,
+        "count": 1776,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 305,
+      "triangle_count": 592
+    },
+    {
+      "id": "walker/tarsus_T1_4_left",
+      "positions": {
+        "byte_offset": 2511348,
+        "count": 305,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2515008,
+        "count": 1776,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 305,
+      "triangle_count": 592
+    },
+    {
+      "id": "walker/tarsal_claw_T1_left_brown",
+      "positions": {
+        "byte_offset": 2518560,
+        "count": 799,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2528148,
+        "count": 4728,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 799,
+      "triangle_count": 1576
+    },
+    {
+      "id": "walker/tarsus_T2_2_left",
+      "positions": {
+        "byte_offset": 2537604,
+        "count": 401,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2542416,
+        "count": 2352,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 401,
+      "triangle_count": 784
+    },
+    {
+      "id": "walker/tarsus_T2_3_left",
+      "positions": {
+        "byte_offset": 2547120,
+        "count": 337,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2551164,
+        "count": 1968,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 337,
+      "triangle_count": 656
+    },
+    {
+      "id": "walker/tarsus_T2_4_left",
+      "positions": {
+        "byte_offset": 2555100,
+        "count": 305,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2558760,
+        "count": 1776,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 305,
+      "triangle_count": 592
+    },
+    {
+      "id": "walker/tarsal_claw_T2_left_brown",
+      "positions": {
+        "byte_offset": 2562312,
+        "count": 839,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2572380,
+        "count": 4968,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 839,
+      "triangle_count": 1656
+    },
+    {
+      "id": "walker/tarsus_T2_1_left",
+      "positions": {
+        "byte_offset": 2582316,
+        "count": 569,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2589144,
+        "count": 3360,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 569,
+      "triangle_count": 1120
+    },
+    {
+      "id": "walker/tarsus_T3_2_left",
+      "positions": {
+        "byte_offset": 2595864,
+        "count": 465,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2601444,
+        "count": 2736,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 465,
+      "triangle_count": 912
+    },
+    {
+      "id": "walker/tarsus_T3_3_left",
+      "positions": {
+        "byte_offset": 2606916,
+        "count": 337,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2610960,
+        "count": 1968,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 337,
+      "triangle_count": 656
+    },
+    {
+      "id": "walker/tarsus_T3_4_left",
+      "positions": {
+        "byte_offset": 2614896,
+        "count": 337,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2618940,
+        "count": 1968,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 337,
+      "triangle_count": 656
+    },
+    {
+      "id": "walker/tarsal_claw_T3_left_brown",
+      "positions": {
+        "byte_offset": 2622876,
+        "count": 919,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2633904,
+        "count": 5448,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 919,
+      "triangle_count": 1816
+    },
+    {
+      "id": "walker/tarsus_T3_1_left",
+      "positions": {
+        "byte_offset": 2644800,
+        "count": 799,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2654388,
+        "count": 4740,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 799,
+      "triangle_count": 1580
+    },
+    {
+      "id": "walker/tibia_T2_left",
+      "positions": {
+        "byte_offset": 2663868,
+        "count": 627,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2671392,
+        "count": 3750,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 627,
+      "triangle_count": 1250
+    },
+    {
+      "id": "walker/tibia_T3_left",
+      "positions": {
+        "byte_offset": 2678892,
+        "count": 1131,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2692464,
+        "count": 6774,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 1131,
+      "triangle_count": 2258
+    },
+    {
+      "id": "walker/femur_T1_left",
+      "positions": {
+        "byte_offset": 2706012,
+        "count": 1076,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2718924,
+        "count": 6444,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 1076,
+      "triangle_count": 2148
+    },
+    {
+      "id": "walker/femur_T2_left",
+      "positions": {
+        "byte_offset": 2731812,
+        "count": 1490,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2749692,
+        "count": 8928,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 1490,
+      "triangle_count": 2976
+    },
+    {
+      "id": "walker/femur_T3_left",
+      "positions": {
+        "byte_offset": 2767548,
+        "count": 1538,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2786004,
+        "count": 9216,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 1538,
+      "triangle_count": 3072
+    },
+    {
+      "id": "walker/femur_T1_right",
+      "positions": {
+        "byte_offset": 2804436,
+        "count": 1076,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2817348,
+        "count": 6444,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 1076,
+      "triangle_count": 2148
+    },
+    {
+      "id": "walker/tibia_T1_right",
+      "positions": {
+        "byte_offset": 2830236,
+        "count": 497,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2836200,
+        "count": 2970,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 497,
+      "triangle_count": 990
+    },
+    {
+      "id": "walker/tarsus_T1_1_right",
+      "positions": {
+        "byte_offset": 2842140,
+        "count": 337,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2846184,
+        "count": 1968,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 337,
+      "triangle_count": 656
+    },
+    {
+      "id": "walker/tarsus_T1_2_right",
+      "positions": {
+        "byte_offset": 2850120,
+        "count": 305,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2853780,
+        "count": 1776,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 305,
+      "triangle_count": 592
+    },
+    {
+      "id": "walker/tarsus_T1_3_right",
+      "positions": {
+        "byte_offset": 2857332,
+        "count": 305,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2860992,
+        "count": 1776,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 305,
+      "triangle_count": 592
+    },
+    {
+      "id": "walker/tarsus_T1_4_right",
+      "positions": {
+        "byte_offset": 2864544,
+        "count": 305,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2868204,
+        "count": 1776,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 305,
+      "triangle_count": 592
+    },
+    {
+      "id": "walker/tarsal_claw_T1_right_brown",
+      "positions": {
+        "byte_offset": 2871756,
+        "count": 799,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2881344,
+        "count": 4728,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 799,
+      "triangle_count": 1576
+    },
+    {
+      "id": "walker/femur_T2_right",
+      "positions": {
+        "byte_offset": 2890800,
+        "count": 1490,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2908680,
+        "count": 8928,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 1490,
+      "triangle_count": 2976
+    },
+    {
+      "id": "walker/tibia_T2_right",
+      "positions": {
+        "byte_offset": 2926536,
+        "count": 627,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2934060,
+        "count": 3750,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 627,
+      "triangle_count": 1250
+    },
+    {
+      "id": "walker/tarsus_T2_1_right",
+      "positions": {
+        "byte_offset": 2941560,
+        "count": 569,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2948388,
+        "count": 3360,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 569,
+      "triangle_count": 1120
+    },
+    {
+      "id": "walker/tarsus_T2_2_right",
+      "positions": {
+        "byte_offset": 2955108,
+        "count": 401,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2959920,
+        "count": 2352,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 401,
+      "triangle_count": 784
+    },
+    {
+      "id": "walker/tarsus_T2_3_right",
+      "positions": {
+        "byte_offset": 2964624,
+        "count": 337,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2968668,
+        "count": 1968,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 337,
+      "triangle_count": 656
+    },
+    {
+      "id": "walker/tarsus_T2_4_right",
+      "positions": {
+        "byte_offset": 2972604,
+        "count": 305,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2976264,
+        "count": 1776,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 305,
+      "triangle_count": 592
+    },
+    {
+      "id": "walker/tarsal_claw_T2_right_brown",
+      "positions": {
+        "byte_offset": 2979816,
+        "count": 839,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 2989884,
+        "count": 4968,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 839,
+      "triangle_count": 1656
+    },
+    {
+      "id": "walker/femur_T3_right",
+      "positions": {
+        "byte_offset": 2999820,
+        "count": 1538,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 3018276,
+        "count": 9216,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 1538,
+      "triangle_count": 3072
+    },
+    {
+      "id": "walker/tibia_T3_right",
+      "positions": {
+        "byte_offset": 3036708,
+        "count": 1131,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 3050280,
+        "count": 6774,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 1131,
+      "triangle_count": 2258
+    },
+    {
+      "id": "walker/tarsus_T3_1_right",
+      "positions": {
+        "byte_offset": 3063828,
+        "count": 799,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 3073416,
+        "count": 4740,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 799,
+      "triangle_count": 1580
+    },
+    {
+      "id": "walker/tarsus_T3_2_right",
+      "positions": {
+        "byte_offset": 3082896,
+        "count": 465,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 3088476,
+        "count": 2736,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 465,
+      "triangle_count": 912
+    },
+    {
+      "id": "walker/tarsus_T3_3_right",
+      "positions": {
+        "byte_offset": 3093948,
+        "count": 337,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 3097992,
+        "count": 1968,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 337,
+      "triangle_count": 656
+    },
+    {
+      "id": "walker/tarsus_T3_4_right",
+      "positions": {
+        "byte_offset": 3101928,
+        "count": 337,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 3105972,
+        "count": 1968,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 337,
+      "triangle_count": 656
+    },
+    {
+      "id": "walker/tarsal_claw_T3_right_brown",
+      "positions": {
+        "byte_offset": 3109908,
+        "count": 919,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 3120936,
+        "count": 5448,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 919,
+      "triangle_count": 1816
+    },
+    {
+      "id": "walker/coxa_T1_left",
+      "positions": {
+        "byte_offset": 3131832,
+        "count": 1118,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 3145248,
+        "count": 6696,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 1118,
+      "triangle_count": 2232
+    },
+    {
+      "id": "walker/coxa_T1_right",
+      "positions": {
+        "byte_offset": 3158640,
+        "count": 1118,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 3172056,
+        "count": 6696,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 1118,
+      "triangle_count": 2232
+    },
+    {
+      "id": "walker/coxa_T2_left",
+      "positions": {
+        "byte_offset": 3185448,
+        "count": 1276,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 3200760,
+        "count": 7644,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 1276,
+      "triangle_count": 2548
+    },
+    {
+      "id": "walker/coxa_T2_right",
+      "positions": {
+        "byte_offset": 3216048,
+        "count": 1276,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 3231360,
+        "count": 7644,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 1276,
+      "triangle_count": 2548
+    },
+    {
+      "id": "walker/coxa_T3_left",
+      "positions": {
+        "byte_offset": 3246648,
+        "count": 968,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 3258264,
+        "count": 5796,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 968,
+      "triangle_count": 1932
+    },
+    {
+      "id": "walker/coxa_T3_right",
+      "positions": {
+        "byte_offset": 3269856,
+        "count": 968,
+        "item_size": 3,
+        "dtype": "float32"
+      },
+      "indices": {
+        "byte_offset": 3281472,
+        "count": 5796,
+        "item_size": 1,
+        "dtype": "uint16"
+      },
+      "vertex_count": 968,
+      "triangle_count": 1932
+    }
+  ],
+  "nodes": [
+    {
+      "id": "walker/",
+      "parent": null,
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": true,
+      "geometries": [],
+      "joints": []
+    },
+    {
+      "id": "walker/thorax",
+      "parent": "walker/",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/thorax",
+          "geometry_id": "walker/thorax",
+          "position": [
+            1.7749687005463866e-06,
+            3.780967347267487e-07,
+            9.602004012242149e-05
+          ],
+          "quaternion": [
+            0.5881188212723499,
+            -0.5881188212723499,
+            -0.39257642831074696,
+            0.39257642831074696
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        },
+        {
+          "id": "walker/thorax_black",
+          "geometry_id": "walker/thorax_black",
+          "position": [
+            0.005052582532870692,
+            -0.00037891414066242815,
+            0.021256642038553847
+          ],
+          "quaternion": [
+            -0.5926808020629919,
+            -0.3852919789278493,
+            -0.3837563300234804,
+            0.5941469826623228
+          ],
+          "rgba": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/head",
+      "parent": "walker/thorax",
+      "position": [
+        0.0567,
+        3.81e-07,
+        -0.00305
+      ],
+      "quaternion": [
+        -0.08696756714505467,
+        0.08696756714505467,
+        -0.7017383004118204,
+        0.7017383004118204
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/head",
+          "geometry_id": "walker/head",
+          "position": [
+            3.298141436711442e-08,
+            0.016156310062267594,
+            -0.0005886992179025274
+          ],
+          "quaternion": [
+            0.5276026161740578,
+            -0.4707817747176397,
+            -0.5276026161740578,
+            0.4707817747176397
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        },
+        {
+          "id": "walker/head_red",
+          "geometry_id": "walker/head_red",
+          "position": [
+            3.060533997307803e-08,
+            0.017836024920699904,
+            0.004584229824034308
+          ],
+          "quaternion": [
+            0.5820370484886959,
+            -0.40153799168183607,
+            -0.5820372138214464,
+            0.40153803948026456
+          ],
+          "rgba": [
+            0.800000011920929,
+            0.027899999171495438,
+            0.0015399999683722854,
+            1.0
+          ]
+        },
+        {
+          "id": "walker/head_ocelli",
+          "geometry_id": "walker/head_ocelli",
+          "position": [
+            -2.5550918164637034e-06,
+            0.01882406228422285,
+            0.03195325649032654
+          ],
+          "quaternion": [
+            -0.12659499936567953,
+            -0.6953048701316007,
+            0.12646978648874693,
+            0.6960820618378087
+          ],
+          "rgba": [
+            0.12800000607967377,
+            0.04879999905824661,
+            0.015399999916553497,
+            1.0
+          ]
+        },
+        {
+          "id": "walker/head_black",
+          "geometry_id": "walker/head_black",
+          "position": [
+            -0.00033965207527937775,
+            0.019631997811411728,
+            0.004912186221265741
+          ],
+          "quaternion": [
+            0.12409601568145079,
+            0.10780514232212837,
+            -0.6871689755772536,
+            0.7076560104916813
+          ],
+          "rgba": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "name": "head_abduct",
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 7
+        },
+        {
+          "name": "head_twist",
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 8
+        },
+        {
+          "name": "head",
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 9
+        }
+      ]
+    },
+    {
+      "id": "walker/rostrum",
+      "parent": "walker/head",
+      "position": [
+        0.0,
+        0.0368,
+        -0.0235
+      ],
+      "quaternion": [
+        -1.2104691477096864e-07,
+        0.19207444327294196,
+        -0.9813803585976878,
+        2.2008529958357934e-07
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/rostrum",
+          "geometry_id": "walker/rostrum",
+          "position": [
+            -2.141492168754346e-08,
+            0.019543643076223652,
+            -0.0004441152678379412
+          ],
+          "quaternion": [
+            7.68824505774896e-19,
+            0.7786089242689972,
+            0.6275094764612545,
+            -1.207516766047653e-17
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        },
+        {
+          "id": "walker/rostrum_bristle-brown",
+          "geometry_id": "walker/rostrum_bristle-brown",
+          "position": [
+            5.184383151869756e-08,
+            0.024997555303167704,
+            -0.024505918751199743
+          ],
+          "quaternion": [
+            0.6688774635962048,
+            -0.22935273889319785,
+            0.6688775900776963,
+            -0.2293535030191445
+          ],
+          "rgba": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "name": "rostrum",
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 10
+        }
+      ]
+    },
+    {
+      "id": "walker/haustellum",
+      "parent": "walker/rostrum",
+      "position": [
+        0.0,
+        0.0377,
+        0.0
+      ],
+      "quaternion": [
+        -1.5598026974373108e-07,
+        -0.3469561128274018,
+        0.937881365510383,
+        2.3297053109159835e-07
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/haustellum",
+          "geometry_id": "walker/haustellum",
+          "position": [
+            4.608989257126066e-08,
+            0.0123668828375727,
+            -0.001222779912298591
+          ],
+          "quaternion": [
+            0.7741881594723266,
+            -1.4359983960161128e-17,
+            -1.0628411803648643e-17,
+            0.6329555227129742
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        },
+        {
+          "id": "walker/haustellum_black",
+          "geometry_id": "walker/haustellum_black",
+          "position": [
+            -0.0011137404343112593,
+            0.011582036059244516,
+            -0.002395098842281118
+          ],
+          "quaternion": [
+            0.15194050031155878,
+            -0.7268223542532894,
+            0.01625625840641531,
+            0.6696111437135779
+          ],
+          "rgba": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "name": "haustellum_abduct",
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 11
+        },
+        {
+          "name": "haustellum",
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 12
+        }
+      ]
+    },
+    {
+      "id": "walker/labrum_left",
+      "parent": "walker/haustellum",
+      "position": [
+        -0.00263,
+        0.0182,
+        0.0
+      ],
+      "quaternion": [
+        -0.014197695617055982,
+        -0.5909040922309919,
+        0.3189482325240041,
+        0.7408797501576396
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/labrum_left_lower",
+          "geometry_id": "walker/labrum_left_lower",
+          "position": [
+            -0.0002775277564039669,
+            0.008731486092332832,
+            -0.004082493977932228
+          ],
+          "quaternion": [
+            -0.7145507020425763,
+            0.08840691211160384,
+            0.6716852583937719,
+            -0.17447184803815016
+          ],
+          "rgba": [
+            0.7990000247955322,
+            0.6100000143051147,
+            0.38600000739097595,
+            1.0
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "name": "labrum_left",
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 13
+        }
+      ]
+    },
+    {
+      "id": "walker/labrum_right",
+      "parent": "walker/haustellum",
+      "position": [
+        0.00263,
+        0.0182,
+        0.0
+      ],
+      "quaternion": [
+        0.002739139350260435,
+        0.6417983441121166,
+        -0.3159007425847801,
+        0.6987804400846876
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/labrum_right_lower",
+          "geometry_id": "walker/labrum_right_lower",
+          "position": [
+            0.0006742070519171195,
+            0.008919207443570715,
+            -0.003993541242645304
+          ],
+          "quaternion": [
+            -0.6683866363528178,
+            -0.0726589832886277,
+            -0.7190925109345581,
+            -0.17574395355250264
+          ],
+          "rgba": [
+            0.7990000247955322,
+            0.6100000143051147,
+            0.38600000739097595,
+            1.0
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "name": "labrum_right",
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 14
+        }
+      ]
+    },
+    {
+      "id": "walker/antenna_left",
+      "parent": "walker/head",
+      "position": [
+        -0.00795,
+        0.0378,
+        0.0129
+      ],
+      "quaternion": [
+        -0.5896013166704936,
+        -0.012791350598953083,
+        0.19187025898429624,
+        0.7844695484514196
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/antenna_left",
+          "geometry_id": "walker/antenna_left",
+          "position": [
+            -0.0033311751622732873,
+            0.011952353721236833,
+            0.0024279448400325587
+          ],
+          "quaternion": [
+            0.6163299854857427,
+            -0.38797382271383113,
+            -0.6565420492524673,
+            -0.19638278805265294
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        },
+        {
+          "id": "walker/antenna_left_black",
+          "geometry_id": "walker/antenna_left_black",
+          "position": [
+            -0.0012680589532319472,
+            0.0023938369204291876,
+            0.006638413258380993
+          ],
+          "quaternion": [
+            0.6677965348279801,
+            -0.34900270852934634,
+            -0.5633871151258396,
+            0.3388802974814398
+          ],
+          "rgba": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "name": "antenna_abduct_left",
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 15
+        },
+        {
+          "name": "antenna_twist_left",
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 16
+        },
+        {
+          "name": "antenna_left",
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 17
+        }
+      ]
+    },
+    {
+      "id": "walker/antenna_right",
+      "parent": "walker/head",
+      "position": [
+        0.00861,
+        0.038,
+        0.0129
+      ],
+      "quaternion": [
+        0.7844695484514196,
+        -0.19187025898429624,
+        -0.012791350598953083,
+        0.5896013166704936
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/antenna_right",
+          "geometry_id": "walker/antenna_right",
+          "position": [
+            0.0028304997999250552,
+            -0.011952136890566192,
+            -0.0024277987119602634
+          ],
+          "quaternion": [
+            0.3879742054267545,
+            0.6163303393532467,
+            0.19638367193514003,
+            -0.6565412265147279
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        },
+        {
+          "id": "walker/antenna_right_black",
+          "geometry_id": "walker/antenna_right_black",
+          "position": [
+            0.0007673730600023087,
+            -0.0023935910938954197,
+            -0.006638273521256899
+          ],
+          "quaternion": [
+            0.34900121973710097,
+            0.6677969665865132,
+            -0.33888044319264404,
+            -0.5633874379691355
+          ],
+          "rgba": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "name": "antenna_abduct_right",
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 18
+        },
+        {
+          "name": "antenna_twist_right",
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 19
+        },
+        {
+          "name": "antenna_right",
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 20
+        }
+      ]
+    },
+    {
+      "id": "walker/wing_left",
+      "parent": "walker/thorax",
+      "position": [
+        -0.00694,
+        0.0432,
+        0.0091
+      ],
+      "quaternion": [
+        0.402366491053364,
+        -0.0,
+        0.9154786763641211,
+        0.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/wing_left_brown",
+          "geometry_id": "walker/wing_left_brown",
+          "position": [
+            0.008744910646085041,
+            -0.10643383565069389,
+            -0.009158466432983528
+          ],
+          "quaternion": [
+            -0.6631568307334232,
+            0.25408003421727965,
+            -0.25463336038265055,
+            -0.6563750496811946
+          ],
+          "rgba": [
+            0.20200000703334808,
+            0.07819999754428864,
+            0.026200000196695328,
+            1.0
+          ]
+        },
+        {
+          "id": "walker/wing_left_membrane",
+          "geometry_id": "walker/wing_left_membrane",
+          "position": [
+            0.02424336791547925,
+            -0.12213513273927729,
+            -0.026318048856996193
+          ],
+          "quaternion": [
+            -0.6703413458748969,
+            0.2514215824338623,
+            -0.2574940611135862,
+            -0.6489425832755313
+          ],
+          "rgba": [
+            0.5389999747276306,
+            0.6859999895095825,
+            0.800000011920929,
+            0.4000000059604645
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "name": "wing_yaw_left",
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 21,
+          "wing_angle_index": 0
+        },
+        {
+          "name": "wing_roll_left",
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 22,
+          "wing_angle_index": 1
+        },
+        {
+          "name": "wing_pitch_left",
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 23,
+          "wing_angle_index": 2
+        }
+      ]
+    },
+    {
+      "id": "walker/wing_right",
+      "parent": "walker/thorax",
+      "position": [
+        -0.00694,
+        -0.0432,
+        0.0091
+      ],
+      "quaternion": [
+        -0.9154786763641211,
+        0.0,
+        0.402366491053364,
+        -0.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/wing_right_brown",
+          "geometry_id": "walker/wing_right_brown",
+          "position": [
+            -0.008746799219088969,
+            0.10642024477059439,
+            0.008966023920546018
+          ],
+          "quaternion": [
+            0.2540712854862952,
+            0.6631581746988096,
+            -0.656381217054573,
+            0.25462269168211427
+          ],
+          "rgba": [
+            0.20200000703334808,
+            0.07819999754428864,
+            0.026200000196695328,
+            1.0
+          ]
+        },
+        {
+          "id": "walker/wing_right_membrane",
+          "geometry_id": "walker/wing_right_membrane",
+          "position": [
+            -0.024243512065164716,
+            0.12213596687920675,
+            0.026124391838871774
+          ],
+          "quaternion": [
+            0.25141435492293157,
+            0.6703441581522693,
+            -0.6489453934651978,
+            0.25748671435651616
+          ],
+          "rgba": [
+            0.5389999747276306,
+            0.6859999895095825,
+            0.800000011920929,
+            0.4000000059604645
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "name": "wing_yaw_right",
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 24,
+          "wing_angle_index": 3
+        },
+        {
+          "name": "wing_roll_right",
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 25,
+          "wing_angle_index": 4
+        },
+        {
+          "name": "wing_pitch_right",
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 26,
+          "wing_angle_index": 5
+        }
+      ]
+    },
+    {
+      "id": "walker/abdomen",
+      "parent": "walker/thorax",
+      "position": [
+        -0.0447,
+        -0.000555,
+        0.00428
+      ],
+      "quaternion": [
+        -0.08588836720843908,
+        -0.08528844846193077,
+        -0.6999052042596897,
+        -0.7039046625697452
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/abdomen",
+          "geometry_id": "walker/abdomen_1",
+          "position": [
+            -0.0001408936987701804,
+            0.007324592152600187,
+            -0.007143539160537726
+          ],
+          "quaternion": [
+            0.3894400237182126,
+            0.581573993446821,
+            0.4057265116859074,
+            0.5877875090437543
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        },
+        {
+          "id": "walker/abdomen_lower",
+          "geometry_id": "walker/abdomen_1_lower",
+          "position": [
+            -0.0004800624740115833,
+            -0.0024723039443586003,
+            -0.033673557588208
+          ],
+          "quaternion": [
+            0.4549873457235964,
+            0.5420179118323031,
+            0.45719672950517304,
+            0.5386782425661176
+          ],
+          "rgba": [
+            0.7990000247955322,
+            0.6100000143051147,
+            0.38600000739097595,
+            1.0
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "name": "abdomen_abduct",
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 27
+        },
+        {
+          "name": "abdomen",
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 28
+        }
+      ]
+    },
+    {
+      "id": "walker/abdomen_2",
+      "parent": "walker/abdomen",
+      "position": [
+        0.0,
+        0.0119,
+        0.0
+      ],
+      "quaternion": [
+        -0.19207423702130277,
+        -0.0002691040091600544,
+        0.0014405567776597707,
+        0.9813793047807188
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/abdomen_2",
+          "geometry_id": "walker/abdomen_2",
+          "position": [
+            -0.00021567658181066392,
+            0.01673471399025927,
+            -0.009679472057714605
+          ],
+          "quaternion": [
+            0.5185548125992349,
+            0.475774269371985,
+            0.5231069796875395,
+            0.4807274058506624
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        },
+        {
+          "id": "walker/abdomen_2_lower",
+          "geometry_id": "walker/abdomen_2_lower",
+          "position": [
+            0.0002508509200930606,
+            0.015315188975627538,
+            -0.04712303830467436
+          ],
+          "quaternion": [
+            0.6506946610021037,
+            0.28585829441738886,
+            0.6475651143703371,
+            0.2748470780391743
+          ],
+          "rgba": [
+            0.7990000247955322,
+            0.6100000143051147,
+            0.38600000739097595,
+            1.0
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "name": "abdomen_abduct_2",
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 29
+        },
+        {
+          "name": "abdomen_2",
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 30
+        }
+      ]
+    },
+    {
+      "id": "walker/abdomen_3",
+      "parent": "walker/abdomen_2",
+      "position": [
+        0.0,
+        0.0212,
+        0.0
+      ],
+      "quaternion": [
+        -0.09088731800942906,
+        6.689066638977782e-05,
+        0.0005249267541798708,
+        0.9958610422155264
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/abdomen_3",
+          "geometry_id": "walker/abdomen_3",
+          "position": [
+            -6.786481210995475e-05,
+            0.0194952943854664,
+            -0.009884605828054782
+          ],
+          "quaternion": [
+            0.5724110807607437,
+            0.4294482746437884,
+            0.568967810718011,
+            0.4052102718275372
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        },
+        {
+          "id": "walker/abdomen_3_lower",
+          "geometry_id": "walker/abdomen_3_lower",
+          "position": [
+            0.0003915931789346267,
+            0.023070933222535218,
+            -0.05074846636956472
+          ],
+          "quaternion": [
+            0.6944337549504015,
+            0.1313005267931331,
+            0.695779606738598,
+            0.12811194517302724
+          ],
+          "rgba": [
+            0.7990000247955322,
+            0.6100000143051147,
+            0.38600000739097595,
+            1.0
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "name": "abdomen_abduct_3",
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 31
+        },
+        {
+          "name": "abdomen_3",
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 32
+        }
+      ]
+    },
+    {
+      "id": "walker/abdomen_4",
+      "parent": "walker/abdomen_3",
+      "position": [
+        0.0,
+        0.0313,
+        0.0
+      ],
+      "quaternion": [
+        -0.03321489500462488,
+        0.00014706595077348969,
+        -0.00022910273964033427,
+        0.9994481960728993
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/abdomen_4",
+          "geometry_id": "walker/abdomen_4",
+          "position": [
+            -9.958794411016813e-05,
+            0.01423262673409334,
+            -0.009458816076861887
+          ],
+          "quaternion": [
+            0.5496218568138348,
+            0.43669744895569257,
+            0.5624641684363259,
+            0.43685834295951936
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        },
+        {
+          "id": "walker/abdomen_4_lower",
+          "geometry_id": "walker/abdomen_4_lower",
+          "position": [
+            0.0003177928264400255,
+            0.020319843743570744,
+            -0.051168718841594574
+          ],
+          "quaternion": [
+            0.6790945380679314,
+            0.19165380300235654,
+            0.6823077232107242,
+            0.19119518562985954
+          ],
+          "rgba": [
+            0.7990000247955322,
+            0.6100000143051147,
+            0.38600000739097595,
+            1.0
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "name": "abdomen_abduct_4",
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 33
+        },
+        {
+          "name": "abdomen_4",
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 34
+        }
+      ]
+    },
+    {
+      "id": "walker/abdomen_5",
+      "parent": "walker/abdomen_4",
+      "position": [
+        0.0,
+        0.0262,
+        0.0
+      ],
+      "quaternion": [
+        -0.03681186731352773,
+        -4.72152211195247e-05,
+        -0.00032710545140009694,
+        0.9993221588645165
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/abdomen_5",
+          "geometry_id": "walker/abdomen_5",
+          "position": [
+            0.0003477515699081386,
+            0.009630966943413824,
+            -0.00976591167812571
+          ],
+          "quaternion": [
+            0.559455560565406,
+            0.426468507721338,
+            0.5633914009538384,
+            0.4332715280348521
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        },
+        {
+          "id": "walker/abdomen_5_lower",
+          "geometry_id": "walker/abdomen_5_lower",
+          "position": [
+            0.0003292513740937807,
+            0.01696494516587639,
+            -0.04722761671681308
+          ],
+          "quaternion": [
+            0.5800285634712532,
+            -0.40389784509609505,
+            0.5794785433737208,
+            -0.4057561016838547
+          ],
+          "rgba": [
+            0.7990000247955322,
+            0.6100000143051147,
+            0.38600000739097595,
+            1.0
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "name": "abdomen_abduct_5",
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 35
+        },
+        {
+          "name": "abdomen_5",
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 36
+        }
+      ]
+    },
+    {
+      "id": "walker/abdomen_6",
+      "parent": "walker/abdomen_5",
+      "position": [
+        0.0,
+        0.0213,
+        0.0
+      ],
+      "quaternion": [
+        -0.06618720766142482,
+        0.0001559698549121189,
+        -0.0003509321735522676,
+        0.9978071487326582
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/abdomen_6",
+          "geometry_id": "walker/abdomen_6",
+          "position": [
+            -0.00016417706489614862,
+            0.008355665493398862,
+            -0.009511502909400171
+          ],
+          "quaternion": [
+            0.5798661893544474,
+            0.40089236503774034,
+            0.5826083778348757,
+            0.40448484789249545
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        },
+        {
+          "id": "walker/abdomen_6_lower",
+          "geometry_id": "walker/abdomen_6_lower",
+          "position": [
+            0.0001947688795462632,
+            0.01681992589710858,
+            -0.040124222082873306
+          ],
+          "quaternion": [
+            0.5785959466936951,
+            -0.40659124408045505,
+            0.5768029989806506,
+            -0.40891147094898733
+          ],
+          "rgba": [
+            0.7990000247955322,
+            0.6100000143051147,
+            0.38600000739097595,
+            1.0
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "name": "abdomen_abduct_6",
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 37
+        },
+        {
+          "name": "abdomen_6",
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 38
+        }
+      ]
+    },
+    {
+      "id": "walker/abdomen_7",
+      "parent": "walker/abdomen_6",
+      "position": [
+        0.0,
+        0.0182,
+        0.0
+      ],
+      "quaternion": [
+        -0.10197812625461732,
+        -1.7896161372133824e-06,
+        -0.00018695989813346508,
+        0.9947866237582768
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/abdomen_8",
+          "geometry_id": "walker/abdomen_8",
+          "position": [
+            -4.4874989347355645e-05,
+            0.022623399673264044,
+            -0.009918217009523972
+          ],
+          "quaternion": [
+            0.14848419212550623,
+            -0.15943948473109557,
+            0.6968071812011976,
+            0.6833675787041409
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        },
+        {
+          "id": "walker/abdomen_7",
+          "geometry_id": "walker/abdomen_7",
+          "position": [
+            -0.00016379334677453505,
+            0.007219589263465671,
+            -0.007330747390139503
+          ],
+          "quaternion": [
+            0.5429531317995541,
+            0.43891607630053703,
+            0.5598806622935083,
+            0.4461930284347576
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        },
+        {
+          "id": "walker/abdomen_7_lower",
+          "geometry_id": "walker/abdomen_7_lower",
+          "position": [
+            9.681817571132552e-05,
+            0.015153147851744916,
+            -0.03241267923803573
+          ],
+          "quaternion": [
+            0.5805692802068263,
+            -0.40229746030984587,
+            0.5797458521739316,
+            -0.4061906094378603
+          ],
+          "rgba": [
+            0.7990000247955322,
+            0.6100000143051147,
+            0.38600000739097595,
+            1.0
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "name": "abdomen_abduct_7",
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 39
+        },
+        {
+          "name": "abdomen_7",
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 40
+        }
+      ]
+    },
+    {
+      "id": "walker/haltere_left",
+      "parent": "walker/thorax",
+      "position": [
+        -0.0386,
+        0.0247,
+        -0.00866
+      ],
+      "quaternion": [
+        -0.2038681399563818,
+        0.8254660960978989,
+        0.43871624235711576,
+        0.2908119055260152
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/haltere_left",
+          "geometry_id": "walker/haltere_left",
+          "position": [
+            0.0005009166839697599,
+            0.017188874245579272,
+            0.00112267434163206
+          ],
+          "quaternion": [
+            0.7008093923513066,
+            -0.1601606613545121,
+            -0.181328630620448,
+            -0.6710698069977451
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "name": "haltere_left",
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 41
+        }
+      ]
+    },
+    {
+      "id": "walker/haltere_right",
+      "parent": "walker/thorax",
+      "position": [
+        -0.0386,
+        -0.0247,
+        -0.00866
+      ],
+      "quaternion": [
+        -0.8290327474402985,
+        0.20600813748214897,
+        -0.28001106065534814,
+        -0.4380173020251517
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/haltere_right",
+          "geometry_id": "walker/haltere_right",
+          "position": [
+            -0.0004471760308013134,
+            0.017512736241926424,
+            0.0011318951153424864
+          ],
+          "quaternion": [
+            -0.14461472350784788,
+            0.7041445216088531,
+            0.676605987169618,
+            0.15959765837635045
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "name": "haltere_right",
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reference_angle": 0.0,
+          "qpos_address": 42
+        }
+      ]
+    },
+    {
+      "id": "walker/coxa_T1_left",
+      "parent": "walker/thorax",
+      "position": [
+        0.0317,
+        0.0209,
+        -0.0272
+      ],
+      "quaternion": [
+        0.7712717721339297,
+        -0.31159234831255794,
+        -0.013812825925353303,
+        -0.5548506716427485
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/coxa_T1_left",
+          "geometry_id": "walker/coxa_T1_left",
+          "position": [
+            4.915691413644521e-06,
+            0.02569612879310311,
+            -0.0004036431057169044
+          ],
+          "quaternion": [
+            -0.38321831070184986,
+            -0.5314811368532921,
+            0.6296127569220824,
+            -0.41744377325925935
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/femur_T1_left",
+      "parent": "walker/coxa_T1_left",
+      "position": [
+        0.0,
+        0.0437,
+        0.0
+      ],
+      "quaternion": [
+        0.0,
+        0.1826466168564555,
+        0.9831786273871553,
+        0.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/femur_T1_left",
+          "geometry_id": "walker/femur_T1_left",
+          "position": [
+            0.0021492072176334705,
+            0.033346185373163605,
+            0.0027763612000164736
+          ],
+          "quaternion": [
+            -0.6760284964067407,
+            0.22597657083721145,
+            0.21784645649523784,
+            0.6666805703417248
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tibia_T1_left",
+      "parent": "walker/femur_T1_left",
+      "position": [
+        0.0,
+        0.0697,
+        0.0
+      ],
+      "quaternion": [
+        0.017624160383629774,
+        0.9578368067909502,
+        -0.14750453675188116,
+        0.2459277376891448
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tibia_T1_left",
+          "geometry_id": "walker/tibia_T1_left",
+          "position": [
+            -0.0005340188533659728,
+            -0.02879134333179661,
+            -0.0005850542607918202
+          ],
+          "quaternion": [
+            0.7264170316680495,
+            -0.015565209944282326,
+            -0.027666516571233438,
+            -0.6865206363997989
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus_T1_left",
+      "parent": "walker/tibia_T1_left",
+      "position": [
+        0.0,
+        -0.051,
+        0.00175
+      ],
+      "quaternion": [
+        0.9860856955936075,
+        0.0009693937025803126,
+        0.04787135879401771,
+        0.1591929465420349
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus_T1_left",
+          "geometry_id": "walker/tarsus_T1_1_left",
+          "position": [
+            -0.0004833566248915299,
+            0.0130962780137325,
+            0.0011179996662386282
+          ],
+          "quaternion": [
+            -0.5467745919860253,
+            -0.454811147898438,
+            0.4618725949306209,
+            -0.5299604432010699
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus2_T1_left",
+      "parent": "walker/tarsus_T1_left",
+      "position": [
+        -0.000165,
+        0.0235,
+        0.00174
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus2_T1_left",
+          "geometry_id": "walker/tarsus_T1_2_left",
+          "position": [
+            -6.699739015980644e-05,
+            0.007986347053126324,
+            -0.00020914342294321708
+          ],
+          "quaternion": [
+            0.4995701947114356,
+            0.5089564812940892,
+            -0.4990253215136976,
+            0.49230747424030497
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus3_T1_left",
+      "parent": "walker/tarsus2_T1_left",
+      "position": [
+        0.000113,
+        0.0136,
+        0.000556
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus3_T1_left",
+          "geometry_id": "walker/tarsus_T1_3_left",
+          "position": [
+            -0.00023223239177918437,
+            0.005555880571250872,
+            -0.0006766538666189287
+          ],
+          "quaternion": [
+            -0.5030109928713464,
+            -0.4804532106556085,
+            0.48375473485101783,
+            -0.5311553538565918
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus4_T1_left",
+      "parent": "walker/tarsus3_T1_left",
+      "position": [
+        -0.000255,
+        0.00909,
+        0.0002
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus4_T1_left",
+          "geometry_id": "walker/tarsus_T1_4_left",
+          "position": [
+            -0.00020806992776341467,
+            0.0047920966526682485,
+            -0.0007145506218422942
+          ],
+          "quaternion": [
+            0.42965977259762855,
+            0.49864901652584376,
+            -0.5436202599347079,
+            0.5207865696402744
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/claw_T1_left",
+      "parent": "walker/tarsus4_T1_left",
+      "position": [
+        -7.12e-05,
+        0.00906,
+        -0.00081
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsal_claw_T1_left",
+          "geometry_id": "walker/tarsal_claw_T1_left_brown",
+          "position": [
+            -0.0005457329522813945,
+            0.004973107707562978,
+            1.0991275453398064e-06
+          ],
+          "quaternion": [
+            -0.418688670575891,
+            -0.5552491200615419,
+            0.5532146516536824,
+            -0.45864121162186394
+          ],
+          "rgba": [
+            0.20200000703334808,
+            0.07819999754428864,
+            0.026200000196695328,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/coxa_T1_right",
+      "parent": "walker/thorax",
+      "position": [
+        0.0317,
+        -0.0209,
+        -0.0272
+      ],
+      "quaternion": [
+        0.02030411776428316,
+        -0.5653236911527563,
+        -0.7606404987857958,
+        0.3184696196344843
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/coxa_T1_right",
+          "geometry_id": "walker/coxa_T1_right",
+          "position": [
+            0.0007126369004723694,
+            -0.025952692346030343,
+            0.0014655471013240882
+          ],
+          "quaternion": [
+            0.6281267623811854,
+            0.4467036092418599,
+            0.3850907360102314,
+            -0.5075606179658985
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/femur_T1_right",
+      "parent": "walker/coxa_T1_right",
+      "position": [
+        0.0,
+        -0.0436,
+        0.0
+      ],
+      "quaternion": [
+        0.0,
+        0.1919477524983104,
+        0.9814051458550884,
+        0.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/femur_T1_right",
+          "geometry_id": "walker/femur_T1_right",
+          "position": [
+            -0.0021911887191155797,
+            -0.033235149559641984,
+            -0.002646159234780572
+          ],
+          "quaternion": [
+            -0.23905815944836994,
+            -0.6715384376457998,
+            -0.6619792600456677,
+            0.231669554397614
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tibia_T1_right",
+      "parent": "walker/femur_T1_right",
+      "position": [
+        0.0,
+        -0.0698,
+        0.0
+      ],
+      "quaternion": [
+        0.020264521134658715,
+        0.9654812686864993,
+        -0.139305087717279,
+        0.21915602098681097
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tibia_T1_right",
+          "geometry_id": "walker/tibia_T1_right",
+          "position": [
+            -7.308922611645209e-05,
+            0.028558173050548898,
+            0.0002653917732504396
+          ],
+          "quaternion": [
+            -0.6804214462531801,
+            -0.02466837187185014,
+            0.006685758571493596,
+            -0.7323751958799863
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus_T1_right",
+      "parent": "walker/tibia_T1_right",
+      "position": [
+        0.0,
+        0.0515,
+        -0.00175
+      ],
+      "quaternion": [
+        -0.9783860318319352,
+        0.004703461750878052,
+        0.07146533622403567,
+        -0.1939880302547121
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus_T1_right",
+          "geometry_id": "walker/tarsus_T1_1_right",
+          "position": [
+            -0.000275701316291236,
+            -0.012473717533745793,
+            -0.0006912814940119999
+          ],
+          "quaternion": [
+            0.515894337407427,
+            0.4519341416284812,
+            0.49828819272130837,
+            -0.5303936663045784
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus2_T1_right",
+      "parent": "walker/tarsus_T1_right",
+      "position": [
+        -0.000965,
+        -0.0227,
+        -0.00161
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus2_T1_right",
+          "geometry_id": "walker/tarsus_T1_2_right",
+          "position": [
+            0.00034993968477390475,
+            -0.008065596213288076,
+            -0.0003164142574472173
+          ],
+          "quaternion": [
+            -0.5370105222769666,
+            -0.41585302591202367,
+            -0.4401311083198818,
+            0.5873419509048758
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus3_T1_right",
+      "parent": "walker/tarsus2_T1_right",
+      "position": [
+        0.000143,
+        -0.0136,
+        -0.00168
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus3_T1_right",
+          "geometry_id": "walker/tarsus_T1_3_right",
+          "position": [
+            0.00035547792547341306,
+            -0.00548258304815389,
+            0.000471595728403329
+          ],
+          "quaternion": [
+            0.5178565254603164,
+            0.46168657942897967,
+            0.4433230328785683,
+            -0.5675692115792451
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus4_T1_right",
+      "parent": "walker/tarsus3_T1_right",
+      "position": [
+        0.000437,
+        -0.00899,
+        -0.00063
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus4_T1_right",
+          "geometry_id": "walker/tarsus_T1_4_right",
+          "position": [
+            0.0005037076841029921,
+            -0.004884572042096448,
+            -7.212486400060003e-05
+          ],
+          "quaternion": [
+            -0.5658240396442297,
+            -0.4546042634630689,
+            -0.3601320830673807,
+            0.5860742295541035
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/claw_T1_right",
+      "parent": "walker/tarsus4_T1_right",
+      "position": [
+        0.000765,
+        -0.00899,
+        0.000134
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsal_claw_T1_right",
+          "geometry_id": "walker/tarsal_claw_T1_right_brown",
+          "position": [
+            0.0005620400300617376,
+            -0.0050302852542937135,
+            -0.0004800606105445637
+          ],
+          "quaternion": [
+            0.5738906258672745,
+            0.38639053174072024,
+            0.3448360906318137,
+            -0.6343815706028665
+          ],
+          "rgba": [
+            0.20200000703334808,
+            0.07819999754428864,
+            0.026200000196695328,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/coxa_T2_left",
+      "parent": "walker/thorax",
+      "position": [
+        -0.0144,
+        0.0241,
+        -0.0425
+      ],
+      "quaternion": [
+        0.7680226936974242,
+        0.07076300444421445,
+        -0.3739930933766454,
+        -0.5150367999224408
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/coxa_T2_left",
+          "geometry_id": "walker/coxa_T2_left",
+          "position": [
+            0.00045196652068692916,
+            0.018079895773854944,
+            -0.0027485210881670608
+          ],
+          "quaternion": [
+            -0.46031341567776235,
+            -0.4640255508756074,
+            0.40168346610161065,
+            -0.6414376357388606
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/femur_T2_left",
+      "parent": "walker/coxa_T2_left",
+      "position": [
+        0.0,
+        0.0281,
+        0.0
+      ],
+      "quaternion": [
+        -0.2992506352012601,
+        0.2196817549435679,
+        0.9285127801479623,
+        -0.007280177089760797
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/femur_T2_left",
+          "geometry_id": "walker/femur_T2_left",
+          "position": [
+            -0.0013424348192292261,
+            0.040544583035264106,
+            0.0022867287547588475
+          ],
+          "quaternion": [
+            -0.6906831752901319,
+            -0.2018043097053427,
+            -0.18894226692027336,
+            0.6682309419104449
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tibia_T2_left",
+      "parent": "walker/femur_T2_left",
+      "position": [
+        0.0,
+        0.083,
+        0.0
+      ],
+      "quaternion": [
+        -0.0010751475937906024,
+        0.975297804733375,
+        -0.17428948306692513,
+        0.13570634558551362
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tibia_T2_left",
+          "geometry_id": "walker/tibia_T2_left",
+          "position": [
+            3.413587007491253e-05,
+            -0.03364347928345446,
+            -0.0008630157765161794
+          ],
+          "quaternion": [
+            0.018244984906630797,
+            0.7228966687252731,
+            0.690127605826393,
+            -0.028485339176323177
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus_T2_left",
+      "parent": "walker/tibia_T2_left",
+      "position": [
+        0.0,
+        -0.0668,
+        0.00175
+      ],
+      "quaternion": [
+        0.8891630197469088,
+        -0.06343716663551176,
+        -0.13002254602022334,
+        -0.4341186332446876
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus_T2_left",
+          "geometry_id": "walker/tarsus_T2_1_left",
+          "position": [
+            -6.45537948342767e-05,
+            0.016665601560337293,
+            2.3372803439600243e-05
+          ],
+          "quaternion": [
+            0.3496566568037599,
+            0.5998059574252906,
+            0.6246110710124388,
+            -0.3575388730734682
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus2_T2_left",
+      "parent": "walker/tarsus_T2_left",
+      "position": [
+        0.000471,
+        0.0342,
+        0.00136
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus2_T2_left",
+          "geometry_id": "walker/tarsus_T2_2_left",
+          "position": [
+            -0.0001554285335281947,
+            0.010042487873546155,
+            -3.072624930630652e-05
+          ],
+          "quaternion": [
+            -0.5120604842828124,
+            -0.4758134375456304,
+            -0.49052218061370945,
+            0.520368737928247
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus3_T2_left",
+      "parent": "walker/tarsus2_T2_left",
+      "position": [
+        2.42e-05,
+        0.0178,
+        0.000203
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus3_T2_left",
+          "geometry_id": "walker/tarsus_T2_3_left",
+          "position": [
+            -0.00013197207934463433,
+            0.005833056996263533,
+            -0.0005454365732769223
+          ],
+          "quaternion": [
+            0.5039034125879841,
+            0.5026094352020788,
+            0.4975752620064966,
+            -0.49586688240615584
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus4_T2_left",
+      "parent": "walker/tarsus3_T2_left",
+      "position": [
+        -3.11e-05,
+        0.00991,
+        0.000292
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus4_T2_left",
+          "geometry_id": "walker/tarsus_T2_4_left",
+          "position": [
+            2.6320159582770425e-06,
+            0.005213291560365985,
+            -0.00042653848131492256
+          ],
+          "quaternion": [
+            -0.5544244260597024,
+            -0.48068717572747144,
+            -0.4387149261796363,
+            0.5187317306919985
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/claw_T2_left",
+      "parent": "walker/tarsus4_T2_left",
+      "position": [
+        3.6e-05,
+        0.00991,
+        -0.000254
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsal_claw_T2_left",
+          "geometry_id": "walker/tarsal_claw_T2_left_brown",
+          "position": [
+            1.606533595167013e-05,
+            0.00510416685238832,
+            0.0005907056943940253
+          ],
+          "quaternion": [
+            0.5281165818067495,
+            0.4084814665236329,
+            0.4627307695936943,
+            -0.5831946522377314
+          ],
+          "rgba": [
+            0.20200000703334808,
+            0.07819999754428864,
+            0.026200000196695328,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/coxa_T2_right",
+      "parent": "walker/thorax",
+      "position": [
+        -0.0144,
+        -0.0241,
+        -0.0425
+      ],
+      "quaternion": [
+        -0.37220581514908696,
+        -0.5175089436091604,
+        -0.7671129553561947,
+        -0.0720072092114345
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/coxa_T2_right",
+          "geometry_id": "walker/coxa_T2_right",
+          "position": [
+            -0.0003735735400835251,
+            -0.0180654098774111,
+            0.002560371515933711
+          ],
+          "quaternion": [
+            -0.4624887434880654,
+            0.45823538783222156,
+            -0.6435215142157119,
+            -0.4024978909591996
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/femur_T2_right",
+      "parent": "walker/coxa_T2_right",
+      "position": [
+        0.0,
+        -0.0282,
+        0.0
+      ],
+      "quaternion": [
+        -0.2992008539758822,
+        0.22532168560775714,
+        0.9271602851438704,
+        -0.0090990453850276
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/femur_T2_right",
+          "geometry_id": "walker/femur_T2_right",
+          "position": [
+            0.001371136891915755,
+            -0.04052450041932615,
+            -0.001967868551150616
+          ],
+          "quaternion": [
+            0.20253658703474073,
+            -0.6934059686545871,
+            -0.6657771486445971,
+            -0.1868365111245248
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tibia_T2_right",
+      "parent": "walker/femur_T2_right",
+      "position": [
+        0.0,
+        -0.084,
+        0.0
+      ],
+      "quaternion": [
+        0.024731245186560284,
+        0.9758633972425725,
+        -0.1700869998072861,
+        0.1347197384582665
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tibia_T2_right",
+          "geometry_id": "walker/tibia_T2_right",
+          "position": [
+            -0.00031825237630851363,
+            0.03308133926783945,
+            -0.00025817857799884103
+          ],
+          "quaternion": [
+            -0.6935810459825466,
+            -0.00655235299553244,
+            -0.002107677035060249,
+            -0.7203457204853061
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus_T2_right",
+      "parent": "walker/tibia_T2_right",
+      "position": [
+        0.0,
+        0.0665,
+        -0.00175
+      ],
+      "quaternion": [
+        -0.8921208356453001,
+        0.05023944395313957,
+        0.1026756578763827,
+        0.43709738292337424
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus_T2_right",
+          "geometry_id": "walker/tarsus_T2_1_right",
+          "position": [
+            6.035209894124198e-05,
+            -0.016471627097396017,
+            0.0005475720080786312
+          ],
+          "quaternion": [
+            0.5993321868995051,
+            -0.34692928154744473,
+            -0.35734580089966705,
+            -0.6266936906740084
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus2_T2_right",
+      "parent": "walker/tarsus_T2_right",
+      "position": [
+        -0.000367,
+        -0.0339,
+        -0.00103
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus2_T2_right",
+          "geometry_id": "walker/tarsus_T2_2_right",
+          "position": [
+            0.00016292171896437925,
+            -0.010142547907742064,
+            0.0004664725781871326
+          ],
+          "quaternion": [
+            -0.4761052312295285,
+            0.5093491464220196,
+            0.5207298384605293,
+            0.4926740212066307
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus3_T2_right",
+      "parent": "walker/tarsus2_T2_right",
+      "position": [
+        1.72e-05,
+        -0.0177,
+        -0.000553
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus3_T2_right",
+          "geometry_id": "walker/tarsus_T2_3_right",
+          "position": [
+            5.5429151676314806e-05,
+            -0.006330952852813945,
+            -8.630076603070858e-05
+          ],
+          "quaternion": [
+            0.5028014066018626,
+            -0.5012252133330167,
+            -0.4961591881859049,
+            -0.4997900469368782
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus4_T2_right",
+      "parent": "walker/tarsus3_T2_right",
+      "position": [
+        5.07e-05,
+        -0.00988,
+        -0.000293
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus4_T2_right",
+          "geometry_id": "walker/tarsus_T2_4_right",
+          "position": [
+            3.031773396023653e-05,
+            -0.005710361767147981,
+            0.0007480174457924482
+          ],
+          "quaternion": [
+            -0.48111470958923436,
+            0.5518265206302843,
+            0.519164609716651,
+            0.44100366819755826
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/claw_T2_right",
+      "parent": "walker/tarsus4_T2_right",
+      "position": [
+        -9.66e-05,
+        -0.00988,
+        0.000252
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsal_claw_T2_right",
+          "geometry_id": "walker/tarsal_claw_T2_right_brown",
+          "position": [
+            3.1575438379382106e-05,
+            -0.005596172169474223,
+            -0.001319287281433268
+          ],
+          "quaternion": [
+            0.40899035324832256,
+            -0.5253373486994477,
+            -0.5837473796796092,
+            -0.4647435397382512
+          ],
+          "rgba": [
+            0.20200000703334808,
+            0.07819999754428864,
+            0.026200000196695328,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/coxa_T3_left",
+      "parent": "walker/thorax",
+      "position": [
+        -0.0377,
+        0.0192,
+        -0.0402
+      ],
+      "quaternion": [
+        -0.4758074289174896,
+        -0.0459584060150149,
+        0.5011134693639655,
+        0.7213739712004428
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/coxa_T3_left",
+          "geometry_id": "walker/coxa_T3_left",
+          "position": [
+            -0.0034683722518361326,
+            0.013337380265120422,
+            -0.006870516590692835
+          ],
+          "quaternion": [
+            0.05736104050090586,
+            0.5134125843650167,
+            -0.765410204984686,
+            0.38375050143757394
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/femur_T3_left",
+      "parent": "walker/coxa_T3_left",
+      "position": [
+        -0.00398,
+        0.0232,
+        -0.00668
+      ],
+      "quaternion": [
+        0.22688377596755255,
+        -0.728930080654565,
+        -0.6267526079822928,
+        0.1560956697254256
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/femur_T3_left",
+          "geometry_id": "walker/femur_T3_left",
+          "position": [
+            -0.0024758545308787086,
+            0.03318836025286291,
+            0.001156056509308185
+          ],
+          "quaternion": [
+            -0.7045343811253372,
+            -0.17803314079918106,
+            -0.14951748185426358,
+            0.6705072924357183
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tibia_T3_left",
+      "parent": "walker/femur_T3_left",
+      "position": [
+        0.0,
+        0.0779,
+        1.6e-07
+      ],
+      "quaternion": [
+        -0.0859043347508975,
+        -0.8033916160204078,
+        0.5744898113156437,
+        -0.13093438537542276
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tibia_T3_left",
+          "geometry_id": "walker/tibia_T3_left",
+          "position": [
+            0.00016220359096084241,
+            -0.03676131714425069,
+            -0.001829991573541856
+          ],
+          "quaternion": [
+            -0.11144297464224484,
+            -0.7127134049200993,
+            -0.680672220086104,
+            0.12769257869251066
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus_T3_left",
+      "parent": "walker/tibia_T3_left",
+      "position": [
+        0.0,
+        -0.0715,
+        0.00175
+      ],
+      "quaternion": [
+        0.9252247336865806,
+        -0.05046832816136783,
+        -0.13258151318665212,
+        -0.3519009553671742
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus_T3_left",
+          "geometry_id": "walker/tarsus_T3_1_left",
+          "position": [
+            3.1341145463954084e-05,
+            0.015347038476086747,
+            0.0004606769804631483
+          ],
+          "quaternion": [
+            -0.007998721598172262,
+            -0.6921445193941249,
+            -0.7216612207820944,
+            0.008778789482107035
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus2_T3_left",
+      "parent": "walker/tarsus_T3_left",
+      "position": [
+        0.00027,
+        0.0337,
+        0.00102
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus2_T3_left",
+          "geometry_id": "walker/tarsus_T3_2_left",
+          "position": [
+            -0.00018023736423494752,
+            0.01013431591576966,
+            0.001386962571042108
+          ],
+          "quaternion": [
+            0.4382126200867975,
+            0.5313897949520245,
+            0.5597728443932205,
+            -0.4607048383699016
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus3_T3_left",
+      "parent": "walker/tarsus2_T3_left",
+      "position": [
+        -7.97e-05,
+        0.0197,
+        0.00158
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus3_T3_left",
+          "geometry_id": "walker/tarsus_T3_3_left",
+          "position": [
+            -8.123545244607087e-05,
+            0.005739087249016145,
+            -0.00017257870907268213
+          ],
+          "quaternion": [
+            -0.4600914811439685,
+            -0.5578412396958243,
+            -0.5353899794966545,
+            0.43644764878270526
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus4_T3_left",
+      "parent": "walker/tarsus3_T3_left",
+      "position": [
+        8e-05,
+        0.0111,
+        -2.78e-05
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus4_T3_left",
+          "geometry_id": "walker/tarsus_T3_4_left",
+          "position": [
+            -0.0001427782254897602,
+            0.005092615929957689,
+            -0.0006670391642135814
+          ],
+          "quaternion": [
+            0.5199946363389816,
+            0.5426665538146039,
+            0.4784315870723298,
+            -0.45411651152664334
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/claw_T3_left",
+      "parent": "walker/tarsus4_T3_left",
+      "position": [
+        0.000222,
+        0.0111,
+        -0.00108
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsal_claw_T3_left",
+          "geometry_id": "walker/tarsal_claw_T3_left_brown",
+          "position": [
+            -0.0004166688721782309,
+            0.005487030668448883,
+            2.2788464923567675e-05
+          ],
+          "quaternion": [
+            -0.5151482843377526,
+            -0.5030738037305735,
+            -0.48202561843069014,
+            0.4991896396365182
+          ],
+          "rgba": [
+            0.20200000703334808,
+            0.07819999754428864,
+            0.026200000196695328,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/coxa_T3_right",
+      "parent": "walker/thorax",
+      "position": [
+        -0.0377,
+        -0.0192,
+        -0.0402
+      ],
+      "quaternion": [
+        -0.5075959361030021,
+        -0.7134185977478816,
+        -0.4812101312512677,
+        -0.04262721689602779
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/coxa_T3_right",
+          "geometry_id": "walker/coxa_T3_right",
+          "position": [
+            0.00336391149331651,
+            -0.013465432490172492,
+            0.006789757541741506
+          ],
+          "quaternion": [
+            -0.37522344029321997,
+            0.7665631442255799,
+            0.5170735041390041,
+            0.06498697628699085
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/femur_T3_right",
+      "parent": "walker/coxa_T3_right",
+      "position": [
+        0.00383,
+        -0.0232,
+        0.0066
+      ],
+      "quaternion": [
+        -0.22841502464516075,
+        0.7227017860881618,
+        0.6339243034311408,
+        -0.15384629479020395
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/femur_T3_right",
+          "geometry_id": "walker/femur_T3_right",
+          "position": [
+            0.002677742574187035,
+            -0.03330442329853732,
+            -0.0012428474430339308
+          ],
+          "quaternion": [
+            -0.1835078284455402,
+            0.7006971665574262,
+            0.6712240581536829,
+            0.15750117914892112
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tibia_T3_right",
+      "parent": "walker/femur_T3_right",
+      "position": [
+        0.0,
+        -0.077,
+        1.96e-07
+      ],
+      "quaternion": [
+        -0.09227011964452565,
+        -0.8007398633663562,
+        0.5760398185205313,
+        -0.13594125097132023
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tibia_T3_right",
+          "geometry_id": "walker/tibia_T3_right",
+          "position": [
+            -0.0001688282274254667,
+            0.03745900979646976,
+            0.002819612585944542
+          ],
+          "quaternion": [
+            -0.12886944895105149,
+            0.675357298727808,
+            -0.7177157818008827,
+            -0.1103142816505632
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus_T3_right",
+      "parent": "walker/tibia_T3_right",
+      "position": [
+        0.0,
+        0.0721,
+        -0.00175
+      ],
+      "quaternion": [
+        -0.9280951896524952,
+        0.04852488727967281,
+        0.13081536759715673,
+        0.34521296884505226
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus_T3_right",
+          "geometry_id": "walker/tarsus_T3_1_right",
+          "position": [
+            -0.0005935042432757762,
+            -0.015369035826276703,
+            -0.000432258031787508
+          ],
+          "quaternion": [
+            0.006866405293695733,
+            -0.7215083691883274,
+            0.6923373823472092,
+            0.006890186801509366
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus2_T3_right",
+      "parent": "walker/tarsus_T3_right",
+      "position": [
+        -0.00073,
+        -0.0338,
+        -0.00122
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus2_T3_right",
+          "geometry_id": "walker/tarsus_T3_2_right",
+          "position": [
+            3.832983450918585e-05,
+            -0.01015679239690051,
+            -0.000367889097284968
+          ],
+          "quaternion": [
+            0.5609969333840792,
+            0.459142870343791,
+            -0.43743127445434576,
+            0.5320941133628285
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus3_T3_right",
+      "parent": "walker/tarsus2_T3_right",
+      "position": [
+        0.000185,
+        -0.0197,
+        -0.00157
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus3_T3_right",
+          "geometry_id": "walker/tarsus_T3_3_right",
+          "position": [
+            -0.00019228344346419908,
+            -0.00576184962237361,
+            0.00019138071883417762
+          ],
+          "quaternion": [
+            -0.5367720520429772,
+            -0.43488105366677643,
+            0.45934525010054833,
+            -0.5583513002736845
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/tarsus4_T3_right",
+      "parent": "walker/tarsus3_T3_right",
+      "position": [
+        1.98e-05,
+        -0.011,
+        1.95e-05
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsus4_T3_right",
+          "geometry_id": "walker/tarsus_T3_4_right",
+          "position": [
+            -0.00024957400904338824,
+            -0.005115435778429461,
+            0.0006827003378154367
+          ],
+          "quaternion": [
+            0.48001365224890924,
+            0.452678651757442,
+            -0.5193391602697107,
+            0.5430983046448261
+          ],
+          "rgba": [
+            0.6740000247955322,
+            0.3499999940395355,
+            0.14300000667572021,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    },
+    {
+      "id": "walker/claw_T3_right",
+      "parent": "walker/tarsus4_T3_right",
+      "position": [
+        4.3e-05,
+        -0.011,
+        0.00125
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "recorded_root": false,
+      "geometries": [
+        {
+          "id": "walker/tarsal_claw_T3_right",
+          "geometry_id": "walker/tarsal_claw_T3_right_brown",
+          "position": [
+            -0.0002556682218435892,
+            -0.005510150913604794,
+            -1.1706215926027275e-05
+          ],
+          "quaternion": [
+            -0.48363577400380076,
+            -0.4978211065266005,
+            0.5144329776648254,
+            -0.503616218455365
+          ],
+          "rgba": [
+            0.20200000703334808,
+            0.07819999754428864,
+            0.026200000196695328,
+            1.0
+          ]
+        }
+      ],
+      "joints": []
+    }
+  ]
+}

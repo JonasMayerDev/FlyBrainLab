@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { loadRecordedFly, type RecordedFly } from './fly';
 import type { Replay } from './types';
 
 export class NeuralScene {
@@ -15,6 +16,9 @@ export class NeuralScene {
   private observer: ResizeObserver;
   private guides: THREE.Group;
   private body: THREE.Group;
+  private fly?: RecordedFly;
+  private flyLoadFailed = false;
+  private followBody = true;
   private path?: THREE.Line;
   private bodyGrid: THREE.GridHelper;
   private mode: 'neural' | 'body' = 'neural';
@@ -22,7 +26,7 @@ export class NeuralScene {
   private onSelect: (id: string) => void;
   private colors = { quiet: new THREE.Color('#496065'), target: new THREE.Color('#d5f78c'), active: new THREE.Color('#ffffff'), selected: new THREE.Color('#7bddcb') };
 
-  constructor(private container: HTMLElement, onSelect: (id: string) => void) {
+  constructor(private container: HTMLElement, onSelect: (id: string) => void, onGeometryReady: () => void = () => {}) {
     this.onSelect = onSelect;
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -38,9 +42,16 @@ export class NeuralScene {
     this.controls.maxDistance = 11;
     this.guides = this.createGuides();
     this.scene.add(this.guides);
-    this.body = this.createBodyMarker();
+    this.body = new THREE.Group();
     this.body.visible = false;
     this.scene.add(this.body);
+    void loadRecordedFly().then(fly => {
+      this.fly = fly; this.body.add(fly);
+      if (this.mode === 'body') this.reset();
+      this.updateAccessibility(); onGeometryReady();
+    }).catch(() => {
+      this.flyLoadFailed = true; this.updateAccessibility(); onGeometryReady();
+    });
     this.bodyGrid = new THREE.GridHelper(8, 24, '#315b4e', '#1b3530');
     this.bodyGrid.rotation.x = Math.PI / 2;
     this.bodyGrid.visible = false;
@@ -49,6 +60,9 @@ export class NeuralScene {
     const light = new THREE.DirectionalLight('#efffe4', 3);
     light.position.set(2, 4, 3);
     this.scene.add(light);
+    const fill = new THREE.DirectionalLight('#d8eafa', 1.1);
+    fill.position.set(0, -4, 3);
+    this.scene.add(fill);
     this.observer = new ResizeObserver(() => this.resize());
     this.observer.observe(container);
     this.resize();
@@ -78,15 +92,6 @@ export class NeuralScene {
     const grid = new THREE.GridHelper(8, 18, '#284145', '#1a2d30');
     grid.position.y = -1.8;
     group.add(grid);
-    return group;
-  }
-
-  private createBodyMarker(): THREE.Group {
-    const group = new THREE.Group();
-    const material = new THREE.MeshStandardMaterial({ color: '#d5f78c', roughness: 0.45 });
-    const root = new THREE.Mesh(new THREE.SphereGeometry(0.15, 20, 12), material);
-    group.add(root);
-    group.add(new THREE.AxesHelper(0.6));
     return group;
   }
 
@@ -123,22 +128,37 @@ export class NeuralScene {
     this.guides.visible = mode === 'neural';
     this.bodyGrid.visible = mode === 'body';
     if (this.path) this.path.visible = mode === 'body';
+    this.updateAccessibility();
     this.reset();
   }
 
   select(id: string): void { this.selectedId = id; }
+  isFollowingBody(): boolean { return this.followBody; }
+  toggleBodyCamera(): void { this.followBody = !this.followBody; this.reset(); this.updateAccessibility(); }
+  bodyCaption(): string {
+    if (this.flyLoadFailed) return 'Geometry unavailable · recorded path only';
+    if (!this.fly) return 'Loading Flybody mesh · recorded path';
+    return `Flybody mesh · ${this.followBody ? 'follow view' : 'full path'} · cm, z-up`;
+  }
+  private updateAccessibility(): void {
+    this.renderer.domElement.setAttribute('aria-label', this.mode === 'body'
+      ? `${this.bodyCaption()}. Author model reconstruction from recorded root position, orientation and six wing angles. Other joints stay at the model reference pose. Camera ${this.followBody ? 'follows the recorded fly' : 'frames the full recorded trajectory'}. Drag to orbit and scroll to zoom.`
+      : 'Interactive abstract neuron view. Drag to rotate, scroll to zoom; use the neuron list below for keyboard selection.');
+  }
   reset(): void {
     if (this.mode === 'body') {
       const points = this.run?.body?.states?.map(state => new THREE.Vector3().fromArray(state.position)) ?? [];
       const bounds = new THREE.Box3().setFromPoints(points);
-      const center = points.length ? bounds.getCenter(new THREE.Vector3()) : new THREE.Vector3(0.35, 0, 0.8);
+      const center = this.followBody ? this.body.position.clone() : points.length ? bounds.getCenter(new THREE.Vector3()) : new THREE.Vector3(0.35, 0, 0.8);
       const extent = bounds.getSize(new THREE.Vector3());
-      const distance = Math.max(3.8, extent.length() * 1.25);
-      this.camera.up.set(0, 0, 1); this.camera.position.copy(center).add(new THREE.Vector3(distance * 0.5, -distance, distance * 0.55));
-      this.controls.target.copy(center); this.controls.minDistance = 1; this.controls.maxDistance = Math.max(11, distance * 2);
+      const distance = this.followBody ? Math.max(0.55, (this.fly?.modelExtent ?? 0.6) * 1.08) : Math.max(3.8, extent.length() * 1.25);
+      this.camera.near = 0.005; this.camera.updateProjectionMatrix();
+      this.camera.up.set(0, 0, 1); this.camera.position.copy(center).add(new THREE.Vector3(0.65, -1, 0.65).normalize().multiplyScalar(distance));
+      this.controls.target.copy(center); this.controls.minDistance = 0.25; this.controls.maxDistance = Math.max(11, distance * 2);
       this.bodyGrid.position.set(center.x, center.y, 0);
     } else {
-      this.camera.up.set(0, 1, 0); this.camera.position.set(0.5, 0.5, 6.7); this.controls.target.set(0, 0, 0); this.controls.minDistance = 3;
+      this.camera.near = 0.1; this.camera.updateProjectionMatrix();
+      this.camera.up.set(0, 1, 0); this.camera.position.set(0.5, 0.5, 6.7); this.controls.target.set(0, 0, 0); this.controls.minDistance = 3; this.controls.maxDistance = 11;
     }
   }
 
@@ -170,6 +190,14 @@ export class NeuralScene {
         const fraction = b.time_ms === a.time_ms ? 0 : Math.min(1, Math.max(0, (timeMs - a.time_ms) / (b.time_ms - a.time_ms)));
         this.body.position.fromArray(a.position).lerp(new THREE.Vector3().fromArray(b.position), fraction);
         if (a.quaternion && b.quaternion) this.body.quaternion.fromArray(a.quaternion).slerp(new THREE.Quaternion().fromArray(b.quaternion), fraction);
+        const wingAngles = a.wing_angles_rad && b.wing_angles_rad
+          ? a.wing_angles_rad.map((angle, index) => angle + (b.wing_angles_rad![index] - angle) * fraction) : a.wing_angles_rad;
+        this.fly?.updateWings(wingAngles);
+        if (this.mode === 'body' && this.followBody) {
+          // Move only the camera/target; the geometry and recorded world path retain cm scale.
+          const delta = this.body.position.clone().sub(this.controls.target);
+          this.camera.position.add(delta); this.controls.target.copy(this.body.position);
+        }
       }
     }
     this.controls.update();

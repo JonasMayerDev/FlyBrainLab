@@ -15,3 +15,5 @@
 .trace-root code,.followup-trace code{overflow-wrap:anywhere;font-size:10px}
 .proof-order{display:flex;align-items:center;gap:15px;background:#e8f0dd;border-radius:5px;padding:15px;margin-top:14px}.proof-order span{font-size:10px;color:#84966f;flex:1}.proof-order strong{display:block;font-weight:550;color:#627c4b;margin-top:5px}.proof-order svg{width:14px;height:14px;stroke:#8da772;stroke-width:1.5;fill:none}
 @media(max-width:650px){.proof-order{gap:7px;padding:11px}.proof-order span{font-size:8px}.proof-order svg{width:10px;height:10px;flex-shrink:0}.proof-order strong{font-size:9px}.followup-trace{padding:16px}.followup-trace h4{font-size:14px}}
+.body-camera{border:1px solid #405947;border-radius:5px;background:#172720;color:#9eb58d;padding:5px 8px;font-size:8px;white-space:nowrap}.body-camera[aria-pressed=true]{color:#d5f78c;border-color:#708e52;background:#243522}.body-camera[hidden]{display:none}
+@media(max-width:650px){.scene-overlay:has(.body-camera:not([hidden])) .view-hint{display:none}.scene-overlay:has(.body-camera:not([hidden])) .scene-caption{flex:1;line-height:1.5}.body-camera{font-size:7px;padding:5px 6px}}
