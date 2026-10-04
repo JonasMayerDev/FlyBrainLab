@@ -4,7 +4,7 @@
 
 **[Öffentliche interaktive Demo](https://valleebo.github.io/FlyBrainLab/)** · [Ergebnisse und Grenzen](docs/RESULTS.md) · [Teamstand](TEAM_STATUS.md) · [GitHub-Issues](https://github.com/JonasMayerDev/FlyBrainLab/issues) · [Abgabeunterlagen](submission/README.md)
 
-Die Demo spielt echte vorberechnete Runs ab. Sie rechnet keine Simulation im Browser. Der vollständige FAFB-FlyWire-v783-Graph umfasst 138.639 Neuronen und 15.091.983 verarbeitete Verbindungszeilen. Das eingefrorene DNg02-Experiment untersucht neuronale Signalübertragung; die Körperkopplung nutzt einen ausdrücklich angenommenen Motoradapter. **Stabiler oder biologisch validierter autonomer Flug ist nicht nachgewiesen.**
+Die Demo spielt echte vorberechnete Runs ab. Sie rechnet keine Simulation im Browser. Der vollständige FAFB-FlyWire-v783-Graph umfasst 138.639 Neuronen und 15.091.983 verarbeitete Verbindungszeilen. Das eingefrorene DNg02-Experiment untersucht neuronale Signalübertragung; die Körperkopplung nutzt einen ausdrücklich angenommenen Motoradapter. **Die vorhandene Autoren-Policy stabilisiert den Körper im geprüften 200-ms-Fenster. Biologisch validierter Flug allein durch das Connectome ist nicht nachgewiesen.**
 
 ## Was funktioniert
 
@@ -13,12 +13,12 @@ Die Demo spielt echte vorberechnete Runs ab. Sie rechnet keine Simulation im Bro
 | Vollgraph-Neuronenrechnung | Gepinnter Shiu-Autorencode + Brian2; echte Sham-/Stimulations-/Disconnection-Runs, Seeds 42/43/44 |
 | Wissenschaftliche Targets | 25 DNg02-IDs in v783 verifiziert; Primärliteratur, vier gehashte Quellensnapshots und geprüfte KB-Claims |
 | Vorab eingefrorene Untersuchung | Zwei Testdesigns, versiegelte Parameter/Targets und ergebnisabhängige nächste Entscheidung |
-| Native Agentenarchitektur | Omnigent 0.16.0: Supervisor + Recherche, Evidenzprüfung, Planung, Experiment und Analyse; deklarierte Tools/Policies |
-| Körperphysik und Kopplung | Gepinntes Flybody/MuJoCo, echte physikalische Trajektorien, eingefrorener Open-loop-Adapter; Körper endet bei 38,8 ms |
-| Öffentlicher Viewer | Vite + TypeScript + Three.js, GitHub Actions/Pages; Run-Auswahl, Play/Pause, Zeitleiste, Readouts, Kontrollen und Quellen |
+| Verifizierter Discovery-Loop | Omnigent 0.16.0: zwei echte Sessions mit insgesamt zehn abgeschlossenen Handoffs; neue Tests A und B samt Kontrollauswertung und ergebnisabhängiger Folgeentscheidung, streng verifiziert |
+| Körperphysik und Kopplung | Flybody/MuJoCo + vorhandene Autoren-RL-Policy; sechs gekoppelte 200-ms-Läufe ohne vorzeitiges Ende. Eingefrorener Open-loop-Adapter, keine biologische Kalibrierung |
+| Öffentlicher Viewer | Vite + TypeScript + Three.js, GitHub Actions/Pages; 26 echte neuronale Runs, zwölf davon nativ verifiziert; sechs passende Körperreplays, Zeitsteuerung, Messwerte, Quellen und A→B-Provenienz |
 | Engpassmessung | Wiederholter identischer 25-ID-Abruf: 427,73 ms erneutes Par­sen versus 0,282 ms geprüfter KB-Claim; eng begrenzte Cache-Messung |
 
-Manuelle Machbarkeitsläufe und tatsächlich unter Omnigent ausgeführte Experimente müssen getrennt beurteilt werden. Native Session-Trace und Tool-Receipt sind der erforderliche Orchestrierungsnachweis; ein Provenienzlabel in einem Run allein ist keiner. [Resultate](docs/RESULTS.md), [Neuronale Rohdaten](data/runs/), [Experimentdesign](research/designs/), [Körperintegration](docs/BODY_INTEGRATION.md).
+Manuelle Machbarkeitsläufe und tatsächlich unter Omnigent ausgeführte Experimente müssen getrennt beurteilt werden. [Trace A](data/discovery/native-trace.json), [Trace B](data/discovery/native-trace-b.json) und echte Tool-Receipts belegen beide vollständigen Loops. Die zweite Session liest den verifizierten A-Entscheidungsrecord vor Planung und Ausführung von B; dieser Übergang ist separat geprüft. Ein Provenienzlabel allein genügt nicht. [Resultate](docs/RESULTS.md), [Neuronale Rohdaten](data/runs/), [Experimentdesign](research/designs/), [Körperintegration](docs/BODY_INTEGRATION.md).
 
 ## Lokal starten
 

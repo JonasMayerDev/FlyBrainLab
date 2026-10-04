@@ -132,7 +132,8 @@
       "nonstimulated_active_neurons": 0
     },
     "execution_context": "independent-feasibility-before-Omnigent",
-    "orchestration_verified_by_this_module": false
+    "orchestration_verified_by_this_module": false,
+    "native_trace_verified": false
   },
   "activity": {
     "time_unit": "ms",
@@ -1996,6 +1997,7 @@
     "loop": "open-loop recorded spike replay",
     "flight_validated": false,
     "axis_convention": "right-handed MuJoCo world; z-up; quaternion xyzw",
+    "run_id": "body-coupled-20261004T002129Z-4b352e",
     "adapter": {
       "adapter_id": "dng02-wing-yaw-amplitude-v1",
       "specification_path": "data/coupling/adapter_v1.json",
@@ -2057,6 +2059,11 @@
       "maximum_adapter_rate_hz": 0.0,
       "maximum_wing_yaw_amplitude_factor": 1.0
     },
+    "published_policy": null,
+    "body_controller_feedback": false,
+    "neural_sensor_feedback": false,
+    "diagnostic_configuration": null,
+    "execution_context": "manual replay of recorded neural output",
     "states": [
       {
         "time_ms": 0.0,
@@ -6740,8 +6747,81 @@
       }
     ],
     "run_record_url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/body/body-coupled-20261004T002129Z-4b352e/run.json",
-    "trajectory_sha256": "1f2f6755747780461136377aec03b943730984fe649869e2b94a64eed45befef"
+    "trajectory_sha256": "1f2f6755747780461136377aec03b943730984fe649869e2b94a64eed45befef",
+    "started_at_utc": "2026-10-04T00:21:29.526377+00:00"
   },
+  "body_variants": [
+    {
+      "model": "Flybody Drosophila melanogaster",
+      "model_commit": "d015e9bfe441bd90ae431bac24c55cb74bdbce26",
+      "controller": "author WingBeatPatternGenerator; approximate pattern; no trained RL policy",
+      "loop": "open-loop recorded spike replay",
+      "flight_validated": false,
+      "axis_convention": "right-handed MuJoCo world; z-up; quaternion xyzw",
+      "run_id": "body-coupled-20261004T002129Z-4b352e",
+      "adapter": {
+        "adapter_id": "dng02-wing-yaw-amplitude-v1",
+        "specification_path": "data/coupling/adapter_v1.json",
+        "specification_sha256": "76b7dcdc5f529f4b1ba9dfee6791eca8150f12cfb54fe4a99f57e89bc2ee162e",
+        "readout_ids": [
+          "720575940610863310",
+          "720575940612014131",
+          "720575940612804606",
+          "720575940613668620",
+          "720575940613793170",
+          "720575940615679282",
+          "720575940617498507",
+          "720575940617922439",
+          "720575940622042603",
+          "720575940622681864",
+          "720575940622910188",
+          "720575940625144061",
+          "720575940625482954",
+          "720575940626278129",
+          "720575940626377349",
+          "720575940626904219",
+          "720575940627414887",
+          "720575940627850622",
+          "720575940628942586",
+          "720575940630289804",
+          "720575940630492714",
+          "720575940632573887",
+          "720575940639201443",
+          "720575940641305229",
+          "720575940647964281"
+        ],
+        "event_count": 0,
+        "window_ms": 10.0,
+        "model_assumption": true,
+        "biologically_calibrated": false,
+        "mapping": "r(t)=count(events in [t-10ms,t))/(25*0.010s); u=clip(r/100Hz,0,1); yaw'=0.3+(1+0.1*u)*(yaw-0.3)"
+      },
+      "position_unit": "cm",
+      "duration_ms": 38.8,
+      "task_terminated_early": true,
+      "metrics": {
+        "sample_count": 195,
+        "actual_duration_ms": 38.8,
+        "root_displacement_cm": 0.775548128135724,
+        "root_path_length_cm": 0.8211070024490292,
+        "root_height_change_cm": -0.43939191892163854,
+        "minimum_root_height_cm": 0.5974942009207599,
+        "wing_yaw_peak_to_peak_rad": [
+          2.2293602325226307,
+          2.2293222420699634
+        ],
+        "maximum_adapter_rate_hz": 0.0,
+        "maximum_wing_yaw_amplitude_factor": 1.0
+      },
+      "published_policy": null,
+      "body_controller_feedback": false,
+      "neural_sensor_feedback": false,
+      "diagnostic_configuration": null,
+      "execution_context": "manual replay of recorded neural output",
+      "run_record_url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/body/body-coupled-20261004T002129Z-4b352e/run.json",
+      "trajectory_sha256": "1f2f6755747780461136377aec03b943730984fe649869e2b94a64eed45befef"
+    }
+  ],
   "sources": [
     {
       "title": "Shiu et al. (2024) \u00b7 whole-brain LIF model",
@@ -6784,6 +6864,12 @@
       "url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/research/evidence/dng02_targets.json",
       "kind": "Evidence and exact v783 IDs",
       "scope": "Annotation release and graph-selected upstream identities. Flight-related biological evidence does not validate this model as a flying brain."
+    },
+    {
+      "title": "Flybody \u00b7 recorded physics and controller",
+      "url": "https://github.com/TuragaLab/flybody/tree/d015e9bfe441bd90ae431bac24c55cb74bdbce26",
+      "kind": "Separate motor and physics layer",
+      "scope": "Body motion uses an explicit fixed adapter and an existing controller. The root-marker view is schematic; the exported poses are measured physics states."
     }
   ],
   "provenance": {

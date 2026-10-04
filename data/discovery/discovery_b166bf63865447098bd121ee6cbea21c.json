@@ -1,0 +1,97 @@
+{
+  "question": "Do eight connectivity-selected right-side upstream neurons drive firing in DNg02 cells in the fixed full-v783 LIF model, and does response require outgoing connections?",
+  "evidence": {
+    "organism": "adult Drosophila melanogaster",
+    "connectome_release": "FAFB FlyWire v783 only",
+    "model": "pinned Shiu/Brian2 commit 91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+    "sealed_design": {
+      "design_id": "dng02-input-v1",
+      "sha256": "e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6"
+    },
+    "source_ids": [
+      "src_ed165fa0105fe71168bc",
+      "src_8ed6cdb697519ced31f7",
+      "src_26b56b10e90a9cdc96ac",
+      "src_38fb76e91124b3802a6d"
+    ],
+    "claim_ids": [
+      "clm_3b70e19bd21e4140bb41fc8ca5b2d9b7",
+      "clm_56ffe1e8dc514ef6a84029d464124c34",
+      "clm_f0e3ce6e163f42a8abc9f1b407af3be9",
+      "clm_6640c27508c34365a3df7e1d028248fc"
+    ],
+    "artifact_paths": [
+      "data/discovery/tool-receipts/tool_f45963ca9f204a4ca9b3f02fd266fcbf.json",
+      "data/experiments/comparison-dng02-20261004T005438Z-0aa143.json",
+      "data/runs/neural-dng02-20261004T005440Z-a9f7ee",
+      "data/runs/neural-dng02-20261004T005444Z-c33c4e",
+      "data/runs/neural-dng02-20261004T005447Z-d51a7b",
+      "data/runs/neural-dng02-20261004T005449Z-c3e2a2",
+      "data/runs/neural-dng02-20261004T005452Z-80ef64",
+      "data/runs/neural-dng02-20261004T005455Z-475a2b"
+    ]
+  },
+  "hypothesis": "8 graph-selected upstream inputs at150Hz for200ms increase pooled DNg02 firing vs sham; if A positive, B tests whether outgoing connectivity is necessary.",
+  "candidate_tests": [
+    "A: upstream stimulation versus sham; 8 graph-selected inputs at150Hz for200ms, seeds42/43/44; measure mean DNg02 Hz across all25 readouts and paired differences.",
+    "B: outgoing-connectivity necessity control; identical input with stimulated inputs' outgoing synapses disconnected; measure fractional reduction vs driven output."
+  ],
+  "selected_test": "A",
+  "experiment": {
+    "tool": "run_frozen_experiment",
+    "execution_context": "Omnigent native tool",
+    "wall_seconds": 20.9062,
+    "conditions": {
+      "sham": "0Hz control stimulation for seeds42/43/44; expected null baseline in this design.",
+      "upstream_drive": "8 graph-selected upstream inputs at150Hz for200ms, seeds42/43/44.",
+      "outgoing_disconnection": "candidate B only; not part of this A receipt and not yet measured here.",
+      "direct_calibration": "separate calibration/feasibility context; not used as evidence for this A upstream effect.",
+      "manual_feasibility": "separate manual feasibility context; not used as native A evidence."
+    }
+  },
+  "actual_result": "A completed. Sham DNg02 population mean rates were [0.0,0.0,0.0] Hz, mean 0.0. Upstream-drive rates were [17.2,18.8,18.4] Hz, mean 18.133333333333333 Hz, sample SD 0.8326663997864536. Paired differences were [17.2,18.8,18.4] Hz, all positive. Drive readout spike events were [86,94,92], active DNg02 readouts [14,14,13], nonstimulated active network cells [235,193,228].",
+  "result": {
+    "status": "completed",
+    "supports_model_hypothesis": true,
+    "decision_rule_applied": "effect branch: all paired A differences positive with stable nonzero upstream-drive response and sham at 0Hz; proceed to outgoing-disconnection control rather than direct calibration or repeat-for-instability.",
+    "sham_mean_hz": 0.0,
+    "drive_mean_hz": 18.133333333333333,
+    "paired_difference_hz": [
+      17.2,
+      18.8,
+      18.4
+    ]
+  },
+  "updated_decision": "Run test B outgoing-disconnection causality control",
+  "decision_reason": "The sealed A comparison shows an upstream-drive effect in the fixed full-v783 LIF model, but A only establishes numerical propagation from graph-selected inputs to DNg02 readouts. Because the hypothesis explicitly asks whether the response requires outgoing connections, the next measured experiment is the receipt-specified B control.",
+  "next_test": "B",
+  "source_ids": [
+    "src_ed165fa0105fe71168bc",
+    "src_8ed6cdb697519ced31f7",
+    "src_26b56b10e90a9cdc96ac",
+    "src_38fb76e91124b3802a6d"
+  ],
+  "claim_ids": [
+    "clm_3b70e19bd21e4140bb41fc8ca5b2d9b7",
+    "clm_56ffe1e8dc514ef6a84029d464124c34",
+    "clm_f0e3ce6e163f42a8abc9f1b407af3be9",
+    "clm_6640c27508c34365a3df7e1d028248fc"
+  ],
+  "tool_receipt_ids": [
+    "tool_f45963ca9f204a4ca9b3f02fd266fcbf"
+  ],
+  "limitations": [
+    "Model-only upstream propagation; no natural sensory pathway was tested.",
+    "No body behavior, no flight initiation, no stable flight, and no biological validation are implied.",
+    "Sham zero is expected under this design and is not biological silence evidence.",
+    "FAFB lacks the complete VNC/wing-muscle system needed for a full flight motor claim.",
+    "Literature claims, graph-selection assumptions, numerical propagation, motor adapter, and body physics remain separate evidence categories.",
+    "Receipt existence alone does not prove specialist dispatch; independent native trace audit remains pending."
+  ],
+  "schema_version": 1,
+  "record_id": "discovery_b166bf63865447098bd121ee6cbea21c",
+  "created_at": "2026-10-04T00:57:06.681650+00:00",
+  "dataset_version": "FAFB FlyWire v783",
+  "native_trace_verification": "pending",
+  "discovery_loop_verified": false
+}

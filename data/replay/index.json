@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "exported_at_utc": "2026-10-04T00:33:12.031519+00:00",
+  "exported_at_utc": "2026-10-04T01:24:57.998552+00:00",
   "repository_url": "https://github.com/JonasMayerDev/FlyBrainLab",
   "runs": [
     {
@@ -51,7 +51,8 @@
         "active_neurons": 1,
         "full_network_included": true,
         "backend": "Brian2 numpy runtime",
-        "wall_seconds": 2.494
+        "wall_seconds": 2.494,
+        "native_trace_verified": false
       },
       "body_available": false
     },
@@ -104,7 +105,8 @@
         "full_network_included": true,
         "backend": "Brian2 numpy runtime",
         "wall_seconds": 2.246,
-        "max_process_rss_bytes": 1088307200
+        "max_process_rss_bytes": 1088307200,
+        "native_trace_verified": false
       },
       "body_available": false
     },
@@ -241,7 +243,8 @@
           "nonstimulated_active_neurons": 0
         },
         "execution_context": "independent-feasibility-before-Omnigent",
-        "orchestration_verified_by_this_module": false
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": false
       },
       "body_available": true
     },
@@ -378,7 +381,8 @@
           "nonstimulated_active_neurons": 235
         },
         "execution_context": "independent-feasibility-before-Omnigent",
-        "orchestration_verified_by_this_module": false
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": false
       },
       "body_available": true
     },
@@ -515,7 +519,8 @@
           "nonstimulated_active_neurons": 0
         },
         "execution_context": "independent-feasibility-before-Omnigent",
-        "orchestration_verified_by_this_module": false
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": false
       },
       "body_available": true
     },
@@ -652,7 +657,8 @@
           "nonstimulated_active_neurons": 193
         },
         "execution_context": "independent-feasibility-before-Omnigent",
-        "orchestration_verified_by_this_module": false
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": false
       },
       "body_available": true
     },
@@ -789,7 +795,8 @@
           "nonstimulated_active_neurons": 0
         },
         "execution_context": "independent-feasibility-before-Omnigent",
-        "orchestration_verified_by_this_module": false
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": false
       },
       "body_available": true
     },
@@ -926,7 +933,8 @@
           "nonstimulated_active_neurons": 228
         },
         "execution_context": "independent-feasibility-before-Omnigent",
-        "orchestration_verified_by_this_module": false
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": false
       },
       "body_available": true
     },
@@ -1063,7 +1071,8 @@
           "nonstimulated_active_neurons": 235
         },
         "execution_context": "independent-feasibility-before-Omnigent",
-        "orchestration_verified_by_this_module": false
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": false
       },
       "body_available": false
     },
@@ -1200,7 +1209,8 @@
           "nonstimulated_active_neurons": 0
         },
         "execution_context": "independent-feasibility-before-Omnigent",
-        "orchestration_verified_by_this_module": false
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": false
       },
       "body_available": false
     },
@@ -1337,7 +1347,8 @@
           "nonstimulated_active_neurons": 193
         },
         "execution_context": "independent-feasibility-before-Omnigent",
-        "orchestration_verified_by_this_module": false
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": false
       },
       "body_available": false
     },
@@ -1474,7 +1485,8 @@
           "nonstimulated_active_neurons": 0
         },
         "execution_context": "independent-feasibility-before-Omnigent",
-        "orchestration_verified_by_this_module": false
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": false
       },
       "body_available": false
     },
@@ -1611,7 +1623,8 @@
           "nonstimulated_active_neurons": 228
         },
         "execution_context": "independent-feasibility-before-Omnigent",
-        "orchestration_verified_by_this_module": false
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": false
       },
       "body_available": false
     },
@@ -1748,7 +1761,1664 @@
           "nonstimulated_active_neurons": 0
         },
         "execution_context": "independent-feasibility-before-Omnigent",
-        "orchestration_verified_by_this_module": false
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": false
+      },
+      "body_available": false
+    },
+    {
+      "run_id": "neural-dng02-20261004T005440Z-a9f7ee",
+      "title": "Sham \u00b7 0 Hz",
+      "classification": "model_experiment",
+      "file": "neural-dng02-20261004T005440Z-a9f7ee.json",
+      "metadata": {
+        "run_id": "neural-dng02-20261004T005440Z-a9f7ee",
+        "status": "completed",
+        "started_at_utc": "2026-10-04T00:54:40.031199+00:00",
+        "ended_at_utc": "2026-10-04T00:54:44.197598+00:00",
+        "dataset_version": "FAFB FlyWire v783",
+        "model_commit": "91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+        "duration_ms": 200,
+        "stimulus_rate_hz": 0,
+        "seed": 42,
+        "n_trials": 1,
+        "timestep_ms": 0.1,
+        "simulation_scope": "whole downloaded v783 graph",
+        "body_connected": false,
+        "evidence_scope": "Frozen connectome-model prediction of DNg02 firing; no biological or flight validation",
+        "versions": {
+          "python": "3.12.14",
+          "brian2": "2.9.0",
+          "numpy": "1.26.4",
+          "pandas": "2.2.3"
+        },
+        "limitations": [
+          "Graph-selected upstream inputs are hypotheses; seven lack a verified cell-type label and none are assumed to be visual sensory inputs.",
+          "DNg02 has published flight-amplitude evidence, but this frozen assay predicts neural firing only, not takeoff or flight.",
+          "FAFB brain omits complete ventral nerve cord and wing-muscle system.",
+          "Shiu LIF model was biologically validated for feeding/grooming; these DNg02 outputs have no new independent biological validation.",
+          "Only200ms and3 simulation seeds; no general biological efficacy conclusion.",
+          "DNg02 subtypes a..g are pooled; signed-connectivity weights reflect author predictions.",
+          "Zero spontaneous activity means sham0 is expected and tests only this driven state.",
+          "Existing author model has a reset compatibility correction (remove undeclared w assignment).",
+          "Open-loop brain signal; no sensor feedback."
+        ],
+        "compatibility_adjustments": [
+          "Removed undeclared upstream reset assignment w=0; source untouched"
+        ],
+        "data_loading_adjustments": [
+          "Projected three required connectivity columns; retained every edge and cell"
+        ],
+        "stimulated_neuron_ids": [
+          "720575940623744236",
+          "720575940619031837",
+          "720575940622712979",
+          "720575940625965374",
+          "720575940609695683",
+          "720575940646682676",
+          "720575940619155995",
+          "720575940619524555"
+        ],
+        "neurons": 138639,
+        "connection_rows": 15091983,
+        "spike_events": 0,
+        "active_neurons": 0,
+        "full_network_included": true,
+        "backend": "Brian2 numpy runtime",
+        "wall_seconds": 4.165134,
+        "max_process_rss_bytes": 1040465920,
+        "condition": "sham",
+        "hypothesis": "The eight upstream targets, selected by positive graph weight before observing activity, increase pooled DNg02 firing relative to sham; removing all outgoing target weights reduces the DNg02 mean rate by at least 80%. This is a model-generated hypothesis, not an established biological finding.",
+        "question": "Do eight connectivity-selected right-side upstream neurons drive firing in flight-related DNg02 cells in the fixed full-v783 LIF model, and does this response require their outgoing connections?",
+        "readout_neuron_ids": [
+          "720575940610863310",
+          "720575940612014131",
+          "720575940612804606",
+          "720575940613668620",
+          "720575940613793170",
+          "720575940615679282",
+          "720575940617498507",
+          "720575940617922439",
+          "720575940622042603",
+          "720575940622681864",
+          "720575940622910188",
+          "720575940625144061",
+          "720575940625482954",
+          "720575940626278129",
+          "720575940626377349",
+          "720575940626904219",
+          "720575940627414887",
+          "720575940627850622",
+          "720575940628942586",
+          "720575940630289804",
+          "720575940630492714",
+          "720575940632573887",
+          "720575940639201443",
+          "720575940641305229",
+          "720575940647964281"
+        ],
+        "design_id": "dng02-input-v1",
+        "design_sha256": "e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6",
+        "design_path": "research/designs/dng02-input-v1.json",
+        "readout_metrics": {
+          "readout_spike_events": 0,
+          "readout_active_neurons": 0,
+          "population_mean_rate_hz": 0.0,
+          "group_mean_rate_hz": {
+            "left": 0.0,
+            "right": 0.0
+          },
+          "right_minus_left_mean_rate_hz": 0.0,
+          "per_neuron_spike_counts": {
+            "720575940610863310": 0,
+            "720575940612014131": 0,
+            "720575940612804606": 0,
+            "720575940613668620": 0,
+            "720575940613793170": 0,
+            "720575940615679282": 0,
+            "720575940617498507": 0,
+            "720575940617922439": 0,
+            "720575940622042603": 0,
+            "720575940622681864": 0,
+            "720575940622910188": 0,
+            "720575940625144061": 0,
+            "720575940625482954": 0,
+            "720575940626278129": 0,
+            "720575940626377349": 0,
+            "720575940626904219": 0,
+            "720575940627414887": 0,
+            "720575940627850622": 0,
+            "720575940628942586": 0,
+            "720575940630289804": 0,
+            "720575940630492714": 0,
+            "720575940632573887": 0,
+            "720575940639201443": 0,
+            "720575940641305229": 0,
+            "720575940647964281": 0
+          },
+          "nonstimulated_active_neurons": 0
+        },
+        "execution_context": "Omnigent native tool",
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": true
+      },
+      "body_available": true
+    },
+    {
+      "run_id": "neural-dng02-20261004T005444Z-c33c4e",
+      "title": "Upstream drive \u00b7 150 Hz",
+      "classification": "model_experiment",
+      "file": "neural-dng02-20261004T005444Z-c33c4e.json",
+      "metadata": {
+        "run_id": "neural-dng02-20261004T005444Z-c33c4e",
+        "status": "completed",
+        "started_at_utc": "2026-10-04T00:54:44.355306+00:00",
+        "ended_at_utc": "2026-10-04T00:54:47.001070+00:00",
+        "dataset_version": "FAFB FlyWire v783",
+        "model_commit": "91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+        "duration_ms": 200,
+        "stimulus_rate_hz": 150,
+        "seed": 42,
+        "n_trials": 1,
+        "timestep_ms": 0.1,
+        "simulation_scope": "whole downloaded v783 graph",
+        "body_connected": false,
+        "evidence_scope": "Frozen connectome-model prediction of DNg02 firing; no biological or flight validation",
+        "versions": {
+          "python": "3.12.14",
+          "brian2": "2.9.0",
+          "numpy": "1.26.4",
+          "pandas": "2.2.3"
+        },
+        "limitations": [
+          "Graph-selected upstream inputs are hypotheses; seven lack a verified cell-type label and none are assumed to be visual sensory inputs.",
+          "DNg02 has published flight-amplitude evidence, but this frozen assay predicts neural firing only, not takeoff or flight.",
+          "FAFB brain omits complete ventral nerve cord and wing-muscle system.",
+          "Shiu LIF model was biologically validated for feeding/grooming; these DNg02 outputs have no new independent biological validation.",
+          "Only200ms and3 simulation seeds; no general biological efficacy conclusion.",
+          "DNg02 subtypes a..g are pooled; signed-connectivity weights reflect author predictions.",
+          "Zero spontaneous activity means sham0 is expected and tests only this driven state.",
+          "Existing author model has a reset compatibility correction (remove undeclared w assignment).",
+          "Open-loop brain signal; no sensor feedback."
+        ],
+        "compatibility_adjustments": [
+          "Removed undeclared upstream reset assignment w=0; source untouched"
+        ],
+        "data_loading_adjustments": [
+          "Projected three required connectivity columns; retained every edge and cell"
+        ],
+        "stimulated_neuron_ids": [
+          "720575940623744236",
+          "720575940619031837",
+          "720575940622712979",
+          "720575940625965374",
+          "720575940609695683",
+          "720575940646682676",
+          "720575940619155995",
+          "720575940619524555"
+        ],
+        "neurons": 138639,
+        "connection_rows": 15091983,
+        "spike_events": 1129,
+        "active_neurons": 243,
+        "full_network_included": true,
+        "backend": "Brian2 numpy runtime",
+        "wall_seconds": 2.645645,
+        "max_process_rss_bytes": 2047377408,
+        "condition": "upstream_drive",
+        "hypothesis": "The eight upstream targets, selected by positive graph weight before observing activity, increase pooled DNg02 firing relative to sham; removing all outgoing target weights reduces the DNg02 mean rate by at least 80%. This is a model-generated hypothesis, not an established biological finding.",
+        "question": "Do eight connectivity-selected right-side upstream neurons drive firing in flight-related DNg02 cells in the fixed full-v783 LIF model, and does this response require their outgoing connections?",
+        "readout_neuron_ids": [
+          "720575940610863310",
+          "720575940612014131",
+          "720575940612804606",
+          "720575940613668620",
+          "720575940613793170",
+          "720575940615679282",
+          "720575940617498507",
+          "720575940617922439",
+          "720575940622042603",
+          "720575940622681864",
+          "720575940622910188",
+          "720575940625144061",
+          "720575940625482954",
+          "720575940626278129",
+          "720575940626377349",
+          "720575940626904219",
+          "720575940627414887",
+          "720575940627850622",
+          "720575940628942586",
+          "720575940630289804",
+          "720575940630492714",
+          "720575940632573887",
+          "720575940639201443",
+          "720575940641305229",
+          "720575940647964281"
+        ],
+        "design_id": "dng02-input-v1",
+        "design_sha256": "e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6",
+        "design_path": "research/designs/dng02-input-v1.json",
+        "readout_metrics": {
+          "readout_spike_events": 86,
+          "readout_active_neurons": 14,
+          "population_mean_rate_hz": 17.2,
+          "group_mean_rate_hz": {
+            "left": 9.615384615384615,
+            "right": 25.416666666666664
+          },
+          "right_minus_left_mean_rate_hz": 15.80128205128205,
+          "per_neuron_spike_counts": {
+            "720575940610863310": 0,
+            "720575940612014131": 0,
+            "720575940612804606": 3,
+            "720575940613668620": 0,
+            "720575940613793170": 0,
+            "720575940615679282": 14,
+            "720575940617498507": 0,
+            "720575940617922439": 7,
+            "720575940622042603": 1,
+            "720575940622681864": 0,
+            "720575940622910188": 10,
+            "720575940625144061": 2,
+            "720575940625482954": 15,
+            "720575940626278129": 6,
+            "720575940626377349": 6,
+            "720575940626904219": 0,
+            "720575940627414887": 1,
+            "720575940627850622": 0,
+            "720575940628942586": 2,
+            "720575940630289804": 0,
+            "720575940630492714": 7,
+            "720575940632573887": 0,
+            "720575940639201443": 0,
+            "720575940641305229": 10,
+            "720575940647964281": 2
+          },
+          "nonstimulated_active_neurons": 235
+        },
+        "execution_context": "Omnigent native tool",
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": true
+      },
+      "body_available": true
+    },
+    {
+      "run_id": "neural-dng02-20261004T005447Z-d51a7b",
+      "title": "Sham \u00b7 0 Hz",
+      "classification": "model_experiment",
+      "file": "neural-dng02-20261004T005447Z-d51a7b.json",
+      "metadata": {
+        "run_id": "neural-dng02-20261004T005447Z-d51a7b",
+        "status": "completed",
+        "started_at_utc": "2026-10-04T00:54:47.154287+00:00",
+        "ended_at_utc": "2026-10-04T00:54:49.736828+00:00",
+        "dataset_version": "FAFB FlyWire v783",
+        "model_commit": "91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+        "duration_ms": 200,
+        "stimulus_rate_hz": 0,
+        "seed": 43,
+        "n_trials": 1,
+        "timestep_ms": 0.1,
+        "simulation_scope": "whole downloaded v783 graph",
+        "body_connected": false,
+        "evidence_scope": "Frozen connectome-model prediction of DNg02 firing; no biological or flight validation",
+        "versions": {
+          "python": "3.12.14",
+          "brian2": "2.9.0",
+          "numpy": "1.26.4",
+          "pandas": "2.2.3"
+        },
+        "limitations": [
+          "Graph-selected upstream inputs are hypotheses; seven lack a verified cell-type label and none are assumed to be visual sensory inputs.",
+          "DNg02 has published flight-amplitude evidence, but this frozen assay predicts neural firing only, not takeoff or flight.",
+          "FAFB brain omits complete ventral nerve cord and wing-muscle system.",
+          "Shiu LIF model was biologically validated for feeding/grooming; these DNg02 outputs have no new independent biological validation.",
+          "Only200ms and3 simulation seeds; no general biological efficacy conclusion.",
+          "DNg02 subtypes a..g are pooled; signed-connectivity weights reflect author predictions.",
+          "Zero spontaneous activity means sham0 is expected and tests only this driven state.",
+          "Existing author model has a reset compatibility correction (remove undeclared w assignment).",
+          "Open-loop brain signal; no sensor feedback."
+        ],
+        "compatibility_adjustments": [
+          "Removed undeclared upstream reset assignment w=0; source untouched"
+        ],
+        "data_loading_adjustments": [
+          "Projected three required connectivity columns; retained every edge and cell"
+        ],
+        "stimulated_neuron_ids": [
+          "720575940623744236",
+          "720575940619031837",
+          "720575940622712979",
+          "720575940625965374",
+          "720575940609695683",
+          "720575940646682676",
+          "720575940619155995",
+          "720575940619524555"
+        ],
+        "neurons": 138639,
+        "connection_rows": 15091983,
+        "spike_events": 0,
+        "active_neurons": 0,
+        "full_network_included": true,
+        "backend": "Brian2 numpy runtime",
+        "wall_seconds": 2.582459,
+        "max_process_rss_bytes": 2047377408,
+        "condition": "sham",
+        "hypothesis": "The eight upstream targets, selected by positive graph weight before observing activity, increase pooled DNg02 firing relative to sham; removing all outgoing target weights reduces the DNg02 mean rate by at least 80%. This is a model-generated hypothesis, not an established biological finding.",
+        "question": "Do eight connectivity-selected right-side upstream neurons drive firing in flight-related DNg02 cells in the fixed full-v783 LIF model, and does this response require their outgoing connections?",
+        "readout_neuron_ids": [
+          "720575940610863310",
+          "720575940612014131",
+          "720575940612804606",
+          "720575940613668620",
+          "720575940613793170",
+          "720575940615679282",
+          "720575940617498507",
+          "720575940617922439",
+          "720575940622042603",
+          "720575940622681864",
+          "720575940622910188",
+          "720575940625144061",
+          "720575940625482954",
+          "720575940626278129",
+          "720575940626377349",
+          "720575940626904219",
+          "720575940627414887",
+          "720575940627850622",
+          "720575940628942586",
+          "720575940630289804",
+          "720575940630492714",
+          "720575940632573887",
+          "720575940639201443",
+          "720575940641305229",
+          "720575940647964281"
+        ],
+        "design_id": "dng02-input-v1",
+        "design_sha256": "e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6",
+        "design_path": "research/designs/dng02-input-v1.json",
+        "readout_metrics": {
+          "readout_spike_events": 0,
+          "readout_active_neurons": 0,
+          "population_mean_rate_hz": 0.0,
+          "group_mean_rate_hz": {
+            "left": 0.0,
+            "right": 0.0
+          },
+          "right_minus_left_mean_rate_hz": 0.0,
+          "per_neuron_spike_counts": {
+            "720575940610863310": 0,
+            "720575940612014131": 0,
+            "720575940612804606": 0,
+            "720575940613668620": 0,
+            "720575940613793170": 0,
+            "720575940615679282": 0,
+            "720575940617498507": 0,
+            "720575940617922439": 0,
+            "720575940622042603": 0,
+            "720575940622681864": 0,
+            "720575940622910188": 0,
+            "720575940625144061": 0,
+            "720575940625482954": 0,
+            "720575940626278129": 0,
+            "720575940626377349": 0,
+            "720575940626904219": 0,
+            "720575940627414887": 0,
+            "720575940627850622": 0,
+            "720575940628942586": 0,
+            "720575940630289804": 0,
+            "720575940630492714": 0,
+            "720575940632573887": 0,
+            "720575940639201443": 0,
+            "720575940641305229": 0,
+            "720575940647964281": 0
+          },
+          "nonstimulated_active_neurons": 0
+        },
+        "execution_context": "Omnigent native tool",
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": true
+      },
+      "body_available": true
+    },
+    {
+      "run_id": "neural-dng02-20261004T005449Z-c3e2a2",
+      "title": "Upstream drive \u00b7 150 Hz",
+      "classification": "model_experiment",
+      "file": "neural-dng02-20261004T005449Z-c3e2a2.json",
+      "metadata": {
+        "run_id": "neural-dng02-20261004T005449Z-c3e2a2",
+        "status": "completed",
+        "started_at_utc": "2026-10-04T00:54:49.904597+00:00",
+        "ended_at_utc": "2026-10-04T00:54:52.492516+00:00",
+        "dataset_version": "FAFB FlyWire v783",
+        "model_commit": "91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+        "duration_ms": 200,
+        "stimulus_rate_hz": 150,
+        "seed": 43,
+        "n_trials": 1,
+        "timestep_ms": 0.1,
+        "simulation_scope": "whole downloaded v783 graph",
+        "body_connected": false,
+        "evidence_scope": "Frozen connectome-model prediction of DNg02 firing; no biological or flight validation",
+        "versions": {
+          "python": "3.12.14",
+          "brian2": "2.9.0",
+          "numpy": "1.26.4",
+          "pandas": "2.2.3"
+        },
+        "limitations": [
+          "Graph-selected upstream inputs are hypotheses; seven lack a verified cell-type label and none are assumed to be visual sensory inputs.",
+          "DNg02 has published flight-amplitude evidence, but this frozen assay predicts neural firing only, not takeoff or flight.",
+          "FAFB brain omits complete ventral nerve cord and wing-muscle system.",
+          "Shiu LIF model was biologically validated for feeding/grooming; these DNg02 outputs have no new independent biological validation.",
+          "Only200ms and3 simulation seeds; no general biological efficacy conclusion.",
+          "DNg02 subtypes a..g are pooled; signed-connectivity weights reflect author predictions.",
+          "Zero spontaneous activity means sham0 is expected and tests only this driven state.",
+          "Existing author model has a reset compatibility correction (remove undeclared w assignment).",
+          "Open-loop brain signal; no sensor feedback."
+        ],
+        "compatibility_adjustments": [
+          "Removed undeclared upstream reset assignment w=0; source untouched"
+        ],
+        "data_loading_adjustments": [
+          "Projected three required connectivity columns; retained every edge and cell"
+        ],
+        "stimulated_neuron_ids": [
+          "720575940623744236",
+          "720575940619031837",
+          "720575940622712979",
+          "720575940625965374",
+          "720575940609695683",
+          "720575940646682676",
+          "720575940619155995",
+          "720575940619524555"
+        ],
+        "neurons": 138639,
+        "connection_rows": 15091983,
+        "spike_events": 994,
+        "active_neurons": 201,
+        "full_network_included": true,
+        "backend": "Brian2 numpy runtime",
+        "wall_seconds": 2.587831,
+        "max_process_rss_bytes": 2047377408,
+        "condition": "upstream_drive",
+        "hypothesis": "The eight upstream targets, selected by positive graph weight before observing activity, increase pooled DNg02 firing relative to sham; removing all outgoing target weights reduces the DNg02 mean rate by at least 80%. This is a model-generated hypothesis, not an established biological finding.",
+        "question": "Do eight connectivity-selected right-side upstream neurons drive firing in flight-related DNg02 cells in the fixed full-v783 LIF model, and does this response require their outgoing connections?",
+        "readout_neuron_ids": [
+          "720575940610863310",
+          "720575940612014131",
+          "720575940612804606",
+          "720575940613668620",
+          "720575940613793170",
+          "720575940615679282",
+          "720575940617498507",
+          "720575940617922439",
+          "720575940622042603",
+          "720575940622681864",
+          "720575940622910188",
+          "720575940625144061",
+          "720575940625482954",
+          "720575940626278129",
+          "720575940626377349",
+          "720575940626904219",
+          "720575940627414887",
+          "720575940627850622",
+          "720575940628942586",
+          "720575940630289804",
+          "720575940630492714",
+          "720575940632573887",
+          "720575940639201443",
+          "720575940641305229",
+          "720575940647964281"
+        ],
+        "design_id": "dng02-input-v1",
+        "design_sha256": "e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6",
+        "design_path": "research/designs/dng02-input-v1.json",
+        "readout_metrics": {
+          "readout_spike_events": 94,
+          "readout_active_neurons": 14,
+          "population_mean_rate_hz": 18.8,
+          "group_mean_rate_hz": {
+            "left": 9.615384615384615,
+            "right": 28.749999999999996
+          },
+          "right_minus_left_mean_rate_hz": 19.13461538461538,
+          "per_neuron_spike_counts": {
+            "720575940610863310": 1,
+            "720575940612014131": 0,
+            "720575940612804606": 3,
+            "720575940613668620": 0,
+            "720575940613793170": 0,
+            "720575940615679282": 15,
+            "720575940617498507": 0,
+            "720575940617922439": 9,
+            "720575940622042603": 0,
+            "720575940622681864": 0,
+            "720575940622910188": 11,
+            "720575940625144061": 3,
+            "720575940625482954": 14,
+            "720575940626278129": 5,
+            "720575940626377349": 9,
+            "720575940626904219": 0,
+            "720575940627414887": 3,
+            "720575940627850622": 0,
+            "720575940628942586": 1,
+            "720575940630289804": 0,
+            "720575940630492714": 8,
+            "720575940632573887": 0,
+            "720575940639201443": 0,
+            "720575940641305229": 10,
+            "720575940647964281": 2
+          },
+          "nonstimulated_active_neurons": 193
+        },
+        "execution_context": "Omnigent native tool",
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": true
+      },
+      "body_available": true
+    },
+    {
+      "run_id": "neural-dng02-20261004T005452Z-80ef64",
+      "title": "Sham \u00b7 0 Hz",
+      "classification": "model_experiment",
+      "file": "neural-dng02-20261004T005452Z-80ef64.json",
+      "metadata": {
+        "run_id": "neural-dng02-20261004T005452Z-80ef64",
+        "status": "completed",
+        "started_at_utc": "2026-10-04T00:54:52.640117+00:00",
+        "ended_at_utc": "2026-10-04T00:54:55.513710+00:00",
+        "dataset_version": "FAFB FlyWire v783",
+        "model_commit": "91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+        "duration_ms": 200,
+        "stimulus_rate_hz": 0,
+        "seed": 44,
+        "n_trials": 1,
+        "timestep_ms": 0.1,
+        "simulation_scope": "whole downloaded v783 graph",
+        "body_connected": false,
+        "evidence_scope": "Frozen connectome-model prediction of DNg02 firing; no biological or flight validation",
+        "versions": {
+          "python": "3.12.14",
+          "brian2": "2.9.0",
+          "numpy": "1.26.4",
+          "pandas": "2.2.3"
+        },
+        "limitations": [
+          "Graph-selected upstream inputs are hypotheses; seven lack a verified cell-type label and none are assumed to be visual sensory inputs.",
+          "DNg02 has published flight-amplitude evidence, but this frozen assay predicts neural firing only, not takeoff or flight.",
+          "FAFB brain omits complete ventral nerve cord and wing-muscle system.",
+          "Shiu LIF model was biologically validated for feeding/grooming; these DNg02 outputs have no new independent biological validation.",
+          "Only200ms and3 simulation seeds; no general biological efficacy conclusion.",
+          "DNg02 subtypes a..g are pooled; signed-connectivity weights reflect author predictions.",
+          "Zero spontaneous activity means sham0 is expected and tests only this driven state.",
+          "Existing author model has a reset compatibility correction (remove undeclared w assignment).",
+          "Open-loop brain signal; no sensor feedback."
+        ],
+        "compatibility_adjustments": [
+          "Removed undeclared upstream reset assignment w=0; source untouched"
+        ],
+        "data_loading_adjustments": [
+          "Projected three required connectivity columns; retained every edge and cell"
+        ],
+        "stimulated_neuron_ids": [
+          "720575940623744236",
+          "720575940619031837",
+          "720575940622712979",
+          "720575940625965374",
+          "720575940609695683",
+          "720575940646682676",
+          "720575940619155995",
+          "720575940619524555"
+        ],
+        "neurons": 138639,
+        "connection_rows": 15091983,
+        "spike_events": 0,
+        "active_neurons": 0,
+        "full_network_included": true,
+        "backend": "Brian2 numpy runtime",
+        "wall_seconds": 2.873512,
+        "max_process_rss_bytes": 2047377408,
+        "condition": "sham",
+        "hypothesis": "The eight upstream targets, selected by positive graph weight before observing activity, increase pooled DNg02 firing relative to sham; removing all outgoing target weights reduces the DNg02 mean rate by at least 80%. This is a model-generated hypothesis, not an established biological finding.",
+        "question": "Do eight connectivity-selected right-side upstream neurons drive firing in flight-related DNg02 cells in the fixed full-v783 LIF model, and does this response require their outgoing connections?",
+        "readout_neuron_ids": [
+          "720575940610863310",
+          "720575940612014131",
+          "720575940612804606",
+          "720575940613668620",
+          "720575940613793170",
+          "720575940615679282",
+          "720575940617498507",
+          "720575940617922439",
+          "720575940622042603",
+          "720575940622681864",
+          "720575940622910188",
+          "720575940625144061",
+          "720575940625482954",
+          "720575940626278129",
+          "720575940626377349",
+          "720575940626904219",
+          "720575940627414887",
+          "720575940627850622",
+          "720575940628942586",
+          "720575940630289804",
+          "720575940630492714",
+          "720575940632573887",
+          "720575940639201443",
+          "720575940641305229",
+          "720575940647964281"
+        ],
+        "design_id": "dng02-input-v1",
+        "design_sha256": "e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6",
+        "design_path": "research/designs/dng02-input-v1.json",
+        "readout_metrics": {
+          "readout_spike_events": 0,
+          "readout_active_neurons": 0,
+          "population_mean_rate_hz": 0.0,
+          "group_mean_rate_hz": {
+            "left": 0.0,
+            "right": 0.0
+          },
+          "right_minus_left_mean_rate_hz": 0.0,
+          "per_neuron_spike_counts": {
+            "720575940610863310": 0,
+            "720575940612014131": 0,
+            "720575940612804606": 0,
+            "720575940613668620": 0,
+            "720575940613793170": 0,
+            "720575940615679282": 0,
+            "720575940617498507": 0,
+            "720575940617922439": 0,
+            "720575940622042603": 0,
+            "720575940622681864": 0,
+            "720575940622910188": 0,
+            "720575940625144061": 0,
+            "720575940625482954": 0,
+            "720575940626278129": 0,
+            "720575940626377349": 0,
+            "720575940626904219": 0,
+            "720575940627414887": 0,
+            "720575940627850622": 0,
+            "720575940628942586": 0,
+            "720575940630289804": 0,
+            "720575940630492714": 0,
+            "720575940632573887": 0,
+            "720575940639201443": 0,
+            "720575940641305229": 0,
+            "720575940647964281": 0
+          },
+          "nonstimulated_active_neurons": 0
+        },
+        "execution_context": "Omnigent native tool",
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": true
+      },
+      "body_available": true
+    },
+    {
+      "run_id": "neural-dng02-20261004T005455Z-475a2b",
+      "title": "Upstream drive \u00b7 150 Hz",
+      "classification": "model_experiment",
+      "file": "neural-dng02-20261004T005455Z-475a2b.json",
+      "metadata": {
+        "run_id": "neural-dng02-20261004T005455Z-475a2b",
+        "status": "completed",
+        "started_at_utc": "2026-10-04T00:54:55.698206+00:00",
+        "ended_at_utc": "2026-10-04T00:54:58.950781+00:00",
+        "dataset_version": "FAFB FlyWire v783",
+        "model_commit": "91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+        "duration_ms": 200,
+        "stimulus_rate_hz": 150,
+        "seed": 44,
+        "n_trials": 1,
+        "timestep_ms": 0.1,
+        "simulation_scope": "whole downloaded v783 graph",
+        "body_connected": false,
+        "evidence_scope": "Frozen connectome-model prediction of DNg02 firing; no biological or flight validation",
+        "versions": {
+          "python": "3.12.14",
+          "brian2": "2.9.0",
+          "numpy": "1.26.4",
+          "pandas": "2.2.3"
+        },
+        "limitations": [
+          "Graph-selected upstream inputs are hypotheses; seven lack a verified cell-type label and none are assumed to be visual sensory inputs.",
+          "DNg02 has published flight-amplitude evidence, but this frozen assay predicts neural firing only, not takeoff or flight.",
+          "FAFB brain omits complete ventral nerve cord and wing-muscle system.",
+          "Shiu LIF model was biologically validated for feeding/grooming; these DNg02 outputs have no new independent biological validation.",
+          "Only200ms and3 simulation seeds; no general biological efficacy conclusion.",
+          "DNg02 subtypes a..g are pooled; signed-connectivity weights reflect author predictions.",
+          "Zero spontaneous activity means sham0 is expected and tests only this driven state.",
+          "Existing author model has a reset compatibility correction (remove undeclared w assignment).",
+          "Open-loop brain signal; no sensor feedback."
+        ],
+        "compatibility_adjustments": [
+          "Removed undeclared upstream reset assignment w=0; source untouched"
+        ],
+        "data_loading_adjustments": [
+          "Projected three required connectivity columns; retained every edge and cell"
+        ],
+        "stimulated_neuron_ids": [
+          "720575940623744236",
+          "720575940619031837",
+          "720575940622712979",
+          "720575940625965374",
+          "720575940609695683",
+          "720575940646682676",
+          "720575940619155995",
+          "720575940619524555"
+        ],
+        "neurons": 138639,
+        "connection_rows": 15091983,
+        "spike_events": 1090,
+        "active_neurons": 236,
+        "full_network_included": true,
+        "backend": "Brian2 numpy runtime",
+        "wall_seconds": 3.252451,
+        "max_process_rss_bytes": 2047377408,
+        "condition": "upstream_drive",
+        "hypothesis": "The eight upstream targets, selected by positive graph weight before observing activity, increase pooled DNg02 firing relative to sham; removing all outgoing target weights reduces the DNg02 mean rate by at least 80%. This is a model-generated hypothesis, not an established biological finding.",
+        "question": "Do eight connectivity-selected right-side upstream neurons drive firing in flight-related DNg02 cells in the fixed full-v783 LIF model, and does this response require their outgoing connections?",
+        "readout_neuron_ids": [
+          "720575940610863310",
+          "720575940612014131",
+          "720575940612804606",
+          "720575940613668620",
+          "720575940613793170",
+          "720575940615679282",
+          "720575940617498507",
+          "720575940617922439",
+          "720575940622042603",
+          "720575940622681864",
+          "720575940622910188",
+          "720575940625144061",
+          "720575940625482954",
+          "720575940626278129",
+          "720575940626377349",
+          "720575940626904219",
+          "720575940627414887",
+          "720575940627850622",
+          "720575940628942586",
+          "720575940630289804",
+          "720575940630492714",
+          "720575940632573887",
+          "720575940639201443",
+          "720575940641305229",
+          "720575940647964281"
+        ],
+        "design_id": "dng02-input-v1",
+        "design_sha256": "e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6",
+        "design_path": "research/designs/dng02-input-v1.json",
+        "readout_metrics": {
+          "readout_spike_events": 92,
+          "readout_active_neurons": 13,
+          "population_mean_rate_hz": 18.4,
+          "group_mean_rate_hz": {
+            "left": 8.846153846153847,
+            "right": 28.749999999999996
+          },
+          "right_minus_left_mean_rate_hz": 19.90384615384615,
+          "per_neuron_spike_counts": {
+            "720575940610863310": 0,
+            "720575940612014131": 0,
+            "720575940612804606": 2,
+            "720575940613668620": 0,
+            "720575940613793170": 0,
+            "720575940615679282": 15,
+            "720575940617498507": 0,
+            "720575940617922439": 9,
+            "720575940622042603": 0,
+            "720575940622681864": 0,
+            "720575940622910188": 10,
+            "720575940625144061": 4,
+            "720575940625482954": 13,
+            "720575940626278129": 4,
+            "720575940626377349": 8,
+            "720575940626904219": 0,
+            "720575940627414887": 3,
+            "720575940627850622": 0,
+            "720575940628942586": 1,
+            "720575940630289804": 0,
+            "720575940630492714": 9,
+            "720575940632573887": 0,
+            "720575940639201443": 0,
+            "720575940641305229": 10,
+            "720575940647964281": 4
+          },
+          "nonstimulated_active_neurons": 228
+        },
+        "execution_context": "Omnigent native tool",
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": true
+      },
+      "body_available": true
+    },
+    {
+      "run_id": "neural-dng02-20261004T011207Z-5714b5",
+      "title": "Upstream drive \u00b7 150 Hz",
+      "classification": "model_experiment",
+      "file": "neural-dng02-20261004T011207Z-5714b5.json",
+      "metadata": {
+        "run_id": "neural-dng02-20261004T011207Z-5714b5",
+        "status": "completed",
+        "started_at_utc": "2026-10-04T01:12:07.235631+00:00",
+        "ended_at_utc": "2026-10-04T01:12:10.607911+00:00",
+        "dataset_version": "FAFB FlyWire v783",
+        "model_commit": "91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+        "duration_ms": 200,
+        "stimulus_rate_hz": 150,
+        "seed": 42,
+        "n_trials": 1,
+        "timestep_ms": 0.1,
+        "simulation_scope": "whole downloaded v783 graph",
+        "body_connected": false,
+        "evidence_scope": "Frozen connectome-model prediction of DNg02 firing; no biological or flight validation",
+        "versions": {
+          "python": "3.12.14",
+          "brian2": "2.9.0",
+          "numpy": "1.26.4",
+          "pandas": "2.2.3"
+        },
+        "limitations": [
+          "Graph-selected upstream inputs are hypotheses; seven lack a verified cell-type label and none are assumed to be visual sensory inputs.",
+          "DNg02 has published flight-amplitude evidence, but this frozen assay predicts neural firing only, not takeoff or flight.",
+          "FAFB brain omits complete ventral nerve cord and wing-muscle system.",
+          "Shiu LIF model was biologically validated for feeding/grooming; these DNg02 outputs have no new independent biological validation.",
+          "Only200ms and3 simulation seeds; no general biological efficacy conclusion.",
+          "DNg02 subtypes a..g are pooled; signed-connectivity weights reflect author predictions.",
+          "Zero spontaneous activity means sham0 is expected and tests only this driven state.",
+          "Existing author model has a reset compatibility correction (remove undeclared w assignment).",
+          "Open-loop brain signal; no sensor feedback."
+        ],
+        "compatibility_adjustments": [
+          "Removed undeclared upstream reset assignment w=0; source untouched"
+        ],
+        "data_loading_adjustments": [
+          "Projected three required connectivity columns; retained every edge and cell"
+        ],
+        "stimulated_neuron_ids": [
+          "720575940623744236",
+          "720575940619031837",
+          "720575940622712979",
+          "720575940625965374",
+          "720575940609695683",
+          "720575940646682676",
+          "720575940619155995",
+          "720575940619524555"
+        ],
+        "neurons": 138639,
+        "connection_rows": 15091983,
+        "spike_events": 1129,
+        "active_neurons": 243,
+        "full_network_included": true,
+        "backend": "Brian2 numpy runtime",
+        "wall_seconds": 3.372187,
+        "max_process_rss_bytes": 1327939584,
+        "condition": "upstream_drive",
+        "hypothesis": "The eight upstream targets, selected by positive graph weight before observing activity, increase pooled DNg02 firing relative to sham; removing all outgoing target weights reduces the DNg02 mean rate by at least 80%. This is a model-generated hypothesis, not an established biological finding.",
+        "question": "Do eight connectivity-selected right-side upstream neurons drive firing in flight-related DNg02 cells in the fixed full-v783 LIF model, and does this response require their outgoing connections?",
+        "readout_neuron_ids": [
+          "720575940610863310",
+          "720575940612014131",
+          "720575940612804606",
+          "720575940613668620",
+          "720575940613793170",
+          "720575940615679282",
+          "720575940617498507",
+          "720575940617922439",
+          "720575940622042603",
+          "720575940622681864",
+          "720575940622910188",
+          "720575940625144061",
+          "720575940625482954",
+          "720575940626278129",
+          "720575940626377349",
+          "720575940626904219",
+          "720575940627414887",
+          "720575940627850622",
+          "720575940628942586",
+          "720575940630289804",
+          "720575940630492714",
+          "720575940632573887",
+          "720575940639201443",
+          "720575940641305229",
+          "720575940647964281"
+        ],
+        "design_id": "dng02-input-v1",
+        "design_sha256": "e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6",
+        "design_path": "research/designs/dng02-input-v1.json",
+        "readout_metrics": {
+          "readout_spike_events": 86,
+          "readout_active_neurons": 14,
+          "population_mean_rate_hz": 17.2,
+          "group_mean_rate_hz": {
+            "left": 9.615384615384615,
+            "right": 25.416666666666664
+          },
+          "right_minus_left_mean_rate_hz": 15.80128205128205,
+          "per_neuron_spike_counts": {
+            "720575940610863310": 0,
+            "720575940612014131": 0,
+            "720575940612804606": 3,
+            "720575940613668620": 0,
+            "720575940613793170": 0,
+            "720575940615679282": 14,
+            "720575940617498507": 0,
+            "720575940617922439": 7,
+            "720575940622042603": 1,
+            "720575940622681864": 0,
+            "720575940622910188": 10,
+            "720575940625144061": 2,
+            "720575940625482954": 15,
+            "720575940626278129": 6,
+            "720575940626377349": 6,
+            "720575940626904219": 0,
+            "720575940627414887": 1,
+            "720575940627850622": 0,
+            "720575940628942586": 2,
+            "720575940630289804": 0,
+            "720575940630492714": 7,
+            "720575940632573887": 0,
+            "720575940639201443": 0,
+            "720575940641305229": 10,
+            "720575940647964281": 2
+          },
+          "nonstimulated_active_neurons": 235
+        },
+        "execution_context": "Omnigent native tool",
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": true
+      },
+      "body_available": false
+    },
+    {
+      "run_id": "neural-dng02-20261004T011210Z-30bd3a",
+      "title": "Outgoing links disconnected",
+      "classification": "model_experiment",
+      "file": "neural-dng02-20261004T011210Z-30bd3a.json",
+      "metadata": {
+        "run_id": "neural-dng02-20261004T011210Z-30bd3a",
+        "status": "completed",
+        "started_at_utc": "2026-10-04T01:12:10.760528+00:00",
+        "ended_at_utc": "2026-10-04T01:12:13.725541+00:00",
+        "dataset_version": "FAFB FlyWire v783",
+        "model_commit": "91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+        "duration_ms": 200,
+        "stimulus_rate_hz": 150,
+        "seed": 42,
+        "n_trials": 1,
+        "timestep_ms": 0.1,
+        "simulation_scope": "whole downloaded v783 graph",
+        "body_connected": false,
+        "evidence_scope": "Frozen connectome-model prediction of DNg02 firing; no biological or flight validation",
+        "versions": {
+          "python": "3.12.14",
+          "brian2": "2.9.0",
+          "numpy": "1.26.4",
+          "pandas": "2.2.3"
+        },
+        "limitations": [
+          "Graph-selected upstream inputs are hypotheses; seven lack a verified cell-type label and none are assumed to be visual sensory inputs.",
+          "DNg02 has published flight-amplitude evidence, but this frozen assay predicts neural firing only, not takeoff or flight.",
+          "FAFB brain omits complete ventral nerve cord and wing-muscle system.",
+          "Shiu LIF model was biologically validated for feeding/grooming; these DNg02 outputs have no new independent biological validation.",
+          "Only200ms and3 simulation seeds; no general biological efficacy conclusion.",
+          "DNg02 subtypes a..g are pooled; signed-connectivity weights reflect author predictions.",
+          "Zero spontaneous activity means sham0 is expected and tests only this driven state.",
+          "Existing author model has a reset compatibility correction (remove undeclared w assignment).",
+          "Open-loop brain signal; no sensor feedback."
+        ],
+        "compatibility_adjustments": [
+          "Removed undeclared upstream reset assignment w=0; source untouched"
+        ],
+        "data_loading_adjustments": [
+          "Projected three required connectivity columns; retained every edge and cell"
+        ],
+        "stimulated_neuron_ids": [
+          "720575940623744236",
+          "720575940619031837",
+          "720575940622712979",
+          "720575940625965374",
+          "720575940609695683",
+          "720575940646682676",
+          "720575940619155995",
+          "720575940619524555"
+        ],
+        "neurons": 138639,
+        "connection_rows": 15091983,
+        "spike_events": 222,
+        "active_neurons": 8,
+        "full_network_included": true,
+        "backend": "Brian2 numpy runtime",
+        "wall_seconds": 2.964872,
+        "max_process_rss_bytes": 1368883200,
+        "condition": "outgoing_disconnected",
+        "hypothesis": "The eight upstream targets, selected by positive graph weight before observing activity, increase pooled DNg02 firing relative to sham; removing all outgoing target weights reduces the DNg02 mean rate by at least 80%. This is a model-generated hypothesis, not an established biological finding.",
+        "question": "Do eight connectivity-selected right-side upstream neurons drive firing in flight-related DNg02 cells in the fixed full-v783 LIF model, and does this response require their outgoing connections?",
+        "readout_neuron_ids": [
+          "720575940610863310",
+          "720575940612014131",
+          "720575940612804606",
+          "720575940613668620",
+          "720575940613793170",
+          "720575940615679282",
+          "720575940617498507",
+          "720575940617922439",
+          "720575940622042603",
+          "720575940622681864",
+          "720575940622910188",
+          "720575940625144061",
+          "720575940625482954",
+          "720575940626278129",
+          "720575940626377349",
+          "720575940626904219",
+          "720575940627414887",
+          "720575940627850622",
+          "720575940628942586",
+          "720575940630289804",
+          "720575940630492714",
+          "720575940632573887",
+          "720575940639201443",
+          "720575940641305229",
+          "720575940647964281"
+        ],
+        "design_id": "dng02-input-v1",
+        "design_sha256": "e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6",
+        "design_path": "research/designs/dng02-input-v1.json",
+        "readout_metrics": {
+          "readout_spike_events": 0,
+          "readout_active_neurons": 0,
+          "population_mean_rate_hz": 0.0,
+          "group_mean_rate_hz": {
+            "left": 0.0,
+            "right": 0.0
+          },
+          "right_minus_left_mean_rate_hz": 0.0,
+          "per_neuron_spike_counts": {
+            "720575940610863310": 0,
+            "720575940612014131": 0,
+            "720575940612804606": 0,
+            "720575940613668620": 0,
+            "720575940613793170": 0,
+            "720575940615679282": 0,
+            "720575940617498507": 0,
+            "720575940617922439": 0,
+            "720575940622042603": 0,
+            "720575940622681864": 0,
+            "720575940622910188": 0,
+            "720575940625144061": 0,
+            "720575940625482954": 0,
+            "720575940626278129": 0,
+            "720575940626377349": 0,
+            "720575940626904219": 0,
+            "720575940627414887": 0,
+            "720575940627850622": 0,
+            "720575940628942586": 0,
+            "720575940630289804": 0,
+            "720575940630492714": 0,
+            "720575940632573887": 0,
+            "720575940639201443": 0,
+            "720575940641305229": 0,
+            "720575940647964281": 0
+          },
+          "nonstimulated_active_neurons": 0
+        },
+        "execution_context": "Omnigent native tool",
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": true
+      },
+      "body_available": false
+    },
+    {
+      "run_id": "neural-dng02-20261004T011213Z-3d3e38",
+      "title": "Upstream drive \u00b7 150 Hz",
+      "classification": "model_experiment",
+      "file": "neural-dng02-20261004T011213Z-3d3e38.json",
+      "metadata": {
+        "run_id": "neural-dng02-20261004T011213Z-3d3e38",
+        "status": "completed",
+        "started_at_utc": "2026-10-04T01:12:13.870893+00:00",
+        "ended_at_utc": "2026-10-04T01:12:16.561857+00:00",
+        "dataset_version": "FAFB FlyWire v783",
+        "model_commit": "91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+        "duration_ms": 200,
+        "stimulus_rate_hz": 150,
+        "seed": 43,
+        "n_trials": 1,
+        "timestep_ms": 0.1,
+        "simulation_scope": "whole downloaded v783 graph",
+        "body_connected": false,
+        "evidence_scope": "Frozen connectome-model prediction of DNg02 firing; no biological or flight validation",
+        "versions": {
+          "python": "3.12.14",
+          "brian2": "2.9.0",
+          "numpy": "1.26.4",
+          "pandas": "2.2.3"
+        },
+        "limitations": [
+          "Graph-selected upstream inputs are hypotheses; seven lack a verified cell-type label and none are assumed to be visual sensory inputs.",
+          "DNg02 has published flight-amplitude evidence, but this frozen assay predicts neural firing only, not takeoff or flight.",
+          "FAFB brain omits complete ventral nerve cord and wing-muscle system.",
+          "Shiu LIF model was biologically validated for feeding/grooming; these DNg02 outputs have no new independent biological validation.",
+          "Only200ms and3 simulation seeds; no general biological efficacy conclusion.",
+          "DNg02 subtypes a..g are pooled; signed-connectivity weights reflect author predictions.",
+          "Zero spontaneous activity means sham0 is expected and tests only this driven state.",
+          "Existing author model has a reset compatibility correction (remove undeclared w assignment).",
+          "Open-loop brain signal; no sensor feedback."
+        ],
+        "compatibility_adjustments": [
+          "Removed undeclared upstream reset assignment w=0; source untouched"
+        ],
+        "data_loading_adjustments": [
+          "Projected three required connectivity columns; retained every edge and cell"
+        ],
+        "stimulated_neuron_ids": [
+          "720575940623744236",
+          "720575940619031837",
+          "720575940622712979",
+          "720575940625965374",
+          "720575940609695683",
+          "720575940646682676",
+          "720575940619155995",
+          "720575940619524555"
+        ],
+        "neurons": 138639,
+        "connection_rows": 15091983,
+        "spike_events": 994,
+        "active_neurons": 201,
+        "full_network_included": true,
+        "backend": "Brian2 numpy runtime",
+        "wall_seconds": 2.690887,
+        "max_process_rss_bytes": 1575796736,
+        "condition": "upstream_drive",
+        "hypothesis": "The eight upstream targets, selected by positive graph weight before observing activity, increase pooled DNg02 firing relative to sham; removing all outgoing target weights reduces the DNg02 mean rate by at least 80%. This is a model-generated hypothesis, not an established biological finding.",
+        "question": "Do eight connectivity-selected right-side upstream neurons drive firing in flight-related DNg02 cells in the fixed full-v783 LIF model, and does this response require their outgoing connections?",
+        "readout_neuron_ids": [
+          "720575940610863310",
+          "720575940612014131",
+          "720575940612804606",
+          "720575940613668620",
+          "720575940613793170",
+          "720575940615679282",
+          "720575940617498507",
+          "720575940617922439",
+          "720575940622042603",
+          "720575940622681864",
+          "720575940622910188",
+          "720575940625144061",
+          "720575940625482954",
+          "720575940626278129",
+          "720575940626377349",
+          "720575940626904219",
+          "720575940627414887",
+          "720575940627850622",
+          "720575940628942586",
+          "720575940630289804",
+          "720575940630492714",
+          "720575940632573887",
+          "720575940639201443",
+          "720575940641305229",
+          "720575940647964281"
+        ],
+        "design_id": "dng02-input-v1",
+        "design_sha256": "e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6",
+        "design_path": "research/designs/dng02-input-v1.json",
+        "readout_metrics": {
+          "readout_spike_events": 94,
+          "readout_active_neurons": 14,
+          "population_mean_rate_hz": 18.8,
+          "group_mean_rate_hz": {
+            "left": 9.615384615384615,
+            "right": 28.749999999999996
+          },
+          "right_minus_left_mean_rate_hz": 19.13461538461538,
+          "per_neuron_spike_counts": {
+            "720575940610863310": 1,
+            "720575940612014131": 0,
+            "720575940612804606": 3,
+            "720575940613668620": 0,
+            "720575940613793170": 0,
+            "720575940615679282": 15,
+            "720575940617498507": 0,
+            "720575940617922439": 9,
+            "720575940622042603": 0,
+            "720575940622681864": 0,
+            "720575940622910188": 11,
+            "720575940625144061": 3,
+            "720575940625482954": 14,
+            "720575940626278129": 5,
+            "720575940626377349": 9,
+            "720575940626904219": 0,
+            "720575940627414887": 3,
+            "720575940627850622": 0,
+            "720575940628942586": 1,
+            "720575940630289804": 0,
+            "720575940630492714": 8,
+            "720575940632573887": 0,
+            "720575940639201443": 0,
+            "720575940641305229": 10,
+            "720575940647964281": 2
+          },
+          "nonstimulated_active_neurons": 193
+        },
+        "execution_context": "Omnigent native tool",
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": true
+      },
+      "body_available": false
+    },
+    {
+      "run_id": "neural-dng02-20261004T011216Z-98839b",
+      "title": "Outgoing links disconnected",
+      "classification": "model_experiment",
+      "file": "neural-dng02-20261004T011216Z-98839b.json",
+      "metadata": {
+        "run_id": "neural-dng02-20261004T011216Z-98839b",
+        "status": "completed",
+        "started_at_utc": "2026-10-04T01:12:16.707448+00:00",
+        "ended_at_utc": "2026-10-04T01:12:19.467171+00:00",
+        "dataset_version": "FAFB FlyWire v783",
+        "model_commit": "91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+        "duration_ms": 200,
+        "stimulus_rate_hz": 150,
+        "seed": 43,
+        "n_trials": 1,
+        "timestep_ms": 0.1,
+        "simulation_scope": "whole downloaded v783 graph",
+        "body_connected": false,
+        "evidence_scope": "Frozen connectome-model prediction of DNg02 firing; no biological or flight validation",
+        "versions": {
+          "python": "3.12.14",
+          "brian2": "2.9.0",
+          "numpy": "1.26.4",
+          "pandas": "2.2.3"
+        },
+        "limitations": [
+          "Graph-selected upstream inputs are hypotheses; seven lack a verified cell-type label and none are assumed to be visual sensory inputs.",
+          "DNg02 has published flight-amplitude evidence, but this frozen assay predicts neural firing only, not takeoff or flight.",
+          "FAFB brain omits complete ventral nerve cord and wing-muscle system.",
+          "Shiu LIF model was biologically validated for feeding/grooming; these DNg02 outputs have no new independent biological validation.",
+          "Only200ms and3 simulation seeds; no general biological efficacy conclusion.",
+          "DNg02 subtypes a..g are pooled; signed-connectivity weights reflect author predictions.",
+          "Zero spontaneous activity means sham0 is expected and tests only this driven state.",
+          "Existing author model has a reset compatibility correction (remove undeclared w assignment).",
+          "Open-loop brain signal; no sensor feedback."
+        ],
+        "compatibility_adjustments": [
+          "Removed undeclared upstream reset assignment w=0; source untouched"
+        ],
+        "data_loading_adjustments": [
+          "Projected three required connectivity columns; retained every edge and cell"
+        ],
+        "stimulated_neuron_ids": [
+          "720575940623744236",
+          "720575940619031837",
+          "720575940622712979",
+          "720575940625965374",
+          "720575940609695683",
+          "720575940646682676",
+          "720575940619155995",
+          "720575940619524555"
+        ],
+        "neurons": 138639,
+        "connection_rows": 15091983,
+        "spike_events": 223,
+        "active_neurons": 8,
+        "full_network_included": true,
+        "backend": "Brian2 numpy runtime",
+        "wall_seconds": 2.759653,
+        "max_process_rss_bytes": 1613725696,
+        "condition": "outgoing_disconnected",
+        "hypothesis": "The eight upstream targets, selected by positive graph weight before observing activity, increase pooled DNg02 firing relative to sham; removing all outgoing target weights reduces the DNg02 mean rate by at least 80%. This is a model-generated hypothesis, not an established biological finding.",
+        "question": "Do eight connectivity-selected right-side upstream neurons drive firing in flight-related DNg02 cells in the fixed full-v783 LIF model, and does this response require their outgoing connections?",
+        "readout_neuron_ids": [
+          "720575940610863310",
+          "720575940612014131",
+          "720575940612804606",
+          "720575940613668620",
+          "720575940613793170",
+          "720575940615679282",
+          "720575940617498507",
+          "720575940617922439",
+          "720575940622042603",
+          "720575940622681864",
+          "720575940622910188",
+          "720575940625144061",
+          "720575940625482954",
+          "720575940626278129",
+          "720575940626377349",
+          "720575940626904219",
+          "720575940627414887",
+          "720575940627850622",
+          "720575940628942586",
+          "720575940630289804",
+          "720575940630492714",
+          "720575940632573887",
+          "720575940639201443",
+          "720575940641305229",
+          "720575940647964281"
+        ],
+        "design_id": "dng02-input-v1",
+        "design_sha256": "e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6",
+        "design_path": "research/designs/dng02-input-v1.json",
+        "readout_metrics": {
+          "readout_spike_events": 0,
+          "readout_active_neurons": 0,
+          "population_mean_rate_hz": 0.0,
+          "group_mean_rate_hz": {
+            "left": 0.0,
+            "right": 0.0
+          },
+          "right_minus_left_mean_rate_hz": 0.0,
+          "per_neuron_spike_counts": {
+            "720575940610863310": 0,
+            "720575940612014131": 0,
+            "720575940612804606": 0,
+            "720575940613668620": 0,
+            "720575940613793170": 0,
+            "720575940615679282": 0,
+            "720575940617498507": 0,
+            "720575940617922439": 0,
+            "720575940622042603": 0,
+            "720575940622681864": 0,
+            "720575940622910188": 0,
+            "720575940625144061": 0,
+            "720575940625482954": 0,
+            "720575940626278129": 0,
+            "720575940626377349": 0,
+            "720575940626904219": 0,
+            "720575940627414887": 0,
+            "720575940627850622": 0,
+            "720575940628942586": 0,
+            "720575940630289804": 0,
+            "720575940630492714": 0,
+            "720575940632573887": 0,
+            "720575940639201443": 0,
+            "720575940641305229": 0,
+            "720575940647964281": 0
+          },
+          "nonstimulated_active_neurons": 0
+        },
+        "execution_context": "Omnigent native tool",
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": true
+      },
+      "body_available": false
+    },
+    {
+      "run_id": "neural-dng02-20261004T011219Z-38504d",
+      "title": "Upstream drive \u00b7 150 Hz",
+      "classification": "model_experiment",
+      "file": "neural-dng02-20261004T011219Z-38504d.json",
+      "metadata": {
+        "run_id": "neural-dng02-20261004T011219Z-38504d",
+        "status": "completed",
+        "started_at_utc": "2026-10-04T01:12:19.622838+00:00",
+        "ended_at_utc": "2026-10-04T01:12:22.770973+00:00",
+        "dataset_version": "FAFB FlyWire v783",
+        "model_commit": "91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+        "duration_ms": 200,
+        "stimulus_rate_hz": 150,
+        "seed": 44,
+        "n_trials": 1,
+        "timestep_ms": 0.1,
+        "simulation_scope": "whole downloaded v783 graph",
+        "body_connected": false,
+        "evidence_scope": "Frozen connectome-model prediction of DNg02 firing; no biological or flight validation",
+        "versions": {
+          "python": "3.12.14",
+          "brian2": "2.9.0",
+          "numpy": "1.26.4",
+          "pandas": "2.2.3"
+        },
+        "limitations": [
+          "Graph-selected upstream inputs are hypotheses; seven lack a verified cell-type label and none are assumed to be visual sensory inputs.",
+          "DNg02 has published flight-amplitude evidence, but this frozen assay predicts neural firing only, not takeoff or flight.",
+          "FAFB brain omits complete ventral nerve cord and wing-muscle system.",
+          "Shiu LIF model was biologically validated for feeding/grooming; these DNg02 outputs have no new independent biological validation.",
+          "Only200ms and3 simulation seeds; no general biological efficacy conclusion.",
+          "DNg02 subtypes a..g are pooled; signed-connectivity weights reflect author predictions.",
+          "Zero spontaneous activity means sham0 is expected and tests only this driven state.",
+          "Existing author model has a reset compatibility correction (remove undeclared w assignment).",
+          "Open-loop brain signal; no sensor feedback."
+        ],
+        "compatibility_adjustments": [
+          "Removed undeclared upstream reset assignment w=0; source untouched"
+        ],
+        "data_loading_adjustments": [
+          "Projected three required connectivity columns; retained every edge and cell"
+        ],
+        "stimulated_neuron_ids": [
+          "720575940623744236",
+          "720575940619031837",
+          "720575940622712979",
+          "720575940625965374",
+          "720575940609695683",
+          "720575940646682676",
+          "720575940619155995",
+          "720575940619524555"
+        ],
+        "neurons": 138639,
+        "connection_rows": 15091983,
+        "spike_events": 1090,
+        "active_neurons": 236,
+        "full_network_included": true,
+        "backend": "Brian2 numpy runtime",
+        "wall_seconds": 3.148062,
+        "max_process_rss_bytes": 1613725696,
+        "condition": "upstream_drive",
+        "hypothesis": "The eight upstream targets, selected by positive graph weight before observing activity, increase pooled DNg02 firing relative to sham; removing all outgoing target weights reduces the DNg02 mean rate by at least 80%. This is a model-generated hypothesis, not an established biological finding.",
+        "question": "Do eight connectivity-selected right-side upstream neurons drive firing in flight-related DNg02 cells in the fixed full-v783 LIF model, and does this response require their outgoing connections?",
+        "readout_neuron_ids": [
+          "720575940610863310",
+          "720575940612014131",
+          "720575940612804606",
+          "720575940613668620",
+          "720575940613793170",
+          "720575940615679282",
+          "720575940617498507",
+          "720575940617922439",
+          "720575940622042603",
+          "720575940622681864",
+          "720575940622910188",
+          "720575940625144061",
+          "720575940625482954",
+          "720575940626278129",
+          "720575940626377349",
+          "720575940626904219",
+          "720575940627414887",
+          "720575940627850622",
+          "720575940628942586",
+          "720575940630289804",
+          "720575940630492714",
+          "720575940632573887",
+          "720575940639201443",
+          "720575940641305229",
+          "720575940647964281"
+        ],
+        "design_id": "dng02-input-v1",
+        "design_sha256": "e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6",
+        "design_path": "research/designs/dng02-input-v1.json",
+        "readout_metrics": {
+          "readout_spike_events": 92,
+          "readout_active_neurons": 13,
+          "population_mean_rate_hz": 18.4,
+          "group_mean_rate_hz": {
+            "left": 8.846153846153847,
+            "right": 28.749999999999996
+          },
+          "right_minus_left_mean_rate_hz": 19.90384615384615,
+          "per_neuron_spike_counts": {
+            "720575940610863310": 0,
+            "720575940612014131": 0,
+            "720575940612804606": 2,
+            "720575940613668620": 0,
+            "720575940613793170": 0,
+            "720575940615679282": 15,
+            "720575940617498507": 0,
+            "720575940617922439": 9,
+            "720575940622042603": 0,
+            "720575940622681864": 0,
+            "720575940622910188": 10,
+            "720575940625144061": 4,
+            "720575940625482954": 13,
+            "720575940626278129": 4,
+            "720575940626377349": 8,
+            "720575940626904219": 0,
+            "720575940627414887": 3,
+            "720575940627850622": 0,
+            "720575940628942586": 1,
+            "720575940630289804": 0,
+            "720575940630492714": 9,
+            "720575940632573887": 0,
+            "720575940639201443": 0,
+            "720575940641305229": 10,
+            "720575940647964281": 4
+          },
+          "nonstimulated_active_neurons": 228
+        },
+        "execution_context": "Omnigent native tool",
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": true
+      },
+      "body_available": false
+    },
+    {
+      "run_id": "neural-dng02-20261004T011222Z-149937",
+      "title": "Outgoing links disconnected",
+      "classification": "model_experiment",
+      "file": "neural-dng02-20261004T011222Z-149937.json",
+      "metadata": {
+        "run_id": "neural-dng02-20261004T011222Z-149937",
+        "status": "completed",
+        "started_at_utc": "2026-10-04T01:12:22.963099+00:00",
+        "ended_at_utc": "2026-10-04T01:12:25.798616+00:00",
+        "dataset_version": "FAFB FlyWire v783",
+        "model_commit": "91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+        "duration_ms": 200,
+        "stimulus_rate_hz": 150,
+        "seed": 44,
+        "n_trials": 1,
+        "timestep_ms": 0.1,
+        "simulation_scope": "whole downloaded v783 graph",
+        "body_connected": false,
+        "evidence_scope": "Frozen connectome-model prediction of DNg02 firing; no biological or flight validation",
+        "versions": {
+          "python": "3.12.14",
+          "brian2": "2.9.0",
+          "numpy": "1.26.4",
+          "pandas": "2.2.3"
+        },
+        "limitations": [
+          "Graph-selected upstream inputs are hypotheses; seven lack a verified cell-type label and none are assumed to be visual sensory inputs.",
+          "DNg02 has published flight-amplitude evidence, but this frozen assay predicts neural firing only, not takeoff or flight.",
+          "FAFB brain omits complete ventral nerve cord and wing-muscle system.",
+          "Shiu LIF model was biologically validated for feeding/grooming; these DNg02 outputs have no new independent biological validation.",
+          "Only200ms and3 simulation seeds; no general biological efficacy conclusion.",
+          "DNg02 subtypes a..g are pooled; signed-connectivity weights reflect author predictions.",
+          "Zero spontaneous activity means sham0 is expected and tests only this driven state.",
+          "Existing author model has a reset compatibility correction (remove undeclared w assignment).",
+          "Open-loop brain signal; no sensor feedback."
+        ],
+        "compatibility_adjustments": [
+          "Removed undeclared upstream reset assignment w=0; source untouched"
+        ],
+        "data_loading_adjustments": [
+          "Projected three required connectivity columns; retained every edge and cell"
+        ],
+        "stimulated_neuron_ids": [
+          "720575940623744236",
+          "720575940619031837",
+          "720575940622712979",
+          "720575940625965374",
+          "720575940609695683",
+          "720575940646682676",
+          "720575940619155995",
+          "720575940619524555"
+        ],
+        "neurons": 138639,
+        "connection_rows": 15091983,
+        "spike_events": 222,
+        "active_neurons": 8,
+        "full_network_included": true,
+        "backend": "Brian2 numpy runtime",
+        "wall_seconds": 2.835418,
+        "max_process_rss_bytes": 1613725696,
+        "condition": "outgoing_disconnected",
+        "hypothesis": "The eight upstream targets, selected by positive graph weight before observing activity, increase pooled DNg02 firing relative to sham; removing all outgoing target weights reduces the DNg02 mean rate by at least 80%. This is a model-generated hypothesis, not an established biological finding.",
+        "question": "Do eight connectivity-selected right-side upstream neurons drive firing in flight-related DNg02 cells in the fixed full-v783 LIF model, and does this response require their outgoing connections?",
+        "readout_neuron_ids": [
+          "720575940610863310",
+          "720575940612014131",
+          "720575940612804606",
+          "720575940613668620",
+          "720575940613793170",
+          "720575940615679282",
+          "720575940617498507",
+          "720575940617922439",
+          "720575940622042603",
+          "720575940622681864",
+          "720575940622910188",
+          "720575940625144061",
+          "720575940625482954",
+          "720575940626278129",
+          "720575940626377349",
+          "720575940626904219",
+          "720575940627414887",
+          "720575940627850622",
+          "720575940628942586",
+          "720575940630289804",
+          "720575940630492714",
+          "720575940632573887",
+          "720575940639201443",
+          "720575940641305229",
+          "720575940647964281"
+        ],
+        "design_id": "dng02-input-v1",
+        "design_sha256": "e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6",
+        "design_path": "research/designs/dng02-input-v1.json",
+        "readout_metrics": {
+          "readout_spike_events": 0,
+          "readout_active_neurons": 0,
+          "population_mean_rate_hz": 0.0,
+          "group_mean_rate_hz": {
+            "left": 0.0,
+            "right": 0.0
+          },
+          "right_minus_left_mean_rate_hz": 0.0,
+          "per_neuron_spike_counts": {
+            "720575940610863310": 0,
+            "720575940612014131": 0,
+            "720575940612804606": 0,
+            "720575940613668620": 0,
+            "720575940613793170": 0,
+            "720575940615679282": 0,
+            "720575940617498507": 0,
+            "720575940617922439": 0,
+            "720575940622042603": 0,
+            "720575940622681864": 0,
+            "720575940622910188": 0,
+            "720575940625144061": 0,
+            "720575940625482954": 0,
+            "720575940626278129": 0,
+            "720575940626377349": 0,
+            "720575940626904219": 0,
+            "720575940627414887": 0,
+            "720575940627850622": 0,
+            "720575940628942586": 0,
+            "720575940630289804": 0,
+            "720575940630492714": 0,
+            "720575940632573887": 0,
+            "720575940639201443": 0,
+            "720575940641305229": 0,
+            "720575940647964281": 0
+          },
+          "nonstimulated_active_neurons": 0
+        },
+        "execution_context": "Omnigent native tool",
+        "orchestration_verified_by_this_module": false,
+        "native_trace_verified": true
       },
       "body_available": false
     }
@@ -1910,61 +3580,646 @@
       },
       "orchestration_verified_by_this_module": false,
       "url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/experiments/comparison-dng02-20261004T001927Z-32a28b.json"
+    },
+    {
+      "design_id": "dng02-input-v1",
+      "test": "A",
+      "execution_context": "Omnigent native tool",
+      "run_ids": [
+        "neural-dng02-20261004T005440Z-a9f7ee",
+        "neural-dng02-20261004T005444Z-c33c4e",
+        "neural-dng02-20261004T005447Z-d51a7b",
+        "neural-dng02-20261004T005449Z-c3e2a2",
+        "neural-dng02-20261004T005452Z-80ef64",
+        "neural-dng02-20261004T005455Z-475a2b"
+      ],
+      "summary": {
+        "test": "A",
+        "n_seeds": 3,
+        "inference": "descriptive model comparison; no p-value or biological replication",
+        "sham": {
+          "population_mean_rates_hz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_hz": 0.0,
+          "sample_sd_hz": 0.0,
+          "min_hz": 0.0,
+          "max_hz": 0.0
+        },
+        "upstream_drive": {
+          "population_mean_rates_hz": [
+            17.2,
+            18.8,
+            18.4
+          ],
+          "mean_hz": 18.133333333333333,
+          "sample_sd_hz": 0.8326663997864536,
+          "min_hz": 17.2,
+          "max_hz": 18.8
+        },
+        "paired_difference_hz": [
+          17.2,
+          18.8,
+          18.4
+        ],
+        "supports_model_hypothesis": true,
+        "updated_decision": "Run test B outgoing-disconnection causality control",
+        "next_test": "B"
+      },
+      "orchestration_verified_by_this_module": false,
+      "url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/experiments/comparison-dng02-20261004T005438Z-0aa143.json"
+    },
+    {
+      "design_id": "dng02-input-v1",
+      "test": "B",
+      "execution_context": "Omnigent native tool",
+      "run_ids": [
+        "neural-dng02-20261004T011207Z-5714b5",
+        "neural-dng02-20261004T011210Z-30bd3a",
+        "neural-dng02-20261004T011213Z-3d3e38",
+        "neural-dng02-20261004T011216Z-98839b",
+        "neural-dng02-20261004T011219Z-38504d",
+        "neural-dng02-20261004T011222Z-149937"
+      ],
+      "summary": {
+        "test": "B",
+        "n_seeds": 3,
+        "inference": "descriptive model comparison; no p-value or biological replication",
+        "upstream_drive": {
+          "population_mean_rates_hz": [
+            17.2,
+            18.8,
+            18.4
+          ],
+          "mean_hz": 18.133333333333333,
+          "sample_sd_hz": 0.8326663997864536,
+          "min_hz": 17.2,
+          "max_hz": 18.8
+        },
+        "outgoing_disconnected": {
+          "population_mean_rates_hz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_hz": 0.0,
+          "sample_sd_hz": 0.0,
+          "min_hz": 0.0,
+          "max_hz": 0.0
+        },
+        "paired_fraction_reduction": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "supports_outgoing_dependency": true,
+        "updated_decision": "Model output depends on source axonal weights; next validate upstream identities and test a matched non-target input before any biological flight claim",
+        "next_test": "matched_input_and_sensory_validation"
+      },
+      "orchestration_verified_by_this_module": false,
+      "url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/experiments/comparison-dng02-20261004T011205Z-88d84a.json"
     }
   ],
   "coupling": {
     "schema_version": 1,
-    "created_at_utc": "2026-10-04T00:21:41.413769+00:00",
-    "comparison_kind": "technical open-loop brain-to-body adapter",
+    "created_at_utc": "2026-10-04T01:01:18.336896+00:00",
+    "comparison_kind": "open-loop neural replay into published trained flight controller",
     "paired_results": [
       {
         "seed": 42,
-        "sham_run_id": "body-coupled-20261004T002129Z-4b352e",
-        "driven_run_id": "body-coupled-20261004T002132Z-39925e",
-        "common_horizon_ms": 38.8,
-        "root_position_difference_cm_at_common_horizon": 0.004621227800118535,
-        "wing_angle_rms_difference_rad": 0.0070153441830512996,
-        "max_driven_amplitude_factor": 1.036,
+        "sham_run_id": "body-coupled-policy-20261004T010033Z-7a8980",
+        "driven_run_id": "body-coupled-policy-20261004T010044Z-de8a13",
+        "common_horizon_ms": 200.0,
+        "root_position_difference_cm_at_common_horizon": 0.001641367092913762,
+        "wing_angle_rms_difference_rad": 0.031021292932461867,
+        "max_driven_amplitude_factor": 1.052,
         "max_sham_amplitude_factor": 1.0,
-        "driven_terminated_early": true,
-        "sham_terminated_early": true
+        "driven_terminated_early": false,
+        "sham_terminated_early": false,
+        "policy_action_rms_difference": 0.011088789904644071,
+        "maximum_driven_adapter_command_delta_rad": 0.05389974542279474,
+        "maximum_sham_adapter_command_delta_rad": 1.1102230246251565e-16,
+        "minimum_driven_thorax_height_cm": 1.0136672490159733,
+        "minimum_sham_thorax_height_cm": 1.0117629357471087
       },
       {
         "seed": 43,
-        "sham_run_id": "body-coupled-20261004T002134Z-50b2ac",
-        "driven_run_id": "body-coupled-20261004T002136Z-6e51f0",
-        "common_horizon_ms": 38.8,
-        "root_position_difference_cm_at_common_horizon": 0.0055191030082180886,
-        "wing_angle_rms_difference_rad": 0.007456456641175568,
-        "max_driven_amplitude_factor": 1.028,
+        "sham_run_id": "body-coupled-policy-20261004T010054Z-a8d0d2",
+        "driven_run_id": "body-coupled-policy-20261004T010104Z-0a1471",
+        "common_horizon_ms": 200.0,
+        "root_position_difference_cm_at_common_horizon": 0.002797245230914979,
+        "wing_angle_rms_difference_rad": 0.028748801384311823,
+        "max_driven_amplitude_factor": 1.04,
         "max_sham_amplitude_factor": 1.0,
-        "driven_terminated_early": true,
-        "sham_terminated_early": true
+        "driven_terminated_early": false,
+        "sham_terminated_early": false,
+        "policy_action_rms_difference": 0.011057785981529409,
+        "maximum_driven_adapter_command_delta_rad": 0.04435039470796165,
+        "maximum_sham_adapter_command_delta_rad": 1.1102230246251565e-16,
+        "minimum_driven_thorax_height_cm": 1.0145941010209385,
+        "minimum_sham_thorax_height_cm": 1.013794817482373
       },
       {
         "seed": 44,
-        "sham_run_id": "body-coupled-20261004T002137Z-204991",
-        "driven_run_id": "body-coupled-20261004T002139Z-f3bc44",
-        "common_horizon_ms": 38.8,
-        "root_position_difference_cm_at_common_horizon": 0.0023107797167113186,
-        "wing_angle_rms_difference_rad": 0.005321843847311493,
-        "max_driven_amplitude_factor": 1.02,
+        "sham_run_id": "body-coupled-policy-20261004T010108Z-adae0c",
+        "driven_run_id": "body-coupled-policy-20261004T010113Z-d2a727",
+        "common_horizon_ms": 200.0,
+        "root_position_difference_cm_at_common_horizon": 0.0017324664792540932,
+        "wing_angle_rms_difference_rad": 0.031022725934655812,
+        "max_driven_amplitude_factor": 1.04,
         "max_sham_amplitude_factor": 1.0,
-        "driven_terminated_early": true,
-        "sham_terminated_early": true
+        "driven_terminated_early": false,
+        "sham_terminated_early": false,
+        "policy_action_rms_difference": 0.011363117007721057,
+        "maximum_driven_adapter_command_delta_rad": 0.04065598247664326,
+        "maximum_sham_adapter_command_delta_rad": 1.1102230246251565e-16,
+        "minimum_driven_thorax_height_cm": 1.0145289314931119,
+        "minimum_sham_thorax_height_cm": 1.0135685592236925
       }
     ],
     "all_run_ids": [
-      "body-coupled-20261004T002129Z-4b352e",
-      "body-coupled-20261004T002132Z-39925e",
-      "body-coupled-20261004T002134Z-50b2ac",
-      "body-coupled-20261004T002136Z-6e51f0",
-      "body-coupled-20261004T002137Z-204991",
-      "body-coupled-20261004T002139Z-f3bc44"
+      "body-coupled-policy-20261004T010033Z-7a8980",
+      "body-coupled-policy-20261004T010044Z-de8a13",
+      "body-coupled-policy-20261004T010054Z-a8d0d2",
+      "body-coupled-policy-20261004T010104Z-0a1471",
+      "body-coupled-policy-20261004T010108Z-adae0c",
+      "body-coupled-policy-20261004T010113Z-d2a727"
     ],
-    "adapter_sha256": "76b7dcdc5f529f4b1ba9dfee6791eca8150f12cfb54fe4a99f57e89bc2ee162e",
-    "interpretation": "Actual neural events affect a fixed controller input and measured body physics. The gain/controller choice is a model assumption; this does not validate biological flight.",
+    "adapter_sha256": "bde975de924f55e9793c395196674933fbc659093535cb6ed48e9d11e906bc03",
+    "interpretation": "Actual neural events modulate a fixed adapter into an independently trained authors' flight controller. Physical response is measured; stabilization is supplied by the published RL policy, not discovered by the connectome.",
     "flight_validated": false,
-    "next_decision": "Calibrate the rate-to-wing mapping and stabilize the existing flight controller before any biological or stable-flight claim."
-  }
+    "next_decision": "Calibrate the rate-to-wing mapping before biological flight claims; separately validate controller stability over longer horizons.",
+    "body_controller_feedback": true,
+    "neural_sensor_feedback": false,
+    "neural_experiment_path": "data/experiments/comparison-dng02-20261004T005438Z-0aa143.json",
+    "neural_experiment_sha256": "c324e58ae4d7438da29e9a442c9f4bc40e053d9bd6faff7a25b00d7fde31611d",
+    "native_omnigent_receipt_path": "data/discovery/tool-receipts/tool_f45963ca9f204a4ca9b3f02fd266fcbf.json",
+    "native_omnigent_receipt_sha256": "183d699e59bce1c4bbb445173fe586031cee5217ac4ec931ee1c6a008f104d90",
+    "neural_execution_context": "Omnigent native tool",
+    "body_execution_context": "manual open-loop replay of fresh native Omnigent neural test A into published trained flight controller"
+  },
+  "discovery": {
+    "verified": true,
+    "omnigent_version": "0.16.0",
+    "root_conversation_id": "2e99e639e48743ee874f0ecfefc8a08d",
+    "exported_at": "2026-10-04T01:08:50.884563+00:00",
+    "trace_url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/discovery/native-trace.json",
+    "trace_sha256": "c853fac9e1494b3f90fbe1c89b921bfee3176441cb02641c44e923d6b6210b28",
+    "evidence_mode": "independently retrieved cached primary evidence; BrightData unavailable",
+    "verification_scope": "Successful collected native handoffs in order; actual experimenter receipt and sealed comparison/raw spike integrity; analyst record links and frozen next_test. Semantic scientific validity and immutable archival sealing remain separate.",
+    "stages": [
+      {
+        "role": "researcher",
+        "conversation_id": "53fd729f1b6a4f7b9e329544acd6d3c3",
+        "final_item_sha256": "a3cbd8e00bfb292f3207df2af238f038671a29cc3ea4f38e10cbac910f7536a1",
+        "inbox_result_item_sha256": "7926979bab62bf3018e1b333423b88951103ac44a9493482b843ef6383b73656",
+        "observed_tools": [
+          "read_source_snapshot",
+          "search_knowledge"
+        ],
+        "output_excerpt": "BrightData unavailable; no network used. Evidence below was independently retrieved from local KB hash-verified snapshots.\n\n`organism`: adult *Drosophila melanogaster*  \n`dataset`: FAFB FlyWire v783 only  \n`model_commit`: `91bdd1e7dcf193f3e7ca5a8933497fcef63b7960`  \n`design`: `dng02-input-v1`  \n`design_sha256`: `e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6`  \n`initial_selected_test`: `A`\n\n| source / claim | hash / location | supports | does NOT support |\n|---|---|---|---|\n| `src_ed165fa0105fe71168bc` / `clm_3b70e19bd21e4140bb41fc8ca5b2d9b7` | `2fe58a0a27de98343ac509c6aebb11885ae8f862499af7ca551ce980d365a99d`; URL `https://pmc.ncbi.nlm.nih.gov/articles/PMC9206711/`; pub `2022-01-31`; loc: Summary; Results; Figs. 3A-B, 4; saved HTML P8/P9/P15/P16 | DNg02 population regulates wingbeat amplitude in already-flying tethered flies; evidence type: optogenetic perturbation + two-photon functional imaging. | No flight initiation proof; no stable free/body flight; no natural sensory pathway for our selected inputs; no calibrated actuator mapping. |\n| `src_8ed6cdb697519ced31f7` / `clm_56ffe1e8dc514ef6a84029d464124c34` | `3edb1415a7e812608383e05c93c2ab0a935566925158c83de418688a932f83e1`; URL pinned FlyWire annotations TSV; pub `2024`; loc: selected official v783 rows, cell_type `DNg02_*` + 8 upstream excerpt | Official FAFB FlyWire v783 annotation basis for 25 DNg02 readout cells and 8 selected upstream cells; evidence type: dataset annotation + local index membership validation. | Does not prove function, causality, sensory role, or biological correctness of upstream selection. Selected upstream group is graph-selected model assumption. |\n| `src_26b56b10e90a9cdc96ac` / `clm_f0e3ce6e163f42a8abc9f1b407af3be9` | `6a3b47e44ea8852b22d1b18291dde8d86a23ec70ae477e18d3b7311df1ae0e5a`; URL `https://pmc.ncbi.nlm.nih.gov/articles/PMC11446845/`; pub `2024-10-02`; loc: model scope, baseline 0 Hz, feeding/grooming validation, incomplete descending motor circuits | Shiu whole-brain LIF model scope: simplified signed-weight connectome model; validation reported for feeding/grooming circuits; local use constrained to v783 data option. | No biological validation for DNg02 flight assay, upstream model, stable body flight, or absolute firing-rate calibration. |\n\n`DNg02 root_ids`: `\"720575940610863310\",\"720575940612014131\",\"720575940612804606\",\"720575940613668620\",\"720575940613793170\",\"720575940615679282\",\"720575940617498507\",\"720575940617922439\",\"720575940622042603\",\"720575940622681864\",\"720575940622910188\",\"720575940625144061\",\"720575940625482954\",\"720575940626278129\",\"720575940626377349\",\"720575940626904219\",\"720575940627414887\",\"720575940627850622\",\"720575940628942586\",\"720575940630289804\",\"720575940630492714\",\"720575940632573887\",\"720575940639201443\",\"720575940641305229\",\"720575940647964281\"`\n\n`upstream_root_ids`: `\"720575940623744236\",\"720575940619031837\",\"720575940622712979\",\"720575940625965374\",\"720575940609695683\",\"720575940646682676\",\"720575940619155995\",\"720575940619524555\"`\n\nCarried IDs only: hypothesis `clm_6640c27508c34365a3df7e1d028248fc`; code source `src_38fb76e91124b3802a6d`, hash `fc45837d7122c6ce2a7f3f2f23c515992e4b232aadb919efabb72337fac88e4e`.",
+        "excerpt_truncated": false
+      },
+      {
+        "role": "evidence_reviewer",
+        "conversation_id": "b793ae6b636b4dc7a1a41c48a6a19d69",
+        "final_item_sha256": "50a2d58d74f971776474da05a36dc9094ee3d68009cf2d24ff3f12b443bca892",
+        "inbox_result_item_sha256": "5b61eb73e96e06ab8a9f5798bf0b23e36fd73dee783a1876df7f8c5ca75c52e2",
+        "observed_tools": [
+          "read_source_snapshot",
+          "search_knowledge"
+        ],
+        "output_excerpt": "Die Snapshot-Lesung hat Namiki und die v783-Annotation vollst\u00e4ndig genug geliefert; danach hat die lokale Policy weitere Snapshot-Reads gestoppt. F\u00fcr Shiu/Code st\u00fctze ich mich daher auf die bereits gepr\u00fcften KB-Claims plus die dort gespeicherten Snapshot-Hashes, ohne neue Evidenz zu erfinden.**Stage 2 Evidence Review Result**\n\nVerdict: accepted with narrow scope. Namiki supports only this functional claim: DNg02 population activation changes wingbeat amplitude in already-established tethered flight in adult Drosophila melanogaster under experimental optogenetic/visual conditions. It does not support flight initiation, stable free/body flight, a natural upstream sensory pathway, or a calibrated virtual actuator mapping.\n\nAnnotation-to-v783 identity: accepted. The pinned FlyWire annotation excerpt maps the 25 supplied readout IDs to DNg02_a..g rows in FAFB FlyWire v783 and includes the 8 supplied upstream IDs. IDs remain strings. DNg02 is treated as one population readout; lettered subtypes are annotation labels, not automatically left/right functional subclasses.\n\nSource scope:\n- Namiki `src_ed165fa0105fe71168bc`, hash `2fe58a0a27de98343ac509c6aebb11885ae8f862499af7ca551ce980d365a99d`: wingbeat amplitude regulation during tethered flight only.\n- FlyWire annotation `src_8ed6cdb697519ced31f7`, hash `3edb1415a7e812608383e05c93c2ab0a935566925158c83de418688a932f83e1`: v783 identity/version basis only, not function.\n- Shiu `src_26b56b10e90a9cdc96ac`, hash `6a3b47e44ea8852b22d1b18291dde8d86a23ec70ae477e18d3b7311df1ae0e5a`: LIF model scope; feeding/grooming validation; no DNg02 biological validation.\n- Code `src_38fb76e91124b3802a6d`, hash `fc45837d7122c6ce2a7f3f2f23c515992e4b232aadb919efabb72337fac88e4e`: pinned Shiu/Brian2 commit `91bdd1e7dcf193f3e7ca5a8933497fcef63b7960`.\n\nAccepted claim IDs: `clm_3b70e19bd21e4140bb41fc8ca5b2d9b7`, `clm_56ffe1e8dc514ef6a84029d464124c34`, `clm_f0e3ce6e163f42a8abc9f1b407af3be9`, `clm_6640c27508c34365a3df7e1d028248fc`. No new claim stored; existing checked source-linked claims were sufficient.\n\nDesign carried: `dng02-input-v1`, sha256 `e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6`, `initial_selected_test=A`.\n\nLimitations: upstream graph-based selection remains a model assumption, not evidence of a natural sensory pathway. Model outcomes are in-silico predictions only. Snapshot reads confirmed Namiki + v783 annotation directly; local KB policy then reached `10/10` tool-call limit, so Shiu/code were accepted from already checked source-linked claims and hashes. No BrightData/network used.",
+        "excerpt_truncated": false
+      },
+      {
+        "role": "hypothesis_planner",
+        "conversation_id": "7bd60b05103a445ba38c42302a2f53d4",
+        "final_item_sha256": "6c33d065bb26d787753d0b8bb6cd2cea0f9768f77f00067c327a1a4429af3a6f",
+        "inbox_result_item_sha256": "55873fbdba1b6f75f7226cc2879d569179b868d295cc1abbb5e94bc9b36231a8",
+        "observed_tools": [],
+        "output_excerpt": "question: Does stimulating the sealed graph-selected upstream inputs produce a measurable DNg02 readout difference in the FAFB FlyWire v783 Shiu/Brian2 model?\n\nhypothesis: With adult Drosophila melanogaster FAFB FlyWire v783 IDs and pinned Shiu/Brian2 commit `91bdd1e7dcf193f3e7ca5a8933497fcef63b7960`, 150 Hz stimulation of the 8 preregistered upstream inputs for 200 ms will increase mean DNg02 spikes/s across the sealed 25 DNg02 readout cells versus sham, with positive paired seed-wise differences for seeds `42/43/44`.\n\ncandidate_tests:\n- \"A: upstream stimulation vs sham; conditions sham vs upstream_drive; 8 graph-selected inputs at 150 Hz, 200 ms, seeds 42/43/44; measure mean DNg02 spikes/s across all 25 cells and paired seed-wise difference; success if positive paired difference every seed.\"\n- \"B: outgoing-connectivity necessity control; conditions upstream_drive vs outgoing_disconnected; identical input with stimulated inputs' outgoing connections disconnected; measure 1 - disconnected/driven mean rate per seed; success if >=0.80 reduction for every nonzero driven seed.\"\n\nselected_test: A\n\nrationale: Select A first because it is the propagation and feasibility test: before testing causal necessity by disconnecting outgoing edges, the sealed upstream drive must first show that activity can propagate to the DNg02 readout under the fixed model, dt, duration, seeds, targets, and measurement rules. B is more informative causally, but only after A produces a DNg02 readout difference.\n\nids_hashes: design `dng02-input-v1`, sha256 `e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6`, initial_selected_test `A`; sources/claims: Namiki `src_ed165fa0105fe71168bc` / `clm_3b70e19bd21e4140bb41fc8ca5b2d9b7`; v783 annotation `src_8ed6cdb697519ced31f7` / `clm_56ffe1e8dc514ef6a84029d464124c34`; Shiu `src_26b56b10e90a9cdc96ac` / `clm_f0e3ce6e163f42a8abc9f1b407af3be9`; hypothesis `clm_6640c27508c34365a3df7e1d028248fc`; code `src_38fb76e91124b3802a6d`, hash `fc45837d7122c6ce2a7f3f2f23c515992e4b232aadb919efabb72337fac88e4e`.\n\nbranches: If A succeeds for all seeds, run B next without changing parameters. If A is null or not positive for every seed, preserve the null and do not retune. If A produces no DNg02 spikes, run direct-DNg02 calibration only to diagnose readout excitability. If responses are unspecific or seed-unstable, report that instability and preregister any follow-up separately.\n\nlimitations: Evidence supports DNg02 identity and tethered-flight wingbeat-amplitude relevance only; it does not establish flight initiation, stable body flight, natural sensory drive, or calibrated actuator mapping. Shiu validation is feeding/grooming scoped and not DNg02-biological validation. Neural rates must not be interpreted as body or flight behavior.",
+        "excerpt_truncated": false
+      },
+      {
+        "role": "experimenter",
+        "conversation_id": "7b38a4ae34c643b68ecf1916027c0b7e",
+        "final_item_sha256": "106cc175e3082efd1c053ecb867487ae49919a1d608bb776b35b98c1979165d5",
+        "inbox_result_item_sha256": "4b76e3780efd371b612a9f54971f18d32b21497e5dac67af8d90b497b2bedb90",
+        "observed_tools": [
+          "read_local_artifact",
+          "run_frozen_experiment",
+          "search_knowledge"
+        ],
+        "output_excerpt": "**DNg02 sealed loop stage 4: fresh native test A completed**\n\n- `receipt_id`: `tool_f45963ca9f204a4ca9b3f02fd266fcbf`\n- `receipt_path`: `data/discovery/tool-receipts/tool_f45963ca9f204a4ca9b3f02fd266fcbf.json`\n- `comparison_path`: `data/experiments/comparison-dng02-20261004T005438Z-0aa143.json`\n- `design_path`: `research/designs/dng02-input-v1.json`\n- `design_sha256`: `e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6`\n- `wall_seconds`: `20.9062`\n\n**Parameters**\nFAFB FlyWire v783 only; pinned Shiu/Brian2 commit `91bdd1e7dcf193f3e7ca5a8933497fcef63b7960`; test `A`; 8 sealed upstream inputs; 25 DNg02 readouts; `150 Hz`; `200 ms`; seeds `42,43,44`; conditions `sham` vs `upstream_drive`.\n\n**New run IDs / paths**\n- `neural-dng02-20261004T005440Z-a9f7ee` \u2014 sham seed 42 \u2014 `data/runs/neural-dng02-20261004T005440Z-a9f7ee`\n- `neural-dng02-20261004T005444Z-c33c4e` \u2014 upstream seed 42 \u2014 `data/runs/neural-dng02-20261004T005444Z-c33c4e`\n- `neural-dng02-20261004T005447Z-d51a7b` \u2014 sham seed 43 \u2014 `data/runs/neural-dng02-20261004T005447Z-d51a7b`\n- `neural-dng02-20261004T005449Z-c3e2a2` \u2014 upstream seed 43 \u2014 `data/runs/neural-dng02-20261004T005449Z-c3e2a2`\n- `neural-dng02-20261004T005452Z-80ef64` \u2014 sham seed 44 \u2014 `data/runs/neural-dng02-20261004T005452Z-80ef64`\n- `neural-dng02-20261004T005455Z-475a2b` \u2014 upstream seed 44 \u2014 `data/runs/neural-dng02-20261004T005455Z-475a2b`\n\n**Measured result**\nControl/sham: population mean rates `[0.0, 0.0, 0.0] Hz`; mean `0.0 Hz`; `0` readout spike events; `0` active readout neurons.\n\nUpstream drive: population mean rates `[17.2, 18.8, 18.4] Hz`; mean `18.133333333333333 Hz`; sample SD `0.8326663997864536`; min/max `17.2/18.8 Hz`.\n\nPaired differences: `[17.2, 18.8, 18.4] Hz`; all positive. Readout spike events: `[86, 94, 92]`; active DNg02 readouts: `[14, 14, 13]`; nonstimulated active network cells: `[235, 193, 228]`.\n\n`receipt.result.summary.next_test`: `B`\n\n**Limitations**\nThis is a descriptive model signal only, not biological validation, flight proof, or body behavior. Sham zero is expected under zero spontaneous activity. The graph-selected upstream inputs are hypotheses, not proven natural sensory inputs. The FAFB brain lacks complete VNC/wing-muscle circuitry, and the Shiu LIF model\u2019s prior biological validation scope was feeding/grooming, not DNg02 flight output.",
+        "excerpt_truncated": false
+      },
+      {
+        "role": "analyst",
+        "conversation_id": "b77f9d159a674b41bf6b7a04835f1fec",
+        "final_item_sha256": "cbe68a6f18ea47f1feedeba2588ebe3e5f4294388183909e16b252a86af28425",
+        "inbox_result_item_sha256": "7d34480bdc0a402ddd54ccdc943cbfe8f5fb6dd2404149839f747e1188522ed2",
+        "observed_tools": [
+          "read_local_artifact",
+          "save_discovery_record"
+        ],
+        "output_excerpt": "**Saved Record**\n\n- `record_id`: `discovery_b166bf63865447098bd121ee6cbea21c`\n- `path`: `data/discovery/discovery_b166bf63865447098bd121ee6cbea21c.json`\n- `selected_test`: `A`\n- `next_test`: `B`\n- `tool_receipt_id`: `tool_f45963ca9f204a4ca9b3f02fd266fcbf`\n- `comparison_path`: `data/experiments/comparison-dng02-20261004T005438Z-0aa143.json`\n\n**Measured A Result**\n\nSham stayed at `[0.0, 0.0, 0.0] Hz`, mean `0.0`.\n\nUpstream drive produced `[17.2, 18.8, 18.4] Hz`, mean `18.133333333333333 Hz`, sample SD `0.8326663997864536`.\n\nPaired differences were `[17.2, 18.8, 18.4] Hz`, all positive. Drive readout spike events were `[86, 94, 92]`; active DNg02 readouts were `[14, 14, 13]`; nonstimulated active network cells were `[235, 193, 228]`.\n\n**Decision**\n\nA hits the sealed design\u2019s effect branch: stable nonzero upstream-drive response versus expected 0 Hz sham. Decision saved as: `Run test B outgoing-disconnection causality control`.\n\nReason: A supports model-only numerical propagation from graph-selected upstream inputs to DNg02 readouts, but does not answer whether the response requires outgoing connectivity. So the next test is exactly `B`.\n\n**Caveats**\n\n`discovery_loop_verified` is `false`: native trace audit remains pending. This is not a biological flight claim, not body behavior, not natural sensory drive, and not a speedup claim. Outgoing-disconnection, direct calibration, and manual feasibility remain separate contexts from this A receipt.",
+        "excerpt_truncated": false
+      }
+    ],
+    "receipts": [
+      {
+        "receipt_id": "tool_f45963ca9f204a4ca9b3f02fd266fcbf",
+        "test": "A",
+        "wall_seconds": 20.9062,
+        "url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/discovery/tool-receipts/tool_f45963ca9f204a4ca9b3f02fd266fcbf.json",
+        "sha256": "183d699e59bce1c4bbb445173fe586031cee5217ac4ec931ee1c6a008f104d90",
+        "run_ids": [
+          "neural-dng02-20261004T005440Z-a9f7ee",
+          "neural-dng02-20261004T005444Z-c33c4e",
+          "neural-dng02-20261004T005447Z-d51a7b",
+          "neural-dng02-20261004T005449Z-c3e2a2",
+          "neural-dng02-20261004T005452Z-80ef64",
+          "neural-dng02-20261004T005455Z-475a2b"
+        ],
+        "comparison_url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/experiments/comparison-dng02-20261004T005438Z-0aa143.json",
+        "summary": {
+          "test": "A",
+          "n_seeds": 3,
+          "inference": "descriptive model comparison; no p-value or biological replication",
+          "sham": {
+            "population_mean_rates_hz": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mean_hz": 0.0,
+            "sample_sd_hz": 0.0,
+            "min_hz": 0.0,
+            "max_hz": 0.0
+          },
+          "upstream_drive": {
+            "population_mean_rates_hz": [
+              17.2,
+              18.8,
+              18.4
+            ],
+            "mean_hz": 18.133333333333333,
+            "sample_sd_hz": 0.8326663997864536,
+            "min_hz": 17.2,
+            "max_hz": 18.8
+          },
+          "paired_difference_hz": [
+            17.2,
+            18.8,
+            18.4
+          ],
+          "supports_model_hypothesis": true,
+          "updated_decision": "Run test B outgoing-disconnection causality control",
+          "next_test": "B"
+        },
+        "design_sha256": "e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6"
+      },
+      {
+        "receipt_id": "tool_dec9321a154f4053b3d99f56f0b1376b",
+        "test": "B",
+        "wall_seconds": 19.8832,
+        "url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/discovery/tool-receipts/tool_dec9321a154f4053b3d99f56f0b1376b.json",
+        "sha256": "8b74a374f3342d0e5b788340297141a365dddac4ea3753aa219290a2b2c27550",
+        "run_ids": [
+          "neural-dng02-20261004T011207Z-5714b5",
+          "neural-dng02-20261004T011210Z-30bd3a",
+          "neural-dng02-20261004T011213Z-3d3e38",
+          "neural-dng02-20261004T011216Z-98839b",
+          "neural-dng02-20261004T011219Z-38504d",
+          "neural-dng02-20261004T011222Z-149937"
+        ],
+        "comparison_url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/experiments/comparison-dng02-20261004T011205Z-88d84a.json",
+        "summary": {
+          "test": "B",
+          "n_seeds": 3,
+          "inference": "descriptive model comparison; no p-value or biological replication",
+          "upstream_drive": {
+            "population_mean_rates_hz": [
+              17.2,
+              18.8,
+              18.4
+            ],
+            "mean_hz": 18.133333333333333,
+            "sample_sd_hz": 0.8326663997864536,
+            "min_hz": 17.2,
+            "max_hz": 18.8
+          },
+          "outgoing_disconnected": {
+            "population_mean_rates_hz": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mean_hz": 0.0,
+            "sample_sd_hz": 0.0,
+            "min_hz": 0.0,
+            "max_hz": 0.0
+          },
+          "paired_fraction_reduction": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "supports_outgoing_dependency": true,
+          "updated_decision": "Model output depends on source axonal weights; next validate upstream identities and test a matched non-target input before any biological flight claim",
+          "next_test": "matched_input_and_sensory_validation"
+        },
+        "design_sha256": "e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6"
+      }
+    ],
+    "analyst_records": [
+      {
+        "record_id": "discovery_b166bf63865447098bd121ee6cbea21c",
+        "url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/discovery/discovery_b166bf63865447098bd121ee6cbea21c.json",
+        "sha256": "ed0e45a3e2298ce217856120d140a7663cc7d32e7a2360d0b87df65b145c52f0",
+        "question": "Do eight connectivity-selected right-side upstream neurons drive firing in DNg02 cells in the fixed full-v783 LIF model, and does response require outgoing connections?",
+        "candidate_tests": [
+          "A: upstream stimulation versus sham; 8 graph-selected inputs at150Hz for200ms, seeds42/43/44; measure mean DNg02 Hz across all25 readouts and paired differences.",
+          "B: outgoing-connectivity necessity control; identical input with stimulated inputs' outgoing synapses disconnected; measure fractional reduction vs driven output."
+        ],
+        "selected_test": "A",
+        "updated_decision": "Run test B outgoing-disconnection causality control",
+        "decision_reason": "The sealed A comparison shows an upstream-drive effect in the fixed full-v783 LIF model, but A only establishes numerical propagation from graph-selected inputs to DNg02 readouts. Because the hypothesis explicitly asks whether the response requires outgoing connections, the next measured experiment is the receipt-specified B control.",
+        "next_test": "B",
+        "source_ids": [
+          "src_ed165fa0105fe71168bc",
+          "src_8ed6cdb697519ced31f7",
+          "src_26b56b10e90a9cdc96ac",
+          "src_38fb76e91124b3802a6d"
+        ],
+        "claim_ids": [
+          "clm_3b70e19bd21e4140bb41fc8ca5b2d9b7",
+          "clm_56ffe1e8dc514ef6a84029d464124c34",
+          "clm_f0e3ce6e163f42a8abc9f1b407af3be9",
+          "clm_6640c27508c34365a3df7e1d028248fc"
+        ],
+        "tool_receipt_ids": [
+          "tool_f45963ca9f204a4ca9b3f02fd266fcbf"
+        ]
+      },
+      {
+        "record_id": "discovery_0c3c59b3fbb044c78c9c7c7189676c68",
+        "url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/discovery/discovery_0c3c59b3fbb044c78c9c7c7189676c68.json",
+        "sha256": "6edd2426fd61781e2d7555b404155bce21ebf4be101388613078570da68684e8",
+        "question": "Do eight connectivity-selected upstream neurons drive DNg02 firing in fixed full-v783 LIF model, and does response require their outgoing connections?",
+        "candidate_tests": [
+          "A: upstream stimulation versus sham; 8 graph-selected inputs at150Hz for200ms, seeds42/43/44; measure mean DNg02 Hz across all25 readouts and paired differences.",
+          "B: outgoing-connectivity necessity control; identical input with stimulated inputs' outgoing synapses disconnected; measure fractional reduction vs driven output."
+        ],
+        "selected_test": "B",
+        "updated_decision": "Model output depends on source axonal weights; next validate upstream identities and test a matched non-target input before any biological flight claim",
+        "decision_reason": "The actual B receipt shows a 100% fractional reduction across all three seeds when outgoing synapses are disconnected, distinguishing numerical propagation through source axonal weights from sham, direct calibration, body physics, or manual feasibility contexts.",
+        "next_test": "matched_input_and_sensory_validation",
+        "source_ids": [
+          "src_ed165fa0105fe71168bc",
+          "src_8ed6cdb697519ced31f7",
+          "src_26b56b10e90a9cdc96ac",
+          "src_38fb76e91124b3802a6d"
+        ],
+        "claim_ids": [
+          "clm_3b70e19bd21e4140bb41fc8ca5b2d9b7",
+          "clm_56ffe1e8dc514ef6a84029d464124c34",
+          "clm_f0e3ce6e163f42a8abc9f1b407af3be9",
+          "clm_6640c27508c34365a3df7e1d028248fc"
+        ],
+        "tool_receipt_ids": [
+          "tool_dec9321a154f4053b3d99f56f0b1376b"
+        ]
+      }
+    ],
+    "verified_run_ids": [
+      "neural-dng02-20261004T005440Z-a9f7ee",
+      "neural-dng02-20261004T005444Z-c33c4e",
+      "neural-dng02-20261004T005447Z-d51a7b",
+      "neural-dng02-20261004T005449Z-c3e2a2",
+      "neural-dng02-20261004T005452Z-80ef64",
+      "neural-dng02-20261004T005455Z-475a2b",
+      "neural-dng02-20261004T011207Z-5714b5",
+      "neural-dng02-20261004T011210Z-30bd3a",
+      "neural-dng02-20261004T011213Z-3d3e38",
+      "neural-dng02-20261004T011216Z-98839b",
+      "neural-dng02-20261004T011219Z-38504d",
+      "neural-dng02-20261004T011222Z-149937"
+    ],
+    "preferred_run_id": "neural-dng02-20261004T005444Z-c33c4e",
+    "unsuccessful_tool_output_count": 3,
+    "no_arbitrary_shell_or_apply_patch_observed": true,
+    "runtime_harness": "unknown",
+    "runtime_model": "unknown",
+    "cross_session_followup_proofs": [],
+    "followup_traces": [
+      {
+        "verified": true,
+        "omnigent_version": "0.16.0",
+        "root_conversation_id": "944082e71d344da6a3b44e5b7abdd723",
+        "exported_at": "2026-10-04T01:23:15.564056+00:00",
+        "trace_url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/discovery/native-trace-b.json",
+        "trace_sha256": "5d0357d90a9ab819aca307dd463433b50322cc760f2e0613a7c184131028c171",
+        "evidence_mode": "independently retrieved cached primary evidence; BrightData unavailable",
+        "verification_scope": "Successful collected native handoffs in order; actual experimenter receipt and sealed comparison/raw spike integrity; analyst record links and frozen next_test. Separate follow-up roots require recursive prior-tree reverification, unchanged archived artifact hashes and an exact prior-decision read before current planning/execution. Semantic scientific validity and immutable archival sealing remain separate.",
+        "stages": [
+          {
+            "role": "researcher",
+            "conversation_id": "0ddeff4888cb43b78a5a3dd1170ca25c",
+            "final_item_sha256": "06a074d34ed86ea85fb04d58cfca19cfcedd6b9196346ca647f6c9eaf79fe0db",
+            "inbox_result_item_sha256": "ee3b4ef50ef7c66fa097fe5ff0a81871db096c55b0f7b795272d0979a34b5fed",
+            "observed_tools": [
+              "read_source_snapshot"
+            ],
+            "output_excerpt": "BrightData/search/fetch unavailable by instruction; evidence below was independently retrieved from local KB primary snapshots only.\n\n```json\n{\n  \"stage\": \"1/5 researcher\",\n  \"mode\": \"existing-source-only\",\n  \"dataset\": \"FAFB FlyWire v783\",\n  \"model_commit\": \"Shiu/Brian2 91bdd1e7dcf193f3e7ca5a8933497fcef63b7960\",\n  \"sealed_design\": \"dng02-input-v1 sha256:e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6\",\n  \"claim_ids\": [\n    \"clm_3b70e19bd21e4140bb41fc8ca5b2d9b7\",\n    \"clm_56ffe1e8dc514ef6a84029d464124c34\",\n    \"clm_f0e3ce6e163f42a8abc9f1b407af3be9\",\n    \"clm_6640c27508c34365a3df7e1d028248fc\"\n  ],\n  \"sources\": [\n    {\n      \"source_id\": \"src_ed165fa0105fe71168bc\",\n      \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9206711/\",\n      \"date\": \"2022-01-31\",\n      \"location\": \"offset 0, article header/title\",\n      \"cell_type_or_ids\": \"DNg02 literature context\",\n      \"supports\": \"Primary paper: 'A population of descending neurons that regulate the flight motor of Drosophila'. Use only as tethered-flight wing-amplitude evidence.\",\n      \"evidence_type\": \"experimental physiology/behavior in already-flying tethered flies\",\n      \"limitations\": \"Does not prove flight initiation; does not biologically validate our v783 graph-selected input group or motor adapter.\"\n    },\n    {\n      \"source_id\": \"src_8ed6cdb697519ced31f7\",\n      \"url\": \"https://raw.githubusercontent.com/flyconnectome/flywire_annotations/ebd66db2596fcc39c6950fb54ea3efa00f7fe8a0/supplemental_files/Supplemental_file1_neuron_annotations.tsv\",\n      \"date\": \"pinned GitHub snapshot, commit ebd66db2596fcc39c6950fb54ea3efa00f7fe8a0\",\n      \"location\": \"offset 0, TSV header and first annotation rows\",\n      \"cell_type_or_ids\": \"DNg02_a/b/c/e/f/g rows; example root_ids 720575940612014131, 720575940612804606, 720575940647964281\",\n      \"supports\": \"Official pinned FlyWire annotation rows identify DNg02 descending neurons in FAFB/FlyWire v783-style annotations, with fields such as root_id, cell_type, flow=efferent, super_class=descending, side, nerve=CV, fbbt_id.\",\n      \"evidence_type\": \"dataset annotation\",\n      \"limitations\": \"Annotation identity only; neurotransmitter fields are predictions/confidence-scored; not functional proof.\"\n    },\n    {\n      \"source_id\": \"src_26b56b10e90a9cdc96ac\",\n      \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC11446845/\",\n      \"date\": \"2024-10-02\",\n      \"location\": \"offset 0, article header/title\",\n      \"cell_type_or_ids\": \"adult Drosophila computational brain model\",\n      \"supports\": \"Shiu et al. model scope: 'A Drosophila computational brain model reveals sensorimotor processing'. Relevant for using published computational brain modeling as precedent.\",\n      \"evidence_type\": \"computational model paper\",\n      \"limitations\": \"Validation scope is sensorimotor modeling, not proof that our DNg02 stimulation/readout or body coupling is biologically calibrated.\"\n    }\n  ],\n  \"current_B_relevance\": \"Prior A: drive mean 18.1333 Hz vs sham 0 supports proceeding to B, but upstream numerical input group remains graph-selected experimental model assumption.\"\n}\n```",
+            "excerpt_truncated": false
+          },
+          {
+            "role": "evidence_reviewer",
+            "conversation_id": "19fc86a9a6c044238c6de9a64c70c275",
+            "final_item_sha256": "3fc3f59eb98aa4cef415f3e8a2d16949bf9dfe530ce30874333880a1dfe01ed5",
+            "inbox_result_item_sha256": "d4833a783fb5a987616de08a5ad7e31a0df12988e0b5abdca0381f277ca119d2",
+            "observed_tools": [
+              "read_source_snapshot",
+              "search_knowledge"
+            ],
+            "output_excerpt": "{\n  \"status\": \"checked_pass_with_scope_limits\",\n  \"supported_claim_ids\": [\n    \"clm_3b70e19bd21e4140bb41fc8ca5b2d9b7\",\n    \"clm_56ffe1e8dc514ef6a84029d464124c34\",\n    \"clm_f0e3ce6e163f42a8abc9f1b407af3be9\",\n    \"clm_6640c27508c34365a3df7e1d028248fc\"\n  ],\n  \"source_ids\": {\n    \"src_ed165fa0105fe71168bc\": \"Namiki 2022 PMC snapshot sha256 2fe58a0a27de98343ac509c6aebb11885ae8f862499af7ca551ce980d365a99d\",\n    \"src_8ed6cdb697519ced31f7\": \"pinned FlyWire annotations snapshot sha256 3edb1415a7e812608383e05c93c2ab0a935566925158c83de418688a932f83e1\",\n    \"src_26b56b10e90a9cdc96ac\": \"Shiu 2024 PMC snapshot sha256 6a3b47e44ea8852b22d1b18291dde8d86a23ec70ae477e18d3b7311df1ae0e5a\",\n    \"src_38fb76e91124b3802a6d\": \"model.py commit 91bdd1e7 sha256 fc45837d7122c6ce2a7f3f2f23c515992e4b232aadb919efabb72337fac88e4e\"\n  },\n  \"identity_check\": {\n    \"result\": \"pass\",\n    \"dataset_version\": \"FAFB FlyWire v783\",\n    \"count\": 25,\n    \"cell_type_prefix\": \"DNg02_a..g\",\n    \"fields_confirmed\": [\"root_id\", \"cell_type\", \"flow=efferent\", \"super_class=descending\", \"side\", \"nerve=CV\"],\n    \"ids_remain_strings\": true,\n    \"note\": \"DNg02 is treated as a population; lettered subtypes are not automatic left/right functional subclasses.\"\n  },\n  \"functional_scope_check\": {\n    \"result\": \"pass_limited\",\n    \"supported\": \"DNg02 population regulates wingbeat amplitude in already-flying tethered adult Drosophila.\",\n    \"rejected\": [\"flight initiation\", \"biological validation of our body adapter\", \"validation of upstream graph-selected inputs as natural sensory pathway\"]\n  },\n  \"limitations\": [\n    \"Namiki supports literature context for tethered flight wing-amplitude regulation only.\",\n    \"FlyWire annotation source supports identity/membership only, not function.\",\n    \"Shiu supports model precedent and limited feeding/grooming validation scope, not DNg02 flight/body calibration.\",\n    \"Graph-based upstream selection is an agent/model assumption.\",\n    \"Prior A drive mean 18.1333Hz vs sham 0 is in-silico model evidence only.\"\n  ],\n  \"pass_to_planner\": {\n    \"next_test\": \"B\",\n    \"allowed_claim\": \"model-predicted DNg02 readout modulation under preregistered dng02-input-v1\",\n    \"forbidden_claim\": \"biological flight validation\"\n  }\n}",
+            "excerpt_truncated": false
+          },
+          {
+            "role": "hypothesis_planner",
+            "conversation_id": "1b6e2fb0e161472bb15a4197892911ad",
+            "final_item_sha256": "44bff5912bcfe7091f4ddcd59d50e71a8811dec7a4b3ad9372121c3920665edb",
+            "inbox_result_item_sha256": "438554e3d0cff9587194b9dd7ff68f49fc4718345d3d9d6107013e68e3ae32d9",
+            "observed_tools": [],
+            "output_excerpt": "I\u2019ll keep this as the stage-3 planner handoff: no reruns, no file writes, and I\u2019ll treat A as already established background evidence for selecting B.```json\n{\n  \"selected_test\": \"B\",\n  \"question\": \"Does the prior A DNg02 readout increase require propagation through the stimulated upstream inputs' outgoing connections?\",\n  \"hypothesis\": \"If A's DNg02 increase was propagated through the graph-selected upstream drive, then disconnecting the stimulated inputs' outgoing synapses while keeping the same 150Hz/200ms stimulation should substantially reduce mean DNg02 Hz relative to the prior driven condition.\",\n  \"candidate_tests\": [\n    \"A: upstream stimulation versus sham; 8 graph-selected inputs at150Hz for200ms, seeds42/43/44; measure mean DNg02 Hz across all25 readouts and paired differences.\",\n    \"B: outgoing-connectivity necessity control; identical input with stimulated inputs' outgoing synapses disconnected; measure fractional reduction vs driven output.\"\n  ],\n  \"why_A_not_repeated\": \"A is now background evidence: verified native A tree 2e99e639e48743ee874f0ecfefc8a08d, receipt tool_f45963ca9f204a4ca9b3f02fd266fcbf, drive mean 18.133333333333333 Hz vs sham 0 with paired differences [17.2,18.8,18.4], all positive; preregistered next_test was B.\",\n  \"falsifiable_measurement_for_B\": \"Run sealed B with duration200ms, rate150Hz, seeds42/43/44, dt and DNg02 measurement rules preserved; compare mean DNg02 Hz across all 25 readouts to prior A driven output and report fractional reduction = 1 - mean_B / 18.133333333333333.\",\n  \"decision_branches\": {\n    \"pass\": \"Large reduction supports outgoing-connectivity necessity for the A readout difference.\",\n    \"null\": \"Little/no reduction suggests A's readout difference was not dependent on those outgoing synapses under this model/design.\",\n    \"unspecific\": \"Residual DNg02 activity may reflect alternate graph routes, intrinsic/model effects, or disconnection scope limits.\",\n    \"unstable\": \"Numerical instability or invalid run blocks causal interpretation; do not adjust parameters post hoc.\"\n  },\n  \"limitations\": \"Scope is DNg02 neural rates only; do not infer body or flight behavior. DNg02 support is limited to wingbeat amplitude regulation in already-flying tethered adult Drosophila. Upstream inputs are graph/model-selected, not validated natural sensory pathways.\",\n  \"pass_to_experimenter\": {\n    \"test\": \"B\",\n    \"design_sha256\": \"e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6\",\n    \"source_ids\": [\"src_ed165fa0105fe71168bc\", \"src_8ed6cdb697519ced31f7\", \"src_26b56b10e90a9cdc96ac\", \"src_38fb76e91124b3802a6d\"],\n    \"claim_ids\": [\"clm_3b70e19bd21e4140bb41fc8ca5b2d9b7\", \"clm_56ffe1e8dc514ef6a84029d464124c34\", \"clm_f0e3ce6e163f42a8abc9f1b407af3be9\", \"clm_6640c27508c34365a3df7e1d028248fc\"],\n    \"prior_A_path\": \"data/discovery/discovery_b166bf63865447098bd121ee6cbea21c.json\"\n  }\n}\n```",
+            "excerpt_truncated": false
+          },
+          {
+            "role": "experimenter",
+            "conversation_id": "391619c131324692abbaa1c7dda457c3",
+            "final_item_sha256": "9381bc08b43358d3d320136cb2c675322d26bb3e980758a9bbfd801f389f43b9",
+            "inbox_result_item_sha256": "830edb61fa2b7a2ffc7b43c5caa4b39713457ba8f7d36f4350d69a7c9064fa1a",
+            "observed_tools": [
+              "read_local_artifact",
+              "run_frozen_experiment",
+              "search_knowledge"
+            ],
+            "output_excerpt": "tool_receipt_id: `tool_dec9321a154f4053b3d99f56f0b1376b`\n\nreceipt_path: `data/discovery/tool-receipts/tool_dec9321a154f4053b3d99f56f0b1376b.json`\n\ncomparison_path: `data/experiments/comparison-dng02-20261004T011205Z-88d84a.json`\n\nrun paths/count: 6 runs\n`data/runs/neural-dng02-20261004T011207Z-5714b5`\n`data/runs/neural-dng02-20261004T011210Z-30bd3a`\n`data/runs/neural-dng02-20261004T011213Z-3d3e38`\n`data/runs/neural-dng02-20261004T011216Z-98839b`\n`data/runs/neural-dng02-20261004T011219Z-38504d`\n`data/runs/neural-dng02-20261004T011222Z-149937`\n\nwall_seconds: `19.8832`\n\nactual receipt.summary:\n```json\n{\n  \"test\": \"B\",\n  \"n_seeds\": 3,\n  \"inference\": \"descriptive model comparison; no p-value or biological replication\",\n  \"upstream_drive\": {\"population_mean_rates_hz\":[17.2,18.8,18.4],\"mean_hz\":18.133333333333333,\"sample_sd_hz\":0.8326663997864536,\"min_hz\":17.2,\"max_hz\":18.8},\n  \"outgoing_disconnected\": {\"population_mean_rates_hz\":[0.0,0.0,0.0],\"mean_hz\":0.0,\"sample_sd_hz\":0.0,\"min_hz\":0.0,\"max_hz\":0.0},\n  \"paired_fraction_reduction\": [1.0,1.0,1.0],\n  \"supports_outgoing_dependency\": true,\n  \"updated_decision\": \"Model output depends on source axonal weights; next validate upstream identities and test a matched non-target input before any biological flight claim\",\n  \"next_test\": \"matched_input_and_sensory_validation\"\n}\n```\n\nlimitations: model signal only; no p-value, biological replication, sensory validation, or flight proof. Design path reported by tool: `research/designs/dng02-input-v1.json`, sha256 matched `e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6`.",
+            "excerpt_truncated": false
+          },
+          {
+            "role": "analyst",
+            "conversation_id": "bd6893ce97984c30a4e7474043cf1db9",
+            "final_item_sha256": "7e2d2fea32e09d188b24a3607393a560c052177abe3f120f8f39c233681c617b",
+            "inbox_result_item_sha256": "48f7762ba4500a3e8f68b8b4b730b6f5dbea500ca9d4869a73cee5730049835b",
+            "observed_tools": [
+              "read_local_artifact",
+              "save_discovery_record",
+              "search_knowledge"
+            ],
+            "output_excerpt": "Saved B discovery record.\n\n`record_id`: `discovery_0c3c59b3fbb044c78c9c7c7189676c68`  \n`path`: `data/discovery/discovery_0c3c59b3fbb044c78c9c7c7189676c68.json`  \n`receipt_id`: `tool_dec9321a154f4053b3d99f56f0b1376b`\n\nValues: upstream drive mean `18.133333333333333 Hz`; outgoing-disconnected mean `0 Hz`; paired fractional reduction `[1, 1, 1]`; `supports_outgoing_dependency: true`.\n\nNext test: `matched_input_and_sensory_validation`.\n\nCaveat preserved: discovery loop/native trace verification remains pending; no biological flight or stable flight claim.",
+            "excerpt_truncated": false
+          }
+        ],
+        "receipts": [
+          {
+            "receipt_id": "tool_dec9321a154f4053b3d99f56f0b1376b",
+            "test": "B",
+            "wall_seconds": 19.8832,
+            "url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/discovery/tool-receipts/tool_dec9321a154f4053b3d99f56f0b1376b.json",
+            "sha256": "8b74a374f3342d0e5b788340297141a365dddac4ea3753aa219290a2b2c27550",
+            "run_ids": [
+              "neural-dng02-20261004T011207Z-5714b5",
+              "neural-dng02-20261004T011210Z-30bd3a",
+              "neural-dng02-20261004T011213Z-3d3e38",
+              "neural-dng02-20261004T011216Z-98839b",
+              "neural-dng02-20261004T011219Z-38504d",
+              "neural-dng02-20261004T011222Z-149937"
+            ],
+            "comparison_url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/experiments/comparison-dng02-20261004T011205Z-88d84a.json",
+            "summary": {
+              "test": "B",
+              "n_seeds": 3,
+              "inference": "descriptive model comparison; no p-value or biological replication",
+              "upstream_drive": {
+                "population_mean_rates_hz": [
+                  17.2,
+                  18.8,
+                  18.4
+                ],
+                "mean_hz": 18.133333333333333,
+                "sample_sd_hz": 0.8326663997864536,
+                "min_hz": 17.2,
+                "max_hz": 18.8
+              },
+              "outgoing_disconnected": {
+                "population_mean_rates_hz": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "mean_hz": 0.0,
+                "sample_sd_hz": 0.0,
+                "min_hz": 0.0,
+                "max_hz": 0.0
+              },
+              "paired_fraction_reduction": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "supports_outgoing_dependency": true,
+              "updated_decision": "Model output depends on source axonal weights; next validate upstream identities and test a matched non-target input before any biological flight claim",
+              "next_test": "matched_input_and_sensory_validation"
+            },
+            "design_sha256": "e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6"
+          }
+        ],
+        "analyst_records": [
+          {
+            "record_id": "discovery_0c3c59b3fbb044c78c9c7c7189676c68",
+            "url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/discovery/discovery_0c3c59b3fbb044c78c9c7c7189676c68.json",
+            "sha256": "6edd2426fd61781e2d7555b404155bce21ebf4be101388613078570da68684e8",
+            "question": "Do eight connectivity-selected upstream neurons drive DNg02 firing in fixed full-v783 LIF model, and does response require their outgoing connections?",
+            "candidate_tests": [
+              "A: upstream stimulation versus sham; 8 graph-selected inputs at150Hz for200ms, seeds42/43/44; measure mean DNg02 Hz across all25 readouts and paired differences.",
+              "B: outgoing-connectivity necessity control; identical input with stimulated inputs' outgoing synapses disconnected; measure fractional reduction vs driven output."
+            ],
+            "selected_test": "B",
+            "updated_decision": "Model output depends on source axonal weights; next validate upstream identities and test a matched non-target input before any biological flight claim",
+            "decision_reason": "The actual B receipt shows a 100% fractional reduction across all three seeds when outgoing synapses are disconnected, distinguishing numerical propagation through source axonal weights from sham, direct calibration, body physics, or manual feasibility contexts.",
+            "next_test": "matched_input_and_sensory_validation",
+            "source_ids": [
+              "src_ed165fa0105fe71168bc",
+              "src_8ed6cdb697519ced31f7",
+              "src_26b56b10e90a9cdc96ac",
+              "src_38fb76e91124b3802a6d"
+            ],
+            "claim_ids": [
+              "clm_3b70e19bd21e4140bb41fc8ca5b2d9b7",
+              "clm_56ffe1e8dc514ef6a84029d464124c34",
+              "clm_f0e3ce6e163f42a8abc9f1b407af3be9",
+              "clm_6640c27508c34365a3df7e1d028248fc"
+            ],
+            "tool_receipt_ids": [
+              "tool_dec9321a154f4053b3d99f56f0b1376b"
+            ]
+          }
+        ],
+        "verified_run_ids": [
+          "neural-dng02-20261004T011207Z-5714b5",
+          "neural-dng02-20261004T011210Z-30bd3a",
+          "neural-dng02-20261004T011213Z-3d3e38",
+          "neural-dng02-20261004T011216Z-98839b",
+          "neural-dng02-20261004T011219Z-38504d",
+          "neural-dng02-20261004T011222Z-149937"
+        ],
+        "preferred_run_id": null,
+        "unsuccessful_tool_output_count": 4,
+        "no_arbitrary_shell_or_apply_patch_observed": true,
+        "runtime_harness": "unknown",
+        "runtime_model": "unknown",
+        "cross_session_followup_proofs": [
+          {
+            "current_root_conversation_id": "944082e71d344da6a3b44e5b7abdd723",
+            "current_receipt_id": "tool_dec9321a154f4053b3d99f56f0b1376b",
+            "followup_test": "B",
+            "prior_root_conversation_id": "2e99e639e48743ee874f0ecfefc8a08d",
+            "prior_trace_path": "data/discovery/native-trace.json",
+            "prior_trace_sha256": "c853fac9e1494b3f90fbe1c89b921bfee3176441cb02641c44e923d6b6210b28",
+            "prior_tree_reverified": true,
+            "prior_record_id": "discovery_b166bf63865447098bd121ee6cbea21c",
+            "prior_record_path": "data/discovery/discovery_b166bf63865447098bd121ee6cbea21c.json",
+            "prior_record_sha256": "ed0e45a3e2298ce217856120d140a7663cc7d32e7a2360d0b87df65b145c52f0",
+            "prior_receipt_ids": [
+              "tool_f45963ca9f204a4ca9b3f02fd266fcbf"
+            ],
+            "prior_receipt_sha256": {
+              "tool_f45963ca9f204a4ca9b3f02fd266fcbf": "183d699e59bce1c4bbb445173fe586031cee5217ac4ec931ee1c6a008f104d90"
+            },
+            "prior_next_test": "B",
+            "prior_decision_collected_at": 1791075448,
+            "current_record_read": {
+              "path": "data/discovery/discovery_b166bf63865447098bd121ee6cbea21c.json",
+              "content_sha256": "ed0e45a3e2298ce217856120d140a7663cc7d32e7a2360d0b87df65b145c52f0",
+              "call_id": "call_DopFQCtEfyDqz4zWDjVzU7ub",
+              "result_position": 5,
+              "created_at": 1791076103,
+              "result_item_sha256": "496dcade6e1e493121c5c4f085d90be424e77bb40be89baf40b0b859750b7ca1"
+            },
+            "current_planner_launch_position": 32,
+            "current_experimenter_launch_position": 40,
+            "current_numeric_call_created_at": 1791076346,
+            "prior_trace_url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/discovery/native-trace.json",
+            "prior_record_url": "https://github.com/JonasMayerDev/FlyBrainLab/blob/main/data/discovery/discovery_b166bf63865447098bd121ee6cbea21c.json"
+          }
+        ]
+      }
+    ]
+  },
+  "default_run_id": "neural-dng02-20261004T005444Z-c33c4e"
 }

@@ -42,7 +42,7 @@
     "counts": {
       "sources": 8,
       "claims": 4,
-      "runs": 2
+      "runs": 3
     }
   },
   "source_snapshot_note": "Actual retrieved contents; no search-snippet evidence is promoted to a finding."

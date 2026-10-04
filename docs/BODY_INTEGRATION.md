@@ -1,6 +1,6 @@
 # Flybody/MuJoCo und neuronaler Motoradapter
 
-Stand: 4. Oktober 2026, echte lokale Läufe. Die Körperintegration ist umgesetzt: vollständige gespeicherte DNg02-Spikes treiben über einen eingefrorenen Adapter einen vorhandenen Wingbeat-Controller, dessen Kräfte in MuJoCo die Körperzustände verändern. **Stabiler oder biologisch validierter Flug ist nicht erreicht.** Die erste Flugbaseline endet nach 38,8 ms, weil ihre kurze synthetische Referenztrajektorie endet. Eine getrennte Diagnose mit verlängerter Referenz zeigt anschließend einen Höhenabbruch bei 53,6 ms.
+Stand: 4. Oktober 2026, echte lokale Läufe. Die Körperintegration ist umgesetzt: vollständige gespeicherte DNg02-Spikes treiben über einen eingefrorenen Adapter einen vorhandenen Wingbeat-Controller, dessen Kräfte in MuJoCo die Körperzustände verändern. Eine **vorhandene trainierte Autorenpolicy hält den Körper in einem getrennten 200-ms-Lauf in der Luft**. Die Stabilisierung stammt von dieser RL-Policy; biologische Flugsteuerung durch das Connectome ist nicht validiert. Die erste einfache Wingbeat-Baseline endet nach 38,8 ms an ihrer kurzen synthetischen Referenz. Bei verlängerter Referenz zeigt sie einen Höhenabbruch bei 53,6 ms.
 
 ## Tatsächliche Laufumgebung
 
@@ -14,7 +14,7 @@ Stand: 4. Oktober 2026, echte lokale Läufe. Die Körperintegration ist umgesetz
 | Physik / Controller | 0,05 ms / 0,2 ms |
 | Installation | isoliert in `.runtime/body-venv/`; gepinnt in `requirements.body.lock` |
 
-Der Body-Runtime verändert die neuronale `.venv` nicht. Flybody-Autorencode und Modellassets werden durch die gepinnte Installation geladen; SHA-256 jedes installierten Python-, XML- und OBJ-Files steht in `data/body/runtime_manifest.json`. Apache-2.0-Lizenz: `data/body/LICENSE.flybody`. Es werden keine TensorFlow-/Acme-/Ray-Extensions und kein neues RL-Training eingesetzt.
+Der Core-Body-Runtime verändert die neuronale `.venv` nicht. Flybody-Autorencode und Modellassets werden durch die gepinnte Installation geladen; SHA-256 jedes installierten Python-, XML- und OBJ-Files steht in `data/body/runtime_manifest.json`. Apache-2.0-Lizenz: `data/body/LICENSE.flybody`. Die erste einfache Baseline verwendet keine TensorFlow-/Acme-/Ray-Extensions. Für die getrennte Autorenpolicy-Inferenz besteht eine eigene Umgebung; neues RL-Training wird in keiner Variante eingesetzt.
 
 Neu aufsetzen und baseline ausführen:
 
@@ -85,6 +85,51 @@ Die Referenzverlängerung setzt keine gemessene Körperposition nach dem Reset u
 .runtime/body-venv/bin/python -m simulation.body --extend-reference --disable-task-termination
 ```
 
+### Vorhandene trainierte Flugpolicy: gemessener 200-ms-Controllerlauf
+
+Die offiziellen Ergänzungsdaten enthalten eine kleine bestehende Flight-SavedModel-Policy (Policyarchiv 6,5 MB) und ein veröffentlichtes `wing_pattern_fmech.npy` (Flugdatensatzarchiv 12,9 MB). Quellen, Artikelversion 4, Dateinummern, Anbieter-MD5 und extrahierte SHA-256 stehen in `data/body/published_assets_manifest.json`. Die Datenlizenz ist GPL-3.0+; Originalarchive und Modellgewichte bleiben unter der ausgeschlossenen `.runtime/body-published-data/`. Es werden ausschließlich eigene Run Records und numerische Zustände veröffentlicht.
+
+Das veröffentlichte Flügelmuster allein erreicht mit eingeschalteten Abbruchprüfungen 60,6 ms; dann unterschreitet der Thorax 0,2 cm (`data/body/body-diagnostic-20261004T004906Z-66edbb/`). Mit der **vorhandenen trainierten Flight-Policy** erreicht der Körper dagegen volle 200 ms, 1.001 Zustände, minimale Thoraxhöhe 1,01176 cm und 3,98632 cm Verschiebung (`data/body/body-diagnostic-20261004T005630Z-eaf2a2/`). Die Task-Abbruchprüfungen bleiben eingeschaltet. Das ist ein kurzer nachgewiesener Controllerflug unter Modellannahmen, kein Nachweis allgemeinen oder biologisch korrekten Flugverhaltens.
+
+Die separate `.runtime/flight-policy-venv/` ist in `requirements.body.policy.lock` gepinnt: TensorFlow 2.18.0, TensorFlow Probability 0.25.0, tf-keras 2.18.0. Die Autorenpolicy stammt aus einer älteren TensorFlow-Umgebung. `simulation.body_policy` registriert deshalb genau einen alten Independent-TypeSpec-Namen als Alias des aktuellen identischen Distributionstyps. Diese Kompatibilitätsanpassung ist protokolliert. Gespeicherte Gewichte und Graphen bleiben unverändert. Beobachtungen werden wie im Autorenbeispiel in float32 mit Batchdimension umgewandelt; die deterministische Distributionserwartung wird mit der Autorenfunktion `canonical2real` auf physikalische Aktuatorgrenzen abgebildet.
+
+```sh
+.venv/bin/python -m simulation.body_download
+.venv/bin/python -m venv .runtime/flight-policy-venv
+.runtime/flight-policy-venv/bin/python -m pip install -r requirements.body.policy.lock
+.runtime/flight-policy-venv/bin/python -m simulation.body --extend-reference --published-wing-pattern --published-flight-policy
+```
+
+Der Body-Controller nutzt tatsächliche Körperbeobachtungen und seine vorgegebene Referenz. Die neuronale Simulation erhält weiterhin keinen sensorischen Rückkanal. Diese beiden Rückkopplungen werden getrennt ausgewiesen.
+
+### Zweite eingefrorene Kopplungsvariante
+
+`data/coupling/adapter_v2_policy.json` ist am 4.10., 00:59:36 UTC, **vor** seinen gekoppelten 200-ms-Vergleichen eingefroren. Hash: `bde975de924f55e9793c395196674933fbc659093535cb6ed48e9d11e906bc03`. Er erhält unverändert die v1-Readout-IDs, das 10-ms-Fenster, die 100-Hz-Skala, das 0,3-rad-Zentrum und die maximale 10-%-Verstärkung. Neu sind ausschließlich der explizit dokumentierte vorhandene Policy-/Muster-Controller und die ausreichend lange Task-Referenz. v1-Spezifikation und alle bisherigen Ergebnisse bleiben erhalten.
+
+```sh
+.venv/bin/python -m simulation.coupling freeze-policy
+.runtime/flight-policy-venv/bin/python -m simulation.coupling run data/runs/NEURAL_RUN_ID --published-policy
+.runtime/flight-policy-venv/bin/python -m simulation.coupling compare data/body/SHAM_POLICY_RUN data/body/DRIVE_POLICY_RUN --published-policy
+```
+
+Der v2-Export enthält zusätzlich unmodifizierte/modifizierte Wingbeat-Sollwinkel, deren Differenz, Policyaktion vor dem Wingbeat-Anteil und tatsächlich angewendete Aktuatorkontrolle. Damit kann die Kette Spike→Rate→Sollwinkeldifferenz→Physik direkt überprüft werden. Die RL-Policy kompensiert Körperabweichungen selbstständig; kleine Positionsänderungen sind deshalb kein Maß für biologisch korrekte neuronale Flugsteuerung.
+
+### Frische native Omnigent-Run-Provenienz
+
+`data/coupling/native_comparison.json` verwendet die sechs frischen A-Neuronenläufe aus `data/experiments/comparison-dng02-20261004T005438Z-0aa143.json`. Der tatsächliche Omnigent-Tool-Receipt `tool_f45963ca9f204a4ca9b3f02fd266fcbf` und Datei-Hashes sind verlinkt. v1 liefert identische Messwerte zum ersten technischen Test. Die neuronalen Läufe sind unter Omnigent ausgeführt; der anschließende Körperlauf ist ausdrücklich eine manuell gestartete Wiederverwendung dieser echten neuronalen Ergebnisse.
+
+`data/coupling/native_policy_comparison.json` enthält die getrennte v2-Auswertung derselben sechs echten Omnigent-A-Neuronenläufe. **Alle sechs Körperläufe erreichen volle 200 ms mit 1.001 tatsächlichen Zuständen und eingeschalteten Task-Abbruchprüfungen.** Die minimale Thoraxhöhe liegt bei 1,0118–1,0146 cm. Anfangszustand, Controller/Policy, Adapter und Seed sind pro Drive/Sham-Paar identisch; ausschließlich die tatsächlichen neuronalen Events unterscheiden sich.
+
+| Seed | Max. Drive-Faktor / Sham | Max. neuronale Sollwinkeldifferenz | RMS-Unterschied gemessener Flügelwinkel | Positionsunterschied nach 200 ms |
+|---|---|---|---|---|
+| 42 | 1,052 / 1,000 | 0,05390 rad | 0,03102 rad | 0,001641 cm |
+| 43 | 1,040 / 1,000 | 0,04435 rad | 0,02875 rad | 0,002797 cm |
+| 44 | 1,040 / 1,000 | 0,04066 rad | 0,03102 rad | 0,001732 cm |
+
+Sham hat null Readout-Spikes und keine relevante Adapter-Sollwinkeldifferenz (maximal 1,1×10⁻¹⁶ rad Rundung). Die Körperfeedback-Policyaktionen unterscheiden sich danach mit RMS 0,0111–0,0114. Damit sind sowohl der direkte Eingriff in den Wingbeat-Sollwinkel als auch die anschließende reale Physikantwort dokumentiert. Die Stabilisierung durch eine unabhängig trainierte Autorenpolicy bleibt eine Modellkomponente; der Vergleich validiert weder VNC-/Muskelzuordnung noch biologisches Flugverhalten.
+
+Für die aktuelle öffentliche Demo hat **v2 Vorrang bei exakt gleicher ursprünglicher neuronaler Run-ID**; ältere v1-Ausgaben bleiben separat nachvollziehbar. Beispiel Seed 42: `data/body/body-coupled-policy-20261004T010033Z-7a8980/` (Sham), `data/body/body-coupled-policy-20261004T010044Z-de8a13/` (Drive).
+
 ## Export für den öffentlichen Replay-Viewer
 
 Pro Lauf liegen `run.json`, `trajectory.json` und `model_manifest.json` vor. `trajectory.json` enthält alle Controllerschritte, keine erfundene Animation:
@@ -108,6 +153,6 @@ Diese Zahlen sind ein **Schema-Beispiel**, kein zusätzlicher gemessener Zustand
 
 Fünf Vertragsprüfungen bestehen: kausale Fenstergrenzen, Nullsignal/Sättigung, Ablehnung gekappter oder fremder Events, Ablehnung von Zeiten außerhalb des neuronalen Horizonts und Ablehnung einer geänderten Evidenzdatei selbst bei unveränderten IDs. Beim Laden muss der aktuelle Evidenz-SHA-256 mit der eingefrorenen Adapterquelle übereinstimmen. Tatsächliche Baseline sowie drei gekoppelte Drive/Sham-Paare sind zusätzlich ausgeführt und auf endliche physikalische Zustände geprüft. Laufrecords erhalten Provenienz zu ursprünglicher neuronaler Bedingung, Seed und Eingabedatei-Hashes.
 
-Nächstes Experiment: zuerst eine kompatible bestehende Flugpolicy oder ein realistischeres Wingbeat-Muster einbinden und dessen Stabilität separat zeigen; anschließend die eingefrorene neurale Kopplung wiederholen. Muskel-/VNC-Kalibrierung und sensorischer Rückkanal bleiben unabhängig davon offen. Ein längerer neuronaler Lauf allein behebt die gemessene Controllerinstabilität nicht.
+Nächstes Experiment: die vorhandene Flugpolicy über längere Horizonte separat prüfen und die Rate→Muskel-/Flügelzuordnung anhand unabhängiger biologischer Messdaten kalibrieren. Der Schritt „bestehende Policy einbinden, 200-ms-Baseline zeigen und eingefrorene neuronale Kopplung wiederholen“ ist mit v2 tatsächlich ausgeführt. Muskel-/VNC-Kalibrierung, allgemeiner Flugnachweis und sensorischer Rückkanal zum Connectome bleiben offen.
 
 Primärquellen: [Flybody-Autorenrepository](https://github.com/TuragaLab/flybody), [gepinntes Fluginterface](https://github.com/TuragaLab/flybody/blob/d015e9bfe441bd90ae431bac24c55cb74bdbce26/flybody/fly_envs.py), [Wingbeat-Testmuster](https://github.com/TuragaLab/flybody/blob/d015e9bfe441bd90ae431bac24c55cb74bdbce26/flybody/tasks/pattern_generators.py), [Flybody-Publikation](https://doi.org/10.1038/s41586-025-09029-4), [DNg02-Amplitudenstudie](https://doi.org/10.1016/j.cub.2022.01.008).

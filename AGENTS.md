@@ -13,25 +13,26 @@ Abgabe heute, Sonntag, 4. Oktober 2026, **15:00 Uhr Europe/Berlin**; internes Zi
 
 **Omnigent organisiert die Agentenarchitektur:** Datenbeschaffung, Recherche, Evidenzprüfung/Extraktion, Speicherung, Hypothesen/Experimentplanung, Code/Integration, Körper-/Environment-Anbindung, Experimente und Auswertung.
 
-Arbeitsannahme für öffentliche Ressourcen: adulte Fruchtfliege **Drosophila melanogaster**. Für das eingerichtete Gehirnmodell ist FAFB FlyWire v783 gewählt; erste Bewegungsfunktion und Motoranbindung sind noch offen. Keine andere Fliegenart als bereits bestätigten Modellorganismus darstellen.
+Arbeitsannahme für öffentliche Ressourcen: adulte Fruchtfliege **Drosophila melanogaster**. Für das eingerichtete Gehirnmodell ist FAFB FlyWire v783 gewählt; DNg02-Flügelamplitude ist die gewählte Funktion; technische Motoranbindung ist nachgewiesen, biologische Kalibrierung bleibt offen. Keine andere Fliegenart als bereits bestätigten Modellorganismus darstellen.
 
 Die frühere KI-Angst-Frage und die geplanten synthetischen Persona-Befragungen sind als aktuelles Projektziel abgelöst. Sie steuern diese Umsetzung nicht mehr.
 
 Bestätigter Demo-Modus: Die Jury sieht echte vorberechnete Läufe interaktiv. Öffentlicher Zugang ist nach aktuellem Nutzerbericht erforderlich; localhost genügt nicht. Eigener Projektcode und nachvollziehbare Ergebnisse kommen auf GitHub. Gewählte Webarchitektur: Vite + TypeScript + Three.js, veröffentlicht über GitHub Actions auf GitHub Pages. Details in `STACK.md`. Kein öffentlicher Live-Simulationsdienst erforderlich.
 
-Aktueller Auftrag: Fliegengehirn herunterladen, Omnigent und Spezialagenten aufsetzen, BrightData anbinden und die Knowledgebase lokal betreiben. Zusätzlich hat der Nutzer Team-Issues und Veröffentlichung der wichtigen Projektinformationen/des Fortschritts im GitHub-Repository beauftragt. Code-/Dokumentationsstand und kleine tatsächliche Ergebnisse gehören dazu. Der öffentliche Viewer ist weiterhin ein späterer Umsetzungsschritt.
+Aktueller Auftrag: Fliegengehirn herunterladen, Omnigent und Spezialagenten aufsetzen, BrightData anbinden und die Knowledgebase lokal betreiben. Zusätzlich hat der Nutzer Team-Issues und Veröffentlichung der wichtigen Projektinformationen/des Fortschritts im GitHub-Repository beauftragt. Code-/Dokumentationsstand und kleine tatsächliche Ergebnisse gehören dazu. Der öffentliche Viewer ist inzwischen veröffentlicht; die tatsächlichen Einreichungen stehen noch aus.
 
 Tatsächlich umgesetzt/geprüft:
 
-- Isolierte `.venv`, Python 3.12.14; Omnigent 0.16.0, Brian2 2.9.0 und gepinnte Datenbibliotheken installiert; Dependency-Prüfung erfolgreich.
-- Modellfertige FAFB/FlyWire-v783-Daten und gepinnter Shiu-Autorencode heruntergeladen. 138.639 Neuronen, 15.091.983 autorenseitig verarbeitete Verbindungszeilen. Datei-Hashes, Schema und Indexbereiche geprüft; Lizenzen erhalten.
-- Zwei echte Whole-network-Setupchecks: 20 ms, Seed 42, generisches Target; 150 Hz erzeugte 2 Spikes, 0 Hz erzeugte 0 Spikes. Nur technische Laufzeit-/Stimulationsprüfung; retrospektiv dokumentiert und außerhalb Omnigent ausgeführt. Kein Körper, Flug oder biologischer Funktionsnachweis.
-- Native Omnigent-Directory-Bundle unter `agents/fly-discovery/`: Supervisor plus Recherche, Evidenzprüfung, Hypothesenplanung, Experiment und Analyse. Tatsächlich geladene Rollen/Tools/Policies und native Tool-Subprozesse offline geprüft.
-- Lokaler Omnigent-Dienst gestartet und `/health` erfolgreich geprüft. Mutable Dienstdaten unter `~/Library/Application Support/FlyDiscovery/omnigent/`.
-- BrightData-SERP-/Web-Unlocker-Tools und lokale Knowledgebase implementiert; 22 Offline-Tests bestanden. Anbieterzugang/Live-Calls noch unbestätigt, da Schlüssel/Zonen fehlen.
-- Knowledgebase unter `~/Library/Application Support/FlyDiscovery/knowledgebase/`, bewusst außerhalb des iCloud-Projekts: vier Quellen, ein tatsächlicher Autor-README-Snapshot, zwei echte neuronale Run Records, bislang keine Funktionsclaims.
-- Lokales Git-Repository initialisiert; gewähltes GitHub-Repository `JonasMayerDev/FlyBrainLab`. Dieser veröffentlichte Projektstand enthält Code, Dokumentation, Agenten und kleine Setup-Ergebnisse; große Originaldaten, Secrets und lokale Dienste/KB bleiben ausgeschlossen. Keine veröffentlichte Viewer-Demo.
-- GitHub-Zugriff als `valleebo` mit Schreibrecht geprüft; zehn passende offene Issues #1–#10 erstellt. Übersicht: `GITHUB_ISSUES.md`. Teamstart, Fortschritt und Rollen: `TEAM_STATUS.md`. Issue #1 bleibt bis zum funktionierenden Pages-Deployment offen.
+- Isolierte Hauptumgebung: Python 3.12.14, Omnigent 0.16.0, Brian2 2.9.0; gepinnte Datenbibliotheken. Abhängigkeiten und Offline-Tests geprüft.
+- Vollständige model-ready FAFB/FlyWire-v783-Tabellen und gepinnter Shiu-Autorencode: 138.639 Neuronen, 15.091.983 verarbeitete Verbindungszeilen; Hashes/Schema/Indexbereiche und Lizenzen erhalten.
+- Zwei technische 20-ms-Setupchecks und zwölf manuelle wissenschaftliche A/B-Machbarkeitsruns; ausdrücklich getrennte Provenienz.
+- Primärliteratur für DNg02-Flügelamplitudenfunktion im bereits bestehenden fixierten Flug, 25 v783-Readouts und acht graphgewählte Inputs; vier zusätzliche echte gehashte Quellenfassungen und vier geprüfte Claims in lokaler KB.
+- Versiegeltes 200-ms-A/B-Design mit drei Seeds, Sham-/Stimulation-/Ausgangsdisconnection-Kontrollen und eingefrorenen Folgeentscheidungsregeln.
+- Zwei streng verifizierte native Omnigent-Loops über vorhandenen Codex-CLI-Zugang: zehn abgeschlossene Handoffs, zwölf neue numerische A/B-Bedingungen und zwei Analyst-Records. B läuft in einer separaten Session, die den echten A-Record vor Planung und Ausführung liest; Cross-Session-Verknüpfung geprüft. Tool-Receipts und Rohdaten erhalten. Nächste Entscheidung: passende Kontrollinputs und belegte sensorische Eingänge untersuchen, noch nicht ausgeführt.
+- Flybody/MuJoCo installiert. Eingefrorene technische Open-loop-Kopplung; v2 mit unveränderter, vorhandener Autoren-RL-Policy erzeugt sechs 200-ms-Körperruns mit 1.001 gemessenen Zuständen und physikalischen Kontrollunterschieden. Stabilisierung stammt aus Autorenpolicy; biologisch kalibrierte Flugsteuerung und neuronaler Sensor-Rückkanal bleiben offen.
+- Öffentlich erreichbarer Vite/TypeScript/Three.js-Replay-Viewer: https://valleebo.github.io/FlyBrainLab/ . Kanonischer Code/Issues bleiben JonasMayerDev/FlyBrainLab; Hosting-Mirror wegen fehlender Pages-Adminrechte im Teamrepo. Anonym auf Desktop und in Mobilansicht geprüft.
+- Eng begrenzter Warmcache-Benchmark: identischer 25-ID-Abruf: 427,73 ms durch erneutes Parsing versus 0,282 ms aus geprüftem KB-Claim. Keine gesamte Discovery-/10x-Beschleunigung behaupten.
+- Abgabeunterlagen, Texte DE/EN, Validator und drei echte captioned Videoentwürfe vorbereitet. Persönliches Teamfoto/Teamintro, Provideraktivierung und tatsächliche Formulare bleiben menschliche Aufgaben. Aktueller Status TEAM_STATUS.md, Einzelbelege in GitHub-Issues.
 
 Startanleitung: `README.md`. Schlüssel per `scripts/with_credentials.py` im interaktiven Terminal verdeckt eingeben; keine Werte in Chat, Projektdateien oder Git. Erfolgreiche Offline-Prüfung bestätigt keinen gültigen API-Zugang und keinen ausgeführten Live-Discovery-Loop.
 
@@ -48,12 +49,12 @@ Startanleitung: `README.md`. Schlüssel per `scripts/with_credentials.py` im int
 Offene Entscheidungen:
 
 1. Gewählte Startkombination ist FAFB/FlyWire v783 + gepinnter Shiu-LIF-Autorencode/Brian2. IDs/Versionen nicht mischen. BANC oder andere Modelle nur als spätere ausdrückliche Änderung.
-2. Eine erste Funktion und belegte Stimulations-/Ausleseneuronen. Flug bleibt die Vision; ein enger Bewegungsnachweis ist eine MVP-Empfehlung, kein bereits akzeptierter Ersatz.
-3. Kompatible Körpermodellversion und nachweisbare Brain-to-Motor-Anbindung; sensorischer Rückkanal. Empfehlung: MuJoCo/Flybody für das Flugziel zuerst separat prüfen; FlyGym nur bei expliziter Walking-MVP-Wahl.
+2. DNg02-Flügelamplitudenfunktion und25 v783-Readouts sind belegt;8 graphgewählte Inputs sind fixiert, aber biologisch nicht als natürlicher Sinnespfad validiert. Flug bleibt die Vision.
+3. Gepinntes Flybody/MuJoCo und technische Brain-to-Motor-Anbindung sind nachgewiesen; sechs v2-Runs mit vorhandener Autorenpolicy umfassen 200 ms. Sensorischer Rückkanal in das Gehirn, biologische Kalibrierung und längere Flugstabilität bleiben offen.
 4. Projektname, Rollen und tatsächlich verfügbare Hardware/Modellzugänge.
-5. Omnigent ist installiert, der Dienst erreichbar und die Agenten/Tools sind offline geprüft. API-Zugang und tatsächlicher Live-Discovery-Loop stehen aus; letzter lokaler Claude-Authcheck war nicht angemeldet, Anthropic-/BrightData-Umgebungsvariablen fehlten.
+5. Native Omnigent-Codex-Route hat A und den daraus gewählten Folgetest B in zwei verbundenen Sessions tatsächlich ausgeführt; zehn Handoffs und zwölf neue numerische Bedingungen sind streng verifiziert. Claude-/BrightData-Zugänge fehlen weiterhin. Nächste Entscheidung ist Kontrollinput-/Sinnesvalidierung, noch nicht ausgeführt.
 6. Google Form und Einreichungsort der zusätzlichen zweiminütigen Demo.
-7. GitHub-Repo ist `JonasMayerDev/FlyBrainLab`, Schreibzugriff geprüft; Code-/Dokumentationsstand veröffentlicht. Pages-Einrichtung und öffentliche Viewer-URL stehen noch aus; keine bereits laufende Simulationsdemo voraussetzen.
+7. Kanonisches GitHub-Repo ist `JonasMayerDev/FlyBrainLab`. Öffentliche tatsächlich geprüfte Viewer-URL: https://valleebo.github.io/FlyBrainLab/ . Hosting-Mirror wegen fehlender Pages-Adminrechte im Teamrepo; echte Replays, kein öffentlicher Live-Simulationsserver.
 
 ### Muss-Anforderungen aus Challenge 03
 
@@ -141,7 +142,7 @@ Omnigent steuert Forschung und Experimentablauf. Numerische Gehirn- und Körperd
 - [Flybody](https://github.com/TuragaLab/flybody): physikalische Walking-/Flight-Umgebung mit eigenen Controllern, kein automatisch angeschlossenes Connectome-Gehirn.
 - [Eons technischer Brain-Body-Bericht](https://eon.systems/updates/embodied-brain-emulation): Architekturvorbild mit approximierter Ausleseschicht auf bestehende Körpercontroller. Kein öffentlich fertig geprüftes Komplettpaket für unsere eigene Integration voraussetzen.
 
-Quellen am 4.10.2026 geprüft. Der beschriebene v783-Shiu/Brian2-Starttest ist inzwischen lokal nachgewiesen; Flybody/FlyGym sind noch nicht installiert oder an das Gehirn gekoppelt. Aktuelle BANC-Daten sind kein Drop-in-Ersatz für das FAFB-basierte Modell.
+Quellen am 4.10.2026 geprüft. Der beschriebene v783-Shiu/Brian2-Starttest ist inzwischen lokal nachgewiesen; Flybody/MuJoCo ist inzwischen installiert und über einen eingefrorenen Adapter gekoppelt. Eine vorhandene Autoren-RL-Policy stabilisiert sechs an native A-Runs gekoppelte 200-ms-Körperläufe; die biologische Kalibrierung und der neuronale sensorische Rückkanal bleiben offen. FlyGym wurde nicht integriert. Aktuelle BANC-Daten sind kein Drop-in-Ersatz für das FAFB-basierte Modell.
 
 ### Evidenz/Knowledgebase
 
@@ -177,7 +178,7 @@ Lovable dokumentiert aktuell eine allgemeine Credit-Balance für Build und Run s
 
 Technikprinzip: wenige Abhängigkeiten und kleinster vollständiger Forschungsdurchlauf zuerst. Omnigent ist Pflicht und wird nicht durch Lovable oder selbstgeschriebene Orchestration ersetzt. Die öffentliche Vite/Three.js-Oberfläche spielt echte exportierte Runs ab und kennzeichnet sie als aufgezeichnet. Python/Brian2 und MuJoCo berechnen neuronale bzw. Körperdynamik separat; Pages betreibt keinen Python-Server.
 
-Der frühere Status „noch nichts eingerichtet“ ist für Installation/Daten abgelöst. Zugangsdaten und Guthaben bleiben unbestätigt. Nächster Meilenstein: kleiner tatsächlicher Omnigent-Lauf mit BrightData, Quellenprüfung und Handoffs; danach eingefrorenen wissenschaftlichen Test unter Omnigent ausführen. Der vorhandene neuronale Starttest ist keine bereits absolvierte C3-Schleife. Gemessene Maschine: 8 GiB RAM; technischer Sham-Peak etwa 1,014 GiB, keine Echtzeit-/Langlaufgarantie. Kein neues Controllertraining als sichere Deadline-Abhängigkeit.
+Der frühere Status „noch nichts eingerichtet“ ist für Installation/Daten abgelöst. Zugangsdaten und Guthaben bleiben unbestätigt. Native Omnigent-A-Schleife mit vorhandener Codex-Anmeldung und echten gespeicherten Primärquellen ist verifiziert; BrightData-Aktivierung ist ein eigener noch offener Providermeilenstein. Der vorhandene neuronale Starttest ist keine bereits absolvierte C3-Schleife. Gemessene Maschine: 8 GiB RAM; technischer Sham-Peak etwa 1,014 GiB, keine Echtzeit-/Langlaufgarantie. Kein neues Controllertraining als sichere Deadline-Abhängigkeit.
 
 Wenn ein passender Databricks-Workspace mit den nötigen Funktionen schon zugänglich wird, die managed Route prüfen; andernfalls Open Source als erlaubte Route. Kein langer Versuch, eine unzugängliche Cloud neu aufzusetzen. Die tatsächlich laufende Version dokumentieren. Offizielle Einstiegspunkte: [Omnigent Repository](https://github.com/omnigent-ai/omnigent), [Databricks Quickstart](https://docs.databricks.com/aws/en/omnigent/quickstart).
 
@@ -235,10 +236,18 @@ Bei bestätigten Produkt-, Track- oder Teamentscheidungen diesen Projektkontext 
 
 ## Nachtfortschritt4.Oktober2026
 
-Der frühere Setup-Snapshot ist für folgende Teile abgelöst:25DNg02-v783Readouts und8graphgewählte Inputs quellenbasiert geprüft, vier echte primäre KB-Snapshots und vier Claims importiert; versiegeltes200msA/B-Design und12manuelle wissenschaftliche Vollgraph-Machbarkeitsruns ausgeführt. Sham0Hz, Drive17,2/18,8/18,4Hz, Ausgangsdisconnection0Hz. Flybody/MuJoCo installiert; echter10msOpen-loop-Motoradapter mit Körpertrajektorien. Dauer/Terminierung und biologisch unkalibrierte Kopplung ausdrücklich begrenzen.
+Der frühere Setup-Snapshot ist für folgende Teile abgelöst:25 DNg02-v783Readouts und8 graphgewählte Inputs quellenbasiert geprüft, vier echte primäre KB-Snapshots und vier Claims importiert; versiegeltes200 msA/B-Design und12 manuelle wissenschaftliche Vollgraph-Machbarkeitsruns ausgeführt. Sham 0 Hz, Drive 17,2/18,8/18,4 Hz, Ausgangsdisconnection 0 Hz. Flybody/MuJoCo installiert; echter10 msOpen-loop-Motoradapter mit Körpertrajektorien. Dauer/Terminierung und biologisch unkalibrierte Kopplung ausdrücklich begrenzen.
 
 Öffentlicher Viewer läuft unter https://valleebo.github.io/FlyBrainLab/ und ist anonym Desktop/Mobile geprüft. Kanonischer Code/Issues bleiben JonasMayerDev/FlyBrainLab; Hosting-Mirror valleebo/FlyBrainLab wurde mangels Pages-Adminrechten im Teamrepo eingerichtet.14echte Neuronenruns,6Körpertrajektorien zunächst exportiert.
 
 Omnigent hat eine native Codex-Route über vorhandene Anmeldung; GPT-5.5 ist im tatsächlichen Konto unterstützt. Die echte5Spezialistenkette wird mit neuen numerischen Toolausführungen abgearbeitet; Abschluss erst nach strikter Traceprüfung behaupten. Startup-Policy muss synthetisches sys_agent_start erlauben, sonst wird die Parent-Inbox nicht initialisiert. Asyncdelegation einmal starten, Turn yielden, nach nativer Fertigmeldung Inbox einmal lesen. Kein Pollingloop. BrightData/Anthropic-Anbieteraktivierung bleibt offen.
 
 Aktuelle Resultate: docs/RESULTS.md. Reale Replays: frontend/ und data/replay/. Abgabeunterlagen, Videoskripte und menschliche09:00-Aufgaben: submission/. #2 und #10 nicht ohne tatsächliche Provider-/Abgabenachweise schließen. Körperdiagnostik und native Loopverifikation können diesen Snapshot aktualisieren.
+
+### Verifizierte weitere Nachtmeilensteine
+
+Strikte native Traceprüfung für A bestanden: data/discovery/native-trace.json. Fünf erfolgreiche Handoffs, echte neue200 msVollgraph-Runs, Analyst-Record mit next_testB. Tool-Receipt tool_f45963ca9f204a4ca9b3f02fd266fcbf und nativer Baum2e99e639e48743ee874f0ecfefc8a08d. Frühere optionale B-Startfehler bleiben sichtbar; eine frische native Folgesession führt B mit korrigierten begrenzten Policies aus. Ein Resume behält die ursprüngliche Agentenversion und ändert deren Policy nicht rückwirkend.
+
+v2-Körperadapter und unveränderte trainierte Flybody-Autorenpolicy vor sechs Paarläufen eingefroren. Alle sechs neuen nativen A-Spike-Replays erzeugen200 ms/1.001 finite Physikzustände, ohne Terminations-Bypass oder vorzeitiges Ende; echte Flügelsollwinkel-/Körperzustandsunterschiede. Stabilisierung stammt aus vorhandener RL-Policy, kein neues Training oder biologischer Connectome-Flugnachweis. data/coupling/native_policy_comparison.json, docs/BODY_INTEGRATION.md. Körpercontroller hat interne Rückkopplung; die neuronale Kopplung bleibt Open-loop.
+
+Drei echte captioned MP4-Entwürfe sind lokal vorbereitet: Produkt50s, Technik55s, C3118s; spätere tatsächliche B-/v2-Resultate konsistent nachführen. Persönliches Teamfoto/Teamintro und tatsächliche HackOS-/Google-Form-Einreichungen bleiben #10. Provideraktivierung bleibt #2.

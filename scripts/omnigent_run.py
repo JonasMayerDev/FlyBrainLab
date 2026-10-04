@@ -78,7 +78,7 @@ def prepare_bundle(harness: str, model: str | None, evidence_mode: str) -> Path:
                 if harness == "codex":
                     role = data["name"]
                     function["arguments"]["max_cost_usd"] = (16.0 if "subagent_cost_budget" in str(function.get("path"))
-                        else 6.0 if role == "fly_discovery" else 2.0)
+                        else 6.0)
         config.write_text(yaml.safe_dump(data, sort_keys=False))
     if evidence_mode == "existing":
         for filename in ("search_literature.py", "fetch_source.py"):
@@ -156,7 +156,8 @@ def main() -> int:
     parser.add_argument("--harness", choices=("claude-sdk", "codex"), default="claude-sdk")
     parser.add_argument("--evidence-mode", choices=("brightdata", "existing"), default="brightdata")
     parser.add_argument("--discovery", action="store_true", help="Neuen eingefrorenen DNg02-Test mit Handoffs ausführen")
-    parser.add_argument("--model", help="Optional ein Modell, das euer aktiver Claude-Zugang erlaubt")
+    parser.add_argument("--model", help="Optional ein vom tatsächlichen Modellzugang unterstütztes Modell")
+    parser.add_argument("--resume", help="Native bestehende Conversation-ID weiterführen; keine Handoffs nachbilden")
     args = parser.parse_args()
     try:
         bundle = prepare_bundle(args.harness, args.model, args.evidence_mode)
@@ -214,6 +215,10 @@ def main() -> int:
         command = [str(executable), "run", str(bundle), "--server", "local", "-p", prompt]
         if args.model:
             command += ["--model", args.model]
+        if args.resume:
+            if not __import__("re").fullmatch(r"[a-f0-9]{32}", args.resume):
+                raise ValueError("Resume requires an actual native32hex conversation ID")
+            command += ["--resume", args.resume]
         print("Starte native Omnigent-Orchestrierung mit fünf Spezialagenten. Die Weboberfläche bleibt lokal.")
         print("Modellkosten werden pro Session und Agentenbaum gemessen; BrightData hat einen separaten Request-/Schätzbudgetzähler.")
         return subprocess.call(command, cwd=ROOT, env=env)

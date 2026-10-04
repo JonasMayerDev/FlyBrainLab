@@ -15,6 +15,7 @@ from pathlib import Path
 from simulation.body import ROOT, run_body, sha256, write_json
 
 ADAPTER_PATH = ROOT / "data/coupling/adapter_v1.json"
+POLICY_ADAPTER_PATH = ROOT / "data/coupling/adapter_v2_policy.json"
 
 
 def canonical_digest(value: dict) -> str:
@@ -69,21 +70,52 @@ def load_adapter(adapter_path: Path | None = None, targets_path: Path | None = N
     return spec
 
 
+def freeze_policy_adapter() -> dict:
+    """Separate write-once controller variant; retain all v1 gains unchanged."""
+    if POLICY_ADAPTER_PATH.exists():
+        return load_adapter(POLICY_ADAPTER_PATH)
+    spec = dict(load_adapter())
+    del spec["specification_sha256"]
+    spec.update(adapter_id="dng02-wing-yaw-amplitude-v2-published-policy",
+                specification_path="data/coupling/adapter_v2_policy.json",
+                frozen_at_utc=datetime.now(timezone.utc).isoformat(),
+                parent_adapter_sha256=load_adapter()["specification_sha256"],
+                controller_frequency_hz="author policy user action modulates 218 Hz base within original task range",
+                controller="published trained flight SavedModel plus published fmech wing pattern",
+                published_assets_manifest_sha256=sha256(ROOT / "data/body/published_assets_manifest.json"),
+                policy_runtime_lock_sha256=sha256(ROOT / "requirements.body.policy.lock"),
+                extended_reference=True, task_termination_disabled=False,
+                body_controller_feedback=True, neural_sensor_feedback=False)
+    spec["model_assumptions"] = [
+        "Same 10 ms window, 100 Hz scale, positive 10 percent gain and yaw center 0.3 rad as v1; not retuned after outcomes.",
+        "25 annotation entries pooled; no calibrated per-cell, per-subtype or left/right muscle mapping.",
+        "The authors' independently trained RL flight policy supplies stabilization and reads body sensors/reference; no new training.",
+        "Neural events are recorded, open-loop inputs to the body controller; no feedback to the connectome.",
+        "Task reference is extended to 202.8 ms preserving original initial conditions; physical failure checks remain enabled."]
+    spec["specification_sha256"] = canonical_digest(spec)
+    write_json(POLICY_ADAPTER_PATH, spec)
+    return spec
+
+
 class AmplitudePattern:
     """Wrap an author's test pattern without modifying installed author code."""
     def __init__(self, base, spec: dict):
         self.base = base
         self.spec = spec
         self.factor = 1.
+        self.last_base = None
+        self.last_modulated = None
 
     def __getattr__(self, name):
         return getattr(self.base, name)
 
     def step(self, ctrl_freq):
         angles = self.base.step(ctrl_freq=ctrl_freq).copy()
+        self.last_base = angles.copy()
         center = self.spec["wing_yaw_center_rad"]
         for index in self.spec["wing_yaw_indices"]:
             angles[index] = center + self.factor * (angles[index] - center)
+        self.last_modulated = angles.copy()
         return angles
 
 
@@ -123,16 +155,28 @@ class SpikeAmplitudeAdapter:
 
     def provenance(self) -> dict:
         return {"adapter_id": self.spec["adapter_id"],
-                "specification_path": "data/coupling/adapter_v1.json",
+                "specification_path": self.spec.get("specification_path", "data/coupling/adapter_v1.json"),
                 "specification_sha256": self.spec["specification_sha256"],
                 "readout_ids": self.spec["readout_ids"],
                 "event_count": len(self.times), "window_ms": self.spec["window_ms"],
                 "model_assumption": True, "biologically_calibrated": False,
                 "mapping": self.spec["formula"]}
 
+    def control_output(self) -> dict:
+        if self.pattern is None or self.pattern.last_base is None:
+            return {}
+        return {"wingbeat_command_base_rad": self.pattern.last_base.tolist(),
+                "wingbeat_command_modulated_rad": self.pattern.last_modulated.tolist(),
+                "wingbeat_command_delta_rad": (self.pattern.last_modulated - self.pattern.last_base).tolist()}
 
-def run_coupled(neural_run_dir: Path) -> dict:
-    spec = load_adapter()
+
+def run_coupled(neural_run_dir: Path, published_policy: bool = False) -> dict:
+    spec = load_adapter(POLICY_ADAPTER_PATH if published_policy else ADAPTER_PATH)
+    if published_policy:
+        if spec["published_assets_manifest_sha256"] != sha256(ROOT / "data/body/published_assets_manifest.json"):
+            raise ValueError("Published policy assets differ from frozen v2 controller")
+        if spec["policy_runtime_lock_sha256"] != sha256(ROOT / "requirements.body.policy.lock"):
+            raise ValueError("Published policy runtime lock differs from frozen v2 controller")
     neural_run_dir = neural_run_dir.resolve()
     neural_run_dir.relative_to(ROOT / "data/runs")
     record_path = neural_run_dir / "run.json"
@@ -151,11 +195,14 @@ def run_coupled(neural_run_dir: Path) -> dict:
                   "neural_duration_ms": neural["duration_ms"],
                   "execution_context": neural.get("execution_context", "unspecified"),
                   "source_is_recorded_simulation": True}
+    diagnostic = ({"extend_reference": True, "disable_task_termination": False,
+                   "published_wing_pattern": True, "published_flight_policy": True}
+                  if published_policy else None)
     return run_body(neural["duration_ms"], neural["seed"], adapter=adapter,
-                    neural_provenance=provenance)
+                    neural_provenance=provenance, diagnostic=diagnostic)
 
 
-def compare(body_run_dirs: list[Path]) -> dict:
+def compare(body_run_dirs: list[Path], published_policy: bool = False) -> dict:
     """Paired physical comparison at each seed's common measured horizon."""
     import numpy as np
     records = [json.loads((p / "run.json").read_text()) for p in body_run_dirs]
@@ -166,7 +213,8 @@ def compare(body_run_dirs: list[Path]) -> dict:
         key = (record["seed"], record["neural_provenance"]["condition"])
         if key in grouped:
             raise ValueError("Duplicate body seed/condition")
-        if record["adapter"]["specification_sha256"] != load_adapter()["specification_sha256"]:
+        spec = load_adapter(POLICY_ADAPTER_PATH if published_policy else ADAPTER_PATH)
+        if record["adapter"]["specification_sha256"] != spec["specification_sha256"]:
             raise ValueError("Adapter must be identical across compared runs")
         grouped[key] = (record, json.loads((path / "trajectory.json").read_text())["states"])
     pairs = []
@@ -192,16 +240,30 @@ def compare(body_run_dirs: list[Path]) -> dict:
                       "max_sham_amplitude_factor": max(s["wing_yaw_amplitude_factor"] for s in sham[:count]),
                       "driven_terminated_early": driven["task_terminated_early"],
                       "sham_terminated_early": baseline["task_terminated_early"]})
+        if published_policy:
+            command_a = np.array([s["policy_action_before_wingbeat"] for s in active[1:count]])
+            command_s = np.array([s["policy_action_before_wingbeat"] for s in sham[1:count]])
+            pairs[-1].update(
+                policy_action_rms_difference=float(np.sqrt(np.mean((command_a - command_s) ** 2))),
+                maximum_driven_adapter_command_delta_rad=driven["metrics"]["maximum_adapter_wingbeat_command_delta_rad"],
+                maximum_sham_adapter_command_delta_rad=baseline["metrics"]["maximum_adapter_wingbeat_command_delta_rad"],
+                minimum_driven_thorax_height_cm=driven["metrics"]["minimum_thorax_height_cm"],
+                minimum_sham_thorax_height_cm=baseline["metrics"]["minimum_thorax_height_cm"])
     if not pairs:
         raise ValueError("No matched upstream_drive/sham seed pairs")
     result = {"schema_version": 1, "created_at_utc": datetime.now(timezone.utc).isoformat(),
               "comparison_kind": "technical open-loop brain-to-body adapter", "paired_results": pairs,
               "all_run_ids": [r["run_id"] for r in records],
-              "adapter_sha256": load_adapter()["specification_sha256"],
+              "adapter_sha256": spec["specification_sha256"],
               "interpretation": "Actual neural events affect a fixed controller input and measured body physics. The gain/controller choice is a model assumption; this does not validate biological flight.",
               "flight_validated": False,
-              "next_decision": "Calibrate the rate-to-wing mapping and stabilize the existing flight controller before any biological or stable-flight claim."}
-    write_json(ROOT / "data/coupling/comparison.json", result)
+              "next_decision": "Calibrate the rate-to-wing mapping before biological flight claims; separately validate controller stability over longer horizons."}
+    if published_policy:
+        result["comparison_kind"] = "open-loop neural replay into published trained flight controller"
+        result["body_controller_feedback"] = True
+        result["neural_sensor_feedback"] = False
+        result["interpretation"] = "Actual neural events modulate a fixed adapter into an independently trained authors' flight controller. Physical response is measured; stabilization is supplied by the published RL policy, not discovered by the connectome."
+    write_json(ROOT / "data/coupling" / ("policy_comparison.json" if published_policy else "comparison.json"), result)
     return result
 
 
@@ -209,11 +271,16 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("freeze")
+    sub.add_parser("freeze-policy")
     run_parser = sub.add_parser("run")
     run_parser.add_argument("neural_run_dir", type=Path)
+    run_parser.add_argument("--published-policy", action="store_true")
     comparison_parser = sub.add_parser("compare")
     comparison_parser.add_argument("body_run_dirs", type=Path, nargs="+")
+    comparison_parser.add_argument("--published-policy", action="store_true")
     args = parser.parse_args()
     result = (freeze_adapter() if args.command == "freeze" else
-              run_coupled(args.neural_run_dir) if args.command == "run" else compare(args.body_run_dirs))
+              freeze_policy_adapter() if args.command == "freeze-policy" else
+              run_coupled(args.neural_run_dir, args.published_policy) if args.command == "run" else
+              compare(args.body_run_dirs, args.published_policy))
     print(json.dumps(result, indent=2, allow_nan=False))

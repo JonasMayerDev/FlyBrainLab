@@ -41,7 +41,7 @@ export class NeuralScene {
     this.body = this.createBodyMarker();
     this.body.visible = false;
     this.scene.add(this.body);
-    this.bodyGrid = new THREE.GridHelper(3, 12, '#315b4e', '#1b3530');
+    this.bodyGrid = new THREE.GridHelper(8, 24, '#315b4e', '#1b3530');
     this.bodyGrid.rotation.x = Math.PI / 2;
     this.bodyGrid.visible = false;
     this.scene.add(this.bodyGrid);
@@ -129,7 +129,14 @@ export class NeuralScene {
   select(id: string): void { this.selectedId = id; }
   reset(): void {
     if (this.mode === 'body') {
-      this.camera.up.set(0, 0, 1); this.camera.position.set(2.4, -3.9, 2.3); this.controls.target.set(0.35, 0, 0.8); this.controls.minDistance = 1;
+      const points = this.run?.body?.states?.map(state => new THREE.Vector3().fromArray(state.position)) ?? [];
+      const bounds = new THREE.Box3().setFromPoints(points);
+      const center = points.length ? bounds.getCenter(new THREE.Vector3()) : new THREE.Vector3(0.35, 0, 0.8);
+      const extent = bounds.getSize(new THREE.Vector3());
+      const distance = Math.max(3.8, extent.length() * 1.25);
+      this.camera.up.set(0, 0, 1); this.camera.position.copy(center).add(new THREE.Vector3(distance * 0.5, -distance, distance * 0.55));
+      this.controls.target.copy(center); this.controls.minDistance = 1; this.controls.maxDistance = Math.max(11, distance * 2);
+      this.bodyGrid.position.set(center.x, center.y, 0);
     } else {
       this.camera.up.set(0, 1, 0); this.camera.position.set(0.5, 0.5, 6.7); this.controls.target.set(0, 0, 0); this.controls.minDistance = 3;
     }

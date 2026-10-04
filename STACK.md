@@ -16,7 +16,7 @@ Stand:4.Oktober2026, nach echten DNg02-A/B-Machbarkeitsläufen, Körperkopplung 
 |---|---|---|
 | Forschungsorchestration | Omnigent | Spezialagenten, Quellenprüfung, Testauswahl, Toolausführung, Ergebnis und nächste Entscheidung; zwingend tatsächlich ausführen |
 | Knowledgebase | JSONL + Quellenmanifest | Kleine nachvollziehbare Claims mit Herkunft, IDs, Version und Prüfstatus; keine zusätzliche Datenbank nötig |
-| Neuronale Simulation | Python + Brian2; vorhandenes Shiu-Modell | v783/Shiu gepinnt;25DNg02Readouts und A/B-Vergleiche tatsächlich gerechnet |
+| Neuronale Simulation | Python + Brian2; vorhandenes Shiu-Modell | v783/Shiu gepinnt; 25 DNg02-Readouts und A/B-Vergleiche tatsächlich gerechnet |
 | Körperphysik | MuJoCo; Flybody als bevorzugter Pilot für das Flugziel | Flybody/MuJoCo installiert; eingefrorener Open-loop-Adapter und echte kurze Körperruns vorhanden |
 | Export | JSON für Metadaten, Aktivität/Messwerte und Körpertrajektorie | Kleine reproduzierbare Viewerdaten aus echten Runs; volle Rohdaten getrennt erhalten |
 | Öffentliche Oberfläche | **Vite + TypeScript + Three.js** | Experimente wählen, abspielen, pausieren und zeitlich untersuchen; Aktivität, Bewegung, Kontrollen und Quellen zeigen |
@@ -88,7 +88,7 @@ Normales GitHub-Git blockiert Dateien über 100 MiB; veröffentlichte Pages-Seit
 
 ## 6. Erste Meilensteine und Stop-Kriterien
 
-1. **Erreicht:** öffentlicher Pages-Viewer anonym auf Desktop und Mobile geprüft. Echte14neuronaleRuns und6zugeordnete Körpertrajektorien. Native Forschungsruns nach erfolgreicher Traceprüfung ergänzen.
+1. **Erreicht:** öffentlicher Pages-Viewer anonym auf Desktop und Mobile geprüft. 26 echte neuronale Runs, davon zwölf streng verifizierte native A/B-Bedingungen; sechs zugeordnete 200-ms-Körpertrajektorien mit vorhandener Autorenpolicy. Zwei native Sessions, zehn Handoffs und tatsächliche A→B-Verknüpfung sind im Viewer belegt.
 2. **Bis 02:00:** kleiner echter neuronaler Baseline-Run oder klar dokumentierter Blocker; Laufzeit und Speicherbedarf messen. Parallel vorhandenen Flybody-Controller separat prüfen. Verfügbare Zeit nicht durch eine zweite Hostingarchitektur verbrauchen.
 3. **Bis 09:30:** Kopplung und erste echte Exporte prüfen. Bei fehlender Körperkopplung vorhandenen neuronalen Forschungsloop sichern und Embodiment als offene Arbeit kennzeichnen.
 4. **Bis 11:30:** gewählten Vergleich ausführen, interpretieren und nächste Entscheidung unter Omnigent erzeugen; Viewer mit echten Ergebnissen veröffentlichen, Feature-Freeze.

@@ -48,7 +48,8 @@
     "full_network_included": true,
     "backend": "Brian2 numpy runtime",
     "wall_seconds": 2.246,
-    "max_process_rss_bytes": 1088307200
+    "max_process_rss_bytes": 1088307200,
+    "native_trace_verified": false
   },
   "activity": {
     "time_unit": "ms",
@@ -1708,6 +1709,7 @@
     "edges": []
   },
   "body": null,
+  "body_variants": [],
   "sources": [
     {
       "title": "Shiu et al. (2024) \u00b7 whole-brain LIF model",

@@ -34,17 +34,27 @@ committed. No API credentials or server are needed by the static viewer.
 - Matched control runs, fixed-seed pooled summaries and recorded next
   decisions; independent feasibility is labeled separately by execution context.
 - Dataset/model versions, parameters, source links and SHA-256 fingerprints.
+- Verified Omnigent handoffs with actual session IDs, final-output and parent
+  inbox hashes, observed tool names, fresh numerical receipts and the saved
+  result-dependent analyst decision. Only independently verified raw run IDs
+  are marked as native; a pending continuation is not presented as executed.
 - Where an exact neural provenance link exists, the real Flybody root
   trajectory is replayed as a schematic marker and its complete measured
   path. Coordinates are centimeters, z-up; no anatomy is inferred. The
-  marker stops at the recorded early termination and is never extrapolated.
+  marker stops at the recorded final state and is never extrapolated. An
+  authors' published-policy replay takes priority over the earlier approximate
+  wing controller for the same exact neural source; earlier diagnostics stay
+  linked separately.
 - Graceful WebGL fallback: the recorded data, controls, parameters and
   time histogram remain accessible when 3D is unavailable.
 
-These model results do not validate biological flight. The current body
-controller is an author-provided approximate wing pattern, open loop, and
-terminates early. The body pose is a separate measured physics record, not
-a movement inferred solely from stimulating a named neuron.
+These model results do not validate biological flight. The default native-A
+body replay uses the authors' independently trained flight policy and its
+body feedback for the recorded 200 ms horizon. Neural input remains open loop,
+and the fixed rate-to-wing adapter is biologically uncalibrated. Earlier
+approximate-controller runs terminate early and remain separate diagnostics.
+The body pose is a separate measured physics record, not a movement inferred
+solely from stimulating a named neuron.
 
 ## Export contract
 
@@ -55,6 +65,20 @@ checks count consistency, exact IDs, finite duration and event time bounds.
 It reads frozen scientific comparison records under `data/experiments/`
 and links completed body records under `data/body/` only by exact source
 neural run ID.
+
+The native proof index is reduced from `data/discovery/native-trace.json` and,
+when its separate strict audit passes, `data/discovery/native-trace-b.json`.
+The exporter checks the trace's strict verification result, rechecks every
+verified receipt artifact hash and the analyst-record hash, and publishes only
+small proof metadata and specialist-output excerpts. It does not put the whole
+session tree, source snapshots, authentication or hidden runtime state in the
+browser. Each selected native test displays its own five handoffs and root
+session; the other verified session is linked separately. Library cards identify
+test A or B to distinguish repeated conditions. Native-A drive seed 42 is the
+default when that verified record exists.
+For a cross-session follow-up, the exporter also rechecks the preceding trace,
+decision and receipt hashes and the native read-before-planning order. The pane
+shows this proof separately without merging the two native root sessions.
 
 Generated public files live in `data/replay/` and are committed. The build
 copies these JSON exports into ignored `frontend/public/replays/` and

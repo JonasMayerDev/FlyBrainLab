@@ -1,0 +1,103 @@
+{
+  "question": "Do eight connectivity-selected upstream neurons drive DNg02 firing in fixed full-v783 LIF model, and does response require their outgoing connections?",
+  "evidence": {
+    "organism": "adult Drosophila melanogaster",
+    "connectome_release": "FAFB FlyWire v783 only",
+    "model": "pinned Shiu/Brian2 commit 91bdd1e7dcf193f3e7ca5a8933497fcef63b7960",
+    "sealed_design": {
+      "design_id": "dng02-input-v1",
+      "sha256": "e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6"
+    },
+    "source_ids": [
+      "src_ed165fa0105fe71168bc",
+      "src_8ed6cdb697519ced31f7",
+      "src_26b56b10e90a9cdc96ac",
+      "src_38fb76e91124b3802a6d"
+    ],
+    "claim_ids": [
+      "clm_3b70e19bd21e4140bb41fc8ca5b2d9b7",
+      "clm_56ffe1e8dc514ef6a84029d464124c34",
+      "clm_f0e3ce6e163f42a8abc9f1b407af3be9",
+      "clm_6640c27508c34365a3df7e1d028248fc"
+    ],
+    "artifact_paths": [
+      "data/discovery/tool-receipts/tool_dec9321a154f4053b3d99f56f0b1376b.json",
+      "data/experiments/comparison-dng02-20261004T011205Z-88d84a.json",
+      "data/runs/neural-dng02-20261004T011207Z-5714b5",
+      "data/runs/neural-dng02-20261004T011210Z-30bd3a",
+      "data/runs/neural-dng02-20261004T011213Z-3d3e38",
+      "data/runs/neural-dng02-20261004T011216Z-98839b",
+      "data/runs/neural-dng02-20261004T011219Z-38504d",
+      "data/runs/neural-dng02-20261004T011222Z-149937"
+    ],
+    "additional_provenance": {
+      "prior_A_record_path": "data/discovery/discovery_b166bf63865447098bd121ee6cbea21c.json",
+      "prior_A_tree": "2e99e639e48743ee874f0ecfefc8a08d",
+      "prior_A_summary": "drive mean18.1333Hz vs sham0",
+      "prior_A_next_test": "B"
+    }
+  },
+  "hypothesis": "A positive upstream drive should collapse when stimulated inputs' outgoing synapses are disconnected if DNg02 response is connectivity-mediated.",
+  "candidate_tests": [
+    "A: upstream stimulation versus sham; 8 graph-selected inputs at150Hz for200ms, seeds42/43/44; measure mean DNg02 Hz across all25 readouts and paired differences.",
+    "B: outgoing-connectivity necessity control; identical input with stimulated inputs' outgoing synapses disconnected; measure fractional reduction vs driven output."
+  ],
+  "selected_test": "B",
+  "experiment": {
+    "tool": "run_frozen_experiment",
+    "execution_context": "Omnigent native tool",
+    "wall_seconds": 19.8832,
+    "conditions": {
+      "upstream_drive": "8 graph-selected upstream inputs at150Hz for200ms, seeds42/43/44.",
+      "outgoing_disconnection": "Identical input with stimulated inputs' outgoing synapses disconnected, seeds42/43/44.",
+      "sham": "A background only; not this B receipt.",
+      "direct_calibration": "separate calibration/feasibility context; not used as evidence for this B outgoing-dependency result.",
+      "manual_feasibility": "separate manual feasibility context; not used as native B evidence."
+    }
+  },
+  "actual_result": "B completed. Upstream-drive DNg02 population mean rates were [17.2,18.8,18.4] Hz, mean 18.133333333333333. Outgoing-disconnected rates were [0,0,0] Hz, mean 0. Paired fractional reductions were [1,1,1]. supports_outgoing_dependency true.",
+  "result": {
+    "status": "completed",
+    "supports_outgoing_dependency": true,
+    "decision_rule_applied": "effect-plus-necessity branch: prior A showed nonzero driven response vs sham; latest B shows complete collapse to 0Hz after disconnecting stimulated inputs' outgoing synapses, so proceed to matched input and sensory validation rather than claiming biological flight or repeating for instability.",
+    "upstream_drive_mean_hz": 18.133333333333333,
+    "outgoing_disconnected_mean_hz": 0,
+    "paired_fraction_reduction": [
+      1,
+      1,
+      1
+    ]
+  },
+  "updated_decision": "Model output depends on source axonal weights; next validate upstream identities and test a matched non-target input before any biological flight claim",
+  "decision_reason": "The actual B receipt shows a 100% fractional reduction across all three seeds when outgoing synapses are disconnected, distinguishing numerical propagation through source axonal weights from sham, direct calibration, body physics, or manual feasibility contexts.",
+  "next_test": "matched_input_and_sensory_validation",
+  "source_ids": [
+    "src_ed165fa0105fe71168bc",
+    "src_8ed6cdb697519ced31f7",
+    "src_26b56b10e90a9cdc96ac",
+    "src_38fb76e91124b3802a6d"
+  ],
+  "claim_ids": [
+    "clm_3b70e19bd21e4140bb41fc8ca5b2d9b7",
+    "clm_56ffe1e8dc514ef6a84029d464124c34",
+    "clm_f0e3ce6e163f42a8abc9f1b407af3be9",
+    "clm_6640c27508c34365a3df7e1d028248fc"
+  ],
+  "tool_receipt_ids": [
+    "tool_dec9321a154f4053b3d99f56f0b1376b"
+  ],
+  "limitations": [
+    "model-only DNg02 rates",
+    "no flight initiation/stable flight/biological validation",
+    "literature only tethered already-established flight wing amplitude",
+    "graph upstream inputs not natural sensory proof",
+    "sham/zero depends on model",
+    "native trace verification pending"
+  ],
+  "dataset_version": "FAFB FlyWire v783",
+  "native_trace_verification": "pending",
+  "discovery_loop_verified": false,
+  "schema_version": 1,
+  "record_id": "discovery_0c3c59b3fbb044c78c9c7c7189676c68",
+  "created_at": "2026-10-04T01:15:10.106544+00:00"
+}

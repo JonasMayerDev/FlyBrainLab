@@ -132,7 +132,8 @@
       "nonstimulated_active_neurons": 228
     },
     "execution_context": "independent-feasibility-before-Omnigent",
-    "orchestration_verified_by_this_module": false
+    "orchestration_verified_by_this_module": false,
+    "native_trace_verified": false
   },
   "activity": {
     "time_unit": "ms",
@@ -6801,6 +6802,7 @@
     "edges": []
   },
   "body": null,
+  "body_variants": [],
   "sources": [
     {
       "title": "Shiu et al. (2024) \u00b7 whole-brain LIF model",
