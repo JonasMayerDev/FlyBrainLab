@@ -31,6 +31,7 @@ export interface NativeDiscovery {
   receipts: { receipt_id: string; test: string; wall_seconds: number; url: string; sha256: string; run_ids: string[]; comparison_url: string; design_sha256: string; summary: { next_test: string; n_seeds: number; upstream_drive: { mean_hz: number; sample_sd_hz: number }; sham?: { mean_hz: number }; paired_difference_hz?: number[] } }[];
   analyst_records: { record_id: string; url: string; sha256: string; question: string; candidate_tests: string[]; selected_test: string; updated_decision: string; decision_reason: string; next_test: string; source_ids: string[]; claim_ids: string[]; tool_receipt_ids: string[] }[];
   verified_run_ids: string[];
+  own_receipt_ids?: string[];
   followup_traces?: NativeDiscovery[];
   cross_session_followup_proofs?: {
     current_root_conversation_id: string; current_receipt_id: string; followup_test: string;

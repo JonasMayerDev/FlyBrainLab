@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "exported_at_utc": "2026-10-04T01:24:57.998552+00:00",
+  "exported_at_utc": "2026-10-04T01:34:54.346939+00:00",
   "repository_url": "https://github.com/JonasMayerDev/FlyBrainLab",
   "runs": [
     {
@@ -3935,6 +3935,9 @@
         "design_sha256": "e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6"
       }
     ],
+    "own_receipt_ids": [
+      "tool_f45963ca9f204a4ca9b3f02fd266fcbf"
+    ],
     "analyst_records": [
       {
         "record_id": "discovery_b166bf63865447098bd121ee6cbea21c",
@@ -4138,6 +4141,9 @@
             },
             "design_sha256": "e37611813b2b081880e9e5eb545e26a503abff618cef0c807bac15db61238ec6"
           }
+        ],
+        "own_receipt_ids": [
+          "tool_dec9321a154f4053b3d99f56f0b1376b"
         ],
         "analyst_records": [
           {

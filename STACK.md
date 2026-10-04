@@ -22,7 +22,7 @@ Stand:4.Oktober2026, nach echten DNg02-A/B-Machbarkeitsläufen, Körperkopplung 
 | Öffentliche Oberfläche | **Vite + TypeScript + Three.js** | Experimente wählen, abspielen, pausieren und zeitlich untersuchen; Aktivität, Bewegung, Kontrollen und Quellen zeigen |
 | Code und Veröffentlichung | **GitHub-Repository + GitHub Actions + GitHub Pages** | Frontend bauen und öffentliche HTTPS-Seite veröffentlichen |
 
-Der öffentliche Viewer ist entschieden. Brain-Baustein inzwischen eingerichtet: FAFB/FlyWire v783 + Shiu-Autorencode/Brian2, echte 20-ms-Whole-network-Runs erfolgreich. MuJoCo/Flybody ist inzwischen mit echten Zuständen und kausalem Motoradapter nachgewiesen; stabile/biologisch kalibrierte Flugsteuerung bleibt offen. FlyGym/NeuroMechFly bleibt ein möglicher Walking-Einstieg, falls das Team später diesen engeren MVP ausdrücklich wählt; heute nicht zwei Körperframeworks gleichzeitig integrieren.
+Der öffentliche Viewer ist entschieden. FAFB/FlyWire v783 + Shiu-Autorencode/Brian2 rechnen echte vollständige 200-ms-A/B-Vergleiche. MuJoCo/Flybody ist mit kausalem Motoradapter und vorhandener Autoren-RL-Policy gekoppelt; sechs 200-ms-Körperläufe enden ohne vorzeitige Terminierung. Längere Flugstabilität und biologisch kalibrierte Flugsteuerung bleiben offen. FlyGym/NeuroMechFly bleibt ein möglicher Walking-Einstieg, falls das Team später diesen engeren MVP ausdrücklich wählt; heute nicht zwei Körperframeworks gleichzeitig integrieren.
 
 Three.js zeichnet die 3D-Szene. Die Bewegung kommt aus den exportierten Körperzuständen der Simulation. Ein Connectome, die neuronale Dynamik und die Motorsteuerung sind separate Bausteine. Ein vorhandener Flugcontroller beweist allein keine connectomebasierte Flugsteuerung.
 
@@ -41,7 +41,7 @@ flowchart LR
     P --> V[GitHub Pages: Three.js-Replay]
 ```
 
-Omnigent und die numerischen Runs laufen lokal. Installation, nativer Agenten-/Toolcheck und Dienst-Healthcheck sind erfolgreich. Die Codex-Route nutzt vorhandene CLI-Anmeldung; BrightData/Anthropic-Schlüssel fehlen weiterhin. Die kurzen Brain-Runs sind auf der 8-GiB-Maschine gemessen, keine Garantie für längere Runs/Körperkopplung. KB und Omnigent-Zustand liegen unter `~/Library/Application Support/FlyDiscovery/`, außerhalb des iCloud-Projekts. Eine öffentlich betriebene Simulations-API ist für den gewählten Replay-Modus nicht erforderlich.
+Omnigent und die numerischen Runs laufen lokal. Installation, nativer Agenten-/Toolcheck und Dienst-Healthcheck sind erfolgreich. Die Codex-Route nutzt vorhandene CLI-Anmeldung; BrightData/Anthropic-Schlüssel fehlen weiterhin. Die kurzen Brain-Runs sind auf der 8-GiB-Maschine gemessen, Die Kopplung ist über 200 ms gemessen; längere Gehirn- und Körperläufe bleiben ungeprüft. KB und Omnigent-Zustand liegen unter `~/Library/Application Support/FlyDiscovery/`, außerhalb des iCloud-Projekts. Eine öffentlich betriebene Simulations-API ist für den gewählten Replay-Modus nicht erforderlich.
 
 GitHub Pages liefert statisches HTML/CSS/JavaScript und Run-Dateien aus. Dort läuft kein Python-/Omnigent-Server. Actions übernimmt zuerst nur Build und Veröffentlichung; Simulationsjobs dort erst nach gemessenem Ressourcen-Pilot ergänzen. Ein CI-Workflow ersetzt den vorgeschriebenen Omnigent-Loop nicht.
 
