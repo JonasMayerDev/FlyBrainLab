@@ -29,3 +29,11 @@ dist/
 /submission/exports/
 .playwright-cli/
 .codex-tmp/
+
+# --- embodied-fly-lab (uv project in this branch) ---
+data/raw/
+data/cache/
+spikes/**/out/
+runs/CURRENT
+.omnigent/
+.streamlit/secrets.toml
