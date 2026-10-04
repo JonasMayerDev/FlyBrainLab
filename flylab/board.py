@@ -44,12 +44,14 @@ WEB_DATA = ROOT / "web" / "data"
 BOARD_JSON = WEB_DATA / "board.json"
 
 HYPOTHESIS = {
-    "en": ("Can a simulated fly brain reproduce the complete real behaviour of a fruit fly when it receives the "
-           "real stimuli reported in published experiments, and does the simulated response match what the "
-           "real fly does?"),
-    "de": ("Können wir ein komplettes reales Verhalten einer Fliege mit einem simulierten Gehirn nachahmen, "
-           "indem wir dem simulierten Gehirn reale Impulse anhand existierender Forschung geben und die darauf "
-           "folgende Reaktion in der Simulation prüfen?"),
+    "en": ("Does the wiring diagram alone predict how a fly's brain responds? If we give the copied fly brain the same "
+           "nudges as published experiments on real flies, do the same command neurons switch on (and the others stay "
+           "off) as in the real fly?"),
+    "de": ("Reicht der Schaltplan allein, um die Reaktion des Fliegengehirns vorherzusagen? Wenn wir dem kopierten Gehirn "
+           "dieselben Reize geben wie in veröffentlichten Experimenten, schalten sich dieselben Kommandoneuronen ein "
+           "wie bei der echten Fliege?"),
+    "vision": ("Long-term goal (unchanged): a virtual fly that behaves like a real one, up to flight. Body movements "
+               "need a simulated nerve cord first; today the body only illustrates the brain's decision."),
 }
 
 # Board members = the Omnigent specialists (agents/fly_lab.yaml). "speaks_for" is the discipline the
@@ -101,9 +103,63 @@ GLOSSARY = {
     "bitter_GRN_shiu2024": "bitter-taste neurons", "water_GRN_shiu2024": "water-taste neurons",
     "P9_L": "forward-walking neurons on the left side", "DNa02_L": "steering neurons on the left side",
     "DNa02_R": "steering neurons on the right side", "aBN1": "grooming command neurons (aBN1)",
-    "DNg07": "grooming neurons (DNg07)",
+    "DNg07": "grooming neurons (DNg07)", "aDN1_shiu2024": "grooming command neurons (aDN1)",
 }
 PLAIN_FILE = ROOT / "data" / "plain_summaries.json"
+
+# Body videos for the simple view. They ILLUSTRATE a brain result: the brain decides how strongly the command
+# neuron fires (number taken from the benchmark row / run artifact); the movement follows from the bridge rule.
+MEDIA = [
+    {"id": "lplc2_strong", "src": "assets/flight/LPLC2_bilateral.mp4", "bench": ("flight_validation", "LPLC2_bilateral"),
+     "group": "GF", "nudge": "LPLC2 eye neurons (see something approaching), strong nudge: 150 pulses/s",
+     "kind": "brain decides"},
+    {"id": "lplc2_30", "src": "assets/flight/LPLC2_30Hz.mp4", "bench": ("flight_validation", "LPLC2_30Hz"),
+     "group": "GF", "nudge": "LPLC2 eye neurons, gentle nudge: 30 pulses/s", "kind": "brain decides"},
+    {"id": "lplc2_10", "src": "assets/flight/LPLC2_10Hz.mp4", "bench": ("flight_validation", "LPLC2_10Hz"),
+     "group": "GF", "nudge": "LPLC2 eye neurons, very gentle nudge: 10 pulses/s", "kind": "brain decides"},
+    {"id": "lc17_s3", "src": "runs/20261004-120628-at-lower-realistic-drive-rates-1-064e/artifacts/flight_01.mp4",
+     "artifact": "runs/20261004-120628-at-lower-realistic-drive-rates-1-064e/artifacts/flight_01.json",
+     "group": "GF", "nudge": "LC17 eye neurons (the surprise of experiment 3), gentle nudge: 14 pulses/s", "kind": "brain decides"},
+    {"id": "lplc2_walk", "src": "assets/embodied/LPLC2_bilateral.mp4", "bench": ("embodied_validation", "LPLC2_bilateral"),
+     "group": "MDN", "nudge": "LPLC2 eye neurons on the walking fly (real flies may back away)", "kind": "brain decides"},
+    {"id": "mdn_direct", "src": "assets/embodied/MDN_bilateral.mp4", "bench": ("embodied_validation", "MDN_bilateral"),
+     "group": "MDN", "nudge": "the moonwalker neurons themselves, switched on directly", "kind": "built in"},
+]
+TAKEOFF_HZ = 0.5 * 148.3  # flylab.bridge: take-off when the mean escape-neuron rate reaches half the reference rate
+
+
+def _media() -> list[dict]:
+    """Copy the selected videos into web/media/ and attach the brain number each one illustrates."""
+    import shutil
+
+    out_dir = WEB_DATA.parent / "media"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    benches = {n: {r["condition"]: r for r in (_load_json(BENCH / f"{n}.json") or {}).get("rows", [])}
+               for n in ("flight_validation", "embodied_validation")}
+    items = []
+    for m in MEDIA:
+        src = ROOT / m["src"]
+        if not src.exists():
+            continue
+        g = m["group"]
+        if "bench" in m:
+            row = benches[m["bench"][0]].get(m["bench"][1]) or {}
+            k = row.get("key_group_rates_hz") or {}
+            rate = (float(k.get(f"{g}_L", 0)) + float(k.get(f"{g}_R", 0))) / 2
+            body = row.get("behavior")
+            source = f"data/benchmarks/{m['bench'][0]}.json ({m['bench'][1]})"
+        else:
+            a = _load_json(ROOT / m["artifact"]) or {}
+            rate = float((a.get("descending_group_rates_hz") or {}).get(g, 0.0))
+            body = (a.get("flight") or {}).get("behavior")
+            source = m["artifact"]
+        dest = out_dir / f"{m['id']}.mp4"
+        if not dest.exists() or dest.stat().st_size != src.stat().st_size:
+            shutil.copyfile(src, dest)
+        items.append({"id": m["id"], "video": f"media/{m['id']}.mp4", "nudge": m["nudge"], "group": g,
+                      "group_plain": GLOSSARY.get(g, g), "rate_hz": round(rate, 1), "body": body, "kind": m["kind"],
+                      "threshold_hz": round(TAKEOFF_HZ, 1) if g == "GF" else None, "source": source})
+    return items
 # Real behaviours for which the lab has NO catalogued published stimulus yet (gaps, not claims).
 NOT_CATALOGUED = ["courtship song", "aggression", "egg laying", "landing", "flight saccades / steering in flight",
                   "phototaxis", "sleep"]
@@ -313,6 +369,41 @@ def behavior_coverage(sessions: list[tuple[str, list[dict]]] | None = None) -> d
         counts[b["status"]] = counts.get(b["status"], 0) + 1
     return {"behaviors": behaviors, "counts": counts, "not_catalogued": NOT_CATALOGUED,
             "n_impulses": len(gt), "n_impulses_tested": sum(1 for v in tests.values() if v)}
+
+
+# =========================================================================== brain-level score (lab hypothesis)
+
+
+def brain_score(cov: dict | None = None) -> dict:
+    """Score of the lab hypothesis at brain level: for every published experiment that nudges SENSORY / UPSTREAM
+    neurons (not a group the bridge reads, not the read-out itself), did the copied brain's command neurons respond
+    as in the real fly? Brain read-out comparisons count first; a body run of such a stimulus counts through its
+    brain part. Experiments that nudge bridge inputs are listed as pipeline checks (true by construction)."""
+    cov = cov or behavior_coverage()
+    gt = _ground_truth()
+    items, checks = [], []
+    for b in cov["behaviors"]:
+        for i in b["impulses"]:
+            entry = gt.get(i["gt_id"], {})
+            row = {**{k: i[k] for k in ("gt_id", "manipulation", "target", "effect", "citation")}, "behavior": b["id"],
+                   "behavior_plain": b.get("plain") or b["label"], "readout": entry.get("readout_group"),
+                   "readout_plain": GLOSSARY.get(entry.get("readout_group") or "", entry.get("readout_group")),
+                   "target_plain": GLOSSARY.get(i["target"], i["target"])}
+            if i["target"] in _ADAPTER_INPUTS:
+                checks.append({**row, "n_tests": len(i["tests"])})
+                continue
+            brain = [t for t in i["tests"] if t["label_source"] == "brain read-out"] or \
+                    [t for t in i["tests"] if not t["circular"]]
+            vs = {t["verdict"] for t in brain}
+            verdict = ("untested" if not brain else "disagrees" if "inconsistent" in vs
+                       else "agrees" if "consistent" in vs else "unclear")
+            items.append({**row, "verdict": verdict, "n_tests": len(brain),
+                          "sources": sorted({t["source"] for t in brain})})
+    n = {v: sum(1 for x in items if x["verdict"] == v) for v in ("agrees", "disagrees", "unclear", "untested")}
+    return {"items": items, "pipeline_checks": checks, "counts": n, "n_total": len(items),
+            "n_conclusive": n["agrees"] + n["disagrees"],
+            "rule": "counted: published experiments that nudge sensory/upstream neurons; excluded: nudging the "
+                    "neurons the brain-to-body link reads (true by construction)"}
 
 
 # =========================================================================== prior results (input to the next round)
@@ -551,6 +642,7 @@ def build_board() -> dict:
             "experts": [{**e, "n_posts": counts.get(e["id"], 0)} for e in EXPERTS],
             "coverage": behavior_coverage(sessions), "sessions": out_sessions,
             "experiments": list(experiments.values()), "skipped_runs": skipped, "glossary": GLOSSARY,
+            "media": _media(), "brain_score": brain_score(),
             "reproduce": "python3 -m flylab.board export"}
 
 

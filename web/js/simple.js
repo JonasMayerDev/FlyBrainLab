@@ -4,12 +4,6 @@
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const fmt = (x, d = 0) => (x === null || x === undefined || Number.isNaN(+x) ? '–' : (+x).toFixed(d));
 
-const STATUS = {
-  reproduced_body: ['good', 'Matches real flies', 'The virtual fly did what real flies do, and the movement was double-checked.'],
-  reproduced_brain: ['mid', 'Matches inside the brain only', 'The virtual brain reacts like a real fly\'s, but the body movement is not proven yet.'],
-  conflict: ['bad', 'Does not match yet', 'At least one result disagrees with what real flies do.'],
-  untested: ['none', 'Not tested yet', 'No experiment from real-fly research has been replayed for this yet.'],
-};
 const VERDICT = {
   yes: ['good', 'Matches real flies'], brain: ['mid', 'Matches inside the brain'], partly: ['mid', 'Partly matches'],
   no: ['bad', 'Does not match'], open: ['none', 'Open'],
@@ -22,106 +16,98 @@ const plainName = (g) => glossary[g] || glossary[String(g).replace(/_[LR]$/, '')
 function verdictChip([cls, text]) { return `<span class="chip ${cls}">${esc(text)}</span>`; }
 
 function hero(b) {
-  const c = b.coverage.counts;
-  const n = b.coverage.behaviors.length;
-  const items = [['good', c.reproduced_body || 0, 'match real flies fully'], ['mid', c.reproduced_brain || 0, 'match inside the brain only'],
-    ['bad', c.conflict || 0, 'do not match yet'], ['none', c.untested || 0, 'not tested yet']];
+  const sc = b.brain_score, n = sc.counts;
   return `<section class="s-hero">
     <p class="kicker">Our question</p>
-    <h2>Can a computer copy of a fruit fly's brain behave like a real fly?</h2>
-    <p class="lead">Scientists have mapped every one of the 139,000 nerve cells in a fruit fly's brain and how they connect.
-      We run that wiring as a computer model, give it the same nudges that scientists gave real flies in published experiments,
-      and check whether our virtual fly reacts the way the real flies did. A board of AI experts plans each experiment, looks at the result and decides what to test next.</p>
-    <div class="s-answer"><b>Answer so far:</b> partly. Of ${n} fly behaviours we can test:
-      <ul class="s-tally">${items.map(([cls, k, t]) => `<li><span class="dot ${cls}"></span><b>${k}</b> ${esc(t)}</li>`).join('')}</ul>
-      ${breakdown(b.coverage)}
-      <details class="s-match"><summary>What does "match" mean?</summary>
-        <p>We take a published experiment on real flies and replay it in the computer. <i>Example:</i> scientists switched on
-          the LPLC2 neurons of real flies and the flies jumped away. We switch on the same neurons in the virtual brain and look at what happens.
-          It <b>matches</b> when the virtual fly shows the same result as the real flies.</p>
-        <ul>
-          <li><span class="dot good"></span><b>Match real flies fully:</b> the virtual body really does it, an independent checker confirms the movement
-            from the video, and the result does not just follow from how we built the model.</li>
-          <li><span class="dot mid"></span><b>Match inside the brain only:</b> the virtual brain reacts the right way (for example the escape neuron fires),
-            but the body was not run, its movement follows from the brain-to-body link we designed from the same papers, or the checker was unsure.</li>
-          <li><span class="dot bad"></span><b>Do not match yet:</b> the virtual fly does something different from the real flies.
-            Example: switching on LPLC2 makes real flies back away, but not our virtual fly.</li>
-        </ul>
-        <p class="small">A behaviour counts as matching when at least one replayed experiment agreed and none disagreed.
-          Not every published experiment has been replayed yet; each behaviour card below shows how many were.</p>
-      </details>
+    <h2>Does the wiring diagram alone predict how a fly's brain responds?</h2>
+    <p class="lead">Scientists have mapped all 139,000 nerve cells of a fruit fly's brain and every connection between them.
+      We run that wiring as a computer model (the "brain copy") and give it the same nudges that scientists gave real flies in published experiments,
+      for example switching on the eye neurons that see something approaching. Then we check: do the same <b>command neurons</b> switch on as in the real fly,
+      such as the escape neuron that makes a fly jump away, while the others stay off? A board of AI experts plans each experiment, reads the result and decides what to test next.</p>
+    <div class="s-answer">
+      <div class="s-score"><span class="big">${n.agrees} of ${sc.n_conclusive}</span>
+        <span>published experiments with a clear answer agree: the brain copy switched on the same command neurons as the real fly.</span></div>
+      <ul class="s-tally">
+        <li><span class="dot good"></span><b>${n.agrees}</b> agree</li>
+        <li><span class="dot bad"></span><b>${n.disagrees}</b> disagree${n.disagrees ? ' (LPLC2: real flies also back away, the brain copy does not start backing away)' : ''}</li>
+        <li><span class="dot none"></span><b>${n.unclear}</b> no clear answer</li>
+        <li><span class="dot none"></span><b>${n.untested}</b> not replayed yet</li>
+      </ul>
+      <p class="small">Answer so far: <b>mostly yes, at brain level.</b> Only experiments where the brain decides by itself are counted:
+        we nudge eye or sense neurons, not the command neurons. ${sc.pipeline_checks.length} more published experiments nudge the command neurons directly;
+        those only check our own code, so they are listed separately below and not counted.</p>
+      ${brainBreakdown(sc)}
     </div>
   </section>`;
 }
 
+const VERB = { agrees: ['good', 'same as real flies'], disagrees: ['bad', 'different from real flies'],
+  unclear: ['none', 'no clear answer'], untested: ['none', 'not replayed yet'] };
+
+function brainLine(x) {
+  const act = x.manipulation === 'silence' ? 'switching off' : 'switching on';
+  const what = x.effect === 'reduce' ? `they ${DOES[x.behavior].replace(/^start /, '')} less` : `they ${DOES[x.behavior]}`;
+  const ro = x.readout_plain || 'the matching command neurons';
+  const [cls, txt] = VERB[x.verdict];
+  const said = { agrees: x.effect === 'reduce' ? `the ${ro} were held back, as in real flies` : `the ${ro} switched on, as in real flies`,
+    disagrees: `the ${ro} stayed off, unlike in real flies`, unclear: 'the runs so far did not test this directly', untested: 'not replayed yet' }[x.verdict];
+  const name = `${x.target_plain}${x.target_plain.includes(x.target) || x.target_plain.includes('(') ? '' : ` (${x.target})`}`;
+  return `<li class="${cls}"><div class="real"><b>Real flies</b> <span class="small-inline">(${esc(x.citation.first_author)} et al. ${esc(x.citation.year)},
+      <a href="https://doi.org/${esc(x.citation.doi)}" target="_blank" rel="noopener">paper</a>)</span>: ${esc(act)} the ${esc(name)} → ${esc(what)}.</div>
+    <div class="ours"><b>Brain copy:</b> <span class="res ${cls}"><span class="dot ${cls}"></span>${esc(txt)}</span> <span class="small-inline">${esc(said)}</span></div></li>`;
+}
+
+function brainBreakdown(sc) {
+  const order = { disagrees: 0, agrees: 1, unclear: 2, untested: 3 };
+  const items = sc.items.slice().sort((a, c) => order[a.verdict] - order[c.verdict]);
+  return `<details class="s-row mid" open><summary><b>Every published experiment we compare against</b>
+      <span class="cnt">${sc.n_total - sc.counts.untested} of ${sc.n_total} replayed</span></summary>
+      <ul class="imps">${items.map(brainLine).join('')}</ul></details>
+    <details class="s-row none"><summary><b>Not counted: checks of our own code</b><span class="cnt">${sc.pipeline_checks.length} experiments</span></summary>
+      <p class="why">These experiments switch on the command neurons themselves (for example the escape neuron or the moonwalker neurons).
+        Our brain-to-body link turns exactly these neurons into movement, so the result is guaranteed by our code. They show the pipeline works, nothing more.</p>
+      <ul class="imps">${sc.pipeline_checks.map((x) => `<li>${esc(x.manipulation === 'silence' ? 'Switching off' : 'Switching on')} the ${esc(x.target_plain)}
+        → ${esc(DOES[x.behavior] || x.behavior)} <span class="small-inline">(${esc(x.citation.first_author)} et al. ${esc(x.citation.year)})</span></li>`).join('')}</ul></details>`;
+}
+
+function videos(b) {
+  const m = b.media || [];
+  if (!m.length) return '';
+  const card = (x) => {
+    const thr = x.threshold_hz ? ` · take-off rule: ${fmt(x.threshold_hz)} or more` : '';
+    return `<figure class="s-vid">
+      <video src="${esc(x.video)}" muted loop playsinline autoplay preload="metadata" aria-label="Simulation video: ${esc(x.nudge)}"></video>
+      <figcaption><b>Nudge:</b> ${esc(x.nudge)}<br>
+        <b>Brain copy:</b> ${esc(x.group_plain)} fired <b>${fmt(x.rate_hz, 1)}</b> signals per second${esc(thr)}<br>
+        <b>Body:</b> ${esc(String(x.body).replace(/_/g, ' '))}
+        <span class="chip ${x.kind === 'built in' ? 'none' : 'mid'}">${x.kind === 'built in' ? 'built into our code' : 'brain decided, body illustrates'}</span></figcaption></figure>`;
+  };
+  return `<section><h3>Watch the virtual fly</h3>
+    <p class="small">These are real physics simulations computed from the brain copy's output. They show the brain's decision as a movement.
+      The brain decides how strongly the command neuron fires. Our hand-built rule turns that into the movement (for example: escape neuron at about 74 signals per second or more → take off).
+      So the videos illustrate the brain result; the number is the evidence.</p>
+    <div class="s-vids">${m.map(card).join('')}</div></section>`;
+}
+
+function vision(b) {
+  return `<section class="s-visionbox"><h3>The long-term goal</h3>
+    <p>${esc(String(b.hypothesis.vision || '').replace(/^Long-term goal \(unchanged\): /, ''))}</p>
+    <ul>
+      <li><b>Next big step:</b> simulate the fly's nerve cord (its "spinal cord") so that leg and wing movements come from real wiring instead of our rule. That is research of months, not hours.</li>
+      <li><b>Strongest next control:</b> run the same nudges on a randomly rewired brain. If the agreement with real flies drops, it is the specific wiring that matters.</li>
+      <li><b>Real flies:</b> test the model's new predictions in a fly lab, for example LC17 triggering the escape neuron.</li>
+    </ul></section>`;
+}
+
 const DOES = { forward: 'walk forward', backward: 'back away', turn_left: 'turn left', turn_right: 'turn right',
   escape: 'jump away (take off)', flight_power: 'flap their wings harder', feed: 'start eating', groom: 'clean their antennae' };
-const WHERE = { 'brain read-out': 'in the brain', 'walking body': 'in the walking body', 'flight body': 'in the flying body' };
-const SAID = { consistent: ['good', 'same as real flies'], inconsistent: ['bad', 'different from real flies'],
-  partially_consistent: ['mid', 'partly the same'], inconclusive: ['none', 'no clear answer'] };
-
-function impulseLine(i, beh) {
-  const act = i.manipulation === 'silence' ? 'switching off' : 'switching on';
-  const what = i.effect === 'reduce' ? `they ${DOES[beh].replace(/^start /, '')} less` : `they ${DOES[beh]}`;
-  // group identical outcomes: "same as real flies, in the brain (x2)"
-  const groups = {};
-  for (const t of i.tests) {
-    const k = `${t.verdict}|${t.label_source}|${t.circular}|${t.verifier && !['correct'].includes(t.verifier) ? 'unsure' : ''}`;
-    (groups[k] ||= { t, n: 0 }).n += 1;
-  }
-  const res = Object.values(groups).map(({ t, n }) => {
-    const [cls, txt] = SAID[t.verdict] || SAID.inconclusive;
-    const notes = [t.circular ? 'built into our brain-to-body link' : '', t.verifier && t.verifier !== 'correct' ? 'checker unsure' : ''].filter(Boolean);
-    return `<span class="res ${cls}"><span class="dot ${cls}"></span>${esc(txt)} ${esc(WHERE[t.label_source] || '')}${n > 1 ? ` (${n}×)` : ''}${notes.length ? ` <i>(${esc(notes.join(', '))})</i>` : ''}</span>`;
-  }).join('');
-  return `<li><div class="real"><b>Real flies</b> <span class="small-inline">(${esc(i.citation.first_author)} et al. ${esc(i.citation.year)},
-      <a href="https://doi.org/${esc(i.citation.doi)}" target="_blank" rel="noopener">paper</a>)</span>: ${esc(act)} the ${esc(plainName(i.target))}${plainName(i.target).includes(i.target) || plainName(i.target).includes('(') ? '' : ` (${esc(i.target)})`} → ${esc(what)}.</div>
-    <div class="ours"><b>Our virtual fly:</b> ${res || '<span class="res none"><span class="dot none"></span>not replayed yet</span>'}</div></li>`;
-}
-
-function whyNot(b) {
-  if (b.status === 'reproduced_body') return '';
-  const ok = b.impulses.flatMap((i) => i.tests).filter((t) => t.verdict === 'consistent');
-  const bad = b.impulses.filter((i) => i.tests.some((t) => t.verdict === 'inconsistent'));
-  const reasons = [];
-  if (bad.length) reasons.push(`when we switched on ${bad.map((i) => i.target).join(' or ')}, the virtual fly did something different from the real flies`);
-  if (ok.some((t) => t.label_source === 'brain read-out')) reasons.push('some results were only measured in the brain, not as a body movement');
-  if (ok.some((t) => t.circular)) reasons.push('the body movement comes from the brain-to-body link we built from the same papers, so it cannot count as independent');
-  if (ok.some((t) => t.verifier && t.verifier !== 'correct')) reasons.push('the movement checker could not confirm the video');
-  const open = b.impulses.filter((i) => !i.tests.length).length;
-  if (open) reasons.push(`${open} of ${b.n_impulses} published experiments have not been replayed yet`);
-  return reasons.length ? `<div class="why"><b>${b.status === 'conflict' ? 'Why it does not match:' : 'Why not "fully":'}</b>
-    <ul>${reasons.map((r) => `<li>${esc(r[0].toUpperCase() + r.slice(1))}.</li>`).join('')}</ul></div>` : '';
-}
-
-function breakdown(cov) {
-  const order = { conflict: 0, reproduced_body: 1, reproduced_brain: 2, untested: 3 };
-  const rows = cov.behaviors.slice().sort((a, c) => order[a.status] - order[c.status]).map((b) => {
-    const [cls, label] = STATUS[b.status];
-    return `<details class="s-row ${cls}"><summary><span class="dot ${cls}"></span><b>${esc(b.plain || b.label)}</b>
-        <span class="chip ${cls}">${esc(label)}</span><span class="cnt">${b.n_tested} of ${b.n_impulses} real-fly experiments replayed</span></summary>
-      ${whyNot(b)}
-      <ul class="imps">${b.impulses.map((i) => impulseLine(i, b.id)).join('')}</ul></details>`;
-  }).join('');
-  const total = cov.n_impulses, done = cov.n_impulses_tested;
-  return `<p class="s-sub">Behaviour by behaviour (click one to see every experiment):</p>
-    <div class="s-rows">${rows}</div>
-    <div class="s-need"><b>What is still missing for a full "yes"</b><ul>
-      <li>A body movement that the brain decides on by itself (we nudge eye or sense neurons, not the neurons our brain-to-body link reads) and that the movement checker confirms.
-        Closest so far: eye neurons LPLC2 → take-off. The video exists, but the checker could not confirm it because the camera follows the fly, so the height gain is hard to see.
-        Even then, how the legs and wings move comes from our hand-built link: the fly's nerve cord (its "spinal cord") is not simulated.</li>
-      <li>Replaying the remaining ${total - done} of ${total} published experiments (${done} done so far).</li>
-      <li>Behaviours we have no published experiment for yet: ${cov.not_catalogued.map(esc).join(', ')}.</li>
-      <li>Testing the model's new predictions in real flies, for example LC17 triggering escape.</li>
-    </ul></div>`;
-}
 
 function howItWorks() {
   const steps = [
     ['Virtual brain', 'A computer model of all 139,000 nerve cells of a fruit fly, wired exactly as measured in a real fly brain.'],
     ['Nudge neurons', 'We switch on (or off) the same nerve cells that scientists switched on in real flies, for example the cells that see a looming object.'],
-    ['Virtual body', 'The brain\'s output drives a physics-simulated fly that can walk and fly.'],
-    ['Compare', 'Did the virtual fly do what the real flies did in the published experiment? An independent checker re-runs everything.'],
+    ['Read the command neurons', 'We measure which command neurons switch on, such as the escape neuron, and which stay off.'],
+    ['Compare', 'Same as in the real fly? An independent checker re-runs every experiment. A physics-simulated body shows the decision as a movement.'],
   ];
   return `<section class="s-how"><h3>How it works</h3><ol>${steps.map(([t, d], i) => `<li><span class="num">${i + 1}</span><b>${esc(t)}</b><p>${esc(d)}</p></li>`).join('')}</ol></section>`;
 }
@@ -218,11 +204,11 @@ function glossaryBox() {
 export function renderSimple(b, el, onExpert) {
   glossary = b.glossary || {};
   const sessions = b.sessions.slice().reverse(); // newest first
-  el.innerHTML = `${hero(b)}${howItWorks()}
+  el.innerHTML = `${hero(b)}${videos(b)}${howItWorks()}
     <section><h3>The experiments, newest first</h3>
       <p class="small">Each experiment builds on the one before: the experts read the earlier results before planning the next test.</p>
       ${sessions.map((s) => story(s, b, b.sessions.indexOf(s))).join('')}
     </section>
-    ${glossaryBox()}`;
+    ${vision(b)}${glossaryBox()}`;
   el.querySelectorAll('[data-expert]').forEach((a) => a.addEventListener('click', (ev) => { ev.preventDefault(); onExpert(a.dataset.expert); }));
 }

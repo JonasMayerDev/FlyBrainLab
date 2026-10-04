@@ -1,10 +1,11 @@
 {
  "format": "flylab-board-v1",
- "generated": "2026-10-04T10:41:40+00:00",
- "git_rev": "43ffe8c",
+ "generated": "2026-10-04T11:41:20+00:00",
+ "git_rev": "650dbf0",
  "hypothesis": {
-  "en": "Can a simulated fly brain reproduce the complete real behaviour of a fruit fly when it receives the real stimuli reported in published experiments, and does the simulated response match what the real fly does?",
-  "de": "Können wir ein komplettes reales Verhalten einer Fliege mit einem simulierten Gehirn nachahmen, indem wir dem simulierten Gehirn reale Impulse anhand existierender Forschung geben und die darauf folgende Reaktion in der Simulation prüfen?"
+  "en": "Does the wiring diagram alone predict how a fly's brain responds? If we give the copied fly brain the same nudges as published experiments on real flies, do the same command neurons switch on (and the others stay off) as in the real fly?",
+  "de": "Reicht der Schaltplan allein, um die Reaktion des Fliegengehirns vorherzusagen? Wenn wir dem kopierten Gehirn dieselben Reize geben wie in veröffentlichten Experimenten, schalten sich dieselben Kommandoneuronen ein wie bei der echten Fliege?",
+  "vision": "Long-term goal (unchanged): a virtual fly that behaves like a real one, up to flight. Body movements need a simulated nerve cord first; today the body only illustrates the brain's decision."
  },
  "experts": [
   {
@@ -13,7 +14,7 @@
    "speaks_for": "Scientist",
    "color": "#6b665d",
    "decides": "sets the research question and approves consequential actions",
-   "n_posts": 3
+   "n_posts": 4
   },
   {
    "id": "supervisor",
@@ -21,7 +22,7 @@
    "speaks_for": "Principal investigator",
    "color": "#b0722f",
    "decides": "agenda, hand-offs, whether a result reopens an assumption, when to stop",
-   "n_posts": 11
+   "n_posts": 14
   },
   {
    "id": "literature",
@@ -29,7 +30,7 @@
    "speaks_for": "Behavioural neuroscience",
    "color": "#2f6fb0",
    "decides": "which published findings count as evidence and where the gaps are",
-   "n_posts": 9
+   "n_posts": 16
   },
   {
    "id": "hypothesis",
@@ -37,7 +38,7 @@
    "speaks_for": "Connectomics",
    "color": "#7a4fb3",
    "decides": "which candidate neurons to stimulate and what each hypothesis predicts",
-   "n_posts": 13
+   "n_posts": 18
   },
   {
    "id": "planner",
@@ -45,7 +46,7 @@
    "speaks_for": "Experimental design",
    "color": "#1f7a72",
    "decides": "which of at least two competing tests to run (information gain vs. cost, budget)",
-   "n_posts": 14
+   "n_posts": 17
   },
   {
    "id": "safety",
@@ -53,7 +54,7 @@
    "speaks_for": "Safety and approval",
    "color": "#b3261e",
    "decides": "whether a plan is within budget and caps and must go to the human",
-   "n_posts": 6
+   "n_posts": 7
   },
   {
    "id": "runner",
@@ -916,7 +917,7 @@
    "run_id": "20261004-010600-which-visual-projection-neurons-ebe8",
    "question": "Which visual projection neurons drive backward walking (retreat) in Drosophila, and is the moonwalker pathway necessary?",
    "status": "finished",
-   "last_event_age_s": 41241,
+   "last_event_age_s": 44821,
    "started": "2026-10-04T01:06:00+02:00",
    "ended": "2026-10-04T01:14:19+02:00",
    "n_events": 37,
@@ -1809,7 +1810,7 @@
    "run_id": "20261004-093251-which-visual-neurons-trigger-esc-9460",
    "question": "Which visual neurons trigger escape takeoff through the giant fiber, does the simulated body actually take off, and is the giant fiber necessary?",
    "status": "finished",
-   "last_event_age_s": 10839,
+   "last_event_age_s": 14419,
    "started": "2026-10-04T09:32:51+02:00",
    "ended": "2026-10-04T09:41:01+02:00",
    "n_events": 33,
@@ -2679,7 +2680,7 @@
    "run_id": "20261004-120628-at-lower-realistic-drive-rates-1-064e",
    "question": "At lower, realistic drive rates (10-30 Hz), which visual projection neurons (LC/LPLC types) still drive the giant fiber and escape takeoff, and does the simulated flying body take off? (follow-up to S2 saturation at 150 Hz)",
    "status": "finished",
-   "last_event_age_s": 1293,
+   "last_event_age_s": 4873,
    "started": "2026-10-04T12:06:28+02:00",
    "ended": "2026-10-04T12:20:07+02:00",
    "n_events": 52,
@@ -3873,6 +3874,560 @@
     ]
    },
    "record": "runs/20261004-120628-at-lower-realistic-drive-rates-1-064e/record.jsonl"
+  },
+  {
+   "id": "S4",
+   "run_id": "20261004-133848-at-realistic-drive-rates-10-30-h-8ed6",
+   "question": "At realistic drive rates (10-30 Hz), which visual projection neurons drive the moonwalker neurons (MDN), does LPLC2 reach them through any route, and is the escape-versus-retreat split specific (right command neurons on, others off)?",
+   "status": "running",
+   "last_event_age_s": 1,
+   "started": "2026-10-04T13:38:48+02:00",
+   "ended": "2026-10-04T13:41:19+02:00",
+   "n_events": 20,
+   "rounds": [
+    {
+     "n": 1,
+     "posts": [
+      {
+       "seq": 0,
+       "ts": "2026-10-04T13:38:48+02:00",
+       "agent": "human",
+       "type": "question",
+       "text": "At realistic drive rates (10-30 Hz), which visual projection neurons drive the moonwalker neurons (MDN), does LPLC2 reach them through any route, and is the escape-versus-retreat split specific (right command neurons on, others off)?",
+       "citations": [],
+       "refs": []
+      },
+      {
+       "seq": 1,
+       "ts": "2026-10-04T13:38:48+02:00",
+       "agent": "supervisor",
+       "type": "note",
+       "text": "Run opened by orchestrator.",
+       "citations": [],
+       "refs": []
+      },
+      {
+       "seq": 2,
+       "ts": "2026-10-04T13:38:50+02:00",
+       "agent": "supervisor",
+       "type": "prior_review",
+       "text": "Board reviewed 3 earlier session(s) with 25 experiments; untested or conflicting behaviours: backward",
+       "citations": [],
+       "refs": [
+        "S1/screen_01",
+        "S1/brain_01",
+        "S1/brain_02",
+        "S1/embodied_01",
+        "S1/brain_03",
+        "S1/brain_04",
+        "S1/brain_05",
+        "S1/brain_06",
+        "S2/screen_01",
+        "S2/flight_01",
+        "S2/flight_02",
+        "S2/brain_01",
+        "S2/brain_02",
+        "S3/screen_01",
+        "S3/brain_01",
+        "S3/brain_02",
+        "S3/brain_03",
+        "S3/brain_04",
+        "S3/screen_02",
+        "S3/screen_03",
+        "S3/brain_05",
+        "S3/brain_06",
+        "S3/brain_07",
+        "S3/flight_01",
+        "S3/flight_02"
+       ],
+       "reviewed": [
+        "S1/screen_01",
+        "S1/brain_01",
+        "S1/brain_02",
+        "S1/embodied_01",
+        "S1/brain_03",
+        "S1/brain_04",
+        "S1/brain_05",
+        "S1/brain_06",
+        "S2/screen_01",
+        "S2/flight_01",
+        "S2/flight_02",
+        "S2/brain_01",
+        "S2/brain_02",
+        "S3/screen_01",
+        "S3/brain_01",
+        "S3/brain_02",
+        "S3/brain_03",
+        "S3/brain_04",
+        "S3/screen_02",
+        "S3/screen_03",
+        "S3/brain_05",
+        "S3/brain_06",
+        "S3/brain_07",
+        "S3/flight_01",
+        "S3/flight_02"
+       ]
+      },
+      {
+       "seq": 3,
+       "ts": "2026-10-04T13:38:54+02:00",
+       "agent": "supervisor",
+       "type": "board_statement",
+       "text": "Agenda: the only brain-level conflict is backward walking (gt19 LPLC2->backward inconsistent in S1/screen_01, MDN 0 Hz; LC16 drove MDN 32 Hz in S1/brain_01). S1 used saturating drive; S3 showed that ranking changes at 10-30 Hz. Session 4 re-screens visual projection neurons for MDN at 10-30 Hz, asks whether LPLC2 reaches MDN by any route (direct/2-hop/rate sweep), and tests specificity: GF vs MDN vs DNa/P9 for LPLC2 vs MDN-driving types (LC16 etc.). Brain-level evidence only; body only as illustration.",
+       "citations": [],
+       "refs": [
+        "S1/screen_01",
+        "S1/brain_01",
+        "S3/screen_01",
+        "S3/brain_06"
+       ],
+       "stance": "propose"
+      },
+      {
+       "seq": 4,
+       "ts": "2026-10-04T13:39:07+02:00",
+       "agent": "literature",
+       "type": "evidence",
+       "text": "Literature search: 'LPLC2 LC16 moonwalker MDN backward walking descending neurons Drosophila' -> 2 hits",
+       "citations": [
+        "10.3389/fnins.2022.883640",
+        "10.15083/0002013308"
+       ],
+       "refs": [],
+       "hits": [
+        {
+         "title": "From Photons to Behaviors: Neural Implementations of Visual Behaviors in Drosophila.",
+         "year": 2022,
+         "doi": "10.3389/fnins.2022.883640"
+        },
+        {
+         "title": "Neuronal Mechanism that Drives Visual Gating in a Defensive Internal State",
+         "year": 2024,
+         "doi": "10.15083/0002013308"
+        }
+       ]
+      },
+      {
+       "seq": 5,
+       "ts": "2026-10-04T13:39:08+02:00",
+       "agent": "literature",
+       "type": "evidence",
+       "text": "Literature search: 'visual projection neurons VPN LPC1 LT82b LC6 LC18 escape descending neurons frequency Hz' -> 0 hits",
+       "citations": [],
+       "refs": []
+      },
+      {
+       "seq": 6,
+       "ts": "2026-10-04T13:39:15+02:00",
+       "agent": "hypothesis",
+       "type": "evidence",
+       "text": "Connectome ranking of 326 visual_projection types -> MDN: top LPC1, LT82b, LC6, LC18, LPLC1",
+       "citations": [],
+       "refs": [],
+       "ranking": [
+        {
+         "rank": 1,
+         "cell_type": "LPC1",
+         "score": 45.1,
+         "note": "indirect only (<= 3 hops)"
+        },
+        {
+         "rank": 2,
+         "cell_type": "LT82b",
+         "score": 30.0,
+         "note": "indirect only (<= 3 hops)"
+        },
+        {
+         "rank": 3,
+         "cell_type": "LC6",
+         "score": 27.6,
+         "note": "indirect only (<= 3 hops)"
+        },
+        {
+         "rank": 4,
+         "cell_type": "LC18",
+         "score": 19.8,
+         "note": "indirect only (<= 3 hops)"
+        },
+        {
+         "rank": 5,
+         "cell_type": "LPLC1",
+         "score": 18.0,
+         "note": "indirect only (<= 3 hops)"
+        },
+        {
+         "rank": 6,
+         "cell_type": "LC4",
+         "score": 13.7,
+         "note": "indirect only (<= 3 hops)"
+        },
+        {
+         "rank": 7,
+         "cell_type": "LTe65",
+         "score": 13.6,
+         "note": "indirect only (<= 3 hops)"
+        },
+        {
+         "rank": 8,
+         "cell_type": "LC9",
+         "score": 12.6,
+         "note": "indirect only (<= 3 hops)"
+        },
+        {
+         "rank": 9,
+         "cell_type": "LLPC2",
+         "score": 11.9,
+         "note": "indirect only (<= 3 hops)"
+        },
+        {
+         "rank": 10,
+         "cell_type": "LC10c-1",
+         "score": 11.9,
+         "note": "indirect only (<= 3 hops)"
+        }
+       ]
+      },
+      {
+       "seq": 7,
+       "ts": "2026-10-04T13:39:21+02:00",
+       "agent": "hypothesis",
+       "type": "hypothesis",
+       "text": "[H1, agent-generated] [Agent-generated; ground-truth check] At realistic 10-30 Hz drive, bilateral LC16 activation still raises MDN firing above baseline (and above LC6/LC4 activation), with LC16 retained as the only literature-backed VPN-to-MDN route even though the prior ranks it only #16.",
+       "citations": [
+        "10.7554/eLife.21022",
+        "10.1016/j.cub.2017.02.008"
+       ],
+       "refs": [],
+       "hypothesis": {
+        "id": "H1",
+        "predicted": "backward",
+        "targets": [
+         "LC16",
+         "MDN"
+        ],
+        "confidence": 0.55
+       }
+      },
+      {
+       "seq": 8,
+       "ts": "2026-10-04T13:39:24+02:00",
+       "agent": "literature",
+       "type": "evidence",
+       "text": "Literature search: 'LC16 frequency response optogenetic drive rate MDN synapse connectivity Drosophila' -> 1 hits",
+       "citations": [
+        "10.1101/2025.07.22.666129"
+       ],
+       "refs": [],
+       "hits": [
+        {
+         "title": "Control of walking direction by descending and dopaminergic neurons in Drosophila",
+         "year": 2025,
+         "doi": "10.1101/2025.07.22.666129"
+        }
+       ]
+      },
+      {
+       "seq": 9,
+       "ts": "2026-10-04T13:39:24+02:00",
+       "agent": "literature",
+       "type": "evidence",
+       "text": "Literature search: 'LPC1 LT82b LC6 LC18 LC4 LC9 visual projection neurons backward retreat Drosophila connectome' -> 0 hits",
+       "citations": [],
+       "refs": []
+      },
+      {
+       "seq": 10,
+       "ts": "2026-10-04T13:39:27+02:00",
+       "agent": "hypothesis",
+       "type": "hypothesis",
+       "text": "[H2, agent-generated] [Agent-generated; gap probe] At 10-30 Hz drive, LPC1, LT82b and LC6 (connectome ranks 1-3, none with literature evidence for MDN) raise MDN firing at least as much as LC16, whereas LPLC2 reaches MDN only weakly and only via multi-hop routes through intermediate types (no direct LPLC2 to MDN synapse), so the LPLC2 effect on MDN is smaller than its effect on GF/DNp01.",
+       "citations": [
+        "10.7554/eLife.21022"
+       ],
+       "refs": [],
+       "hypothesis": {
+        "id": "H2",
+        "predicted": "backward",
+        "targets": [
+         "LPC1",
+         "LT82b",
+         "LC6",
+         "LPLC2",
+         "MDN"
+        ],
+        "confidence": 0.4
+       }
+      },
+      {
+       "seq": 11,
+       "ts": "2026-10-04T13:39:28+02:00",
+       "agent": "literature",
+       "type": "evidence",
+       "text": "Literature search: 'moonwalker descending neurons MDN firing rate visual looming backward escape Drosophila Sen' -> 6 hits",
+       "citations": [
+        "10.7554/elife.96084",
+        "10.1101/2023.06.07.543976",
+        "10.1101/2025.07.22.666129",
+        "10.1016/j.conb.2023.102822",
+        "10.1101/2022.06.30.497612",
+        "10.15083/0002013308"
+       ],
+       "refs": [],
+       "hits": [
+        {
+         "title": "Organization of circuits linking descending input to motor output in the Drosophila Male Adult Nerve Cord connectome.",
+         "year": 2026,
+         "doi": "10.7554/elife.96084"
+        },
+        {
+         "title": "Transforming descending input into motor output: An analysis of the Drosophila Male Adult Nerve Cord connectome",
+         "year": 2023,
+         "doi": "10.1101/2023.06.07.543976"
+        },
+        {
+         "title": "Control of walking direction by descending and dopaminergic neurons in Drosophila",
+         "year": 2025,
+         "doi": "10.1101/2025.07.22.666129"
+        },
+        {
+         "title": "Descending control of motor sequences in Drosophila",
+         "year": 2023,
+         "doi": "10.1016/j.conb.2023.102822"
+        },
+        {
+         "title": "Descending neuron population dynamics during odor-evoked and spontaneous limb-dependent behaviors",
+         "year": 2022,
+         "doi": "10.1101/2022.06.30.497612"
+        },
+        {
+         "title": "Neuronal Mechanism that Drives Visual Gating in a Defensive Internal State",
+         "year": 2024,
+         "doi": "10.15083/0002013308"
+        }
+       ]
+      },
+      {
+       "seq": 12,
+       "ts": "2026-10-04T13:39:29+02:00",
+       "agent": "literature",
+       "type": "evidence",
+       "text": "Literature search: 'Wu et al 2016 lobula visual projection neurons LC LPLC behavioral phenotype optogenetics' -> 5 hits",
+       "citations": [
+        "10.7554/elife.21022",
+        "10.1093/genetics/iyad064",
+        "10.17863/cam.13847",
+        "10.1101/2021.12.20.473513",
+        "10.7936/30rf-tm15"
+       ],
+       "refs": [],
+       "hits": [
+        {
+         "title": "Visual projection neurons in the Drosophila lobula link feature detection to distinct behavioral programs.",
+         "year": 2016,
+         "doi": "10.7554/elife.21022"
+        },
+        {
+         "title": "Visual processing in the fly, from photoreceptors to behavior",
+         "year": 2023,
+         "doi": "10.1093/genetics/iyad064"
+        },
+        {
+         "title": "Signal transformation at the input and output of the Drosophila visual system",
+         "year": 2017,
+         "doi": "10.17863/cam.13847"
+        },
+        {
+         "title": "Neuronal circuits integrating visual motion information in Drosophila",
+         "year": 2021,
+         "doi": "10.1101/2021.12.20.473513"
+        },
+        {
+         "title": "Visual and Chemosensory Pathways Associated With Male Courtship Decisions in Drosophila melanogaster",
+         "year": 2019,
+         "doi": "10.7936/30rf-tm15"
+        }
+       ]
+      },
+      {
+       "seq": 13,
+       "ts": "2026-10-04T13:39:32+02:00",
+       "agent": "hypothesis",
+       "type": "hypothesis",
+       "text": "[H3, agent-generated] [Agent-generated; specificity and necessity] The escape-vs-retreat split is specific: LPLC2 (and LC4, LC6, LC15) activation raises GF/DNp01 but not MDN, while LC16 raises MDN but not GF; silencing MDN removes the MDN response without lowering GF, and silencing GF removes the GF response without lowering MDN.",
+       "citations": [
+        "10.7554/eLife.21022",
+        "10.1016/j.cub.2019.01.079",
+        "10.1016/j.cub.2017.02.008"
+       ],
+       "refs": [],
+       "hypothesis": {
+        "id": "H3",
+        "predicted": "escape",
+        "targets": [
+         "LPLC2",
+         "LC4",
+         "LC6",
+         "LC16",
+         "GF",
+         "MDN",
+         "DNa02"
+        ],
+        "confidence": 0.5
+       }
+      },
+      {
+       "seq": 14,
+       "ts": "2026-10-04T13:39:36+02:00",
+       "agent": "hypothesis",
+       "type": "board_statement",
+       "text": "Run a 10/20/30 Hz screen of the connectome top-10 for MDN (LPC1, LT82b, LC6, LC18, LPLC1, LC4, LTe65, LC9, LLPC2, LC10c-1) plus LC16 (rank 16) and LPLC2 (rank 12), reading out MDN, GF/DNp01 and DNa02/DNa01. Then run the 2x2 of LPLC2 or LC16 activation with MDN or GF silenced. All of this is agent-generated, and every route to MDN is indirect (direct_syn=0). Predictions: LC16 raises MDN (H1); LPLC2 stays near 0 Hz on MDN and reaches it, if at all, only through intermediate types (H2); the escape/retreat split is specific (H3). A result where LPLC2 drives MDN, or LC16 drives GF, falsifies the split.",
+       "citations": [],
+       "refs": [
+        "S1/screen_01",
+        "S1/brain_01"
+       ],
+       "stance": "propose"
+      },
+      {
+       "seq": 15,
+       "ts": "2026-10-04T13:39:53+02:00",
+       "agent": "literature",
+       "type": "evidence",
+       "text": "**Literature Evidence: Visual Projection Neurons Driving MDN/Backward Walking**\n\n**Key Findings (with DOIs):**\n\n1. **LC16 → MDN → Backward Walking (Strong)**: Sen et al. 2017 (doi:10.1016/j.cub.2017.02.008, gt21) reports \"LC16 and MDNs are critical components of the neural circuit that transduces threatening visual stimuli into directional locomotor output\" with functional imaging, behavioral epistasis, and unilateral activation experiments supporting LC16→MDN→backward walking. Wu et al. 2016 (doi:10.7554/eLife.21022, gt20) confirms bilateral LC16 activation produces \"strong backward walking response.\"\n\n2. **LPLC2 Elicits Backward Walking AND Jumping (Equal Penetrance, Mechanism Unclear)**: Wu et al. 2016 (doi:10.7554/eLife.21022, gt08/gt19) shows LPLC2 activation evokes \"both jumping and backward walking behaviors with about equal penetrance in the arena assay.\" The readout group (MDN vs. GF) is ambiguous; Ache et al. 2019 (doi:10.1016/j.cub.2019.01.079, gt09/gt25) establishes LPLC2→GF (necessary for GF-mediated escape) and LPLC2+LC4 synapse directly onto GF. **Question: Does LPLC2 reach MDN via a separate route, or is backward walking from LPLC2 the jumping behavior in situ?**\n\n3. **LC4 and LC6 Drive Escape (Jumping)**: Wu et al. 2016 (doi:10.7554/eLife.21022, gt22/gt23) reports LC4 and LC6 activation drive \"highly penetrant jumping.\" Ache et al. 2019 notes LC4 synapses directly onto GF.\n\n4. **MDN Activation Necessary/Sufficient for Backward Walking**: Bidaye et al. 2014 (doi:10.1126/science.1249964, gt01/gt02) and Braun et al. 2024 (doi:10.1038/s41586-024-07523-9, gt18) confirm MDN activation at ≥10.5 μW produces backward walking.\n\n**Cell Type Names (per ground truth):**\n- LC16, LPLC2, LC4, LC6, LC18 (cited), LPC1, LT82b, LC9 (user mentions; not yet found in published screening data)\n- MDN (moonwalker descending neurons)\n- GF (giant fiber)\n\n**Matching Ground-Truth IDs:**\n- gt20 (LC16→backward), gt21 (LC16→MDN pathway), gt08/gt19 (LPLC2→backward/jumping), gt09/gt25 (LPLC2→GF), gt22 (LC4→escape), gt23 (LC6→escape), gt01/gt02/gt18 (MDN→backward)\n\n**Knowledge Gaps:**\n\n1. **LPLC2-MDN Route Unresolved**: LPLC2 produces backward walking (gt19) but is known to drive GF (gt09/gt25), not MDN. Unclear whether LPLC2 reaches MDN at all, or backward walking is misclassified jumping, or LPLC2 has parallel outputs.\n\n2. **Frequency Response Not Quantified**: Wu et al. 20…",
+       "citations": [],
+       "refs": []
+      },
+      {
+       "seq": 16,
+       "ts": "2026-10-04T13:40:34+02:00",
+       "agent": "planner",
+       "type": "experiment_options",
+       "text": "3 candidate experiments proposed",
+       "citations": [],
+       "refs": [],
+       "options": [
+        {
+         "id": "E1",
+         "kind": "screen",
+         "cost": 82.5,
+         "gain": 0.35,
+         "tests": "H1/H2",
+         "why": "Exhaustive 326-type screen at 20 Hz; denied by policy (>40 candidates) and 82.5 units is 8x budget; screen_mdn benchmark shows guided order finds 12/12 high-drive hits within 20 experiments vs ~302 random, so exhaustive adds little."
+        },
+        {
+         "id": "E2",
+         "kind": "brain",
+         "cost": 9.4,
+         "gain": 0.8,
+         "tests": "H1/H2/H3",
+         "why": "Low-rate MDN screen of top-6 connectome types + LC16/LPLC2 controls (3.0), 10/20/30 Hz sweep of LC16 and LPLC2 with MDN and GF readout at one seed (6 x 0.8 = 4.8), plus 2 silencing runs for specificity (1.6). Directly answers all three questions at brain level."
+        },
+        {
+         "id": "E3",
+         "kind": "embodied_flight",
+         "cost": 3.2,
+         "gain": 0.1,
+         "tests": "H3",
+         "why": "Adapter wires takeoff to GF, so GF silenced -> no_takeoff is true by design (adapter check, not a discovery); no MDN information, so illustration only and skipped."
+        }
+       ],
+       "budget": 10
+      },
+      {
+       "seq": 17,
+       "ts": "2026-10-04T13:40:34+02:00",
+       "agent": "planner",
+       "type": "experiment_choice",
+       "text": "Chose E2: E2 is the only option that covers the three questions (which types drive MDN at 10-30 Hz, whether LPLC2 reaches MDN, whether the GF/MDN split is specific) within 10 units. Cost 9.4 = 3.0 + 4.8 + 1.6. E1 is denied by policy and 8x over budget. E3 is an adapter check with no information on MDN. Prior results that shaped it: the screen_mdn benchmark (guided order finds all hits within 20 of 326; LPLC2 is not an in-silico hit at 150 Hz, which is the saturation question for H2), and S3, where 10-30 Hz screens differed from 150 Hz and some runs were noisy, so seeds are fixed and a replicate seed is the first follow-up. The silencing runs reuse the sweep's 20 Hz, seed 1 runs as unsilenced controls, so they need no extra control runs.",
+       "citations": [],
+       "refs": [],
+       "choice": {
+        "id": "E2",
+        "rationale": "E2 is the only option that covers the three questions (which types drive MDN at 10-30 Hz, whether LPLC2 reaches MDN, whether the GF/MDN split is specific) within 10 units. Cost 9.4 = 3.0 + 4.8 + 1.6. E1 is denied by policy and 8x over budget. E3 is an adapter check with no information on MDN. Prior results that shaped it: the screen_mdn benchmark (guided order finds all hits within 20 of 326; LPLC2 is not an in-silico hit at 150 Hz, which is the saturation question for H2), and S3, where 10-30 Hz screens differed from 150 Hz and some runs were noisy, so seeds are fixed and a replicate seed is the first follow-up. The silencing runs reuse the sweep's 20 Hz, seed 1 runs as unsilenced controls, so they need no extra control runs."
+       }
+      },
+      {
+       "seq": 18,
+       "ts": "2026-10-04T13:40:38+02:00",
+       "agent": "planner",
+       "type": "board_statement",
+       "text": "Run E2 (9.4 of 10 units, brain-level only): (A) low-rate MDN screen, 20 Hz, of LPC1, LT82b, LC6, LC18, LPLC1, LC4 plus LC16 and LPLC2 as controls (est. 3.0); (B) a 10/20/30 Hz sweep of LC16 and LPLC2 with MDN and GF readouts, seed 1 (est. 4.8); (C) two silencing runs for specificity, LC16 + MDN silenced and LPLC2 + GF silenced, at 20 Hz, seed 1, with the sweep's 20 Hz runs as controls (est. 1.6). E1 (exhaustive, 82.5 units) is denied by policy and over budget. The screen_mdn benchmark shows the guided order finds all 12 hits within 20 of 326 experiments. E3 (embodied flight) is skipped because GF -> takeoff is true by design and it carries no MDN information. The first follow-up is a replicate seed for any hit near threshold.",
+       "citations": [],
+       "refs": [
+        "S1/screen_01",
+        "S1/brain_01",
+        "S1/brain_05",
+        "S3/screen_01"
+       ],
+       "stance": "propose"
+      },
+      {
+       "seq": 19,
+       "ts": "2026-10-04T13:41:19+02:00",
+       "agent": "safety",
+       "type": "approval",
+       "text": "Pre-approved at launch (scripted run): Run E2: (A) run_brain_screen: 8 visual candidates (LPC1, LT82b, LC6, LC18, LPLC1, LC4, LC16, LPLC2) against MDN target, 20 Hz, 500 ms, 2 trials (kind=screen, 3.0 units); (B) run_experiments_parallel: 6 brain specs—LC16 and LPLC2 each at 10/20/30 Hz, 1000 ms, 1 trial, readouts MDN+GF (kind=brain, 4.8 units); (C) 2 brain specs—LC16 excite+MDN silence, LPLC2 excite+GF silence, 20 Hz, 1000 ms (kind=brain, 1.6 units). Total: 9.4 units.",
+       "citations": [],
+       "refs": [],
+       "approval": {
+        "status": "pre-approved",
+        "cost": 9.4,
+        "gate": "omnigent policy lab_approval_gate: PRE-APPROVED by kartikkrishnan (approved in chat) (human) at launch via agents/omni.sh -ApproveAtLaunch for this scripted run (agents/omni.ps1 -ApproveAtLaunch; caps still enforced: max 6 embodied runs, <= 40 screen candidates per call, cost_budget, 90 tool calls per session)"
+       }
+      }
+     ],
+     "title": "Round 1",
+     "experiments": [],
+     "opened_by": null,
+     "carried_forward": [
+      "S1/screen_01",
+      "S1/brain_01",
+      "S3/screen_01",
+      "S3/brain_06",
+      "S1/brain_05"
+     ],
+     "reviewed_earlier": [
+      "S1/brain_01",
+      "S1/brain_02",
+      "S1/brain_03",
+      "S1/brain_04",
+      "S1/brain_05",
+      "S1/brain_06",
+      "S1/embodied_01",
+      "S1/screen_01",
+      "S2/brain_01",
+      "S2/brain_02",
+      "S2/flight_01",
+      "S2/flight_02",
+      "S2/screen_01",
+      "S3/brain_01",
+      "S3/brain_02",
+      "S3/brain_03",
+      "S3/brain_04",
+      "S3/brain_05",
+      "S3/brain_06",
+      "S3/brain_07",
+      "S3/flight_01",
+      "S3/flight_02",
+      "S3/screen_01",
+      "S3/screen_02",
+      "S3/screen_03"
+     ],
+     "decision_seq": null
+    }
+   ],
+   "earlier_results_cited": [
+    "S1/brain_01",
+    "S1/brain_05",
+    "S1/screen_01",
+    "S3/brain_06",
+    "S3/screen_01"
+   ],
+   "read_prior_sessions": true,
+   "llm_cost_usd_mentioned": null,
+   "plain": null,
+   "audit": null,
+   "record": "runs/20261004-133848-at-realistic-drive-rates-10-30-h-8ed6/record.jsonl"
   }
  ],
  "experiments": [
@@ -4193,6 +4748,34 @@
      "seq": 11,
      "agent": "hypothesis",
      "type": "board_statement"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 3,
+     "agent": "supervisor",
+     "type": "board_statement"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 14,
+     "agent": "hypothesis",
+     "type": "board_statement"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 18,
+     "agent": "planner",
+     "type": "board_statement"
     }
    ],
    "round": 1
@@ -4240,6 +4823,34 @@
      "seq": 2,
      "agent": "supervisor",
      "type": "prior_review"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 3,
+     "agent": "supervisor",
+     "type": "board_statement"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 14,
+     "agent": "hypothesis",
+     "type": "board_statement"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 18,
+     "agent": "planner",
+     "type": "board_statement"
     }
    ],
    "round": 1
@@ -4274,6 +4885,13 @@
    "used_by": [
     {
      "session": "S3",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
+    },
+    {
+     "session": "S4",
      "round": 1,
      "seq": 2,
      "agent": "supervisor",
@@ -4411,6 +5029,13 @@
      "seq": 2,
      "agent": "supervisor",
      "type": "prior_review"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
     }
    ],
    "round": 1
@@ -4447,6 +5072,13 @@
    "used_by": [
     {
      "session": "S3",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
+    },
+    {
+     "session": "S4",
      "round": 1,
      "seq": 2,
      "agent": "supervisor",
@@ -4491,6 +5123,13 @@
      "seq": 2,
      "agent": "supervisor",
      "type": "prior_review"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
     }
    ],
    "round": 2
@@ -4529,6 +5168,20 @@
      "seq": 2,
      "agent": "supervisor",
      "type": "prior_review"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 18,
+     "agent": "planner",
+     "type": "board_statement"
     }
    ],
    "round": 2
@@ -4563,6 +5216,13 @@
    "used_by": [
     {
      "session": "S3",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
+    },
+    {
+     "session": "S4",
      "round": 1,
      "seq": 2,
      "agent": "supervisor",
@@ -4795,6 +5455,13 @@
      "seq": 14,
      "agent": "planner",
      "type": "board_statement"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
     }
    ],
    "round": 1
@@ -4938,6 +5605,13 @@
      "seq": 14,
      "agent": "planner",
      "type": "board_statement"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
     }
    ],
    "round": 1
@@ -5078,6 +5752,13 @@
      "seq": 14,
      "agent": "planner",
      "type": "board_statement"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
     }
    ],
    "round": 1
@@ -5127,6 +5808,13 @@
     },
     {
      "session": "S3",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
+    },
+    {
+     "session": "S4",
      "round": 1,
      "seq": 2,
      "agent": "supervisor",
@@ -5181,6 +5869,13 @@
     },
     {
      "session": "S3",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
+    },
+    {
+     "session": "S4",
      "round": 1,
      "seq": 2,
      "agent": "supervisor",
@@ -5455,6 +6150,27 @@
      "seq": 33,
      "agent": "planner",
      "type": "board_statement"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 3,
+     "agent": "supervisor",
+     "type": "board_statement"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 18,
+     "agent": "planner",
+     "type": "board_statement"
     }
    ],
    "round": 1
@@ -5527,6 +6243,13 @@
      "seq": 51,
      "agent": "record_keeper",
      "type": "decision"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
     }
    ],
    "round": 1
@@ -5601,6 +6324,13 @@
      "seq": 33,
      "agent": "planner",
      "type": "board_statement"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
     }
    ],
    "round": 1
@@ -5659,6 +6389,13 @@
      "seq": 29,
      "agent": "analysis",
      "type": "board_statement"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
     }
    ],
    "round": 1
@@ -5733,6 +6470,13 @@
      "seq": 33,
      "agent": "planner",
      "type": "board_statement"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
     }
    ],
    "round": 1
@@ -5830,6 +6574,13 @@
      "seq": 33,
      "agent": "planner",
      "type": "board_statement"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
     }
    ],
    "round": 1
@@ -5921,6 +6672,13 @@
      "seq": 33,
      "agent": "planner",
      "type": "board_statement"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
     }
    ],
    "round": 1
@@ -5996,6 +6754,13 @@
      "seq": 48,
      "agent": "analysis",
      "type": "board_statement"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
     }
    ],
    "round": 2
@@ -6068,6 +6833,20 @@
      "seq": 51,
      "agent": "record_keeper",
      "type": "decision"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 3,
+     "agent": "supervisor",
+     "type": "board_statement"
     }
    ],
    "round": 2
@@ -6123,6 +6902,13 @@
      "seq": 48,
      "agent": "analysis",
      "type": "board_statement"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
     }
    ],
    "round": 2
@@ -6264,6 +7050,13 @@
      "seq": 51,
      "agent": "record_keeper",
      "type": "decision"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
     }
    ],
    "round": 2
@@ -6406,6 +7199,13 @@
      "seq": 51,
      "agent": "record_keeper",
      "type": "decision"
+    },
+    {
+     "session": "S4",
+     "round": 1,
+     "seq": 2,
+     "agent": "supervisor",
+     "type": "prior_review"
     }
    ],
    "round": 2
@@ -6440,7 +7240,616 @@
   "DNa02_L": "steering neurons on the left side",
   "DNa02_R": "steering neurons on the right side",
   "aBN1": "grooming command neurons (aBN1)",
-  "DNg07": "grooming neurons (DNg07)"
+  "DNg07": "grooming neurons (DNg07)",
+  "aDN1_shiu2024": "grooming command neurons (aDN1)"
+ },
+ "media": [
+  {
+   "id": "lplc2_strong",
+   "video": "media/lplc2_strong.mp4",
+   "nudge": "LPLC2 eye neurons (see something approaching), strong nudge: 150 pulses/s",
+   "group": "GF",
+   "group_plain": "escape neuron (giant fiber)",
+   "rate_hz": 160.5,
+   "body": "hover",
+   "kind": "brain decides",
+   "threshold_hz": 74.2,
+   "source": "data/benchmarks/flight_validation.json (LPLC2_bilateral)"
+  },
+  {
+   "id": "lplc2_30",
+   "video": "media/lplc2_30.mp4",
+   "nudge": "LPLC2 eye neurons, gentle nudge: 30 pulses/s",
+   "group": "GF",
+   "group_plain": "escape neuron (giant fiber)",
+   "rate_hz": 84.3,
+   "body": "hover",
+   "kind": "brain decides",
+   "threshold_hz": 74.2,
+   "source": "data/benchmarks/flight_validation.json (LPLC2_30Hz)"
+  },
+  {
+   "id": "lplc2_10",
+   "video": "media/lplc2_10.mp4",
+   "nudge": "LPLC2 eye neurons, very gentle nudge: 10 pulses/s",
+   "group": "GF",
+   "group_plain": "escape neuron (giant fiber)",
+   "rate_hz": 36.2,
+   "body": "no_takeoff",
+   "kind": "brain decides",
+   "threshold_hz": 74.2,
+   "source": "data/benchmarks/flight_validation.json (LPLC2_10Hz)"
+  },
+  {
+   "id": "lc17_s3",
+   "video": "media/lc17_s3.mp4",
+   "nudge": "LC17 eye neurons (the surprise of experiment 3), gentle nudge: 14 pulses/s",
+   "group": "GF",
+   "group_plain": "escape neuron (giant fiber)",
+   "rate_hz": 76.0,
+   "body": "hover",
+   "kind": "brain decides",
+   "threshold_hz": 74.2,
+   "source": "runs/20261004-120628-at-lower-realistic-drive-rates-1-064e/artifacts/flight_01.json"
+  },
+  {
+   "id": "lplc2_walk",
+   "video": "media/lplc2_walk.mp4",
+   "nudge": "LPLC2 eye neurons on the walking fly (real flies may back away)",
+   "group": "MDN",
+   "group_plain": "moonwalker neurons (backward walking)",
+   "rate_hz": 0.0,
+   "body": "stop",
+   "kind": "brain decides",
+   "threshold_hz": null,
+   "source": "data/benchmarks/embodied_validation.json (LPLC2_bilateral)"
+  },
+  {
+   "id": "mdn_direct",
+   "video": "media/mdn_direct.mp4",
+   "nudge": "the moonwalker neurons themselves, switched on directly",
+   "group": "MDN",
+   "group_plain": "moonwalker neurons (backward walking)",
+   "rate_hz": 156.8,
+   "body": "backward",
+   "kind": "built in",
+   "threshold_hz": null,
+   "source": "data/benchmarks/embodied_validation.json (MDN_bilateral)"
+  }
+ ],
+ "brain_score": {
+  "items": [
+   {
+    "gt_id": "gt19_lplc2_activate_backward",
+    "manipulation": "activate",
+    "target": "LPLC2",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.7554/eLife.21022",
+     "title": "Visual projection neurons in the Drosophila lobula link feature detection to distinct behavioral programs",
+     "year": 2016,
+     "first_author": "Wu M"
+    },
+    "behavior": "backward",
+    "behavior_plain": "Backing away from danger",
+    "readout": "MDN",
+    "readout_plain": "moonwalker neurons (backward walking)",
+    "target_plain": "eye neurons that see something approaching",
+    "verdict": "disagrees",
+    "n_tests": 1,
+    "sources": [
+     "live session S1"
+    ]
+   },
+   {
+    "gt_id": "gt20_lc16_activate_backward",
+    "manipulation": "activate",
+    "target": "LC16",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.7554/eLife.21022",
+     "title": "Visual projection neurons in the Drosophila lobula link feature detection to distinct behavioral programs",
+     "year": 2016,
+     "first_author": "Wu M"
+    },
+    "behavior": "backward",
+    "behavior_plain": "Backing away from danger",
+    "readout": "MDN",
+    "readout_plain": "moonwalker neurons (backward walking)",
+    "target_plain": "eye neurons (type LC16)",
+    "verdict": "agrees",
+    "n_tests": 1,
+    "sources": [
+     "live session S1"
+    ]
+   },
+   {
+    "gt_id": "gt21_lc16_activate_backward_via_mdn",
+    "manipulation": "activate",
+    "target": "LC16",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.1016/j.cub.2017.02.008",
+     "title": "Moonwalker Descending Neurons Mediate Visually Evoked Retreat in Drosophila",
+     "year": 2017,
+     "first_author": "Sen R"
+    },
+    "behavior": "backward",
+    "behavior_plain": "Backing away from danger",
+    "readout": "MDN",
+    "readout_plain": "moonwalker neurons (backward walking)",
+    "target_plain": "eye neurons (type LC16)",
+    "verdict": "agrees",
+    "n_tests": 2,
+    "sources": [
+     "live session S1"
+    ]
+   },
+   {
+    "gt_id": "gt08_lplc2_activate_escape",
+    "manipulation": "activate",
+    "target": "LPLC2",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.7554/eLife.21022",
+     "title": "Visual projection neurons in the Drosophila lobula link feature detection to distinct behavioral programs",
+     "year": 2016,
+     "first_author": "Wu M"
+    },
+    "behavior": "escape",
+    "behavior_plain": "Jumping into the air when something comes at it",
+    "readout": "GF",
+    "readout_plain": "escape neuron (giant fiber)",
+    "target_plain": "eye neurons that see something approaching",
+    "verdict": "agrees",
+    "n_tests": 2,
+    "sources": [
+     "live session S1",
+     "live session S3"
+    ]
+   },
+   {
+    "gt_id": "gt09_lplc2_silence_escape",
+    "manipulation": "silence",
+    "target": "LPLC2",
+    "effect": "reduce",
+    "citation": {
+     "doi": "10.1016/j.cub.2019.01.079",
+     "title": "Neural Basis for Looming Size and Velocity Encoding in the Drosophila Giant Fiber Escape Pathway",
+     "year": 2019,
+     "first_author": "Ache JM"
+    },
+    "behavior": "escape",
+    "behavior_plain": "Jumping into the air when something comes at it",
+    "readout": null,
+    "readout_plain": null,
+    "target_plain": "eye neurons that see something approaching",
+    "verdict": "unclear",
+    "n_tests": 1,
+    "sources": [
+     "live session S3"
+    ]
+   },
+   {
+    "gt_id": "gt22_lc4_activate_escape",
+    "manipulation": "activate",
+    "target": "LC4",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.7554/eLife.21022",
+     "title": "Visual projection neurons in the Drosophila lobula link feature detection to distinct behavioral programs",
+     "year": 2016,
+     "first_author": "Wu M"
+    },
+    "behavior": "escape",
+    "behavior_plain": "Jumping into the air when something comes at it",
+    "readout": "GF",
+    "readout_plain": "escape neuron (giant fiber)",
+    "target_plain": "eye neurons that see something approaching",
+    "verdict": "agrees",
+    "n_tests": 2,
+    "sources": [
+     "live session S2",
+     "live session S3"
+    ]
+   },
+   {
+    "gt_id": "gt23_lc6_activate_escape",
+    "manipulation": "activate",
+    "target": "LC6",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.7554/eLife.21022",
+     "title": "Visual projection neurons in the Drosophila lobula link feature detection to distinct behavioral programs",
+     "year": 2016,
+     "first_author": "Wu M"
+    },
+    "behavior": "escape",
+    "behavior_plain": "Jumping into the air when something comes at it",
+    "readout": "GF",
+    "readout_plain": "escape neuron (giant fiber)",
+    "target_plain": "eye neurons (type LC6)",
+    "verdict": "agrees",
+    "n_tests": 2,
+    "sources": [
+     "live session S2",
+     "live session S3"
+    ]
+   },
+   {
+    "gt_id": "gt25_lplc2_gf_input_ache",
+    "manipulation": "activate",
+    "target": "LPLC2",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.1016/j.cub.2019.01.079",
+     "title": "Neural Basis for Looming Size and Velocity Encoding in the Drosophila Giant Fiber Escape Pathway",
+     "year": 2019,
+     "first_author": "Ache JM"
+    },
+    "behavior": "escape",
+    "behavior_plain": "Jumping into the air when something comes at it",
+    "readout": "GF",
+    "readout_plain": "escape neuron (giant fiber)",
+    "target_plain": "eye neurons that see something approaching",
+    "verdict": "agrees",
+    "n_tests": 1,
+    "sources": [
+     "live session S3"
+    ]
+   },
+   {
+    "gt_id": "gt10_sugar_activate_feed",
+    "manipulation": "activate",
+    "target": "sugar_GRN_shiu2024",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.1016/j.neuron.2008.12.033",
+     "title": "Motor control in a Drosophila taste circuit",
+     "year": 2009,
+     "first_author": "Gordon MD"
+    },
+    "behavior": "feed",
+    "behavior_plain": "Starting to eat when it tastes sugar",
+    "readout": "MN9",
+    "readout_plain": "swallowing neuron",
+    "target_plain": "sugar-taste neurons",
+    "verdict": "agrees",
+    "n_tests": 1,
+    "sources": [
+     "benchmark: embodied_validation"
+    ]
+   },
+   {
+    "gt_id": "gt11_bitter_activate_reduce_feed",
+    "manipulation": "activate",
+    "target": "bitter_GRN_shiu2024",
+    "effect": "reduce",
+    "citation": {
+     "doi": "10.7554/elife.79887",
+     "title": "Taste quality and hunger interactions in a feeding sensorimotor circuit",
+     "year": 2022,
+     "first_author": "Shiu PK"
+    },
+    "behavior": "feed",
+    "behavior_plain": "Starting to eat when it tastes sugar",
+    "readout": "MN9",
+    "readout_plain": "swallowing neuron",
+    "target_plain": "bitter-taste neurons",
+    "verdict": "untested",
+    "n_tests": 0,
+    "sources": []
+   },
+   {
+    "gt_id": "gt13_water_activate_feed",
+    "manipulation": "activate",
+    "target": "water_GRN_shiu2024",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.1038/s41586-024-07763-9",
+     "title": "A Drosophila computational brain model reveals sensorimotor processing",
+     "year": 2024,
+     "first_author": "Shiu PK"
+    },
+    "behavior": "feed",
+    "behavior_plain": "Starting to eat when it tastes sugar",
+    "readout": "MN9",
+    "readout_plain": "swallowing neuron",
+    "target_plain": "water-taste neurons",
+    "verdict": "untested",
+    "n_tests": 0,
+    "sources": []
+   },
+   {
+    "gt_id": "gt14_jo_activate_groom",
+    "manipulation": "activate",
+    "target": "JO_CE_shiu2024",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.7554/eLife.08758",
+     "title": "A neural command circuit for grooming movement control",
+     "year": 2015,
+     "first_author": "Hampel S"
+    },
+    "behavior": "groom",
+    "behavior_plain": "Cleaning its antennae",
+    "readout": "aDN1_shiu2024",
+    "readout_plain": "grooming command neurons (aDN1)",
+    "target_plain": "antenna touch neurons",
+    "verdict": "agrees",
+    "n_tests": 1,
+    "sources": [
+     "benchmark: embodied_validation"
+    ]
+   },
+   {
+    "gt_id": "gt15_abn1_activate_groom",
+    "manipulation": "activate",
+    "target": "aBN1",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.7554/eLife.08758",
+     "title": "A neural command circuit for grooming movement control",
+     "year": 2015,
+     "first_author": "Hampel S"
+    },
+    "behavior": "groom",
+    "behavior_plain": "Cleaning its antennae",
+    "readout": "aDN1_shiu2024",
+    "readout_plain": "grooming command neurons (aDN1)",
+    "target_plain": "grooming command neurons (aBN1)",
+    "verdict": "untested",
+    "n_tests": 0,
+    "sources": []
+   },
+   {
+    "gt_id": "gt16_dng07_activate_groom",
+    "manipulation": "activate",
+    "target": "DNg07",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.7554/eLife.34275",
+     "title": "Optogenetic dissection of descending behavioral control in Drosophila",
+     "year": 2018,
+     "first_author": "Cande J"
+    },
+    "behavior": "groom",
+    "behavior_plain": "Cleaning its antennae",
+    "readout": null,
+    "readout_plain": null,
+    "target_plain": "grooming neurons (DNg07)",
+    "verdict": "untested",
+    "n_tests": 0,
+    "sources": []
+   }
+  ],
+  "pipeline_checks": [
+   {
+    "gt_id": "gt03_p9_activate_forward",
+    "manipulation": "activate",
+    "target": "P9",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.1016/j.neuron.2020.07.032",
+     "title": "Two Brain Pathways Initiate Distinct Forward Walking Programs in Drosophila",
+     "year": 2020,
+     "first_author": "Bidaye SS"
+    },
+    "behavior": "forward",
+    "behavior_plain": "Walking ahead",
+    "readout": null,
+    "readout_plain": null,
+    "target_plain": "forward-walking neurons",
+    "n_tests": 1
+   },
+   {
+    "gt_id": "gt17_p9_activate_forward_braun",
+    "manipulation": "activate",
+    "target": "P9",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.1038/s41586-024-07523-9",
+     "title": "Descending networks transform command signals into population motor control",
+     "year": 2024,
+     "first_author": "Braun J"
+    },
+    "behavior": "forward",
+    "behavior_plain": "Walking ahead",
+    "readout": null,
+    "readout_plain": null,
+    "target_plain": "forward-walking neurons",
+    "n_tests": 0
+   },
+   {
+    "gt_id": "gt01_mdn_activate_backward",
+    "manipulation": "activate",
+    "target": "MDN",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.1126/science.1249964",
+     "title": "Neuronal control of Drosophila walking direction",
+     "year": 2014,
+     "first_author": "Bidaye SS"
+    },
+    "behavior": "backward",
+    "behavior_plain": "Backing away from danger",
+    "readout": null,
+    "readout_plain": null,
+    "target_plain": "moonwalker neurons (backward walking)",
+    "n_tests": 1
+   },
+   {
+    "gt_id": "gt02_mdn_silence_backward",
+    "manipulation": "silence",
+    "target": "MDN",
+    "effect": "reduce",
+    "citation": {
+     "doi": "10.1126/science.1249964",
+     "title": "Neuronal control of Drosophila walking direction",
+     "year": 2014,
+     "first_author": "Bidaye SS"
+    },
+    "behavior": "backward",
+    "behavior_plain": "Backing away from danger",
+    "readout": null,
+    "readout_plain": null,
+    "target_plain": "moonwalker neurons (backward walking)",
+    "n_tests": 3
+   },
+   {
+    "gt_id": "gt18_mdn_activate_backward_braun",
+    "manipulation": "activate",
+    "target": "MDN",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.1038/s41586-024-07523-9",
+     "title": "Descending networks transform command signals into population motor control",
+     "year": 2024,
+     "first_author": "Braun J"
+    },
+    "behavior": "backward",
+    "behavior_plain": "Backing away from danger",
+    "readout": null,
+    "readout_plain": null,
+    "target_plain": "moonwalker neurons (backward walking)",
+    "n_tests": 0
+   },
+   {
+    "gt_id": "gt04_p9L_activate_turn_left",
+    "manipulation": "activate",
+    "target": "P9_L",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.1016/j.neuron.2020.07.032",
+     "title": "Two Brain Pathways Initiate Distinct Forward Walking Programs in Drosophila",
+     "year": 2020,
+     "first_author": "Bidaye SS"
+    },
+    "behavior": "turn_left",
+    "behavior_plain": "Steering to the left",
+    "readout": null,
+    "readout_plain": null,
+    "target_plain": "forward-walking neurons on the left side",
+    "n_tests": 1
+   },
+   {
+    "gt_id": "gt05_dna02L_activate_turn_left",
+    "manipulation": "activate",
+    "target": "DNa02_L",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.7554/elife.102230",
+     "title": "Neural circuit mechanisms for steering control in walking Drosophila",
+     "year": 2025,
+     "first_author": "Rayshubskiy A"
+    },
+    "behavior": "turn_left",
+    "behavior_plain": "Steering to the left",
+    "readout": null,
+    "readout_plain": null,
+    "target_plain": "steering neurons on the left side",
+    "n_tests": 1
+   },
+   {
+    "gt_id": "gt06_dna02R_activate_turn_right",
+    "manipulation": "activate",
+    "target": "DNa02_R",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.7554/elife.102230",
+     "title": "Neural circuit mechanisms for steering control in walking Drosophila",
+     "year": 2025,
+     "first_author": "Rayshubskiy A"
+    },
+    "behavior": "turn_right",
+    "behavior_plain": "Steering to the right",
+    "readout": null,
+    "readout_plain": null,
+    "target_plain": "steering neurons on the right side",
+    "n_tests": 1
+   },
+   {
+    "gt_id": "gt07_gf_activate_escape",
+    "manipulation": "activate",
+    "target": "GF",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.1016/j.cell.2005.02.004",
+     "title": "Remote control of behavior through genetically targeted photostimulation of neurons",
+     "year": 2005,
+     "first_author": "Lima SQ"
+    },
+    "behavior": "escape",
+    "behavior_plain": "Jumping into the air when something comes at it",
+    "readout": null,
+    "readout_plain": null,
+    "target_plain": "escape neuron (giant fiber)",
+    "n_tests": 3
+   },
+   {
+    "gt_id": "gt24_gf_activate_takeoff_vonreyn",
+    "manipulation": "activate",
+    "target": "GF",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.1038/nn.3741",
+     "title": "A spike-timing mechanism for action selection",
+     "year": 2014,
+     "first_author": "von Reyn CR"
+    },
+    "behavior": "escape",
+    "behavior_plain": "Jumping into the air when something comes at it",
+    "readout": "GF",
+    "readout_plain": "escape neuron (giant fiber)",
+    "target_plain": "escape neuron (giant fiber)",
+    "n_tests": 2
+   },
+   {
+    "gt_id": "gt26_dng02_activate_wingbeat_amplitude",
+    "manipulation": "activate",
+    "target": "DNg02",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.1016/j.cub.2022.01.008",
+     "title": "A population of descending neurons that regulates the flight motor of Drosophila",
+     "year": 2022,
+     "first_author": "Namiki S"
+    },
+    "behavior": "flight_power",
+    "behavior_plain": "Flapping harder to fly up",
+    "readout": null,
+    "readout_plain": null,
+    "target_plain": "wing-power neurons",
+    "n_tests": 1
+   },
+   {
+    "gt_id": "gt12_mn9_activate_feed",
+    "manipulation": "activate",
+    "target": "MN9",
+    "effect": "induce",
+    "citation": {
+     "doi": "10.1016/j.neuron.2008.12.033",
+     "title": "Motor control in a Drosophila taste circuit",
+     "year": 2009,
+     "first_author": "Gordon MD"
+    },
+    "behavior": "feed",
+    "behavior_plain": "Starting to eat when it tastes sugar",
+    "readout": null,
+    "readout_plain": null,
+    "target_plain": "swallowing neuron",
+    "n_tests": 0
+   }
+  ],
+  "counts": {
+   "agrees": 8,
+   "disagrees": 1,
+   "unclear": 1,
+   "untested": 4
+  },
+  "n_total": 14,
+  "n_conclusive": 9,
+  "rule": "counted: published experiments that nudge sensory/upstream neurons; excluded: nudging the neurons the brain-to-body link reads (true by construction)"
  },
  "reproduce": "python3 -m flylab.board export"
 }

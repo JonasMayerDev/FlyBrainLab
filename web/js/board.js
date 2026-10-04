@@ -84,9 +84,12 @@ function renderHypothesis(b) {
   const n = cov.behaviors.length;
   const body = c.reproduced_body || 0, brain = c.reproduced_brain || 0, conflict = c.conflict || 0, untested = c.untested || 0;
   const nExp = b.experiments.length, nRounds = b.sessions.reduce((a, s) => a + s.rounds.filter((r) => r.title !== 'Final report').length, 0);
-  const answer = body === n
-    ? 'All catalogued behaviours are reproduced in the body. The next test is behaviours outside the catalogue.'
-    : `Not yet. ${body} of ${n} catalogued behaviours are reproduced independently in a simulated body, ${brain} match only as a brain read-out or an adapter check, ${conflict} ${conflict === 1 ? 'is' : 'are'} in conflict with the literature${untested ? `, ${untested} untested` : ''}. ${cov.not_catalogued.length} real behaviours have no published stimulus in the lab's catalogue yet.`;
+  const sc = b.brain_score, bn = sc.counts;
+  const answer = `Mostly yes, at brain level: ${bn.agrees} of ${sc.n_conclusive} published experiments with a clear answer agree `
+    + `(the copied brain switched on the same command neurons as the real fly), ${bn.disagrees} disagree, ${bn.unclear} unclear, `
+    + `${bn.untested} not replayed yet. Counted are only nudges of sensory/upstream neurons; ${sc.pipeline_checks.length} experiments `
+    + `that nudge the command neurons directly check our own brain-to-body code and are not counted. Body movements illustrate the brain's decision `
+    + `(${body} of ${n} behaviours reproduced independently in a body).`;
   $('#hypothesis').innerHTML = `
     <div>
       <h2 id="hyp-h" class="typ">Lab hypothesis</h2>

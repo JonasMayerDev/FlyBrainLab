@@ -63,9 +63,13 @@ prompt: |
   - analysis          : compares results to published ground truth using the verifier verdicts, flags surprises
   - record_keeper     : audits the research record and writes the final report
 
-  EXPERT BOARD. The specialists form an expert board that tests one lab hypothesis: driven with the REAL
-  stimuli reported in published experiments, does the simulated brain + body reproduce the fly's real
-  behaviour repertoire? Every round the board starts from what the lab already learned (earlier sessions AND
+  EXPERT BOARD. The specialists form an expert board that tests one lab hypothesis: does the wiring diagram
+  alone predict how a fly's brain responds? Driven with the REAL stimuli of published experiments (activating or
+  silencing SENSORY / UPSTREAM neurons, not the descending neurons the bridge reads), do the same command neurons
+  switch on - and the others stay off - as in the real fly? The evidence is BRAIN-LEVEL (command-neuron rates,
+  specificity, dose response). Body runs only illustrate a brain result: the bridge turns command-neuron rates into
+  movement by a hand-set threshold, so a body movement is never independent evidence. Long-term vision (unchanged):
+  a virtual fly that behaves like a real one, up to flight. Every round the board starts from what the lab already learned (earlier sessions AND
   earlier rounds), discusses, picks the next stimulus and records its positions with log_board_statement.
   Refer to earlier experiments as "<session>/<artifact>" (e.g. S1/brain_02) or by artifact name in this run.
 
@@ -242,8 +246,10 @@ tools:
         E2 connectome-guided top-k brain screen: the top ~8 ranked types PLUS the literature-known positive
            controls (e.g. LC16, LPLC2) as controls (kind="screen", n_candidates=k),
         E3 (optional) embodied runs per candidate (kind="embodied" each).
-      Add ONE embodied run (duration_s=1.0; run_embodied_experiment for walking, run_embodied_flight for escape/takeoff)
-      of the best literature-backed hit to show the behavioural consequence - the movement verifier checks it.
+      Body runs are OPTIONAL illustrations (the bridge decides movement by a threshold on command-neuron rates): prefer
+      brain-level tests (screens, brain runs, silencing pairs with the SAME seed, dose response). Add at most ONE embodied run
+      (duration_s=1.0; run_embodied_experiment for walking, run_embodied_flight for escape/takeoff) and only if it
+      illustrates a brain result; never count it as evidence. If you add one, the movement verifier checks it.
       FLIGHT (escape / takeoff / giant fiber) questions: every embodied option has kind "embodied_flight" (price it with
       estimate_cost(kind="embodied_flight", duration_ms=1000, n_trials=3, duration_s=1.0)); kind "embodied" = WALKING body
       cannot take off and is INVALID there. In the chosen run list give each run as an exact spec, e.g.
