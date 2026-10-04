@@ -2,7 +2,7 @@
 
 **Ein quellenbasierter Forschungsworkflow verbindet ein vollständiges Fliegengehirnmodell mit kontrollierten Experimenten und einer virtuellen Fliegenkörper-Physik.** Challenge 03: Databricks „Agentic Scientific Discovery“, Global AI Hackathon Munich, 3.–4. Oktober 2026.
 
-**[Öffentliche interaktive Demo](https://valleebo.github.io/FlyBrainLab/)** · [Ergebnisse und Grenzen](docs/RESULTS.md) · [Teamstand](TEAM_STATUS.md) · [GitHub-Issues](https://github.com/JonasMayerDev/FlyBrainLab/issues) · [Abgabeunterlagen](submission/README.md)
+**[Öffentliche interaktive Demo](https://valleebo.github.io/FlyBrainLab/)** · [Ergebnisse und Grenzen](docs/RESULTS.md) · [Teamstand](TEAM_STATUS.md) · [GitHub-Issues](https://github.com/JonasMayerDev/FlyBrainLab/issues) · [Abgabeunterlagen](submission/README.md) · [Vier Videoentwürfe und Downloadpaket](https://github.com/JonasMayerDev/FlyBrainLab/releases/tag/demo-2026-10-04)
 
 Die Demo spielt echte vorberechnete Runs ab. Sie rechnet keine Simulation im Browser. Der vollständige FAFB-FlyWire-v783-Graph umfasst 138.639 Neuronen und 15.091.983 verarbeitete Verbindungszeilen. Das eingefrorene DNg02-Experiment untersucht neuronale Signalübertragung; die Körperkopplung nutzt einen ausdrücklich angenommenen Motoradapter. **Die vorhandene Autoren-Policy stabilisiert den Körper im geprüften 200-ms-Fenster. Biologisch validierter Flug allein durch das Connectome ist nicht nachgewiesen.**
 
@@ -94,7 +94,7 @@ Eigene isolierte `.runtime/body-venv`; keine Änderung der Hauptumgebung. Versio
 
 Das Team-Repository und die Issues bleiben **JonasMayerDev/FlyBrainLab**. Dem angemeldeten Teamzugang fehlen dort Pages-Adminrechte. Deshalb veröffentlicht ein gleichnamiger öffentlicher Hosting-Mirror **valleebo/FlyBrainLab** denselben Viewer über GitHub Actions. Die Demo-Adresse ist `https://valleebo.github.io/FlyBrainLab/`; localhost ist kein Einreichungslink.
 
-Abgabe am **4. Oktober 2026, 15:00 Europe/Berlin**, internes Ziel 14:30. Benötigt werden Teamfoto, drei Plattformvideos jeweils höchstens 60 Sekunden/1 GB sowie eine zusätzliche zweiminütige Track-Demo. HackOS und das verlinkte Google Form müssen beide tatsächlich eingereicht werden; ein Entwurf ist keine Einreichung. [Abgabeunterlagen](submission/README.md) enthalten Aufnahmeplan und Validator. Foto, persönliche Teamvorstellung und finale Einreichungen benötigen die Menschen im Team.
+Abgabe am **4. Oktober 2026, 15:00 Europe/Berlin**, internes Ziel 14:30. Benötigt werden Teamfoto, drei Plattformvideos jeweils höchstens 60 Sekunden/1 GB sowie eine zusätzliche zweiminütige Track-Demo. HackOS und das verlinkte Google Form müssen beide tatsächlich eingereicht werden; ein Entwurf ist keine Einreichung. [Abgabeunterlagen](submission/README.md) · [Vier Videoentwürfe und Downloadpaket](https://github.com/JonasMayerDev/FlyBrainLab/releases/tag/demo-2026-10-04) enthalten Aufnahmeplan und Validator. Foto, persönliche Teamvorstellung und finale Einreichungen benötigen die Menschen im Team.
 
 ## Herkunft und Grenzen
 

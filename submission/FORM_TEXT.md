@@ -2,6 +2,8 @@
 
 **Vor Versand:** finale öffentliche URL prüfen, Namen/Rollen ergänzen und mögliche weitere neue Runs mit `README.md`/Trace abgleichen. Die nativen A- und B-Durchläufe sind streng verifiziert; B wurde nach A in einer zweiten, nachweislich verbundenen Omnigent-Sitzung ausgeführt. Die zusätzliche C3-Demo braucht ihren eigenen akzeptierten Einreichungsweg. Die v2-Kopplung mit veröffentlichter Autorenpolicy ist inzwischen über sechs tatsächlich gemessene 200-ms-Läufe belegt; die frühere v1-Diagnose bleibt separat erhalten.
 
+Öffentliches Medienpaket: [Videoentwürfe und zusätzliche C3-Demo](https://github.com/JonasMayerDev/FlyBrainLab/releases/tag/demo-2026-10-04). Ein öffentlicher Downloadlink bestätigt noch keinen akzeptierten Einreichungsweg.
+
 ## Pflichtfelder
 
 | Feld | Eintrag / Status |

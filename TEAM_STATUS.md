@@ -6,6 +6,8 @@ Stand: **4. Oktober 2026, Nachtarbeit**. Challenge 03 Databricks „Agentic Scie
 
 **Acht von zehn Issues sind belegt abgeschlossen.** #2 und #10 bleiben offen.
 
+[Vier Videoentwürfe und Downloadpaket](https://github.com/JonasMayerDev/FlyBrainLab/releases/tag/demo-2026-10-04) sind öffentlich verfügbar: 46 / 55 / 55 / 118 Sekunden, englische Texte, ohne Ton. Alle Dateien sind vollständig decodiert; persönliche Inhaltsprüfung bleibt erforderlich.
+
 ## Nachgewiesener Stand
 
 | Teil | Ergebnis | Beleg |

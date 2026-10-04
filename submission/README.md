@@ -14,6 +14,8 @@ Diese Mappe bereitet Issue [#10](https://github.com/JonasMayerDev/FlyBrainLab/is
 
 Exakte Hashes und Quellpfade stehen in `exports/video_source_manifest.json`; `exports/asset_validation.json` meldet das fehlende Teamfoto bewusst als Fehler. Der Teamvorstellungsentwurf braucht menschliche Inhaltsprüfung; bestandene Mediengrenzen ersetzen diese nicht. A und B besitzen eigene neue numerische Receipts und geprüfte Run Records. Der B-Trace belegt das erneute Lesen von As ergebnisabhängiger Entscheidung vor der B-Planung und validiert As archivierte Quellen und Rohdaten unabhängig. Die vorherigen unabhängigen Vorläufe behalten ihre eigene Provenienz.
 
+**Öffentlich verfügbar:** [GitHub-Release mit vier Videos, SRTs, Prüfbericht und ZIP-Paket](https://github.com/JonasMayerDev/FlyBrainLab/releases/tag/demo-2026-10-04). Der Release ist keine HackOS-/Google-Form-Einreichung. Die lokale Version liegt in `exports/`; Code und öffentliche Medienprüfberichte sind ebenfalls versioniert.
+
 ## Dateien und Reihenfolge
 
 1. [Sprechertexte und Storyboards](VIDEO_SCRIPTS.md): Deutsch und Englisch; drei Plattformvideos mit Ziel 50–55 Sekunden und eine zusätzliche C3-Demo mit Ziel 115–120 Sekunden. Namen sind bei der Teamvorstellung ausdrücklich offen.

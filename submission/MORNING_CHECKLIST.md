@@ -2,6 +2,8 @@
 
 **Zuerst den echten Stand ansehen:** öffentliche Demo, `README.md`, `research/evidence/NEURAL_RESULTS.md`, `docs/BODY_INTEGRATION.md` und `data/discovery/native-trace.json` und `data/discovery/native-trace-b.json`. Der Viewer zeigt aufgezeichnete Daten; er startet keine neue Simulation im Browser.
 
+[Vier geprüfte Videoentwürfe und ZIP herunterladen](https://github.com/JonasMayerDev/FlyBrainLab/releases/tag/demo-2026-10-04): 46 / 55 / 55 / 118 Sekunden, sichtbare englische Texte, ohne Ton.
+
 ## Die menschlichen Aufgaben
 
 | Aufgabe | Verantwortlich | Gegencheck | Erledigt bedeutet |
