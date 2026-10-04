@@ -12,6 +12,7 @@
   try { var t = localStorage.getItem('flylab-theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="board.css">
 <script type="importmap">
 {
   "imports": {
@@ -28,6 +29,10 @@
     <p class="sub">FlyWire whole-brain model → descending-neuron bridge → physics fly body → movement verifier. Hack-Nation 7, Challenge 03.</p>
   </div>
   <div class="top-right">
+    <nav class="pagenav" aria-label="Pages">
+      <a href="index.html" aria-current="page">3D replay</a>
+      <a href="board.html">Expert board</a>
+    </nav>
     <div class="replay-badge" role="note" title="Every frame shown here was computed offline by the Python pipeline and exported; nothing is simulated in your browser.">
       <span class="dot" aria-hidden="true"></span>Recorded simulation replay · not live
     </div>

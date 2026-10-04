@@ -1,0 +1,80 @@
+{
+ "expected_behavior": "escape",
+ "mode": "flight",
+ "kinematic": {
+  "verdict": "correct",
+  "checks": [
+   {
+    "name": "airborne_time_s",
+    "value": 0.95,
+    "threshold": ">= 0.05 s with height gain > 1.0 mm",
+    "pass": true
+   },
+   {
+    "name": "final_abs_roll_deg",
+    "value": 0.0,
+    "threshold": "<= 90.0",
+    "pass": true
+   }
+  ],
+  "recomputed": {
+   "duration_s": 1.0,
+   "n_samples": 101,
+   "start_height_mm": 0.0,
+   "max_height_gain_mm": 18.191,
+   "final_height_gain_mm": 17.646,
+   "airborne_time_s": 0.95,
+   "first_airborne_t_s": 0.06,
+   "forward_disp_initial_frame_mm": 19.42,
+   "lateral_disp_initial_frame_mm": 3.134,
+   "dz_mm": 17.646,
+   "horizontal_disp_mm": 19.671,
+   "heading_change_deg": -12.09,
+   "final_abs_roll_deg": 0.0,
+   "max_abs_roll_deg": 1.2
+  },
+  "reason": "all checks passed"
+ },
+ "vision": {
+  "verdict": "uncertain",
+  "observed_behavior": "hover",
+  "matches_expected": null,
+  "confidence": 0.55,
+  "observations": [
+   "Tile 1-2: fly stands on the floor with wings starting to beat.",
+   "Tiles 3-5: the floor drops away in the frame and the fly looks airborne with legs dangling, no floor contact visible.",
+   "Tiles 5-16: wings beat continuously; fly stays at similar size and position in the frame while the checker pattern shifts only slightly, so there is no clear steady climb or forward travel.",
+   "Camera tracks the fly, so net displacement is hard to judge, but the fly appears to stay aloft roughly in place."
+  ],
+  "fly_visible": true,
+  "model": "claude-sonnet-5-5",
+  "frames_used": 16,
+  "cached": false,
+  "usage": {
+   "input_tokens": 2492,
+   "output_tokens": 211
+  },
+  "video_sha256": "c8d0789c6d86645512489b5d178ebe66ab339db19080506bc95c36d95732a964",
+  "blind": "model saw neither the expected behaviour nor the kinematic numbers"
+ },
+ "vision_error": null,
+ "final_verdict": "uncertain",
+ "agreement": false,
+ "methods": [
+  "kinematic",
+  "vision"
+ ],
+ "reason": "kinematic=correct (all checks passed), vision=uncertain (observed hover, conf 0.55)",
+ "contact_sheet": "runs/20261004-120628-at-lower-realistic-drive-rates-1-064e/artifacts/flight_01_contact.jpg",
+ "video": "runs/20261004-120628-at-lower-realistic-drive-rates-1-064e/artifacts/flight_01.mp4",
+ "independence_note": "kinematics recomputed from the raw trajectory with own formulas/thresholds (not body.classify / flight.classify_flight); vision is blind to both",
+ "artifact": "flight_01.json",
+ "expected_source": "given by caller",
+ "mock": false,
+ "manipulation": {
+  "excite": [
+   "LC17"
+  ],
+  "silence": []
+ }
+}

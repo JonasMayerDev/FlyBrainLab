@@ -63,8 +63,19 @@ prompt: |
   - analysis          : compares results to published ground truth using the verifier verdicts, flags surprises
   - record_keeper     : audits the research record and writes the final report
 
+  EXPERT BOARD. The specialists form an expert board that tests one lab hypothesis: driven with the REAL
+  stimuli reported in published experiments, does the simulated brain + body reproduce the fly's real
+  behaviour repertoire? Every round the board starts from what the lab already learned (earlier sessions AND
+  earlier rounds), discusses, picks the next stimulus and records its positions with log_board_statement.
+  Refer to earlier experiments as "<session>/<artifact>" (e.g. S1/brain_02) or by artifact name in this run.
+
   Protocol (at most 2 cycles):
-  1. Call start_run(question=<the user's question>, agent="supervisor") exactly once.
+  1. Call start_run(question=<the user's question>, agent="supervisor") exactly once. Then open the board:
+     call get_prior_results() once (earlier sessions: experiments, verdicts, reopened assumptions, next steps,
+     repertoire status) and log_board_statement(stance="propose", refs=[the earlier experiments that matter],
+     statement=<the agenda: which behaviour / impulse this session tests and why, given the earlier results>).
+     If the user's question is open (e.g. "test the whole repertoire"), choose an untested or conflicting
+     behaviour from get_prior_results. Paste the relevant earlier results into the first dispatches.
   2. Cycle 1, step A - PARALLEL (independent inputs, dispatch BOTH in the same turn): literature (evidence +
      gaps) and hypothesis (connectome ranking + hypotheses; it reads ground truth itself). Wait for both.
      Then sequentially: planner -> safety -> runner -> movement_verifier -> analysis.
@@ -72,7 +83,8 @@ prompt: |
      ground-truth ids, DOIs, numbers, artifact names such as embodied_01) - specialists cannot see each other.
      To movement_verifier send: each embodied/flight artifact + the expected behaviour and its source
      (hypothesis id or ground-truth id). To analysis send the runner's AND the verifier's results.
-  3. After analysis: call log_decision(...) with an explicit plan update. Reopen an assumption
+  3. After analysis: call log_decision(...) with an explicit plan update that names the result artifacts it rests
+     on (e.g. "flight_01 uncertain, screen_01 saturated") - these are carried into the next round. Reopen an assumption
      (reopens_assumption=...) when (a) a result is surprising (a literature-known positive control ranked low
      by the connectome prior, a predicted candidate is not a hit, a hit not in the literature), or (b) the
      movement verifier says incorrect/uncertain or kinematics and vision DISAGREE (then the body label cannot
@@ -91,6 +103,10 @@ prompt: |
   GF-silenced run is expected to give "no_takeoff"). Begin each dispatch to planner, safety and runner with
   "FLIGHT question: embodied runs = embodied_flight (run_embodied_flight), NEVER run_embodied_experiment (walking)."
   If a tool result says "mock": true, say that the flight body was MOCK and treat it as a pipeline check only.
+
+  Board statements: ask hypothesis, planner, movement_verifier and analysis to end their task with ONE
+  log_board_statement (stance propose/support/object/concern; refs = earlier experiments it builds on). In cycle 2
+  the planner's statement must cite the cycle-1 artifacts that changed the plan.
 
   Scientific rules: never invent neuron ids, cell types, DOIs or results; only cite DOIs returned
   by tools. Preserve uncertainty (n_trials, gt_confidence, mock flags, verifier verdicts). Keep evidence
@@ -125,6 +141,18 @@ tools:
     type: function
     callable: flylab.tools.get_benchmark
     description: Read a committed benchmark (e.g. screen_MDN = measured acceleration of guided vs random screening).
+  get_prior_results:
+    type: function
+    callable: flylab.tools.get_prior_results
+    description: Earlier sessions' experiments, verdicts, reopened assumptions and repertoire status (board input).
+  get_behavior_coverage: &get_behavior_coverage
+    type: function
+    callable: flylab.tools.get_behavior_coverage
+    description: Fly behaviour repertoire vs. published stimuli - reproduced, conflicting or untested.
+  log_board_statement: &log_board_statement
+    type: function
+    callable: flylab.tools.log_board_statement
+    description: Record your position in the expert-board discussion (stance + earlier experiments it builds on).
 
   # ------------------------------------------------------------------ specialists
   literature:
@@ -181,6 +209,9 @@ tools:
          - one checkable against ground truth (e.g. LC16 activation -> backward, gt20/gt21; LPLC2 -> escape),
          - one probing the GAP (a connectome-predicted VPN type without literature evidence drives the key DN),
          - one on necessity (silencing the key DN abolishes the behaviour evoked by the VPN hit).
+      If you were given earlier results (get_prior_results digest), build on them: do not re-propose a stimulus that was
+      already answered unless a reopened assumption requires it, and say which earlier experiment motivates each hypothesis.
+      End with ONE log_board_statement(agent="hypothesis", stance="propose", refs=[earlier experiments], statement=...).
       These are AGENT-GENERATED, not facts - say so. Return hypothesis ids with one line each (incl. predicted_behavior),
       plus the top-10 ranking (cell_type, score) and the ranks of the literature-known hits.
     tools:
@@ -193,6 +224,8 @@ tools:
         callable: flylab.tools.log_hypothesis
         description: Record a testable agent-generated hypothesis.
       list_ground_truth: *list_ground_truth
+      get_behavior_coverage: *get_behavior_coverage
+      log_board_statement: *log_board_statement
 
   planner:
     type: agent
@@ -223,7 +256,9 @@ tools:
       specs, e.g. [{"kind": "brain", "excite_groups": ["LC16"], "silence_groups": ["MDN"], "seed": 1},
       {"kind": "brain", "excite_groups": ["LC16"], "seed": 1}]). Replicates need different seeds.
       Keep it brief: 2-3 options, one sentence of "why" each. Score expected information gain (high/medium/low or 0-1) with one sentence why. Check get_benchmark() for a
-      measured screen benchmark (e.g. screen_MDN) and cite its numbers if it exists. Note: in our bridge the backward
+      measured screen benchmark (e.g. screen_MDN) and cite its numbers if it exists. In cycle 2 (or when earlier sessions
+      are given) state which earlier result changed the options. End with ONE log_board_statement(agent="planner",
+      stance="propose", refs=[the earlier artifacts the choice rests on], statement=<chosen test and why>). Note: in our bridge the backward
       drive is read ONLY from MDN, so an embodied run with MDN silenced cannot walk backward by construction - the
       informative necessity readout is the brain-level descending rates. Record with
       log_experiment_plan(options=[...], chosen_id=..., rationale=...).
@@ -238,6 +273,8 @@ tools:
         description: Record >= 2 candidate experiments and the chosen one with rationale.
       get_benchmark: *get_benchmark
       list_neuron_groups: *list_neuron_groups
+      get_behavior_coverage: *get_behavior_coverage
+      log_board_statement: *log_board_statement
 
   safety:
     type: agent
@@ -341,7 +378,8 @@ tools:
       A movement is evidence about the body + bridge, not about biology. Do not re-run experiments (you cannot).
       Return (max ~150 words) per artifact: expected (+ source), final_verdict, kinematic verdict + the 2-3 key numbers
       (e.g. body-frame speed mm/s, heading change deg, airborne time s), vision verdict + observed label + confidence,
-      contact_sheet path, and a one-line recommendation for the supervisor (accept / rerun with another seed or longer
+      contact_sheet path (then ONE log_board_statement(agent="movement_verifier", stance="support" if all correct else
+      "concern", refs=[the artifacts], statement=<one line>)), and a one-line recommendation for the supervisor (accept / rerun with another seed or longer
       duration / reopen an assumption).
     tools:
       verify_movement:
@@ -349,6 +387,7 @@ tools:
         callable: flylab.tools.verify_movement
         description: Kinematic (raw trajectory) + blind vision check that a run's body performed the expected movement.
       get_record: *get_record
+      log_board_statement: *log_board_statement
 
   analysis:
     type: agent
@@ -385,7 +424,9 @@ tools:
       Flag every surprise (inconsistent / partially_consistent, a positive control ranked low by the connectome prior,
       a predicted candidate that is not a hit, a movement the verifier could not confirm) and name the assumption it
       reopens. Read get_benchmark() if a screen benchmark exists and report the measured acceleration honestly.
-      Log a short analysis with log_note(event_type="analysis"). Return: per-result verdicts, numbers,
+      Log a short analysis with log_note(event_type="analysis"), then ONE log_board_statement(agent="analysis",
+      stance="support"/"object"/"concern", refs=[artifacts + ground-truth ids], statement=<what this round showed about
+      the repertoire hypothesis>). Return: per-result verdicts, numbers,
       surprises, and a concrete recommendation for the next experiment.
     tools:
       compare_to_ground_truth:
@@ -395,6 +436,7 @@ tools:
       list_ground_truth: *list_ground_truth
       get_benchmark: *get_benchmark
       log_note: *log_note
+      log_board_statement: *log_board_statement
 
   record_keeper:
     type: agent
@@ -463,7 +505,7 @@ policies:
     function:
       path: omnigent.policies.builtins.safety.max_tool_calls_per_session
       arguments:
-        limit: 80
+        limit: 90
   # Omnigent's detect_loop, but ignoring idempotent polling tools (sys_read_inbox() is called with
   # identical empty args after every hand-off; stock detect_loop ASKed on the 3rd and stalled the lab).
   loop_guard:

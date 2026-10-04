@@ -1,0 +1,194 @@
+{
+ "inputs": {
+  "candidates": [
+   "LC6",
+   "LPLC2",
+   "LC15",
+   "LC4",
+   "LC31a",
+   "LT1b",
+   "aMe5",
+   "LTe58",
+   "LC17",
+   "MTe35"
+  ],
+  "target_groups": [
+   "GF"
+  ],
+  "rate_hz": 30,
+  "duration_ms": 500,
+  "n_trials": 2,
+  "seed": 1
+ },
+ "hit_threshold_hz": 5.0,
+ "rows": [
+  {
+   "cell_type": "LC6",
+   "n_stimulated": 125,
+   "target_rates": {
+    "GF": 85.0
+   },
+   "target_max": {
+    "GF": 87.0
+   },
+   "n_active": 360,
+   "runtime_s": 1.557,
+   "cached": false,
+   "hit_targets": [
+    "GF"
+   ]
+  },
+  {
+   "cell_type": "LPLC2",
+   "n_stimulated": 210,
+   "target_rates": {
+    "GF": 81.0
+   },
+   "target_max": {
+    "GF": 92.0
+   },
+   "n_active": 487,
+   "runtime_s": 1.7,
+   "cached": false,
+   "hit_targets": [
+    "GF"
+   ]
+  },
+  {
+   "cell_type": "LC15",
+   "n_stimulated": 106,
+   "target_rates": {
+    "GF": 30.0
+   },
+   "target_max": {
+    "GF": 31.0
+   },
+   "n_active": 867,
+   "runtime_s": 1.768,
+   "cached": false,
+   "hit_targets": [
+    "GF"
+   ]
+  },
+  {
+   "cell_type": "LC4",
+   "n_stimulated": 104,
+   "target_rates": {
+    "GF": 27.5
+   },
+   "target_max": {
+    "GF": 40.0
+   },
+   "n_active": 227,
+   "runtime_s": 3.712,
+   "cached": false,
+   "hit_targets": [
+    "GF"
+   ]
+  },
+  {
+   "cell_type": "LC31a",
+   "n_stimulated": 35,
+   "target_rates": {
+    "GF": 0.5
+   },
+   "target_max": {
+    "GF": 1.0
+   },
+   "n_active": 403,
+   "runtime_s": 4.309,
+   "cached": false,
+   "hit_targets": []
+  },
+  {
+   "cell_type": "LT1b",
+   "n_stimulated": 2,
+   "target_rates": {
+    "GF": 1.5
+   },
+   "target_max": {
+    "GF": 2.0
+   },
+   "n_active": 206,
+   "runtime_s": 4.038,
+   "cached": false,
+   "hit_targets": []
+  },
+  {
+   "cell_type": "aMe5",
+   "n_stimulated": 55,
+   "target_rates": {
+    "GF": 0.0
+   },
+   "target_max": {
+    "GF": 0.0
+   },
+   "n_active": 83,
+   "runtime_s": 1.786,
+   "cached": false,
+   "hit_targets": []
+  },
+  {
+   "cell_type": "LTe58",
+   "n_stimulated": 12,
+   "target_rates": {
+    "GF": 0.0
+   },
+   "target_max": {
+    "GF": 0.0
+   },
+   "n_active": 24,
+   "runtime_s": 2.843,
+   "cached": false,
+   "hit_targets": []
+  },
+  {
+   "cell_type": "LC17",
+   "n_stimulated": 276,
+   "target_rates": {
+    "GF": 98.5
+   },
+   "target_max": {
+    "GF": 103.0
+   },
+   "n_active": 1264,
+   "runtime_s": 2.32,
+   "cached": false,
+   "hit_targets": [
+    "GF"
+   ]
+  },
+  {
+   "cell_type": "MTe35",
+   "n_stimulated": 2,
+   "target_rates": {
+    "GF": 2.0
+   },
+   "target_max": {
+    "GF": 4.0
+   },
+   "n_active": 22,
+   "runtime_s": 1.562,
+   "cached": false,
+   "hit_targets": []
+  }
+ ],
+ "hits": [
+  "LC6",
+  "LPLC2",
+  "LC15",
+  "LC4",
+  "LC17"
+ ],
+ "hits_by_target": {
+  "GF": [
+   "LC6",
+   "LPLC2",
+   "LC15",
+   "LC4",
+   "LC17"
+  ]
+ },
+ "wall_s": 25.67,
+ "mock": false
+}

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fly Lab Expert Board</title>
+<meta name="description" content="The expert board of the Embodied Fly Lab: how the specialist agents discuss, which stimuli from published research they send to the simulated fly brain, what each experiment showed and how it changed the next round.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23b0722f'/%3E%3Cellipse cx='16' cy='18' rx='5' ry='9' fill='%23fff3e0'/%3E%3C/svg%3E">
+<script>
+  try { var t = localStorage.getItem('flylab-theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="board.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <h1>Embodied Fly Lab <span class="thin">· Expert board</span></h1>
+    <p class="sub">Specialist agents discuss, send published stimuli to the simulated fly brain, check the response and decide the next experiment.</p>
+  </div>
+  <div class="top-right">
+    <nav class="pagenav" aria-label="Pages">
+      <a href="index.html">3D replay</a>
+      <a href="board.html" aria-current="page">Expert board</a>
+    </nav>
+    <div class="replay-badge" role="note" title="Discussion and results come from the recorded Omnigent research records (runs/*/record.jsonl). Nothing is computed in your browser.">
+      <span class="dot" aria-hidden="true"></span>Recorded sessions · not live
+    </div>
+    <button id="theme" class="icon-btn" type="button" aria-label="Colour theme: automatic" title="Colour theme (auto / light / dark)">Auto</button>
+  </div>
+</header>
+
+<div class="viewswitch" role="tablist" aria-label="View">
+  <button type="button" role="tab" data-view="simple" aria-selected="true">Simple view</button>
+  <button type="button" role="tab" data-view="expert" aria-selected="false">Expert details</button>
+</div>
+
+<main id="simple-view" class="simple" aria-live="polite"><p class="muted">Loading…</p></main>
+
+<main id="main" hidden>
+  <section class="panel hyp" id="hypothesis" aria-labelledby="hyp-h"><p class="muted">Loading the board…</p></section>
+
+  <h2 class="section-h" id="rep-h">1 · Behaviour repertoire: which real behaviours does the simulation reproduce?</h2>
+  <section id="repertoire" class="rep-grid" aria-labelledby="rep-h"></section>
+
+  <h2 class="section-h" id="board-h">2 · The expert board</h2>
+  <section id="experts" class="experts" aria-labelledby="board-h"></section>
+
+  <h2 class="section-h" id="disc-h">3 · Discussion, round by round</h2>
+  <section class="panel disc-head" aria-labelledby="disc-h">
+    <div id="sessions" class="seg" role="tablist" aria-label="Research sessions"></div>
+    <div class="filters">
+      <label class="ctl">Expert <select id="f-agent"><option value="">all</option></select></label>
+      <label class="ctl"><input type="checkbox" id="f-key"> key steps only</label>
+    </div>
+  </section>
+  <section id="discussion" class="discussion" aria-live="polite"></section>
+
+  <h2 class="section-h" id="res-h">4 · Results of the individual experiments</h2>
+  <section class="panel results" aria-labelledby="res-h">
+    <div class="res-scroll"><table id="results"></table></div>
+  </section>
+
+  <section class="panel notes">
+    <h2>How to read this page</h2>
+    <ul>
+      <li><b>Recorded, not live.</b> Every post is an event of a real Omnigent research session (<code>runs/&lt;run_id&gt;/record.jsonl</code>), exported with <code>python3 -m flylab.board export</code>. Mock pipeline tests are excluded.</li>
+      <li><b>Stimuli from research.</b> Each behaviour lists the published activation / silencing experiments (DOI) the lab can replay in silico. A match is a comparison with the paper, not a replication in a real fly.</li>
+      <li><b>Evidence levels are kept apart.</b> "Body" means an independent body run agreed and the movement verifier did not object. "Brain / adapter" means the match is a brain read-out or follows from the hand-designed bridge by construction.</li>
+      <li><b>Carried forward</b> chips show which earlier results a round's discussion explicitly named. A round that names none is shown as such.</li>
+      <li><b>Agent hypotheses</b> are labelled agent-generated; none is confirmed in the wet lab.</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>Source: <code>flylab/board.py</code> · <code>agents/fly_lab.yaml</code> · <code>runs/</code></span>
+  <span id="prov" class="mono muted"></span>
+</footer>
+<noscript><p class="panel">This page needs JavaScript.</p></noscript>
+<script type="module" src="js/board.js"></script>
+</body>
+</html>

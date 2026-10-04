@@ -5,7 +5,7 @@
 > numpy re-implementation of the Shiu et al. 2024 whole-brain model (`flylab/brain.py`), frozen descending-neuron bridge (`flylab/bridge.py`),
 > NeuroMechFly walking + FlyBody flight bodies (`flylab/body.py`, `flylab/flight.py`), connectome-guided discovery screen (`flylab/screen.py`),
 > movement verifier (`flylab/verify.py`), Omnigent lab with 9 agents and policies (`agents/fly_lab.yaml`), recorded runs (`runs/`),
-> Streamlit dashboard (`app.py`), static 3D replay viewer with story mode (`web/`), knowledge base export in the FlyBrainLab schema (`data/knowledge/`).
+> Streamlit dashboard (`app.py`), static 3D replay viewer with story mode (`web/`), expert-board discussion page with a simple view for non-experts and live updates (`web/board.html`, `flylab/board.py`), independent session audit (`flylab/audit.py`), macOS launcher (`agents/omni.sh -ApproveAtLaunch lab "<question>"`), knowledge base export in the FlyBrainLab schema (`data/knowledge/`).
 > Full description, results and limitations: **[EMBODIED_FLY_LAB.md](EMBODIED_FLY_LAB.md)**. The Pages workflow of `main` (frontend/) is unchanged; `web/` is served locally (`uv run python -m http.server 8777 --directory web`).
 
 

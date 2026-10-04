@@ -42,6 +42,8 @@ EVENT_TYPES = (
     "decision",
     "note",
     "movement_verification",  # flylab.verify via tools.verify_movement (Phase 3)
+    "prior_review",  # tools.get_prior_results: earlier sessions the expert board read before discussing
+    "board_statement",  # tools.log_board_statement: one expert's position in the board discussion
 )
 
 _LOCK = threading.Lock()

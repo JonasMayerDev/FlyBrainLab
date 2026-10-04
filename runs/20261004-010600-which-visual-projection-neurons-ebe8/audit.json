@@ -1,0 +1,337 @@
+{
+ "format": "flylab-audit-v1",
+ "run_id": "20261004-010600-which-visual-projection-neurons-ebe8",
+ "session": "S1",
+ "audited_at": "2026-10-04T10:26:09+00:00",
+ "session_finished": true,
+ "n_events_audited": 37,
+ "replicated": true,
+ "runtime_s": 48.7,
+ "summary": {
+  "pass": 10,
+  "warn": 1,
+  "fail": 0
+ },
+ "checks": [
+  {
+   "id": "real_data",
+   "title": "Only real simulations and real literature, no placeholders",
+   "status": "pass",
+   "detail": "none of 37 record events and 8 result files is flagged as mock",
+   "evidence": null
+  },
+  {
+   "id": "connectome",
+   "title": "The fly brain is the published FlyWire v783 wiring diagram",
+   "status": "pass",
+   "detail": "SHA256 of the connectome files on this machine equals the project manifest (Shiu et al. 2024 model, 138,639 neurons)",
+   "evidence": [
+    {
+     "file": "Connectivity_783.parquet",
+     "manifest": "efeb23fb99098e9c",
+     "local": "efeb23fb99098e9c",
+     "match": true
+    },
+    {
+     "file": "Completeness_783.csv",
+     "manifest": "bbb847a4cc2caaa7",
+     "local": "bbb847a4cc2caaa7",
+     "match": true
+    }
+   ]
+  },
+  {
+   "id": "record_integrity",
+   "title": "The lab notebook is complete and in order",
+   "status": "pass",
+   "detail": "37 events, numbered without gaps, in time order over 8.3 min",
+   "evidence": null
+  },
+  {
+   "id": "raw_files",
+   "title": "Every reported result matches its raw data file",
+   "status": "pass",
+   "detail": "8 of 8 results: the numbers in the notebook equal the raw file",
+   "evidence": [
+    {
+     "result": "screen_01",
+     "ok": true
+    },
+    {
+     "result": "brain_01",
+     "ok": true
+    },
+    {
+     "result": "brain_02",
+     "ok": true
+    },
+    {
+     "result": "embodied_01",
+     "ok": true
+    },
+    {
+     "result": "brain_03",
+     "ok": true
+    },
+    {
+     "result": "brain_04",
+     "ok": true
+    },
+    {
+     "result": "brain_05",
+     "ok": true
+    },
+    {
+     "result": "brain_06",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "id": "replication",
+   "title": "Re-running each experiment gives exactly the same result",
+   "status": "pass",
+   "detail": "8 of 8 experiments reproduced identically from their saved inputs (same random seed and thread count, recomputed on this machine)",
+   "evidence": [
+    {
+     "result": "screen_01",
+     "max_diff_hz": 0.0,
+     "same": true,
+     "what": "10 cell types x MDN, P9, GF, DNa01, DNp01 at 150 Hz",
+     "seconds": 29.4
+    },
+    {
+     "result": "brain_01",
+     "max_diff_hz": 0.0,
+     "same": true,
+     "what": "885 active neurons compared one by one (2 threads)",
+     "seconds": 3.5
+    },
+    {
+     "result": "brain_02",
+     "max_diff_hz": 0.0,
+     "same": true,
+     "what": "909 active neurons compared one by one (2 threads)",
+     "seconds": 2.3
+    },
+    {
+     "result": "embodied_01",
+     "same": true,
+     "max_diff_hz": null,
+     "what": "brain -> walking drive -> body: stop vs recorded stop, displacement diff 0.000 mm",
+     "seconds": 6.5
+    },
+    {
+     "result": "brain_03",
+     "max_diff_hz": 0.0,
+     "same": true,
+     "what": "811 active neurons compared one by one (1 threads)",
+     "seconds": 1.4
+    },
+    {
+     "result": "brain_04",
+     "max_diff_hz": 0.0,
+     "same": true,
+     "what": "811 active neurons compared one by one (1 threads)",
+     "seconds": 1.4
+    },
+    {
+     "result": "brain_05",
+     "max_diff_hz": 0.0,
+     "same": true,
+     "what": "864 active neurons compared one by one (1 threads)",
+     "seconds": 1.4
+    },
+    {
+     "result": "brain_06",
+     "max_diff_hz": 0.0,
+     "same": true,
+     "what": "864 active neurons compared one by one (1 threads)",
+     "seconds": 1.4
+    }
+   ]
+  },
+  {
+   "id": "silencing_control",
+   "title": "Switching neurons off really switches them off",
+   "status": "pass",
+   "detail": "stimulating LC16 while silencing the same neurons leaves 0 neurons active (expected 0; the unsilenced run activates hundreds)",
+   "evidence": {
+    "excite_and_silence": [
+     "LC16"
+    ],
+    "n_active": 0
+   }
+  },
+  {
+   "id": "dose_response",
+   "title": "Weaker stimulation never gives a stronger response",
+   "status": "n/a",
+   "detail": "this session did not test one cell type at several drive rates",
+   "evidence": null
+  },
+  {
+   "id": "paired_controls",
+   "title": "Before/after comparisons are fair (same random input)",
+   "status": "pass",
+   "detail": "9 of 9 with/without-silencing pairs used the same random seed",
+   "evidence": [
+    {
+     "control": "brain_01",
+     "silenced": "brain_02",
+     "silenced_groups": [
+      "MDN"
+     ],
+     "same_seed": true,
+     "seeds": [
+      0,
+      0
+     ]
+    },
+    {
+     "control": "brain_01",
+     "silenced": "brain_05",
+     "silenced_groups": [
+      "MDN"
+     ],
+     "same_seed": true,
+     "seeds": [
+      0,
+      0
+     ]
+    },
+    {
+     "control": "brain_01",
+     "silenced": "brain_06",
+     "silenced_groups": [
+      "MDN"
+     ],
+     "same_seed": true,
+     "seeds": [
+      0,
+      0
+     ]
+    },
+    {
+     "control": "brain_03",
+     "silenced": "brain_02",
+     "silenced_groups": [
+      "MDN"
+     ],
+     "same_seed": true,
+     "seeds": [
+      0,
+      0
+     ]
+    },
+    {
+     "control": "brain_03",
+     "silenced": "brain_05",
+     "silenced_groups": [
+      "MDN"
+     ],
+     "same_seed": true,
+     "seeds": [
+      0,
+      0
+     ]
+    },
+    {
+     "control": "brain_03",
+     "silenced": "brain_06",
+     "silenced_groups": [
+      "MDN"
+     ],
+     "same_seed": true,
+     "seeds": [
+      0,
+      0
+     ]
+    },
+    {
+     "control": "brain_04",
+     "silenced": "brain_02",
+     "silenced_groups": [
+      "MDN"
+     ],
+     "same_seed": true,
+     "seeds": [
+      0,
+      0
+     ]
+    },
+    {
+     "control": "brain_04",
+     "silenced": "brain_05",
+     "silenced_groups": [
+      "MDN"
+     ],
+     "same_seed": true,
+     "seeds": [
+      0,
+      0
+     ]
+    },
+    {
+     "control": "brain_04",
+     "silenced": "brain_06",
+     "silenced_groups": [
+      "MDN"
+     ],
+     "same_seed": true,
+     "seeds": [
+      0,
+      0
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sources",
+   "title": "Every paper the experts cite really was found by a search tool",
+   "status": "pass",
+   "detail": "8 of 8 cited DOIs were returned by the literature search, the verified ground truth or the bridge's own references",
+   "evidence": null
+  },
+  {
+   "id": "quoted_numbers",
+   "title": "Numbers the experts quote come from the actual measurements",
+   "status": "pass",
+   "detail": "37 of 37 firing rates quoted in the experts' own words appear in a tool output, a raw file or a committed benchmark (rounded)",
+   "evidence": null
+  },
+  {
+   "id": "approvals",
+   "title": "Costly experiments were approved by a human first, within the safety limits",
+   "status": "pass",
+   "detail": "1 body experiment(s), each after an approval (pre-approved); caps kept (max 6 body runs, max 40 candidates per screen)",
+   "evidence": {
+    "approvals": [
+     11,
+     27
+    ],
+    "body_runs": [
+     16
+    ]
+   }
+  },
+  {
+   "id": "movement_checks",
+   "title": "Every body movement was double-checked and confirmed",
+   "status": "warn",
+   "detail": "not checked: ['embodied_01.json']",
+   "evidence": null
+  }
+ ],
+ "proves": [
+  "the simulations really ran on the published fly connectome and give the same numbers again",
+  "the experts' reports match the raw data; their sources are real papers found by the tools",
+  "the safety rules (approval, limits) were followed"
+ ],
+ "does_not_prove": [
+  "that a real fly behaves like the model: these are computer predictions until tested in the lab",
+  "that the hand-designed link from brain to body is biologically right (it is an assumption)",
+  "that the choice of experiment was the best possible one"
+ ],
+ "reproduce": ".venv/bin/python -m flylab.audit S1"
+}

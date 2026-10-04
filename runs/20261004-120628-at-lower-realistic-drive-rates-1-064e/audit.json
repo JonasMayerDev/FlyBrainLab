@@ -1,0 +1,368 @@
+{
+ "format": "flylab-audit-v1",
+ "run_id": "20261004-120628-at-lower-realistic-drive-rates-1-064e",
+ "session": "S3",
+ "audited_at": "2026-10-04T10:28:02+00:00",
+ "session_finished": true,
+ "n_events_audited": 52,
+ "replicated": true,
+ "runtime_s": 61.7,
+ "summary": {
+  "pass": 10,
+  "warn": 2,
+  "fail": 0
+ },
+ "checks": [
+  {
+   "id": "real_data",
+   "title": "Only real simulations and real literature, no placeholders",
+   "status": "pass",
+   "detail": "none of 52 record events and 12 result files is flagged as mock",
+   "evidence": null
+  },
+  {
+   "id": "connectome",
+   "title": "The fly brain is the published FlyWire v783 wiring diagram",
+   "status": "pass",
+   "detail": "SHA256 of the connectome files on this machine equals the project manifest (Shiu et al. 2024 model, 138,639 neurons)",
+   "evidence": [
+    {
+     "file": "Connectivity_783.parquet",
+     "manifest": "efeb23fb99098e9c",
+     "local": "efeb23fb99098e9c",
+     "match": true
+    },
+    {
+     "file": "Completeness_783.csv",
+     "manifest": "bbb847a4cc2caaa7",
+     "local": "bbb847a4cc2caaa7",
+     "match": true
+    }
+   ]
+  },
+  {
+   "id": "record_integrity",
+   "title": "The lab notebook is complete and in order",
+   "status": "pass",
+   "detail": "52 events, numbered without gaps, in time order over 13.7 min",
+   "evidence": null
+  },
+  {
+   "id": "raw_files",
+   "title": "Every reported result matches its raw data file",
+   "status": "pass",
+   "detail": "12 of 12 results: the numbers in the notebook equal the raw file",
+   "evidence": [
+    {
+     "result": "screen_01",
+     "ok": true
+    },
+    {
+     "result": "brain_01",
+     "ok": true
+    },
+    {
+     "result": "brain_02",
+     "ok": true
+    },
+    {
+     "result": "brain_03",
+     "ok": true
+    },
+    {
+     "result": "brain_04",
+     "ok": true
+    },
+    {
+     "result": "screen_02",
+     "ok": true
+    },
+    {
+     "result": "screen_03",
+     "ok": true
+    },
+    {
+     "result": "brain_05",
+     "ok": true
+    },
+    {
+     "result": "brain_06",
+     "ok": true
+    },
+    {
+     "result": "brain_07",
+     "ok": true
+    },
+    {
+     "result": "flight_01",
+     "ok": true
+    },
+    {
+     "result": "flight_02",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "id": "replication",
+   "title": "Re-running each experiment gives exactly the same result",
+   "status": "pass",
+   "detail": "12 of 12 experiments reproduced identically from their saved inputs (same random seed and thread count, recomputed on this machine)",
+   "evidence": [
+    {
+     "result": "screen_01",
+     "max_diff_hz": 0.0,
+     "same": true,
+     "what": "10 cell types x GF at 30 Hz",
+     "seconds": 18.6
+    },
+    {
+     "result": "brain_01",
+     "max_diff_hz": 0.0,
+     "same": true,
+     "what": "360 active neurons compared one by one (2 threads)",
+     "seconds": 2.1
+    },
+    {
+     "result": "brain_02",
+     "max_diff_hz": 0.0,
+     "same": true,
+     "what": "360 active neurons compared one by one (2 threads)",
+     "seconds": 1.8
+    },
+    {
+     "result": "brain_03",
+     "max_diff_hz": 0.0,
+     "same": true,
+     "what": "867 active neurons compared one by one (2 threads)",
+     "seconds": 1.9
+    },
+    {
+     "result": "brain_04",
+     "max_diff_hz": 0.0,
+     "same": true,
+     "what": "867 active neurons compared one by one (2 threads)",
+     "seconds": 2.1
+    },
+    {
+     "result": "screen_02",
+     "max_diff_hz": 0.0,
+     "same": true,
+     "what": "4 cell types x GF at 20 Hz",
+     "seconds": 7.6
+    },
+    {
+     "result": "screen_03",
+     "max_diff_hz": 0.0,
+     "same": true,
+     "what": "4 cell types x GF at 10 Hz",
+     "seconds": 7.5
+    },
+    {
+     "result": "brain_05",
+     "max_diff_hz": 0.0,
+     "same": true,
+     "what": "0 active neurons compared one by one (2 threads)",
+     "seconds": 1.7
+    },
+    {
+     "result": "brain_06",
+     "max_diff_hz": 0.0,
+     "same": true,
+     "what": "1065 active neurons compared one by one (2 threads)",
+     "seconds": 5.1
+    },
+    {
+     "result": "brain_07",
+     "max_diff_hz": 0.0,
+     "same": true,
+     "what": "999 active neurons compared one by one (2 threads)",
+     "seconds": 4.8
+    },
+    {
+     "result": "flight_01",
+     "same": true,
+     "max_diff_hz": null,
+     "what": "brain -> command (takeoff 0.512) -> body: hover vs recorded hover, height diff 0.000 mm",
+     "seconds": 3.7
+    },
+    {
+     "result": "flight_02",
+     "same": true,
+     "max_diff_hz": null,
+     "what": "brain -> command (takeoff 0.000) -> body: no_takeoff vs recorded no_takeoff, height diff 0.000 mm",
+     "seconds": 3.6
+    }
+   ]
+  },
+  {
+   "id": "silencing_control",
+   "title": "Switching neurons off really switches them off",
+   "status": "pass",
+   "detail": "stimulating LC6 while silencing the same neurons leaves 0 neurons active (expected 0; the unsilenced run activates hundreds)",
+   "evidence": {
+    "excite_and_silence": [
+     "LC6"
+    ],
+    "n_active": 0
+   }
+  },
+  {
+   "id": "dose_response",
+   "title": "Weaker stimulation never gives a stronger response",
+   "status": "pass",
+   "detail": "4 of 4 cell types respond less (or equally) when stimulated more weakly",
+   "evidence": [
+    {
+     "cell_type": "LC15",
+     "target": "GF",
+     "points": {
+      "10 Hz": 0.0,
+      "20 Hz": 13.5,
+      "30 Hz": 30.0
+     },
+     "monotonic": true
+    },
+    {
+     "cell_type": "LC17",
+     "target": "GF",
+     "points": {
+      "10 Hz": 68.5,
+      "20 Hz": 92.0,
+      "30 Hz": 98.5
+     },
+     "monotonic": true
+    },
+    {
+     "cell_type": "LC4",
+     "target": "GF",
+     "points": {
+      "10 Hz": 1.0,
+      "20 Hz": 9.0,
+      "30 Hz": 27.5
+     },
+     "monotonic": true
+    },
+    {
+     "cell_type": "LC6",
+     "target": "GF",
+     "points": {
+      "10 Hz": 25.5,
+      "20 Hz": 61.0,
+      "30 Hz": 85.0
+     },
+     "monotonic": true
+    }
+   ]
+  },
+  {
+   "id": "paired_controls",
+   "title": "Before/after comparisons are fair (same random input)",
+   "status": "warn",
+   "detail": "3 of 4 with/without-silencing pairs used the same random seed; 1 used different seeds, so small differences there may be noise, not an effect",
+   "evidence": [
+    {
+     "control": "brain_01",
+     "silenced": "brain_02",
+     "silenced_groups": [
+      "LPLC2"
+     ],
+     "same_seed": true,
+     "seeds": [
+      1,
+      1
+     ]
+    },
+    {
+     "control": "brain_03",
+     "silenced": "brain_04",
+     "silenced_groups": [
+      "LPLC2"
+     ],
+     "same_seed": true,
+     "seeds": [
+      1,
+      1
+     ]
+    },
+    {
+     "control": "brain_06",
+     "silenced": "brain_07",
+     "silenced_groups": [
+      "LC4",
+      "LC6",
+      "LPLC2"
+     ],
+     "same_seed": false,
+     "seeds": [
+      1,
+      2
+     ]
+    },
+    {
+     "control": "flight_01",
+     "silenced": "flight_02",
+     "silenced_groups": [
+      "GF"
+     ],
+     "same_seed": true,
+     "seeds": [
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sources",
+   "title": "Every paper the experts cite really was found by a search tool",
+   "status": "pass",
+   "detail": "4 of 4 cited DOIs were returned by the literature search, the verified ground truth or the bridge's own references",
+   "evidence": null
+  },
+  {
+   "id": "quoted_numbers",
+   "title": "Numbers the experts quote come from the actual measurements",
+   "status": "pass",
+   "detail": "128 of 128 firing rates quoted in the experts' own words appear in a tool output, a raw file or a committed benchmark (rounded)",
+   "evidence": null
+  },
+  {
+   "id": "approvals",
+   "title": "Costly experiments were approved by a human first, within the safety limits",
+   "status": "pass",
+   "detail": "2 body experiment(s), each after an approval (pre-approved); caps kept (max 6 body runs, max 40 candidates per screen)",
+   "evidence": {
+    "approvals": [
+     15,
+     34
+    ],
+    "body_runs": [
+     38,
+     39
+    ]
+   }
+  },
+  {
+   "id": "movement_checks",
+   "title": "Every body movement was double-checked and confirmed",
+   "status": "warn",
+   "detail": "all 2 body runs were checked by the movement verifier; the checker could not confirm flight_01.json, flight_02.json (kept as uncertain, uncertain, not upgraded)",
+   "evidence": {
+    "flight_01.json": "uncertain",
+    "flight_02.json": "uncertain"
+   }
+  }
+ ],
+ "proves": [
+  "the simulations really ran on the published fly connectome and give the same numbers again",
+  "the experts' reports match the raw data; their sources are real papers found by the tools",
+  "the safety rules (approval, limits) were followed"
+ ],
+ "does_not_prove": [
+  "that a real fly behaves like the model: these are computer predictions until tested in the lab",
+  "that the hand-designed link from brain to body is biologically right (it is an assumption)",
+  "that the choice of experiment was the best possible one"
+ ],
+ "reproduce": ".venv/bin/python -m flylab.audit S3"
+}

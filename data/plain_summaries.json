@@ -1,0 +1,74 @@
+{
+ "_meta": {
+  "what": "Plain-language summaries of the recorded research sessions for non-experts (web/board.html, simple view).",
+  "written_by": "Claude Code from the research record runs/<run_id>/record.jsonl; every number was checked against the raw result files listed in 'numbers_from'.",
+  "rule": "Simplify words, never the facts: no claim here that is not in the record; model predictions stay labelled as predictions."
+ },
+ "sessions": {
+  "20261004-010600-which-visual-projection-neurons-ebe8": {
+   "title": "Which eye neurons make a fly walk backwards?",
+   "question": "Which eye neurons make a fly back away (walk backwards), and does it need its \"moonwalker\" neurons to do that?",
+   "knew_before": "Studies on real flies: switching on the moonwalker neurons (MDN) makes a fly walk backwards. Eye neurons called LC16 and LPLC2 were reported to make flies back away.",
+   "tried": "The experts switched on 10 types of eye neurons one by one in the virtual brain. Then they switched on LC16 alone, and LC16 with the moonwalker neurons switched off, and ran the virtual body once.",
+   "found": [
+    "LC16 activated the moonwalker neurons (32 signals per second), as expected from real flies.",
+    "With the moonwalker neurons switched off, that dropped to 0, as it must when they are switched off.",
+    "Surprise: LPLC2 did not activate the moonwalker neurons at all, although a real-fly study reports backing away.",
+    "The virtual body stood still instead of walking backwards."
+   ],
+   "verdict": "partly",
+   "verdict_text": "Partly matches real flies. The LPLC2 result disagrees with a published experiment and is marked as a conflict to investigate.",
+   "next": "Find out whether LPLC2 makes real flies back away through a different route than the moonwalker neurons.",
+   "numbers_from": [
+    "brain_01",
+    "brain_02",
+    "screen_01",
+    "embodied_01"
+   ]
+  },
+  "20261004-093251-which-visual-neurons-trigger-esc-9460": {
+   "title": "Which eye neurons trigger the escape jump?",
+   "question": "Which eye neurons trigger the escape jump, does the virtual fly really take off, and does it need its \"escape neuron\" (the giant fiber)?",
+   "knew_before": "Studies on real flies: eye neurons that detect an approaching object (LPLC2, LC4) connect to the giant fiber, which fires the escape jump.",
+   "tried": "The experts switched on the 10 most promising eye-neuron types strongly (150 pulses per second). Then they flew the virtual fly with LPLC2 switched on, once with and once without the escape neuron.",
+   "found": [
+    "All 10 types made the escape neuron fire. The stimulation was too strong to tell them apart.",
+    "With LPLC2 on, the virtual fly took off and hovered 18 mm high.",
+    "With the escape neuron switched off, it stayed on the ground.",
+    "The movement checker could not confirm from the video whether the fly hovered or climbed, and said so."
+   ],
+   "verdict": "brain",
+   "verdict_text": "Matches real flies inside the brain. The take-off itself is built into our brain-to-body link, so it checks the plumbing rather than discovering something new.",
+   "next": "Repeat with weaker, more realistic stimulation so the neuron types can be told apart. Session 3 did exactly this.",
+   "numbers_from": [
+    "screen_01",
+    "flight_01",
+    "flight_02"
+   ]
+  },
+  "20261004-120628-at-lower-realistic-drive-rates-1-064e": {
+   "title": "With gentler stimulation: which eye neurons still trigger escape?",
+   "question": "With weaker, more realistic stimulation, which eye neurons still make the escape neuron fire, and does the virtual fly still take off?",
+   "knew_before": "From session 2: with strong stimulation all 10 eye-neuron types worked, so that test could not tell them apart.",
+   "tried": "The experts stimulated the same eye neurons at 30, 20 and 10 pulses per second. They tested whether the strongest one, LC17, needs the well-known escape eye neurons. Then they flew the virtual fly with LC17 on, once with and once without the escape neuron.",
+   "found": [
+    "Weaker stimulation separated the types: 5 of 10 still worked at 30, 4 of 4 tested at 20, and only 2 at 10 pulses per second.",
+    "Surprise: LC17, which is not known from real-fly escape studies, was the strongest (escape neuron at 98.5, 92 and 68.5 signals per second).",
+    "LC17 still worked with the known escape eye neurons (LC6, LC4, LPLC2) switched off: 78.0 versus 78.2 signals per second. The two runs got different random input, so the tiny difference means nothing. What counts is that it stayed far above zero.",
+    "The virtual fly only just took off: the escape neuron fired at 76 and about 74 is needed. The movement checker was unsure about the video."
+   ],
+   "verdict": "brain",
+   "verdict_text": "The known escape neurons behave like in real flies, but only inside the brain. LC17 triggering escape is a new prediction of the computer model and has not been tested in real flies.",
+   "next": "The experts suggest testing LC17 in a real-fly experiment, and re-recording the take-off with a fixed camera because the checker was unsure.",
+   "numbers_from": [
+    "screen_01",
+    "screen_02",
+    "screen_03",
+    "brain_06",
+    "brain_07",
+    "flight_01",
+    "flight_02"
+   ]
+  }
+ }
+}

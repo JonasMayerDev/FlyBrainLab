@@ -1626,6 +1626,78 @@ def get_benchmark(name: str = "", agent: str = "", run_id: str = "") -> dict:
         return _err("get_benchmark", exc)
 
 
+# =========================================================================== expert board tools
+
+
+BOARD_STANCES = ("propose", "support", "object", "concern", "question", "decide")
+
+
+def get_prior_results(agent: str = "supervisor", run_id: str = "") -> dict:
+    """Read what the lab already learned in EARLIER research sessions, before the board discusses the next round:
+    experiments (stimulus, key rates, body label), literature verdicts, movement checks, reopened assumptions,
+    proposed next steps, and which behaviours of the fly's repertoire are reproduced / conflicting / untested.
+    Logged as a prior_review event, so the record shows which earlier results the board saw.
+    :param agent: Calling agent role name.
+    :param run_id: Current run id (excluded from the digest); default = active run.
+    :returns: {"sessions": [...], "repertoire": [...], "untested_or_conflicting": [...], "how_to_cite": ...}
+    """
+    try:
+        from flylab import board
+
+        rid = _rid(run_id)
+        digest = board.prior_results(exclude_run_id=rid)
+        exps = [x["id"] for s in digest["sessions"] for x in s["experiments"]]
+        record.log_event(rid, agent, "prior_review",
+                         f"Board reviewed {len(digest['sessions'])} earlier session(s) with {len(exps)} experiments; "
+                         f"untested or conflicting behaviours: {', '.join(digest['untested_or_conflicting']) or 'none'}",
+                         {"sessions": [s["run_id"] for s in digest["sessions"]], "experiments": exps,
+                          "repertoire": digest["repertoire"]})
+        return {"ok": True, "run_id": rid, **digest}
+    except Exception as exc:
+        return _err("get_prior_results", exc, run_id, agent)
+
+
+def get_behavior_coverage(agent: str = "", run_id: str = "") -> dict:
+    """Behaviour repertoire of the fly vs. the literature stimuli catalogue: per behaviour (forward, backward,
+    turns, escape, flight power, feeding, grooming) the published impulses (ground-truth ids with DOI) and whether
+    the simulation reproduced them (body / brain read-out only / adapter check), contradicted them or never tested
+    them. Use it to choose which behaviour the next round should test.
+    :param agent: Calling agent role name (read-only, not logged).
+    :param run_id: Unused, accepted for uniformity.
+    """
+    try:
+        from flylab import board
+
+        cov = board.behavior_coverage()
+        slim = [{"behavior": b["id"], "status": b["status"], "where_visible": b["body"],
+                 "impulses": [{"gt_id": i["gt_id"], "manipulation": i["manipulation"], "target": i["target"],
+                               "doi": i["citation"]["doi"], "n_tests": len(i["tests"]),
+                               "verdicts": sorted({t["verdict"] for t in i["tests"]})} for i in b["impulses"]]}
+                for b in cov["behaviors"]]
+        return {"ok": True, "behaviors": slim, "counts": cov["counts"], "not_catalogued": cov["not_catalogued"],
+                "note": "reproduced_brain = matches the literature only as a brain read-out or as an adapter check "
+                        "(circular); reproduced_body = an independent body run agreed and the verifier did not object."}
+    except Exception as exc:
+        return _err("get_behavior_coverage", exc)
+
+
+def log_board_statement(statement: str, stance: str = "propose", refs: list = None, agent: str = "",
+                        run_id: str = "") -> dict:
+    """Give your position in the expert-board discussion (one short statement per round).
+    :param statement: Your position in 1-3 sentences, with the evidence it rests on (DOIs, numbers).
+    :param stance: One of propose, support, object, concern, question, decide.
+    :param refs: Earlier experiments the statement builds on, as "<session>/<artifact>" (e.g. "S1/brain_02",
+        from get_prior_results) or artifact names of this run (e.g. "flight_01"), plus ground-truth ids.
+    :param agent: Your role name (e.g. "hypothesis", "planner", "analysis").
+    :param run_id: Run id; default = active run.
+    """
+    rid = _rid(run_id)
+    st = stance if stance in BOARD_STANCES else "propose"
+    ev = record.log_event(rid, agent or "unknown", "board_statement", statement,
+                          {"stance": st, "refs": [str(r) for r in _as_list(refs)]})
+    return {"ok": True, "run_id": rid, "seq": ev["seq"], "stance": st}
+
+
 # =========================================================================== Omnigent policy
 
 

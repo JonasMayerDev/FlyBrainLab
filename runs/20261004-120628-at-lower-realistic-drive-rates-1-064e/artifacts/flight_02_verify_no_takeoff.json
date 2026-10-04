@@ -1,0 +1,82 @@
+{
+ "expected_behavior": "no_takeoff",
+ "mode": "flight",
+ "kinematic": {
+  "verdict": "correct",
+  "checks": [
+   {
+    "name": "airborne_time_s",
+    "value": 0.0,
+    "threshold": ">= 0.05 s with height gain > 1.0 mm",
+    "pass": false
+   },
+   {
+    "name": "final_abs_roll_deg",
+    "value": 0.0,
+    "threshold": "<= 90.0",
+    "pass": true
+   }
+  ],
+  "recomputed": {
+   "duration_s": 1.0,
+   "n_samples": 101,
+   "start_height_mm": 0.0,
+   "max_height_gain_mm": 0.0,
+   "final_height_gain_mm": -0.0,
+   "airborne_time_s": 0.0,
+   "first_airborne_t_s": null,
+   "forward_disp_initial_frame_mm": -0.001,
+   "lateral_disp_initial_frame_mm": -0.0,
+   "dz_mm": -0.0,
+   "horizontal_disp_mm": 0.001,
+   "heading_change_deg": 0.01,
+   "final_abs_roll_deg": 0.0,
+   "max_abs_roll_deg": 0.1
+  },
+  "reason": "all checks passed"
+ },
+ "vision": {
+  "verdict": "uncertain",
+  "observed_behavior": "no_takeoff",
+  "matches_expected": null,
+  "confidence": 0.6,
+  "observations": [
+   "Tiles 1-16: the fly stays at nearly the same screen position and the legs appear to touch the floor throughout.",
+   "No visible gap between legs and floor and no rising body in any tile; a faint reflection or shadow sits just under the legs.",
+   "The wings change slightly in posture (tiles 9, 13 and 16 show them more open) but the body height does not change.",
+   "The floor checker pattern looks almost identical across tiles, so there is no clear forward displacement or turn."
+  ],
+  "fly_visible": true,
+  "model": "claude-sonnet-5-5",
+  "frames_used": 16,
+  "cached": false,
+  "usage": {
+   "input_tokens": 2492,
+   "output_tokens": 194
+  },
+  "video_sha256": "8b167cbcaec83e27a3c11e66b780c769f864df46bad55bb1827d59e54beea8db",
+  "blind": "model saw neither the expected behaviour nor the kinematic numbers"
+ },
+ "vision_error": null,
+ "final_verdict": "uncertain",
+ "agreement": false,
+ "methods": [
+  "kinematic",
+  "vision"
+ ],
+ "reason": "kinematic=correct (all checks passed), vision=uncertain (observed no_takeoff, conf 0.6)",
+ "contact_sheet": "runs/20261004-120628-at-lower-realistic-drive-rates-1-064e/artifacts/flight_02_contact.jpg",
+ "video": "runs/20261004-120628-at-lower-realistic-drive-rates-1-064e/artifacts/flight_02.mp4",
+ "independence_note": "kinematics recomputed from the raw trajectory with own formulas/thresholds (not body.classify / flight.classify_flight); vision is blind to both",
+ "artifact": "flight_02.json",
+ "expected_source": "given by caller",
+ "mock": false,
+ "manipulation": {
+  "excite": [
+   "LC17"
+  ],
+  "silence": [
+   "GF"
+  ]
+ }
+}
